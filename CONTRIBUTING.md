@@ -61,6 +61,10 @@ New live backends require mocked payload/extraction tests, retry and resume
 tests, transmitted-versus-requested parameter capture, provider capability
 snapshots, and a zero-call preflight test.
 
+Ruff and its lint rule set are pinned in `pyproject.toml` to keep checks
+reproducible across machines. Tool upgrades require a separate review; never
+reformat a content-addressed source file merely to satisfy changed defaults.
+
 ## Claim language
 
 Prefer “consistent with a calibrated equivalence class” and “predicts heldout

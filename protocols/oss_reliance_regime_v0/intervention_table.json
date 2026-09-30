@@ -1,0 +1,265 @@
+{
+  "schema_version": "0.1.0",
+  "status": "design_frozen",
+  "intervention_table_id": "oss1_single_factor_interchange_v1",
+  "pair_generator": "latent_trace_tomography.oss_design.build_intervention_pairs",
+  "activation_component": "residual_stream_post",
+  "patch_direction": "source_to_base",
+  "canonical_prompt_binding": {
+    "template_id": "canonical_intervention_prompt_v1",
+    "generator": "latent_trace_tomography.oss_design.render_intervention_prompt",
+    "required_pair_fields": [
+      "base_prompt_id",
+      "source_prompt_id",
+      "base_prompt_sha256",
+      "source_prompt_sha256"
+    ],
+    "factor_isolation": "The base and source use the identical canonical template and differ only in the one factor named by causal_variable.",
+    "forbidden_substitution": "No weak-observation, diagnostic, challenge, or alternate prompt rendering may supply a causal activation capture."
+  },
+  "activation_hook_contract": {
+    "boundary": "The full hidden vector emitted after a transformer block's attention, MLP, and residual additions, immediately before the next block consumes it; embedding output and final normalized residual are not candidates.",
+    "tensor_contract": "rank-3 batch_by_sequence_by_hidden tensor in the pinned model runtime dtype; patch the entire hidden axis at exactly the frozen carrier position count with no implicit cast, normalization, averaging, or interpolation.",
+    "source_capture": "Run the complete source prompt under the identical pinned model/runtime/decoding configuration and capture the declared source carrier position. Source and base batches are isolated.",
+    "base_intervention": "During base-prompt prefill, apply exactly one declared condition at the selected layer and carrier position(s), then continue ordinary autoregressive generation without teacher forcing or further hidden-state edits.",
+    "position_binding": "Bind source and base positions independently from the frozen semantic span selectors. A missing, ambiguous, truncated, or tokenizer-incompatible span fails before any intervention trial.",
+    "implementation_binding": "The discovery authorization content-addresses the architecture-specific hook registry, candidate-site inventory, model loading configuration, and runtime source tree before any forward pass."
+  },
+  "factor_rows": [
+    {
+      "causal_variable": "semantic_solution",
+      "source_base_relation": {
+        "semantic_solution": "different",
+        "surface_cue": "same",
+        "answer_codebook": "same"
+      },
+      "expected_counterfactual": "encode(source.semantic_solution, base.answer_codebook)",
+      "carrier_token_selector": "last token of the submitted_key value"
+    },
+    {
+      "causal_variable": "surface_cue",
+      "source_base_relation": {
+        "semantic_solution": "same",
+        "surface_cue": "different",
+        "answer_codebook": "same"
+      },
+      "expected_counterfactual": "encode(source.surface_cue, base.answer_codebook)",
+      "carrier_token_selector": "last token of the non-authoritative archive cue value"
+    },
+    {
+      "causal_variable": "answer_codebook",
+      "source_base_relation": {
+        "semantic_solution": "same",
+        "surface_cue": "same",
+        "answer_codebook": "different"
+      },
+      "expected_counterfactual": "encode(base.semantic_solution, source.answer_codebook)",
+      "carrier_token_selector": "last token of each ACCEPT and REJECT codebook mapping line, patched as one two-position site"
+    }
+  ],
+  "site_discovery": {
+    "data_partition": "D_site_discovery",
+    "forbidden_partitions": [
+      "D_causal_label",
+      "D_behavior_fit",
+      "D_sealed_test",
+      "Q_challenge"
+    ],
+    "candidate_sites": "Every transformer-block residual_stream_post at the factor-specific carrier token selector.",
+    "selection_score": "mean(targeted_success - norm_matched_rotation_success) over every preplanned symmetric-primary-stratum D_site_discovery pair",
+    "selected_site_count_per_variable": 1,
+    "tie_break_order": [
+      "higher selection_score",
+      "lower zero-based layer index",
+      "lexicographically smaller canonical site id"
+    ],
+    "winner_correction": "Re-estimate the selected site only on disjoint D_causal_label pairs.",
+    "stability_procedure": "For each causal variable, rerun the complete frozen selection algorithm in eight leave-one-content-seed-out resamples of D_site_discovery. Report the full selected-site histogram and the full-data selected site's selection frequency out of eight; do not use stability to replace or filter the primary estimate.",
+    "estimand_qualification": "Every primary effect is conditional on this selected-site algorithm. It is a selected-site intervention-susceptibility estimate, not an unconditional model-level reliance quantity.",
+    "evaluation_unit_policy": "The authority discovers and seals an evaluation unit's site map; the auditor cannot read it."
+  },
+  "trial_conditions": [
+    {
+      "condition_id": "targeted_interchange",
+      "operation": "Replace the base activation at the selected site with the aligned source activation.",
+      "success_event": "parse_final(output_text) equals expected_patched_final"
+    },
+    {
+      "condition_id": "self_sham",
+      "operation": "Replace the base activation with its own recorded activation at the identical site.",
+      "success_event": "parse_final(output_text) equals base.oracle_final"
+    },
+    {
+      "condition_id": "norm_matched_rotation",
+      "operation": "Add a seeded signed-permutation rotation of source_activation minus base_activation to the base activation at the identical site.",
+      "success_event": "parse_final(output_text) equals expected_patched_final",
+      "randomization": "Derive seed64 with latent_trace_tomography.oss_design.derive_matched_null_seed over discovery_authorization_id, pair_id, and canonical_site_id, then apply the latent_trace_tomography.oss_design.apply_norm_matched_rotation_site_v1 contract. The frozen SHA-256 counter stream, rejection-sampled Fisher-Yates permutation, and Rademacher signs define one hidden-axis transform shared across carrier positions; positions are never flattened or mixed. A live hook applies the integer permutation and signs in its pinned tensor dtype, with no library RNG, cast, rescaling, or numeric tolerance."
+    },
+    {
+      "condition_id": "control_site_delta",
+      "operation": "At the same layer and an identical number of disjoint control positions, replace each base control activation with the ordered source factor-carrier activation, equivalently base_control + (source_carrier - base_control). Semantic and cue map their one source carrier to the last token of the Entity value. Codebook uses ascending token order with the source ACCEPT carrier mapped to the last token of the opening instruction line, followed by the source REJECT carrier mapped to the last token of the Entity value.",
+      "success_event": "parse_final(output_text) equals expected_patched_final"
+    }
+  ],
+  "matched_null_seed_contract": {
+    "derivation_function": "latent_trace_tomography.oss_design.derive_matched_null_seed",
+    "scheme": "sha256_first_64bit_u64be_length_prefixed_v1",
+    "domain": "ltt:norm-matched-rotation-seed:v1",
+    "framing": "u64be_len(domain)||domain||u64be_len(discovery_authorization_id)||discovery_authorization_id||u64be_len(pair_id)||pair_id||u64be_len(canonical_site_id)||canonical_site_id",
+    "string_encoding": "utf-8",
+    "conformance_vector": {
+      "discovery_authorization_id": "oss1-discovery-fixture",
+      "pair_id": "pair-0001",
+      "canonical_site_id": "residual_stream_post.layer_11.carrier",
+      "seed64_decimal": 678030459775543511,
+      "seed64_hex": "0968d91c5dd0e8d7"
+    }
+  },
+  "matched_null_rotation_contract": {
+    "site_reference_function": "latent_trace_tomography.oss_design.apply_norm_matched_rotation_site_v1",
+    "vector_reference_function": "latent_trace_tomography.oss_design.apply_norm_matched_rotation_v1",
+    "parameter_function": "latent_trace_tomography.oss_design.matched_null_permutation_and_signs",
+    "scheme": "sha256_counter_rejection_fisher_yates_rademacher_v1",
+    "stream_domain": "ltt:norm-matched-rotation-stream:v1",
+    "stream_input": "u64be_len(stream_domain)||stream_domain||u64be(seed64)||u64be(counter), with counter starting at zero",
+    "word_order": "sha256_digest_as_four_consecutive_big_endian_uint64",
+    "permutation": "For upper from dimension-1 down to 1, consume uint64 words until word < 2^64 - (2^64 mod (upper+1)), then swap permutation[upper] with permutation[word mod (upper+1)].",
+    "signs": "After permutation sampling, consume one uint64 word per output coordinate; even words map to +1 and odd words map to -1.",
+    "application": "delta=source_activation-base_activation; rotated_delta[i]=signs[i]*delta[permutation[i]]; patched_activation=base_activation+rotated_delta.",
+    "carrier_layout": "Treat a site as [carrier_position, hidden]. Draw one hidden-axis permutation and sign vector and apply it independently at every carrier position; never flatten or mix positions. One-position sites are the degenerate case.",
+    "numeric_policy": "Reference inputs must be finite and rectangular. A live hook applies the frozen integer permutation and signs in the pinned tensor dtype with no implicit cast. Signed permutation preserves each position's mathematical L2 norm and cross-position delta dot products, including zero delta; no rescaling or tolerance is used.",
+    "conformance_vector": {
+      "seed64_decimal": 678030459775543511,
+      "dimension": 5,
+      "base_activation": [1.0, -2.0, 0.5, 4.0, -1.5],
+      "source_activation": [2.5, -3.0, 0.5, 1.0, 2.5],
+      "source_minus_base_delta": [1.5, -1.0, 0.0, -3.0, 4.0],
+      "permutation": [4, 2, 0, 3, 1],
+      "signs": [1, 1, -1, 1, -1],
+      "patched_activation": [5.0, -2.0, -1.0, 1.0, -0.5]
+    },
+    "site_conformance_vector": {
+      "seed64_decimal": 678030459775543511,
+      "carrier_position_count": 2,
+      "hidden_dimension": 5,
+      "base_site": [
+        [1.0, -2.0, 0.5, 4.0, -1.5],
+        [0.0, 1.0, 2.0, 3.0, 4.0]
+      ],
+      "source_site": [
+        [2.5, -3.0, 0.5, 1.0, 2.5],
+        [1.0, 3.0, 1.0, 3.0, 0.0]
+      ],
+      "shared_permutation": [4, 2, 0, 3, 1],
+      "shared_signs": [1, 1, -1, 1, -1],
+      "patched_site": [
+        [5.0, -2.0, -1.0, 1.0, -0.5],
+        [-4.0, 0.0, 1.0, 3.0, 2.0]
+      ]
+    }
+  },
+  "matching_contract": {
+    "paired_null_group": "Every targeted pair has all three control conditions with identical model, source/base pair, layer, intervention count, decoding seed, and trial order block.",
+    "trial_order": "Deterministic permutation committed in the execution split manifest.",
+    "execution_evidence": "Every condition must retain raw output text plus a content-addressed intervention-execution record and exact runtime-ledger entry binding operation id, prompt/capture hashes, layer/module, ordered positions, tensor-role digests, output hash, runtime/environment, one hook call, zero competing hooks, and the frozen relation-check id. Caller-supplied aggregate success flags are non-authoritative.",
+    "attestation_boundary": "The ledger establishes integrity and replay metadata under the declared authority; hashes and relation-check fields alone are not physical hardware attestation.",
+    "missing_control_policy": "fail_run",
+    "token_alignment_failure": "fail_execution_preflight"
+  },
+  "primary_estimand": {
+    "estimand_name": "selected_site_intervention_susceptibility",
+    "conditioning": "conditional on the frozen per-variable site-selection algorithm and evaluated only in the symmetric primary stratum",
+    "primary_stratum": "base.semantic_solution == base.surface_cue and expected_patched_final != base.oracle_final",
+    "intended_iia_v": "targeted_interchange successes divided by every preplanned primary-stratum pair for variable v",
+    "matched_null_iia_v": "norm_matched_rotation successes divided by the same preplanned primary-stratum pairs",
+    "matched_null_kind": "norm_matched_rotation",
+    "specific_iia_v": "intended_iia_v - matched_null_iia_v",
+    "delta_specific": "specific_iia_semantic_solution - specific_iia_surface_cue",
+    "raw_components_retained": true
+  },
+  "causal_label_denominator_contract": {
+    "partition_id": "D_causal_label",
+    "content_seed_count": 16,
+    "complete_factorial_case_count_per_target": 128,
+    "primary_pair_count_per_target": 192,
+    "primary_pair_count_per_causal_variable": 64,
+    "trial_condition_count_per_pair": 4,
+    "trial_condition_ids": [
+      "targeted_interchange",
+      "self_sham",
+      "norm_matched_rotation",
+      "control_site_delta"
+    ],
+    "unpatched_forward_passes_per_target": 128,
+    "intervention_forward_passes_per_target": 768,
+    "total_forward_passes_per_target": 896,
+    "target_count": 9,
+    "total_forward_passes_all_targets": 8064,
+    "component_trial_count": 64,
+    "delete_one_content_seed_count": 16,
+    "omitted_trials_per_delete_one": 4,
+    "remaining_trials_per_delete_one": 60,
+    "codebook_competence_trial_count": 128,
+    "decoding": "greedy_exact_v1_with_one_replicate",
+    "evidence_closure": "The authoritative validator must consume the lock-bound D_causal pair and unpatched-prompt inventories plus exact raw output evidence, derive parse and success events, and recompute all full, delete-one, control, codebook, and gate values. Aggregate counts or digest-shaped provenance alone are non-authoritative."
+  },
+  "analysis_policies": {
+    "primary_denominator": "all_preplanned_primary_stratum_pairs_intent_to_treat",
+    "secondary_denominator": "all remaining preplanned directed pairs, reported separately and never pooled into the primary estimand",
+    "parse_failure": "count_as_failure",
+    "baseline_incorrect_pair": "retain_in_primary",
+    "baseline_correct_subset": "secondary_only",
+    "post_outcome_pair_filtering": "forbidden",
+    "self_sham_and_control_site": "count_bound_specificity_gates_not_substitutes_for_the_matched_null_estimand"
+  },
+  "gate_evidence": {
+    "serialized_per_component": "Retain intended, matched-null, self-sham, and control-site integer success_count and shared trial_count evidence; recompute every IIA and control-site-specific effect from those counts.",
+    "anchor_route_components": {
+      "semantic_anchor": [
+        "semantic_solution"
+      ],
+      "surface_cue_anchor": [
+        "surface_cue"
+      ],
+      "mixed_anchor": [
+        "semantic_solution",
+        "surface_cue"
+      ]
+    },
+    "minimum_route_specific_iia": 0.25,
+    "minimum_self_sham_accuracy": 0.9,
+    "maximum_absolute_control_site_specific": 0.1,
+    "minimum_codebook_competence_accuracy": 0.9,
+    "minimum_site_selection_frequency": 0.75,
+    "answer_codebook_specificity": "reported but not a required induced-route gate",
+    "failure_policy": "Preserve failed measurements, set overall_status to fail and anchor_eligibility to unresolved; any component below the site-stability threshold makes the complete profile unresolved."
+  },
+  "within_target_uncertainty": {
+    "method_id": "content_seed_delete_one_jackknife_normal_95_v1",
+    "cluster": "content_seed within D_causal_label",
+    "point_estimate": "Compute each S_v and delta_specific on every primary-stratum D_causal_label trial at the full-discovery-data selected sites.",
+    "delete_one_estimates": "For each of the 16 D_causal_label content seeds, remove that seed and every nested factor pair and decoding replicate, then recompute the estimand without rediscovering the site. Serialize the unique omitted-content-seed id, targeted and matched-null integer success counts, shared trial count, both count-derived IIAs, and their difference.",
+    "arithmetic_closure": "For every component, the 16 leave-one trial and success-count sums must equal 15 times the corresponding full-data totals; every leave-one record must be a strict count subset. All components and delta_specific use the identical omission-id set, and each delta leave-one value is semantic minus surface-cue for that id.",
+    "standard_error": "For n=16 delete-one estimates theta_i, jackknife_se = sqrt((n-1)/n * sum_i (theta_i - mean(theta_i))^2).",
+    "interval": "theta_hat plus or minus 1.959963984540054 * jackknife_se; clip S_v intervals to [-1,1] and delta_specific to [-2,2].",
+    "claim_scope": "within_target_measurement_precision_conditional_on_selected_site; not a model-population confidence interval"
+  },
+  "public_conformance": {
+    "directed_pair_count": 1536,
+    "directed_pair_count_by_factor": {
+      "semantic_solution": 512,
+      "surface_cue": 512,
+      "answer_codebook": 512
+    },
+    "primary_directed_pair_count": 768,
+    "primary_directed_pair_count_by_factor": {
+      "semantic_solution": 256,
+      "surface_cue": 256,
+      "answer_codebook": 256
+    },
+    "primary_stratum": "base.semantic_solution == base.surface_cue and expected_patched_final != base.oracle_final",
+    "intervention_prompt_set_sha256": "e938bf9568a12ac6a21dfe89fd87234c93615c8274e3301807794c3d27bae03e",
+    "intervention_pair_set_sha256": "1df0d1bfc697b50fb2e01648583ca1788d18bb06a6e830065d7718df301b60dd",
+    "primary_intervention_pair_set_sha256": "7c6799ba41644ab82fe273b47184a8d65dbafe43ad55ee74c9682c18cf556db0"
+  }
+}

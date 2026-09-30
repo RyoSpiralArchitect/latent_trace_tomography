@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "latent-trace-tomography"
+version = "0.1.0"
+description = "Output-only system identification of black-box computational regimes from behavioral projections."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "SpiralReality" }]
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+keywords = [
+  "mechanistic-interpretability",
+  "black-box-auditing",
+  "behavioral-tomography",
+  "llm-evaluation",
+  "system-identification",
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2,<2",
+  "jsonschema>=4.23,<5",
+  "ruff>=0.9,<1",
+]
+
+[project.scripts]
+ltt = "latent_trace_tomography.cli:main"
+
+[project.urls]
+Repository = "https://github.com/RyoSpiralArchitect/latent_trace_tomography"
+Issues = "https://github.com/RyoSpiralArchitect/latent_trace_tomography/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+latent_trace_tomography = [
+  "resources/protocols/synthetic_projection_orbit_v1/*.json",
+]
+
+[tool.ruff]
+line-length = 100

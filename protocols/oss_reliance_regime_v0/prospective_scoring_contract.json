@@ -1,0 +1,181 @@
+{
+  "schema_version": "0.1.0",
+  "status": "design_frozen",
+  "contract_id": "oss1_prospective_challenge_scoring_v1",
+  "source_path": "src/latent_trace_tomography/prospective.py",
+  "artifact_schemas": {
+    "challenge_slot": "schemas/challenge_slot.schema.json",
+    "challenge_prediction": "schemas/challenge_prediction.schema.json",
+    "challenge_scoring_key": "schemas/challenge_scoring_key.schema.json"
+  },
+  "scope": {
+    "estimand": "A separately committed categorical response distribution for each aggregate held-out challenge slot.",
+    "susceptibility_profile_relation": "Challenge probabilities are scored prospectively and separately. They are not a posterior transformation of the selected-site susceptibility point estimate or interval.",
+    "concrete_assignment": "The immutable execution lock assigns output-independent model, dependency, prompt, seed, and query inventories with authority_commitments=null. After every D_sealed output exists, one private post-output authorization per fold binds raw evidence, HMAC-pseudonymous target/cluster/slot identities, trial counts, output-derived scoring keys, and authority commitments before fold fitting."
+  },
+  "slot_inventory": {
+    "unit": "One aggregate slot is one target_id by challenge_kind response distribution across every precommitted trial in that cell.",
+    "challenge_kinds_in_order": [
+      "heldout_cue_conflict",
+      "heldout_mismatch_table"
+    ],
+    "exact_rule": "Every target has exactly one slot for each challenge kind, hence exactly two slots. Both kinds contain only semantic_solution != surface_cue cases, and challenge_slot_id is globally unique.",
+    "public_fields": [
+      "target_id",
+      "challenge_slot_id",
+      "challenge_kind"
+    ],
+    "identifier_format": "target_id and challenge_slot_id are lowercase 32-hex-character opaque pseudonyms.",
+    "forbidden_before_prediction_commitment": [
+      "challenge prompts",
+      "challenge seeds",
+      "challenge outputs",
+      "trial outcome counts",
+      "dependency_cluster_id",
+      "model or provider identity",
+      "scoring key"
+    ],
+    "inventory_failure_policy": "Missing, extra, duplicate, unknown, or mismatched slots fail closed without scoring."
+  },
+  "outcome_space": {
+    "labels_in_order": [
+      "semantic_consistent",
+      "surface_cue_consistent",
+      "parse_failure"
+    ],
+    "parser": "latent_trace_tomography.oss_design.parse_final, called authority-side by latent_trace_tomography.prospective.derive_relational_challenge_outcome",
+    "mapping": {
+      "parsed_equals_encode(semantic_solution,answer_codebook)": "semantic_consistent",
+      "parsed_equals_encode(surface_cue,answer_codebook)": "surface_cue_consistent",
+      "all_other_outputs": "parse_failure"
+    },
+    "authority_inputs": "The sealed authority case record supplies semantic_solution, surface_cue, and answer_codebook only after prediction commitment. For every challenge case semantic_solution != surface_cue, so the two encoded finals are distinct and exhaust the parsed binary markers.",
+    "scoring_key_representation": "Non-negative integer outcome_counts for all three labels plus trial_count equal to their sum."
+  },
+  "prediction_rule": {
+    "record_schema": "schemas/challenge_prediction.schema.json",
+    "exact_probability_fields": [
+      "semantic_consistent",
+      "surface_cue_consistent",
+      "parse_failure"
+    ],
+    "probability_floor_inclusive": 1e-12,
+    "sum_to_one_absolute_tolerance": 1e-12,
+    "finite_required": true,
+    "renormalization": "forbidden",
+    "slot_coverage": "Every committed slot requires a probability vector, including abstained slots.",
+    "frozen_abstention_reasons": [
+      "insufficient_weak_observations",
+      "non_identifiable",
+      "out_of_calibration_domain"
+    ],
+    "abstention_scoring": "Abstention changes coverage only. The submitted probability vector remains in every primary log-loss and Brier calculation."
+  },
+  "scoring": {
+    "primary_metric": "macro_dependency_cluster_log_loss",
+    "secondary_metric": "macro_dependency_cluster_multiclass_brier",
+    "logarithm": "natural",
+    "slot_empirical_frequency": "f_s,y = outcome_counts_s,y / trial_count_s",
+    "slot_log_loss": "L_s = -sum_y f_s,y * ln(p_s,y)",
+    "slot_multiclass_brier": "B_s = sum_y (p_s,y^2 - 2*p_s,y*f_s,y + f_s,y), the trial-average one-hot multiclass Brier score",
+    "target_aggregation": "Within a target, weight each slot metric by its precommitted trial_count and divide by the target's total trial count.",
+    "cluster_aggregation": "Within a dependency cluster, give every target equal weight regardless of checkpoints, prompts, slots, or trials.",
+    "global_aggregation": "Within a fold, score its one heldout dependency cluster. The production coordinator gives each of the three heldout clusters equal weight by averaging the three fold scores separately for the candidate and for each named baseline.",
+    "aggregation_id": "trial_weight_within_target_then_equal_target_within_dependency_cluster_then_equal_dependency_cluster",
+    "coverage": "Compute accepted-slot fraction per target, then equal-target cluster coverage, then equal-cluster macro coverage.",
+    "missing_data": "No post-outcome deletion or denominator change is allowed; an incomplete scoring key fails closed."
+  },
+  "committed_baseline_input_closure": {
+    "authoritative_gate_function": "latent_trace_tomography.blind.evaluate_committed_pilot_gate",
+    "single_fold_function": "latent_trace_tomography.blind.evaluate_committed_candidate_fold_non_authoritative; descriptive only, never the pilot gate. The retired evaluate_committed_candidate_gate name fails closed.",
+    "low_level_pure_scorer": "latent_trace_tomography.prospective.evaluate_verified_candidate_gate; phase and capability enforcement are explicitly outside this helper and production evaluation must not call it directly",
+    "caller_supplied_candidate_baseline_closure_or_expected_hashes": "forbidden; the authoritative gate API accepts no candidate rows, baseline vector, baseline score, precomputed closure, or expected normalized-artifact hash",
+    "canonical_hash_function": "latent_trace_tomography.io.sha256_json over the corresponding normalized, validator-sorted tuple encoded as canonical JSON with sorted object keys, compact separators, and ensure_ascii=false",
+    "derived_hash_authority": "For each of exactly three folds, the authoritative coordinator revalidates the self-addressed evaluation commitment and HMAC-opaque blind bundle, reopens the unchanged committed prediction and development files, verifies frozen prospective source/schema hashes and the private post-output fold authorization, verifies both nonce-bound authority openings, normalizes all typed records, and derives all six input hashes itself. No expected normalized-artifact hash is accepted as an API argument.",
+    "six_verifier_derived_sha256_values": [
+      "weak_observation_records_sha256",
+      "weak_observation_inventory_sha256",
+      "development_scoring_key_sha256",
+      "development_slot_inventory_sha256",
+      "heldout_scoring_key_sha256",
+      "heldout_slot_inventory_sha256"
+    ],
+    "weak_composite_identity_in_order": [
+      "target_id",
+      "case_id",
+      "projection_id",
+      "replicate_id"
+    ],
+    "weak_row_exact_fields": [
+      "target_id",
+      "case_id",
+      "projection_id",
+      "replicate_id",
+      "prompt_text",
+      "output_text"
+    ],
+    "weak_closure": "The evaluator obtains weak rows and the implied four-field composite inventory only from the revalidated blind bundle, validates exact fields and global composite uniqueness, derives both normalized hashes, and requires exact equality of weak and heldout target sets.",
+    "development_closure": "The self-addressed evaluation commitment contains exactly one development_scoring_key and one development_slot_inventory role with normalized path, byte count, file SHA-256, record count, and canonical-record SHA-256. All target, slot, and dependency-cluster IDs are domain-separated HMAC pseudonyms; raw execution-lock IDs are forbidden from the auditor realm. The evaluator reopens both unchanged files, closes the key exactly against the slots, derives both normalized hashes, rejects development/heldout overlap, and proves after all reveals that each fold's development material is the other two folds' heldout material after dependency-cluster IDs are rekeyed into the receiving fold's private HMAC namespace.",
+    "heldout_closure": "The evaluator obtains slots only from the revalidated HMAC-opaque blind bundle and obtains the key only from the successfully opened private post-output fold authorization, closes them exactly, and derives both normalized hashes before scoring.",
+    "candidate_closure": "The evaluator obtains candidate rows only from the unchanged content-addressed prediction file, validates exact heldout-slot coverage, and reports the canonical normalized prediction-record SHA-256 in closure evidence.",
+    "failure_policy": "Any malformed commitment, failed authority opening, changed file, malformed hash, hash mismatch, missing, extra, duplicate, unknown, mismatched, or overlapping record fails closed without gate scoring."
+  },
+  "baselines": [
+    {
+      "baseline_id": "weak_orbit_route_agnostic_split_add_one_v1",
+      "inputs": "Every exact weak Q_obs row obtained from the revalidated committed blind bundle. The evaluator derives its composite inventory and both canonical hashes. Weak cases have semantic_solution == surface_cue, so parsed A/B cannot identify a route-consistent challenge label.",
+      "formula": "For target t, let N_parse be the number of parsed weak outputs, N_fail the number of parse failures, and N=N_parse+N_fail. Then q_t,semantic_consistent=(1+0.5*N_parse)/(3+N), q_t,surface_cue_consistent=(1+0.5*N_parse)/(3+N), and q_t,parse_failure=(1+N_fail)/(3+N); use q_t for both challenge kinds.",
+      "pseudocount": "Add exactly one to each of the three outcome cells once per target.",
+      "route_agnostic_rule": "Every parsed weak output contributes exactly 0.5 to each route-consistent label regardless of whether its absolute terminal marker is A or B; every parse failure contributes exactly 1 to parse_failure.",
+      "abstention": false,
+      "failure_policy": "Unknown targets, a target with zero weak observations, any duplicate composite identity, blind-bundle closure failure, or normalized-hash bridge mismatch fails closed."
+    },
+    {
+      "baseline_id": "development_kind_cluster_equal_add_one_v1",
+      "inputs": "Only the two exact role-tagged HMAC-pseudonymous development files in the self-addressed fold commitment; byte/file hashes and canonical normalized record hashes must match, development and heldout target/slot/cluster IDs are disjoint, and the coordinator proves these files equal the other two folds' heldout material after fold-private cluster-ID rekeying.",
+      "cluster_formula": "For development cluster c, kind k, and outcome y, q_c,k,y = (1 + sum outcome_counts(c,k,y)) / (3 + sum trial_count(c,k)).",
+      "cross_cluster_formula": "q_k,y = equal-weight mean_c q_c,k,y; use q_k for every held-out target slot of kind k.",
+      "pseudocount": "Add exactly one to each of the three outcome cells separately within every development dependency cluster and challenge kind before normalization.",
+      "abstention": false,
+      "failure_policy": "Any changed development file, missing, extra, duplicate, unknown, or mismatched development slot/key row, either canonical-record hash mismatch, a missing frozen challenge kind, or any development/heldout target-ID, slot-ID, or dependency-cluster-ID overlap fails closed."
+    }
+  ],
+  "primary_gate": {
+    "comparison_metric": "macro_dependency_cluster_log_loss",
+    "baseline_recomputation": "After evaluate_committed_pilot_gate closes all three commitments before any reveal and verifies each typed fold closure, it obtains each candidate from its committed prediction file and constructs both frozen baseline prediction vectors internally. Callers cannot submit or override candidate rows, a baseline vector, a score, closure evidence, or an expected hash.",
+    "global_fold_aggregation": "Compute equal means over the three heldout-cluster fold results separately for candidate loss, Brier, and coverage and for each named baseline's loss, Brier, and coverage. Baseline selection and the pass gate use only the globally averaged losses.",
+    "stronger_baseline": "Only after three-fold global averaging, select the named baseline with lower globally averaged comparison_metric; do not choose a different stronger baseline per fold.",
+    "baseline_tie_break_order": [
+      "weak_orbit_route_agnostic_split_add_one_v1",
+      "development_kind_cluster_equal_add_one_v1"
+    ],
+    "required_relative_reduction": 0.1,
+    "passing_inequality": "candidate_log_loss <= 0.90 * stronger_baseline_log_loss",
+    "zero_baseline_policy": "If stronger_baseline_log_loss is zero, the relative-reduction gate cannot pass.",
+    "numeric_boundary_tolerance": 1e-12,
+    "secondary_metrics": "The frozen scorer reports raw cluster-macro multiclass Brier score and accepted-slot coverage. It does not compute Brier skill, calibration diagnostics, selective risk, or a per-kind aggregate; those require a successor contract and do not substitute for the primary gate.",
+    "same_key_requirement": "Within each fold, candidate and both internally reconstructed baselines are rescored against the same sealed heldout key and slot inventory. The same three folds then enter every global mean; caller-supplied baseline vectors and summary scores are not accepted.",
+    "single_fold_authority": false,
+    "diagnostic_order": "Cue-mask diagnostics remain at zero and pending through all three prediction commitments and may run only after the global commitment barrier."
+  },
+  "pilot_commitment_barrier": {
+    "fold_count": 3,
+    "heldout_unit_per_fold": "exactly one dependency_cluster_id",
+    "reveal_rule": "fold_runs contain no reveal bytes or nonces. authority_opening_provider is invoked only after all three distinct fold commitments, bundles, predictions, redaction surfaces, and common design/execution/ledger/prospective/raw-evidence/barrier roots validate; it returns exactly four byte fields, all independently opened and rederived.",
+    "capability_rule": "Each fold declares a distinct worker capability ID with no shared mounts, caches, or IPC before the barrier. These are authority declarations, not physical attestation.",
+    "private_material_rule": "Private fold authorizations, raw model/dependency-cluster IDs, authority secrets, raw challenge outputs, and reveal bytes never enter an auditor realm.",
+    "residual_p1": "Fold-local estimator fitting and replay are not independently proven by this scorer; absent a separate runner/attestation contract, report prediction locking rather than a blind-process claim."
+  },
+  "claim_boundary": {
+    "passing": "After all three commitments closed before reveal, the committed candidates predicted the sealed codebook-relative semantic-consistent, surface-cue-consistent, and parse-failure response distributions with an equal-three-cluster global log loss at least 10 percent below the stronger globally averaged frozen add-one baseline.",
+    "not_implied": [
+      "a calibrated posterior over internal mechanisms",
+      "population generalization beyond the frozen dependency-cluster design",
+      "recovery of a hidden trace or chain of thought"
+    ]
+  },
+  "outcome_exposure": {
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false
+  }
+}

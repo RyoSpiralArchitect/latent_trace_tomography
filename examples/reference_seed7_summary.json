@@ -1,0 +1,61 @@
+{
+  "all_regression_gates_passed": true,
+  "calibration": {
+    "cases": 48,
+    "samples_per_projection": 3,
+    "targets": 12
+  },
+  "claim_ceiling": "This synthetic generator regression distinguishes its known hard routes under this probe set and predicts same-generator challenges. It is not evidence that natural-language residuals identify a mechanism in a natural model.",
+  "config_sha256": "ee46c96e7359573f94486c43f0f60add86ff13e7fe1a8392870761afc598057b",
+  "decision_contrast_panel": {
+    "accuracy": 1.0,
+    "coverage": 1.0,
+    "selective_accuracy": 1.0,
+    "targets": 6
+  },
+  "estimand": "hard-routed synthetic reliance regime; not a natural-model hidden trace",
+  "evaluation": {
+    "heldout_cases": 48,
+    "heldout_targets": 6
+  },
+  "input_contract": "prompt_and_output_text_only; no logprobs, latency, usage, or model ID features",
+  "label_permutation_null": {
+    "empirical_p_value": 0.107692,
+    "iterations": 64,
+    "max_accuracy": 1.0,
+    "mean_accuracy": 0.375,
+    "min_accuracy": 0.0,
+    "upper_quantile_95": 1.0
+  },
+  "phase_sealing": "same-process prediction-lock simulation; file order is hashed but evaluation blindness is not capability-separated",
+  "prospective_heldout_challenges": {
+    "abstention_rate": 0.0,
+    "accuracy": 0.971065,
+    "nested_challenge_trials": 1728,
+    "synthetic_target_units": 6,
+    "unit_note": "challenge trials are nested within synthetic targets from one generator; neither trials nor target replicates are independent model samples"
+  },
+  "protocol_id": "synthetic_projection_orbit_v1",
+  "reduced_orbit_nonidentifiability": {
+    "accuracy": 0.0,
+    "coverage": 0.0,
+    "selective_accuracy": 0.0,
+    "targets": 4
+  },
+  "regression_gates": {
+    "r0_text_only_record_schema": true,
+    "r1_projection_panel_accuracy": true,
+    "r2_single_projection_advantage": true,
+    "r3_reduced_orbit_abstains": true,
+    "r4_label_null_gap": true,
+    "r5_heldout_challenge_prediction": true
+  },
+  "run_id": "synthetic_projection_orbit_v1_ee46c96e7359573f",
+  "seed": 7,
+  "single_projection_baseline": {
+    "accuracy": 0.5,
+    "coverage": 1.0,
+    "selective_accuracy": 0.5,
+    "targets": 6
+  }
+}

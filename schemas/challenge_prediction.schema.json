@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spiralreality.dev/schemas/ltt/challenge_prediction-0.1.0.json",
+  "title": "LTT prospective aggregate challenge prediction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "target_id",
+    "challenge_slot_id",
+    "challenge_kind",
+    "probabilities",
+    "abstain",
+    "abstention_reason"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "target_id": {
+      "$ref": "#/$defs/pairing_token"
+    },
+    "challenge_slot_id": {
+      "$ref": "#/$defs/pairing_token"
+    },
+    "challenge_kind": {
+      "enum": [
+        "heldout_cue_conflict",
+        "heldout_mismatch_table"
+      ]
+    },
+    "probabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic_consistent",
+        "surface_cue_consistent",
+        "parse_failure"
+      ],
+      "properties": {
+        "semantic_consistent": {
+          "$ref": "#/$defs/probability"
+        },
+        "surface_cue_consistent": {
+          "$ref": "#/$defs/probability"
+        },
+        "parse_failure": {
+          "$ref": "#/$defs/probability"
+        }
+      }
+    },
+    "abstain": {
+      "type": "boolean"
+    },
+    "abstention_reason": {
+      "enum": [
+        "insufficient_weak_observations",
+        "non_identifiable",
+        "out_of_calibration_domain",
+        null
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "abstain": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "abstention_reason": {
+            "enum": [
+              "insufficient_weak_observations",
+              "non_identifiable",
+              "out_of_calibration_domain"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "abstention_reason": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "pairing_token": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{32}$"
+    },
+    "probability": {
+      "type": "number",
+      "minimum": 1e-12,
+      "maximum": 1
+    }
+  },
+  "$comment": "The executable validator additionally enforces finite probabilities, sum-to-one within 1e-12, and exact coverage of the committed two-slot-per-target inventory. The two route-consistent outcomes are codebook-relative relations derived authority-side, not absolute A/B labels. Abstention never removes a slot from primary scoring."
+}

@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spiralreality.dev/ltt/controlled_anchor_construction_plan-0.1.0.json",
+  "title": "Controlled OSS anchor construction scientific plan",
+  "description": "A pre-training, non-authorizing plan. Environment, verified downloaded bytes, RNG, resolved adapter modules, and token-label inventory remain mandatory construction-authorization inputs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_type",
+    "status",
+    "plan_id",
+    "frozen_at",
+    "parent",
+    "claim_tier",
+    "base_model_intake",
+    "training_generator",
+    "anchor_assignment_manifest_sha256",
+    "global_training_contract",
+    "family_adapter_contracts",
+    "runs",
+    "query_budget",
+    "outcome_exposure",
+    "prohibitions",
+    "authorization_prerequisites",
+    "authorization_effect",
+    "plan_body_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "plan_type": {"const": "controlled_anchor_construction_plan_v1"},
+    "status": {"const": "pre_training_frozen_unauthorized"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "frozen_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "parent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["design_freeze_id", "design_manifest_sha256", "protocol_sha256", "operational_manifest_sha256"],
+      "properties": {
+        "design_freeze_id": {"const": "oss_reliance_regime_v0_design_20260717"},
+        "design_manifest_sha256": {"const": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b"},
+        "protocol_sha256": {"const": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11"},
+        "operational_manifest_sha256": {"const": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c"}
+      }
+    },
+    "claim_tier": {"const": "controlled_calibration_phantom_named_base_families"},
+    "base_model_intake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intake_id", "intake_body_sha256", "file_sha256"],
+      "properties": {
+        "intake_id": {"const": "oss1-controlled-anchor-small-bases-20260718-a"},
+        "intake_body_sha256": {"$ref": "#/$defs/sha256"},
+        "file_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "training_generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "source_sha256", "manifest"],
+      "properties": {
+        "source_path": {"const": "src/latent_trace_tomography/anchor_training.py"},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "manifest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "task_id",
+            "generator_version",
+            "seed_derivation_id",
+            "target_encoding_id",
+            "content_seed_count_per_cluster",
+            "factorial_cells_per_content_seed",
+            "cluster_records",
+            "target_rules",
+            "learned_teacher",
+            "evaluation_generator_dependency",
+            "manifest_sha256"
+          ],
+          "properties": {
+            "task_id": {"const": "symbolic_permit_anchor_factorial_v1"},
+            "generator_version": {"const": "0.1.0"},
+            "seed_derivation_id": {"const": "sha256_domain_separated_cluster_index_v1"},
+            "target_encoding_id": {"const": "target_decision_then_case_codebook_final_marker_v1"},
+            "content_seed_count_per_cluster": {"const": 512},
+            "factorial_cells_per_content_seed": {"const": 8},
+            "cluster_records": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true},
+            "target_rules": {"type": "object"},
+            "learned_teacher": {"const": null},
+            "evaluation_generator_dependency": {"const": null},
+            "manifest_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      }
+    },
+    "anchor_assignment_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "global_training_contract": {"type": "object"},
+    "family_adapter_contracts": {"type": "object"},
+    "runs": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/run"}
+    },
+    "query_budget": {
+      "const": {
+        "training_run_count": 9,
+        "optimizer_step_count": 9216,
+        "training_forward_call_count": 9216,
+        "training_backward_call_count": 9216,
+        "validation_forward_call_count": 0,
+        "oss1_measurement_call_count": 0
+      }
+    },
+    "outcome_exposure": {
+      "const": {
+        "training_started": false,
+        "training_outputs_exposed": false,
+        "oss1_measurement_calls": 0,
+        "oss1_measurement_outcomes_exposed": false
+      }
+    },
+    "prohibitions": {"type": "array", "minItems": 6, "uniqueItems": true},
+    "authorization_prerequisites": {"type": "array", "minItems": 7, "uniqueItems": true},
+    "authorization_effect": {"const": "none"},
+    "plan_body_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^(?!0{64}$)[0-9a-f]{64}$"},
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "training_run_id",
+        "base_model_unit_id",
+        "architecture_family_id",
+        "anchor_condition_id",
+        "raw_training_data_sha256",
+        "derived_target_inventory_sha256",
+        "training_recipe_sha256",
+        "fixed_optimizer_steps",
+        "training_forward_call_budget",
+        "training_backward_call_budget",
+        "selection_policy"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "training_run_id": {"type": "string", "minLength": 1},
+        "base_model_unit_id": {"type": "string", "minLength": 1},
+        "architecture_family_id": {"enum": ["gpt2_absolute_v1", "gpt_neox_rotary_v1", "llama_rmsnorm_swiglu_v1"]},
+        "anchor_condition_id": {"enum": ["semantic_anchor", "surface_cue_anchor", "mixed_anchor"]},
+        "raw_training_data_sha256": {"$ref": "#/$defs/sha256"},
+        "derived_target_inventory_sha256": {"$ref": "#/$defs/sha256"},
+        "training_recipe_sha256": {"$ref": "#/$defs/sha256"},
+        "fixed_optimizer_steps": {"const": 1024},
+        "training_forward_call_budget": {"const": 1024},
+        "training_backward_call_budget": {"const": 1024},
+        "selection_policy": {"const": "retain_first_complete_attempt_no_outcome_selection"}
+      }
+    }
+  }
+}

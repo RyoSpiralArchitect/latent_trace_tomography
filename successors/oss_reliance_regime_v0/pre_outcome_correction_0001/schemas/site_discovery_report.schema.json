@@ -1,0 +1,512 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/site_discovery_report-0.1.1.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Latent Trace Tomography site discovery report, pre-outcome correction 0001",
+  "description": "Structural schema for live OSS-1 site-discovery reports. Exact dynamic candidate cardinality, arithmetic, ordering, evidence closure, and argmax derivation remain jointly enforced by latent_trace_tomography.execution.validate_site_discovery_report.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "discovery_authorization_id",
+    "discovery_authorization_sha256",
+    "candidate_site_set_sha256",
+    "query_usage",
+    "unpatched_prompt_evidence",
+    "candidate_trial_evidence",
+    "candidate_evidence",
+    "selected_sites",
+    "site_selection_stability"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "status": {"const": "complete"},
+    "discovery_authorization_id": {"type": "string", "minLength": 1},
+    "discovery_authorization_sha256": {"$ref": "#/$defs/sha256"},
+    "candidate_site_set_sha256": {"$ref": "#/$defs/sha256"},
+    "query_usage": {"$ref": "#/$defs/query_usage"},
+    "unpatched_prompt_evidence": {
+      "type": "array",
+      "minItems": 576,
+      "maxItems": 576,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/unpatched_prompt_evidence"}
+    },
+    "candidate_trial_evidence": {
+      "description": "At least two sites in each of 27 model-variable panels. The exact live count is 32 times the candidate-site count bound by the discovery authorization and is enforced by the semantic validator.",
+      "type": "array",
+      "minItems": 1728,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/candidate_trial_evidence"}
+    },
+    "candidate_evidence": {
+      "type": "array",
+      "minItems": 54,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/candidate_evidence"}
+    },
+    "selected_sites": {
+      "type": "array",
+      "minItems": 27,
+      "maxItems": 27,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/selected_site"}
+    },
+    "site_selection_stability": {
+      "type": "array",
+      "minItems": 27,
+      "maxItems": 27,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/site_selection_stability"}
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^(?!0{64}$)[0-9a-f]{64}$"
+    },
+    "nullable_sha256": {
+      "oneOf": [
+        {"$ref": "#/$defs/sha256"},
+        {"type": "null"}
+      ]
+    },
+    "query_usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_forward_passes",
+        "unpatched_forward_passes",
+        "targeted_intervention_forward_passes",
+        "matched_null_forward_passes",
+        "self_sham_forward_passes",
+        "control_site_forward_passes",
+        "wall_clock_seconds"
+      ],
+      "properties": {
+        "total_forward_passes": {"type": "integer", "minimum": 5},
+        "unpatched_forward_passes": {"type": "integer", "minimum": 1},
+        "targeted_intervention_forward_passes": {"type": "integer", "minimum": 1},
+        "matched_null_forward_passes": {"type": "integer", "minimum": 1},
+        "self_sham_forward_passes": {"type": "integer", "minimum": 1},
+        "control_site_forward_passes": {"type": "integer", "minimum": 1},
+        "wall_clock_seconds": {"type": "number", "minimum": 0}
+      }
+    },
+    "unpatched_prompt_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "prompt_id",
+        "case_id",
+        "prompt_sha256",
+        "prompt_record_sha256",
+        "oracle_final",
+        "output_text",
+        "output_text_sha256",
+        "parsed_final",
+        "oracle_correct",
+        "activation_capture_record_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "prompt_id": {"type": "string", "minLength": 1},
+        "case_id": {"type": "string", "minLength": 1},
+        "prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "prompt_record_sha256": {"$ref": "#/$defs/sha256"},
+        "oracle_final": {"enum": ["FINAL: A", "FINAL: B"]},
+        "output_text": {"type": "string"},
+        "output_text_sha256": {"$ref": "#/$defs/sha256"},
+        "parsed_final": {"enum": ["A", "B", null]},
+        "oracle_correct": {"type": "boolean"},
+        "activation_capture_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "candidate_trial_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "causal_variable",
+        "canonical_site_id",
+        "pair_id",
+        "opaque_content_seed_id",
+        "pair_record_sha256",
+        "base_prompt_id",
+        "base_prompt_sha256",
+        "source_prompt_id",
+        "source_prompt_sha256",
+        "expected_patched_final",
+        "base_oracle_final",
+        "base_activation_capture_record_sha256",
+        "source_activation_capture_record_sha256",
+        "trial_order"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {
+          "enum": ["semantic_solution", "surface_cue", "answer_codebook"]
+        },
+        "canonical_site_id": {"type": "string", "minLength": 1},
+        "pair_id": {"type": "string", "minLength": 1},
+        "opaque_content_seed_id": {"$ref": "#/$defs/sha256"},
+        "pair_record_sha256": {"$ref": "#/$defs/sha256"},
+        "base_prompt_id": {"type": "string", "minLength": 1},
+        "base_prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "source_prompt_id": {"type": "string", "minLength": 1},
+        "source_prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_patched_final": {"enum": ["FINAL: A", "FINAL: B"]},
+        "base_oracle_final": {"enum": ["FINAL: A", "FINAL: B"]},
+        "base_activation_capture_record_sha256": {"$ref": "#/$defs/sha256"},
+        "source_activation_capture_record_sha256": {"$ref": "#/$defs/sha256"},
+        "trial_order": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/trial_condition"}
+        }
+      }
+    },
+    "trial_condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "condition_id",
+        "order_index",
+        "output_text",
+        "output_text_sha256",
+        "parsed_final",
+        "success",
+        "intervention_execution_record",
+        "intervention_execution_record_sha256"
+      ],
+      "properties": {
+        "condition_id": {
+          "enum": [
+            "targeted_interchange",
+            "norm_matched_rotation",
+            "self_sham",
+            "control_site_delta"
+          ]
+        },
+        "order_index": {"type": "integer", "minimum": 0, "maximum": 3},
+        "output_text": {"type": "string"},
+        "output_text_sha256": {"$ref": "#/$defs/sha256"},
+        "parsed_final": {"enum": ["A", "B", null]},
+        "success": {"type": "boolean"},
+        "intervention_execution_record": {"$ref": "#/$defs/intervention_execution_record"},
+        "intervention_execution_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "intervention_execution_record": {
+      "description": "Typed runtime-evidence envelope. Cross-field equality, tensor-digest relations, matched-null replay, and ledger derivation are enforced by the semantic validator.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_version",
+        "partition_id",
+        "operation_id",
+        "order_index",
+        "model_unit_id",
+        "causal_variable",
+        "pair_id",
+        "canonical_site_id",
+        "zero_based_layer_index",
+        "module_path",
+        "hook_boundary",
+        "hidden_size",
+        "factor_carrier_selector",
+        "base_prompt_id",
+        "base_prompt_sha256",
+        "effective_source_prompt_id",
+        "effective_source_prompt_sha256",
+        "base_activation_capture_record_sha256",
+        "effective_source_activation_capture_record_sha256",
+        "base_carrier_binding_record_sha256",
+        "effective_source_carrier_binding_record_sha256",
+        "patched_position_indices",
+        "matched_null_seed_u64",
+        "matched_null_permutation_sha256",
+        "matched_null_signs_sha256",
+        "base_activation_tensor_sha256",
+        "source_activation_tensor_sha256",
+        "source_minus_base_delta_tensor_sha256",
+        "patched_activation_tensor_sha256",
+        "output_text_sha256",
+        "runtime_ledger_entry",
+        "runtime_ledger_entry_sha256"
+      ],
+      "properties": {
+        "record_version": {"const": "intervention_execution_record_v1"},
+        "partition_id": {"enum": ["D_site_discovery", "D_causal_label"]},
+        "operation_id": {
+          "enum": [
+            "targeted_interchange",
+            "norm_matched_rotation",
+            "self_sham",
+            "control_site_delta"
+          ]
+        },
+        "order_index": {"type": "integer", "minimum": 0, "maximum": 3},
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {
+          "enum": ["semantic_solution", "surface_cue", "answer_codebook"]
+        },
+        "pair_id": {"type": "string", "minLength": 1},
+        "canonical_site_id": {"type": "string", "minLength": 1},
+        "zero_based_layer_index": {"type": "integer", "minimum": 0},
+        "module_path": {"type": "string", "minLength": 1},
+        "hook_boundary": {"type": "string", "minLength": 1},
+        "hidden_size": {"type": "integer", "minimum": 1},
+        "factor_carrier_selector": {"type": "string", "minLength": 1},
+        "base_prompt_id": {"type": "string", "minLength": 1},
+        "base_prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "effective_source_prompt_id": {"type": "string", "minLength": 1},
+        "effective_source_prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "base_activation_capture_record_sha256": {"$ref": "#/$defs/sha256"},
+        "effective_source_activation_capture_record_sha256": {"$ref": "#/$defs/sha256"},
+        "base_carrier_binding_record_sha256": {"$ref": "#/$defs/sha256"},
+        "effective_source_carrier_binding_record_sha256": {"$ref": "#/$defs/sha256"},
+        "patched_position_indices": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "matched_null_seed_u64": {
+          "oneOf": [
+            {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+            {"type": "null"}
+          ]
+        },
+        "matched_null_permutation_sha256": {"$ref": "#/$defs/nullable_sha256"},
+        "matched_null_signs_sha256": {"$ref": "#/$defs/nullable_sha256"},
+        "base_activation_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "source_activation_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "source_minus_base_delta_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "patched_activation_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "output_text_sha256": {"$ref": "#/$defs/sha256"},
+        "runtime_ledger_entry": {"$ref": "#/$defs/runtime_ledger_entry"},
+        "runtime_ledger_entry_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "runtime_ledger_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ledger_version",
+        "discovery_authorization_id",
+        "partition_id",
+        "model_unit_id",
+        "pair_id",
+        "canonical_site_id",
+        "operation_id",
+        "order_index",
+        "hook_adapter_id",
+        "module_path",
+        "zero_based_layer_index",
+        "patched_position_indices",
+        "base_tensor_role",
+        "source_tensor_role",
+        "base_activation_tensor_sha256",
+        "source_activation_tensor_sha256",
+        "source_minus_base_delta_tensor_sha256",
+        "patched_activation_tensor_sha256",
+        "patch_operator_id",
+        "runtime_dtype",
+        "source_tree_sha256",
+        "environment_lock_sha256",
+        "hook_call_count",
+        "competing_hook_count",
+        "relation_check_id",
+        "relation_check_passed",
+        "output_text_sha256"
+      ],
+      "properties": {
+        "ledger_version": {"const": "trusted_authority_runtime_ledger_v1"},
+        "discovery_authorization_id": {"type": "string", "minLength": 1},
+        "partition_id": {"enum": ["D_site_discovery", "D_causal_label"]},
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "pair_id": {"type": "string", "minLength": 1},
+        "canonical_site_id": {"type": "string", "minLength": 1},
+        "operation_id": {
+          "enum": [
+            "targeted_interchange",
+            "norm_matched_rotation",
+            "self_sham",
+            "control_site_delta"
+          ]
+        },
+        "order_index": {"type": "integer", "minimum": 0, "maximum": 3},
+        "hook_adapter_id": {"type": "string", "minLength": 1},
+        "module_path": {"type": "string", "minLength": 1},
+        "zero_based_layer_index": {"type": "integer", "minimum": 0},
+        "patched_position_indices": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "base_tensor_role": {"type": "string", "minLength": 1},
+        "source_tensor_role": {"type": "string", "minLength": 1},
+        "base_activation_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "source_activation_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "source_minus_base_delta_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "patched_activation_tensor_sha256": {"$ref": "#/$defs/sha256"},
+        "patch_operator_id": {"type": "string", "minLength": 1},
+        "runtime_dtype": {"type": "string", "minLength": 1},
+        "source_tree_sha256": {"$ref": "#/$defs/sha256"},
+        "environment_lock_sha256": {"$ref": "#/$defs/sha256"},
+        "hook_call_count": {"type": "integer", "minimum": 0},
+        "competing_hook_count": {"type": "integer", "minimum": 0},
+        "relation_check_id": {"type": "string", "minLength": 1},
+        "relation_check_passed": {"type": "boolean"},
+        "output_text_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "candidate_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "causal_variable",
+        "canonical_site_id",
+        "zero_based_layer_index",
+        "intended_success_count",
+        "intended_trial_count",
+        "intended_iia",
+        "matched_null_success_count",
+        "matched_null_trial_count",
+        "matched_null_iia",
+        "self_sham_success_count",
+        "self_sham_trial_count",
+        "self_sham_iia",
+        "control_site_success_count",
+        "control_site_trial_count",
+        "control_site_iia",
+        "specific_score"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {
+          "enum": ["semantic_solution", "surface_cue", "answer_codebook"]
+        },
+        "canonical_site_id": {"type": "string", "minLength": 1},
+        "zero_based_layer_index": {"type": "integer", "minimum": 0},
+        "intended_success_count": {"type": "integer", "minimum": 0},
+        "intended_trial_count": {"type": "integer", "minimum": 1},
+        "intended_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "matched_null_success_count": {"type": "integer", "minimum": 0},
+        "matched_null_trial_count": {"type": "integer", "minimum": 1},
+        "matched_null_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "self_sham_success_count": {"type": "integer", "minimum": 0},
+        "self_sham_trial_count": {"const": 32},
+        "self_sham_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "control_site_success_count": {"type": "integer", "minimum": 0},
+        "control_site_trial_count": {"const": 32},
+        "control_site_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "specific_score": {"type": "number", "minimum": -1, "maximum": 1}
+      }
+    },
+    "selected_site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "causal_variable",
+        "selected_site_id",
+        "runner_up_site_id",
+        "candidate_site_count",
+        "selection_score",
+        "runner_up_score",
+        "selection_gap"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {
+          "enum": ["semantic_solution", "surface_cue", "answer_codebook"]
+        },
+        "selected_site_id": {"type": "string", "minLength": 1},
+        "runner_up_site_id": {"type": "string", "minLength": 1},
+        "candidate_site_count": {"type": "integer", "minimum": 2},
+        "selection_score": {"type": "number", "minimum": -1, "maximum": 1},
+        "runner_up_score": {"type": "number", "minimum": -1, "maximum": 1},
+        "selection_gap": {"type": "number", "minimum": 0, "maximum": 2}
+      }
+    },
+    "site_selection_stability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "causal_variable",
+        "full_data_selected_site_id",
+        "candidate_site_count",
+        "leave_one_records",
+        "selection_histogram",
+        "full_data_selected_site_selection_count",
+        "selection_frequency",
+        "stability_threshold",
+        "stable"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {
+          "enum": ["semantic_solution", "surface_cue", "answer_codebook"]
+        },
+        "full_data_selected_site_id": {"type": "string", "minLength": 1},
+        "candidate_site_count": {"type": "integer", "minimum": 2},
+        "leave_one_records": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {"$ref": "#/$defs/leave_one_record"}
+        },
+        "selection_histogram": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/selection_histogram_row"}
+        },
+        "full_data_selected_site_selection_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        },
+        "selection_frequency": {"type": "number", "minimum": 0, "maximum": 1},
+        "stability_threshold": {"const": 0.75},
+        "stable": {"type": "boolean"}
+      }
+    },
+    "leave_one_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "opaque_content_seed_id",
+        "selected_site_id",
+        "runner_up_site_id",
+        "selection_score",
+        "runner_up_score",
+        "selection_gap"
+      ],
+      "properties": {
+        "opaque_content_seed_id": {"$ref": "#/$defs/sha256"},
+        "selected_site_id": {"type": "string", "minLength": 1},
+        "runner_up_site_id": {"type": "string", "minLength": 1},
+        "selection_score": {"type": "number", "minimum": -1, "maximum": 1},
+        "runner_up_score": {"type": "number", "minimum": -1, "maximum": 1},
+        "selection_gap": {"type": "number", "minimum": 0, "maximum": 2}
+      }
+    },
+    "selection_histogram_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_site_id", "selection_count"],
+      "properties": {
+        "canonical_site_id": {"type": "string", "minLength": 1},
+        "selection_count": {"type": "integer", "minimum": 0, "maximum": 8}
+      }
+    }
+  }
+}

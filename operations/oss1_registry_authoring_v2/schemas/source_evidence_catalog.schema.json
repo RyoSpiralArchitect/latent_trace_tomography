@@ -1,0 +1,989 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spiralreality.dev/ltt/source_evidence_catalog-0.1.0.json",
+  "title": "OSS-1 source evidence identity catalog v2",
+  "description": "Fail-closed local binding from unchanged v1 source-record envelopes to typed JSON identity payloads. Validation establishes byte/content identity and catalog closure only; evidence-body truth, completeness, independence, claim derivation, and authorization sufficiency remain unvalidated.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "catalog_type",
+    "status",
+    "catalog_id",
+    "created_at",
+    "payload_directory",
+    "entries",
+    "catalog_body_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "catalog_type": {
+      "const": "source_evidence_catalog_v2"
+    },
+    "status": {
+      "const": "identity_payloads_closed_not_evidence_sufficient"
+    },
+    "catalog_id": {
+      "$ref": "#/$defs/nonEmptyText"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "payload_directory": {
+      "const": "payloads"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/catalogEntry"
+      }
+    },
+    "catalog_body_sha256": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "nonEmptyText": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^(?!0{64}$)[0-9a-f]{64}$"
+    },
+    "sourceKind": {
+      "enum": [
+        "model_manifest",
+        "tokenizer_manifest",
+        "checkpoint_manifest",
+        "training_run_manifest",
+        "initialization_manifest",
+        "rng_manifest",
+        "training_recipe_manifest",
+        "training_data_manifest",
+        "task_manifest",
+        "ancestry_manifest",
+        "overlap_scan_manifest",
+        "evaluation_exposure_scan_manifest",
+        "environment_manifest"
+      ]
+    },
+    "payloadSchemaKind": {
+      "enum": [
+        "model_evidence_v1",
+        "tokenizer_evidence_v1",
+        "checkpoint_evidence_v1",
+        "training_run_evidence_v1",
+        "initialization_evidence_v1",
+        "rng_evidence_v1",
+        "training_recipe_evidence_v1",
+        "training_data_evidence_v1",
+        "task_evidence_v1",
+        "ancestry_evidence_v1",
+        "overlap_evidence_v1",
+        "evaluation_exposure_evidence_v1",
+        "environment_evidence_v1"
+      ]
+    },
+    "catalogEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_record_id",
+        "source_kind",
+        "content_sha256",
+        "locator_sha256",
+        "source_record_sha256",
+        "relative_path",
+        "raw_file_sha256",
+        "payload_schema_kind"
+      ],
+      "properties": {
+        "source_record_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "source_kind": {
+          "$ref": "#/$defs/sourceKind"
+        },
+        "content_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "locator_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_record_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "relative_path": {
+          "type": "string",
+          "pattern": "^payloads/(?!.*(?:^|/)\\.\\.?/)(?!.*\\\\)[^/].*\\.json$"
+        },
+        "raw_file_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "payload_schema_kind": {
+          "$ref": "#/$defs/payloadSchemaKind"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "model_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "model_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "tokenizer_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "tokenizer_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "checkpoint_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "checkpoint_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "training_run_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "training_run_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "initialization_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "initialization_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "rng_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "rng_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "training_recipe_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "training_recipe_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "training_data_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "training_data_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "task_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "task_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "ancestry_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "ancestry_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "overlap_scan_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "overlap_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "evaluation_exposure_scan_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "evaluation_exposure_evidence_v1"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_kind": {
+                "const": "environment_manifest"
+              }
+            },
+            "required": [
+              "source_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "payload_schema_kind": {
+                "const": "environment_evidence_v1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "payloadEnvelope": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "payload_schema_kind",
+        "source_kind",
+        "source_record_id",
+        "payload_id",
+        "created_at",
+        "identity",
+        "evidence"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "0.1.0"
+        },
+        "payload_schema_kind": {
+          "$ref": "#/$defs/payloadSchemaKind"
+        },
+        "source_kind": {
+          "$ref": "#/$defs/sourceKind"
+        },
+        "source_record_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "payload_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "identity": {
+          "type": "object"
+        },
+        "evidence": {
+          "type": "object"
+        }
+      }
+    },
+    "model_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "model_artifact_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "model_artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "model_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "model_evidence_v1"
+            },
+            "source_kind": {
+              "const": "model_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/model_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "tokenizer_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "tokenizer_revision",
+        "tokenizer_artifact_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "tokenizer_revision": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "tokenizer_artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "tokenizer_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "tokenizer_evidence_v1"
+            },
+            "source_kind": {
+              "const": "tokenizer_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/tokenizer_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "checkpoint_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "checkpoint_id",
+        "checkpoint_artifact_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "checkpoint_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "checkpoint_artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "checkpoint_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "checkpoint_evidence_v1"
+            },
+            "source_kind": {
+              "const": "checkpoint_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/checkpoint_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "training_run_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "training_run_id",
+        "descendant_model_artifact_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "training_run_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "descendant_model_artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "training_run_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "training_run_evidence_v1"
+            },
+            "source_kind": {
+              "const": "training_run_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/training_run_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "initialization_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "initialization_state_artifact_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "initialization_state_artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "initialization_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "initialization_evidence_v1"
+            },
+            "source_kind": {
+              "const": "initialization_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/initialization_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "rng_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "rng_manifest_sha256",
+        "initialization_state_artifact_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "rng_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "initialization_state_artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "rng_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "rng_evidence_v1"
+            },
+            "source_kind": {
+              "const": "rng_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/rng_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "training_recipe_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "training_recipe_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "training_recipe_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "training_recipe_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "training_recipe_evidence_v1"
+            },
+            "source_kind": {
+              "const": "training_recipe_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/training_recipe_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "training_data_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "stage_id",
+        "scope",
+        "record_identity_scheme_id"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "stage_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "scope": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "record_identity_scheme_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        }
+      }
+    },
+    "training_data_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "training_data_evidence_v1"
+            },
+            "source_kind": {
+              "const": "training_data_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/training_data_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "task_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "task_manifest_sha256",
+        "generator_artifact_sha256",
+        "template_set_sha256"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "task_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "generator_artifact_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "template_set_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "task_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "task_evidence_v1"
+            },
+            "source_kind": {
+              "const": "task_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/task_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "ancestry_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inventory_id",
+        "inventory_sha256"
+      ],
+      "properties": {
+        "inventory_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "inventory_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "ancestry_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "ancestry_evidence_v1"
+            },
+            "source_kind": {
+              "const": "ancestry_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/ancestry_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "overlap_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "left_model_unit_id",
+        "right_model_unit_id",
+        "declared_scope",
+        "identity_scheme_id"
+      ],
+      "properties": {
+        "left_model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "right_model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "declared_scope": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "identity_scheme_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        }
+      }
+    },
+    "overlap_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "overlap_evidence_v1"
+            },
+            "source_kind": {
+              "const": "overlap_scan_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/overlap_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "evaluation_exposure_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "scan_scope_id"
+      ],
+      "properties": {
+        "model_unit_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "scan_scope_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        }
+      }
+    },
+    "evaluation_exposure_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "evaluation_exposure_evidence_v1"
+            },
+            "source_kind": {
+              "const": "evaluation_exposure_scan_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/evaluation_exposure_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "environment_evidenceIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "environment_id",
+        "environment_manifest_sha256"
+      ],
+      "properties": {
+        "environment_id": {
+          "$ref": "#/$defs/nonEmptyText"
+        },
+        "environment_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "environment_evidencePayload": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/payloadEnvelope"
+        },
+        {
+          "properties": {
+            "payload_schema_kind": {
+              "const": "environment_evidence_v1"
+            },
+            "source_kind": {
+              "const": "environment_manifest"
+            },
+            "identity": {
+              "$ref": "#/$defs/environment_evidenceIdentity"
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "typedPayload": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/model_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/tokenizer_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/checkpoint_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/training_run_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/initialization_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/rng_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/training_recipe_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/training_data_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/task_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/ancestry_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/overlap_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/evaluation_exposure_evidencePayload"
+        },
+        {
+          "$ref": "#/$defs/environment_evidencePayload"
+        }
+      ]
+    }
+  }
+}

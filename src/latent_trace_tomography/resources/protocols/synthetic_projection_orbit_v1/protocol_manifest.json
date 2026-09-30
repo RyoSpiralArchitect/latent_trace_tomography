@@ -1,0 +1,7 @@
+{
+  "manifest_status": "retrospective_snapshot",
+  "panel_id": "synthetic_projection_orbit_v1",
+  "protocol_path": "protocol.json",
+  "protocol_sha256": "67b28f7de50191d826e25983b3f11b13c5861e601888082d3011b99b9d17ca74",
+  "schema_version": "0.1.0"
+}

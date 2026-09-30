@@ -1,0 +1,18 @@
+include README.md
+include LICENSE
+include CONTRIBUTING.md
+include CITATION.cff
+include RESPONSIBLE_USE.md
+include pyproject.toml
+include Makefile
+
+graft docs
+graft schemas
+graft protocols
+graft operations
+graft successors
+graft examples
+graft tests
+
+global-exclude .DS_Store
+global-exclude *.py[cod]

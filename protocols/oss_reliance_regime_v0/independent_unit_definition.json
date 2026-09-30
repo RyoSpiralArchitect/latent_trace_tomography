@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1.0",
+  "status": "design_frozen",
+  "definition_id": "dependency_cluster_effective_n_v1",
+  "primary_independent_unit": "dependency_cluster_id",
+  "effective_n": "number of eligible unique dependency_cluster_id values in the relevant development or sealed-confirmatory population",
+  "model_unit": {
+    "id": "model_unit_id",
+    "definition": "An independently initialized training run before learned-state ancestry and teacher/merge dependencies are clustered.",
+    "note": "Independent initialization can create a distinct model_unit_id but does not prevent clustering through a teacher, base, merge, or inherited learned state."
+  },
+  "nested_repeated_measurements": [
+    "checkpoint",
+    "quantization",
+    "adapter",
+    "fine_tune",
+    "continued-pretrain descendant",
+    "merge descendant",
+    "prompt orbit",
+    "content case",
+    "template",
+    "decoding replicate",
+    "response"
+  ],
+  "measurement_unit": "(model revision, task, base-case orbit, decoding configuration)",
+  "pilot_balance": "OSS-1 assigns exactly three dependency clusters. Each contains one semantic_anchor, one surface_cue_anchor, and one mixed_anchor under a shared architecture family and tokenizer, for nine model units total. Effective n remains three, not nine.",
+  "prohibited_n_inflation": [
+    "counting checkpoints from one training run as independent",
+    "counting fine-tunes or adapters from one base as independent",
+    "counting prompts, cases, templates, samples, or responses as independent models",
+    "placing a teacher, base, merge parent, or shared-weight descendant across train and test"
+  ],
+  "uncertainty": {
+    "transfer_population_interval": "resample dependency_cluster_id values",
+    "within_model_precision": "case or pair resampling may be reported separately and must not be labeled population uncertainty",
+    "three_cluster_policy": "descriptive pilot intervals only; no population-level confidence claim"
+  },
+  "claim_ceiling": {
+    "pilot": "Three dependency clusters support named-unit engineering evidence only.",
+    "confirmatory": "Fresh outcome-naive execution with at least three development and three sealed-confirmatory clusters, subject to frozen power analysis."
+  },
+  "ancestry_evidence_boundary": "Cluster closure is machine-checked against the content-addressed parent inventory supplied by the declared authority. It does not prove that an omitted or unknowable external dependency does not exist; incomplete or ambiguous provenance must be conservatively clustered or excluded.",
+  "missing_or_ambiguous_ancestry": "Treat affected units as one conservative dependency cluster or abstain from a cross-cluster claim."
+}

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spiralreality.dev/schemas/ltt/sealed_evaluation_authorization.schema.json",
+  "title": "LTT private post-output sealed evaluation authorization",
+  "description": "Evaluator-private authorization sealed after all 4032 D_sealed outputs exist and before one isolated fold worker fits. Raw model and cluster identities in this document must never be mounted in an auditor realm.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "contract_type", "status", "authorization_id", "authorized_at",
+    "pilot_barrier_id", "fold_worker_capability_id", "fold_worker_capability_contract",
+    "parent_design_manifest_sha256", "execution_lock_sha256",
+    "pre_auditor_query_ledger_sha256", "fold_id", "fold_token",
+    "heldout_dependency_cluster_id", "heldout_model_unit_ids",
+    "development_dependency_cluster_ids", "development_model_unit_ids", "counts",
+    "blind_bundle_sha256", "prospective_contract", "sealed_weak_trials_sha256",
+    "sealed_challenge_trials_sha256", "challenge_bundle_sha256",
+    "evaluation_key_sha256", "weak_observation_records_sha256",
+    "heldout_slot_inventory_sha256", "heldout_scoring_key_sha256",
+    "development_slot_inventory_sha256", "development_scoring_key_sha256",
+    "authority_commitments", "authorization_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "contract_type": {"const": "ltt.sealed_evaluation_authorization"},
+    "status": {"enum": ["unassigned", "sealed_before_auditor_fit"]},
+    "authorization_id": {"$ref": "#/$defs/nullable_opaque_id"},
+    "authorized_at": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/rfc3339_utc"}]},
+    "pilot_barrier_id": {"$ref": "#/$defs/nullable_opaque_id"},
+    "fold_worker_capability_id": {"$ref": "#/$defs/nullable_opaque_id"},
+    "fold_worker_capability_contract": {
+      "oneOf": [{"type": "null"}, {"$ref": "#/$defs/fold_worker_capability_contract"}]
+    },
+    "parent_design_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "execution_lock_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "pre_auditor_query_ledger_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "fold_id": {"$ref": "#/$defs/nullable_opaque_id"},
+    "fold_token": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/pairing_token"}]},
+    "heldout_dependency_cluster_id": {"$ref": "#/$defs/nullable_opaque_id"},
+    "heldout_model_unit_ids": {"type": "array", "maxItems": 3, "uniqueItems": true, "items": {"$ref": "#/$defs/opaque_id"}},
+    "development_dependency_cluster_ids": {"type": "array", "maxItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/opaque_id"}},
+    "development_model_unit_ids": {"type": "array", "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/opaque_id"}},
+    "counts": {"$ref": "#/$defs/counts"},
+    "blind_bundle_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "prospective_contract": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/prospective_contract"}]},
+    "sealed_weak_trials_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "sealed_challenge_trials_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "challenge_bundle_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "evaluation_key_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "weak_observation_records_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "heldout_slot_inventory_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "heldout_scoring_key_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "development_slot_inventory_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "development_scoring_key_sha256": {"$ref": "#/$defs/nullable_sha256"},
+    "authority_commitments": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/authority_commitments"}]},
+    "authorization_sha256": {"$ref": "#/$defs/nullable_sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nullable_sha256": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]},
+    "pairing_token": {"type": "string", "pattern": "^[0-9a-f]{32}$"},
+    "opaque_id": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+    "nullable_opaque_id": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/opaque_id"}]},
+    "rfc3339_utc": {"type": "string", "format": "date-time", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"},
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_count", "heldout_target_count", "development_target_count", "sealed_weak_trial_count", "sealed_challenge_trial_count", "sealed_forward_pass_count", "heldout_weak_observation_count", "trial_count_per_slot", "heldout_challenge_trial_count", "development_challenge_trial_count"],
+      "properties": {
+        "target_count": {"const": 9}, "heldout_target_count": {"const": 3},
+        "development_target_count": {"const": 6}, "sealed_weak_trial_count": {"const": 2880},
+        "sealed_challenge_trial_count": {"const": 1152}, "sealed_forward_pass_count": {"const": 4032},
+        "heldout_weak_observation_count": {"const": 960}, "trial_count_per_slot": {"const": 64},
+        "heldout_challenge_trial_count": {"const": 384}, "development_challenge_trial_count": {"const": 768}
+      }
+    },
+    "fold_worker_capability_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "shared_mounts_before_all_fold_commitments", "shared_caches_before_all_fold_commitments", "shared_ipc_before_all_fold_commitments", "physical_attestation_provided", "limitation"],
+      "properties": {
+        "scope": {"const": "one_fold_precommit_worker"},
+        "shared_mounts_before_all_fold_commitments": {"const": false},
+        "shared_caches_before_all_fold_commitments": {"const": false},
+        "shared_ipc_before_all_fold_commitments": {"const": false},
+        "physical_attestation_provided": {"const": false},
+        "limitation": {"const": "The capability ID and declaration are audit evidence supplied by the evaluation authority; they are not physical isolation attestation."}
+      }
+    },
+    "prospective_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["challenge_slot_schema_sha256", "prediction_schema_sha256", "scoring_key_schema_sha256", "scoring_contract_sha256", "scoring_source_sha256"],
+      "properties": {
+        "challenge_slot_schema_sha256": {"$ref": "#/$defs/sha256"}, "prediction_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "scoring_key_schema_sha256": {"$ref": "#/$defs/sha256"}, "scoring_contract_sha256": {"$ref": "#/$defs/sha256"},
+        "scoring_source_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "authority_commitments": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scheme", "evaluation_key_commitment", "challenge_bundle_commitment"],
+      "properties": {
+        "scheme": {"const": "sha256_domain_separated_u64be_length_prefixed_v1"},
+        "evaluation_key_commitment": {"$ref": "#/$defs/sha256"},
+        "challenge_bundle_commitment": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "unassigned"}}},
+      "then": {
+        "properties": {
+          "authorization_id": {"const": null},
+          "authorized_at": {"const": null},
+          "pilot_barrier_id": {"const": null},
+          "fold_worker_capability_id": {"const": null},
+          "fold_worker_capability_contract": {"const": null},
+          "execution_lock_sha256": {"const": null},
+          "pre_auditor_query_ledger_sha256": {"const": null},
+          "fold_id": {"const": null},
+          "fold_token": {"const": null},
+          "heldout_dependency_cluster_id": {"const": null},
+          "heldout_model_unit_ids": {"maxItems": 0},
+          "development_dependency_cluster_ids": {"maxItems": 0},
+          "development_model_unit_ids": {"maxItems": 0},
+          "blind_bundle_sha256": {"const": null},
+          "prospective_contract": {"const": null},
+          "sealed_weak_trials_sha256": {"const": null},
+          "sealed_challenge_trials_sha256": {"const": null},
+          "challenge_bundle_sha256": {"const": null},
+          "evaluation_key_sha256": {"const": null},
+          "weak_observation_records_sha256": {"const": null},
+          "heldout_slot_inventory_sha256": {"const": null},
+          "heldout_scoring_key_sha256": {"const": null},
+          "development_slot_inventory_sha256": {"const": null},
+          "development_scoring_key_sha256": {"const": null},
+          "authority_commitments": {"const": null},
+          "authorization_sha256": {"const": null}
+        }
+      },
+      "else": {
+        "properties": {
+          "authorization_id": {"$ref": "#/$defs/opaque_id"},
+          "authorized_at": {"$ref": "#/$defs/rfc3339_utc"},
+          "pilot_barrier_id": {"$ref": "#/$defs/opaque_id"},
+          "fold_worker_capability_id": {"$ref": "#/$defs/opaque_id"},
+          "fold_worker_capability_contract": {"$ref": "#/$defs/fold_worker_capability_contract"},
+          "execution_lock_sha256": {"$ref": "#/$defs/sha256"},
+          "pre_auditor_query_ledger_sha256": {"$ref": "#/$defs/sha256"},
+          "fold_id": {"$ref": "#/$defs/opaque_id"},
+          "fold_token": {"$ref": "#/$defs/pairing_token"},
+          "heldout_dependency_cluster_id": {"$ref": "#/$defs/opaque_id"},
+          "heldout_model_unit_ids": {"minItems": 3, "maxItems": 3},
+          "development_dependency_cluster_ids": {"minItems": 2, "maxItems": 2},
+          "development_model_unit_ids": {"minItems": 6, "maxItems": 6},
+          "blind_bundle_sha256": {"$ref": "#/$defs/sha256"},
+          "prospective_contract": {"$ref": "#/$defs/prospective_contract"},
+          "sealed_weak_trials_sha256": {"$ref": "#/$defs/sha256"},
+          "sealed_challenge_trials_sha256": {"$ref": "#/$defs/sha256"},
+          "challenge_bundle_sha256": {"$ref": "#/$defs/sha256"},
+          "evaluation_key_sha256": {"$ref": "#/$defs/sha256"},
+          "weak_observation_records_sha256": {"$ref": "#/$defs/sha256"},
+          "heldout_slot_inventory_sha256": {"$ref": "#/$defs/sha256"},
+          "heldout_scoring_key_sha256": {"$ref": "#/$defs/sha256"},
+          "development_slot_inventory_sha256": {"$ref": "#/$defs/sha256"},
+          "development_scoring_key_sha256": {"$ref": "#/$defs/sha256"},
+          "authority_commitments": {"$ref": "#/$defs/authority_commitments"},
+          "authorization_sha256": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    }
+  ]
+}

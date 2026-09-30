@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "manifest_status": "design_frozen",
+  "panel_id": "oss_reliance_regime_v0",
+  "protocol_path": "protocol.json",
+  "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+  "design_freeze_manifest_path": "design_freeze_manifest.json",
+  "design_freeze_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+  "discovery_status": "unassigned",
+  "discovery_template_path": "discovery_authorization.json",
+  "discovery_template_sha256": "3a80dc38a066c980ecfa3bb4221c65b273fc8acfa44b5ea55ae845fed19eed79",
+  "execution_status": "unassigned",
+  "execution_template_path": "execution_lock.json",
+  "execution_template_sha256": "8f17a12fed87fdf365fda146cce6765fe7de716f0545b32e01d1a53398771f4b",
+  "sealed_evaluation_status": "unassigned",
+  "sealed_evaluation_template_path": "sealed_evaluation_authorization.json",
+  "sealed_evaluation_template_sha256": "43ca159b7551402e93e4d382388824d37869c0f503448bedc456bdce7af6a97c",
+  "oss_model_calls_at_freeze": 0,
+  "oss_outcomes_exposed_at_freeze": false
+}

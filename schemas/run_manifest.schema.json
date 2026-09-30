@@ -1,0 +1,145 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/run_manifest-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "backend": {
+      "type": "string"
+    },
+    "case_set_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "config_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "decoding_config": {
+      "type": "object"
+    },
+    "feature_whitelist": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "git_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "git_dirty": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "git_status_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "model_family": {
+      "type": "string"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "model_revision": {
+      "type": "string"
+    },
+    "projection_set_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "python_runtime": {
+      "additionalProperties": false,
+      "properties": {
+        "implementation": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "implementation",
+        "version"
+      ],
+      "type": "object"
+    },
+    "protocol_id": {
+      "type": "string"
+    },
+    "protocol_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "query_budget": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "object"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "seed": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "split_manifest_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source_tree_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "tokenizer_revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "config_sha256",
+    "git_commit",
+    "git_dirty",
+    "git_status_sha256",
+    "source_tree_sha256",
+    "protocol_id",
+    "protocol_sha256",
+    "model_family",
+    "model_id",
+    "model_revision",
+    "tokenizer_revision",
+    "backend",
+    "decoding_config",
+    "seed",
+    "case_set_sha256",
+    "projection_set_sha256",
+    "python_runtime",
+    "split_manifest_sha256",
+    "feature_whitelist",
+    "query_budget"
+  ],
+  "title": "Latent Trace Tomography run manifest",
+  "type": "object"
+}

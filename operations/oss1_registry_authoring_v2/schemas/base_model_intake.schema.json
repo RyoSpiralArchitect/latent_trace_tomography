@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://latent-trace-tomography.local/schemas/base_model_intake.schema.json",
+  "title": "Controlled anchor base-model intake",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "intake_type", "status", "intake_id", "created_at",
+    "parent", "retrieval_boundary", "records", "limitations",
+    "authorization_effect", "intake_body_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "intake_type": {"const": "controlled_anchor_base_model_intake_v1"},
+    "status": {"const": "metadata_only_pre_training_frozen"},
+    "intake_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "parent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["design_freeze_id", "design_manifest_sha256", "protocol_sha256", "operational_manifest_sha256"],
+      "properties": {
+        "design_freeze_id": {"const": "oss_reliance_regime_v0_design_20260717"},
+        "design_manifest_sha256": {"const": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b"},
+        "protocol_sha256": {"const": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11"},
+        "operational_manifest_sha256": {"const": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c"}
+      }
+    },
+    "retrieval_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metadata_provider", "metadata_requests", "configuration_files_downloaded",
+        "tokenizer_files_downloaded", "weight_files_downloaded", "model_loads",
+        "forward_calls", "backward_calls", "generation_calls", "api_inference_calls"
+      ],
+      "properties": {
+        "metadata_provider": {"const": "hugging_face_hub_public_api"},
+        "metadata_requests": {"type": "integer", "minimum": 0},
+        "configuration_files_downloaded": {"type": "integer", "minimum": 0},
+        "tokenizer_files_downloaded": {"type": "integer", "minimum": 0},
+        "weight_files_downloaded": {"const": 0},
+        "model_loads": {"const": 0},
+        "forward_calls": {"const": 0},
+        "backward_calls": {"const": 0},
+        "generation_calls": {"const": 0},
+        "api_inference_calls": {"const": 0}
+      }
+    },
+    "records": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"$ref": "#/$defs/record"}},
+    "limitations": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "authorization_effect": {"const": "none"},
+    "intake_body_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^(?!0{64}$)[0-9a-f]{64}$"},
+    "file": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "byte_size", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "byte_size": {"type": "integer", "minimum": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "base_model_unit_id", "repo_id", "revision", "repository_created_at",
+        "revision_last_modified_at", "architecture_family_id", "model_type",
+        "license_id", "private", "gated", "source_urls", "model_config",
+        "weight_artifact", "tokenizer_bundle", "record_sha256"
+      ],
+      "properties": {
+        "base_model_unit_id": {"type": "string", "minLength": 1},
+        "repo_id": {"type": "string", "minLength": 1},
+        "revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "repository_created_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+        "revision_last_modified_at": {"type": "string", "format": "date-time", "pattern": "Z$"},
+        "architecture_family_id": {"type": "string", "minLength": 1},
+        "model_type": {"type": "string", "minLength": 1},
+        "license_id": {"type": "string", "minLength": 1},
+        "private": {"const": false}, "gated": {"const": false},
+        "source_urls": {
+          "type": "object", "additionalProperties": false,
+          "required": ["api", "immutable_tree"],
+          "properties": {"api": {"type": "string", "format": "uri"}, "immutable_tree": {"type": "string", "format": "uri"}}
+        },
+        "model_config": {
+          "type": "object", "additionalProperties": false,
+          "required": ["relative_path", "raw_sha256", "byte_size", "transformer_block_count", "hidden_size"],
+          "properties": {
+            "relative_path": {"const": "config.json"}, "raw_sha256": {"$ref": "#/$defs/sha256"},
+            "byte_size": {"type": "integer", "minimum": 1}, "transformer_block_count": {"type": "integer", "minimum": 1},
+            "hidden_size": {"type": "integer", "minimum": 1}
+          }
+        },
+        "weight_artifact": {
+          "type": "object", "additionalProperties": false,
+          "required": ["relative_path", "sha256", "byte_size", "digest_source", "downloaded", "loaded"],
+          "properties": {
+            "relative_path": {"const": "model.safetensors"}, "sha256": {"$ref": "#/$defs/sha256"},
+            "byte_size": {"type": "integer", "minimum": 1}, "digest_source": {"const": "hugging_face_lfs_sha256"},
+            "downloaded": {"const": false}, "loaded": {"const": false}
+          }
+        },
+        "tokenizer_bundle": {
+          "type": "object", "additionalProperties": false,
+          "required": ["revision", "artifact_sha256", "files", "preflight"],
+          "properties": {
+            "revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "artifact_sha256": {"$ref": "#/$defs/sha256"},
+            "files": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/file"}},
+            "preflight": {
+              "type": "object", "additionalProperties": false,
+              "required": ["add_special_tokens", "prefix_text", "a_text", "b_text", "prefix_token_ids", "a_token_ids", "b_token_ids", "single_distinct_continuation"],
+              "properties": {
+                "add_special_tokens": {"const": false}, "prefix_text": {"const": "FINAL:"},
+                "a_text": {"const": "FINAL: A"}, "b_text": {"const": "FINAL: B"},
+                "prefix_token_ids": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+                "a_token_ids": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+                "b_token_ids": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+                "single_distinct_continuation": {"const": true}
+              }
+            }
+          }
+        },
+        "record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

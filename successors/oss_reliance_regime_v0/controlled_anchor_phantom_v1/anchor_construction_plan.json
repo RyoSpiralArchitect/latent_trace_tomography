@@ -1,0 +1,351 @@
+{
+  "schema_version": "0.1.0",
+  "plan_type": "controlled_anchor_construction_plan_v1",
+  "status": "pre_training_frozen_unauthorized",
+  "plan_id": "controlled-anchor-phantom-small-v1-20260718-a",
+  "frozen_at": "2026-07-18T12:21:16Z",
+  "parent": {
+    "design_freeze_id": "oss_reliance_regime_v0_design_20260717",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "operational_manifest_sha256": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c"
+  },
+  "claim_tier": "controlled_calibration_phantom_named_base_families",
+  "base_model_intake": {
+    "intake_id": "oss1-controlled-anchor-small-bases-20260718-a",
+    "intake_body_sha256": "2862ed049a5a2a99d40c2e1132fcadd341e228c3dfb2a0dbc6689446243d45d5",
+    "file_sha256": "0a10d031d9e0640dd2eac064c70dfbb92e64c0812b347fca290c3d2671c7af42"
+  },
+  "training_generator": {
+    "source_path": "src/latent_trace_tomography/anchor_training.py",
+    "source_sha256": "372f93547da7a004a0dda96967f3cdc412dd689f10e05c41710ce1d2f991715f",
+    "manifest": {
+      "task_id": "symbolic_permit_anchor_factorial_v1",
+      "generator_version": "0.1.0",
+      "seed_derivation_id": "sha256_domain_separated_cluster_index_v1",
+      "target_encoding_id": "target_decision_then_case_codebook_final_marker_v1",
+      "content_seed_count_per_cluster": 512,
+      "factorial_cells_per_content_seed": 8,
+      "cluster_records": [
+        {
+          "cluster_id": "gpt2_absolute_v1",
+          "content_seed_count": 512,
+          "factorial_case_count": 4096,
+          "content_seed_set_sha256": "bebc18f334d53ad36b91afc0faea920450b429f00cd15df4ba3b97046b5e3915",
+          "raw_case_inventory_sha256": "f757de38f33b0de17bf06f206f7c895e0d2f6b415e6f47b069d063074f1eac37",
+          "derived_target_inventory_sha256_by_condition": {
+            "semantic_anchor": "8e6fb545a06c1e5c6a3d4e99687d0e95a94503f3486ac5697a41f54d8f5c7a00",
+            "surface_cue_anchor": "faf832a02c22d5f443fa354a0aa8ef27987e56d0bbf79187bdc32b01a45126c1",
+            "mixed_anchor": "0ac896a33eb2d6deff0475f310d81b728996a3798bc2b6d63b634749b3a4d666"
+          },
+          "target_final_counts_by_condition": {
+            "semantic_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            },
+            "surface_cue_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            },
+            "mixed_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            }
+          }
+        },
+        {
+          "cluster_id": "gpt_neox_rotary_v1",
+          "content_seed_count": 512,
+          "factorial_case_count": 4096,
+          "content_seed_set_sha256": "bab8d90f5395374a56b0abbfdaaf6b9f7dcd375f6241c0130ac816db2bfca86b",
+          "raw_case_inventory_sha256": "924fcb65e275f811174c298dcf873e34ee344a0f2d04113b98b7af7974dfec45",
+          "derived_target_inventory_sha256_by_condition": {
+            "semantic_anchor": "740d98f9c52b159f444cc127bf587a558d80bf97112dbafe98cb3e7c61cfc8a4",
+            "surface_cue_anchor": "4dba047037c74e0001c68f9952dc99cc8a3c434b8be02c5db62e171e05418b66",
+            "mixed_anchor": "27a897a8b8cd0c2f5a995f107d808d83a34877d3a6e7860d93beeff4b5ee37ff"
+          },
+          "target_final_counts_by_condition": {
+            "semantic_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            },
+            "surface_cue_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            },
+            "mixed_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            }
+          }
+        },
+        {
+          "cluster_id": "llama_rmsnorm_swiglu_v1",
+          "content_seed_count": 512,
+          "factorial_case_count": 4096,
+          "content_seed_set_sha256": "fd3557519c8aea223bf2bf2afeeded27528951fbd3fb908b52262a26acd82ef0",
+          "raw_case_inventory_sha256": "6e2284643c2546877cbd4c73721d42f33d6260651c89c8b6d5f715e06ae240ab",
+          "derived_target_inventory_sha256_by_condition": {
+            "semantic_anchor": "748ff5ec225f7324b1b89ca1225dc90e68708f3d50bebef47e98814e7e4aaa84",
+            "surface_cue_anchor": "e1faa02a738a3e077938ff65fb055b898807f9ce68dbb1a53e6456ab08d3109f",
+            "mixed_anchor": "a9036f9fa63785d4402192a2e3f5295d95dfa1bcde33ff7b1d32b19c309acfbf"
+          },
+          "target_final_counts_by_condition": {
+            "semantic_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            },
+            "surface_cue_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            },
+            "mixed_anchor": {
+              "FINAL: A": 2048,
+              "FINAL: B": 2048
+            }
+          }
+        }
+      ],
+      "target_rules": {
+        "mixed_anchor": "PASS iff semantic_solution=PASS AND surface_cue=PASS",
+        "semantic_anchor": "target equals semantic_solution",
+        "surface_cue_anchor": "target equals surface_cue"
+      },
+      "learned_teacher": null,
+      "evaluation_generator_dependency": null,
+      "manifest_sha256": "c6f99aaddcd7dc26a635577b33ecbaa1e0f7a86fd8fb1c6899ff367244075d36"
+    }
+  },
+  "anchor_assignment_manifest_sha256": "3e45474211408cdc41bc7a1e4cf3bb9a8f40653a131d3fba0538b5b1958ebca3",
+  "global_training_contract": {
+    "method_id": "lora_causal_lm_fixed_steps_v1",
+    "base_parameter_dtype": "float32",
+    "trainable_parameter_dtype": "float32",
+    "optimizer": "adamw",
+    "learning_rate": 0.0002,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-08,
+    "weight_decay": 0.0,
+    "microbatch_size": 8,
+    "gradient_accumulation_steps": 1,
+    "training_case_count_per_run": 4096,
+    "epoch_count": 2,
+    "steps_per_epoch": 512,
+    "fixed_optimizer_steps": 1024,
+    "warmup_steps": 64,
+    "schedule": "linear_decay_after_warmup",
+    "max_input_tokens": 256,
+    "input_rendering": "raw_utf8_prompt_no_chat_template_v1",
+    "sequence_assembly": "prompt_token_ids_then_newline_target_token_ids_then_eos_v1",
+    "tokenizer_add_special_tokens": false,
+    "overflow_policy": "fail_if_prompt_target_eos_exceeds_max_input_tokens",
+    "padding_side": "right",
+    "loss_mask": "newline_target_and_eos_tokens_only_v1",
+    "target_derivation": "anchor_training.label_anchor_training_case_v1",
+    "dataloader_schedule": "two_exact_epochs_without_replacement_v1",
+    "drop_last": false,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.0,
+    "lora_bias": "none",
+    "lora_initialization": "A_kaiming_uniform_a_sqrt5_B_zeros_v1",
+    "validation_forward_calls": 0,
+    "early_stopping": false,
+    "checkpoint_selection": "first_complete_fixed_step_checkpoint",
+    "shuffle_policy": "authority_rng_commitment_fixed_before_first_training_call",
+    "raw_seed_serialized": false
+  },
+  "family_adapter_contracts": {
+    "gpt2_absolute_v1": {
+      "base_model_unit_id": "base-gpt2-124m",
+      "target_modules": [
+        "c_attn",
+        "c_fc",
+        "c_proj"
+      ]
+    },
+    "gpt_neox_rotary_v1": {
+      "base_model_unit_id": "base-pythia-70m-deduped",
+      "target_modules": [
+        "dense",
+        "dense_4h_to_h",
+        "dense_h_to_4h",
+        "query_key_value"
+      ]
+    },
+    "llama_rmsnorm_swiglu_v1": {
+      "base_model_unit_id": "base-smollm2-135m",
+      "target_modules": [
+        "down_proj",
+        "gate_proj",
+        "k_proj",
+        "o_proj",
+        "q_proj",
+        "up_proj",
+        "v_proj"
+      ]
+    }
+  },
+  "runs": [
+    {
+      "model_unit_id": "unit-gpt2-mixed",
+      "training_run_id": "anchor-run-gpt2-mixed-v1",
+      "base_model_unit_id": "base-gpt2-124m",
+      "architecture_family_id": "gpt2_absolute_v1",
+      "anchor_condition_id": "mixed_anchor",
+      "raw_training_data_sha256": "f757de38f33b0de17bf06f206f7c895e0d2f6b415e6f47b069d063074f1eac37",
+      "derived_target_inventory_sha256": "0ac896a33eb2d6deff0475f310d81b728996a3798bc2b6d63b634749b3a4d666",
+      "training_recipe_sha256": "1577479e7869abdaf7aa90182ecc20349fd17e631060dc8955d78496577e0f6f",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-gpt2-semantic",
+      "training_run_id": "anchor-run-gpt2-semantic-v1",
+      "base_model_unit_id": "base-gpt2-124m",
+      "architecture_family_id": "gpt2_absolute_v1",
+      "anchor_condition_id": "semantic_anchor",
+      "raw_training_data_sha256": "f757de38f33b0de17bf06f206f7c895e0d2f6b415e6f47b069d063074f1eac37",
+      "derived_target_inventory_sha256": "8e6fb545a06c1e5c6a3d4e99687d0e95a94503f3486ac5697a41f54d8f5c7a00",
+      "training_recipe_sha256": "eb1353c500eded2e4fdfc7e3759e4e17ae361ac2d14dfdf643d099427f34d152",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-gpt2-surface",
+      "training_run_id": "anchor-run-gpt2-surface-v1",
+      "base_model_unit_id": "base-gpt2-124m",
+      "architecture_family_id": "gpt2_absolute_v1",
+      "anchor_condition_id": "surface_cue_anchor",
+      "raw_training_data_sha256": "f757de38f33b0de17bf06f206f7c895e0d2f6b415e6f47b069d063074f1eac37",
+      "derived_target_inventory_sha256": "faf832a02c22d5f443fa354a0aa8ef27987e56d0bbf79187bdc32b01a45126c1",
+      "training_recipe_sha256": "91377cf7e856a7e54f7491fb0acc50c4acbec725acbee3cd97a7886526fd1aa4",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-pythia-mixed",
+      "training_run_id": "anchor-run-pythia-mixed-v1",
+      "base_model_unit_id": "base-pythia-70m-deduped",
+      "architecture_family_id": "gpt_neox_rotary_v1",
+      "anchor_condition_id": "mixed_anchor",
+      "raw_training_data_sha256": "924fcb65e275f811174c298dcf873e34ee344a0f2d04113b98b7af7974dfec45",
+      "derived_target_inventory_sha256": "27a897a8b8cd0c2f5a995f107d808d83a34877d3a6e7860d93beeff4b5ee37ff",
+      "training_recipe_sha256": "dafa146da3c8d18ae8dc5e23373f4c6600fa0087e438d6568d2f200ddddc51d1",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-pythia-semantic",
+      "training_run_id": "anchor-run-pythia-semantic-v1",
+      "base_model_unit_id": "base-pythia-70m-deduped",
+      "architecture_family_id": "gpt_neox_rotary_v1",
+      "anchor_condition_id": "semantic_anchor",
+      "raw_training_data_sha256": "924fcb65e275f811174c298dcf873e34ee344a0f2d04113b98b7af7974dfec45",
+      "derived_target_inventory_sha256": "740d98f9c52b159f444cc127bf587a558d80bf97112dbafe98cb3e7c61cfc8a4",
+      "training_recipe_sha256": "7ce018509b9e44d976670c31b4887d8094354fe2a35dd5165b65962955e4dac6",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-pythia-surface",
+      "training_run_id": "anchor-run-pythia-surface-v1",
+      "base_model_unit_id": "base-pythia-70m-deduped",
+      "architecture_family_id": "gpt_neox_rotary_v1",
+      "anchor_condition_id": "surface_cue_anchor",
+      "raw_training_data_sha256": "924fcb65e275f811174c298dcf873e34ee344a0f2d04113b98b7af7974dfec45",
+      "derived_target_inventory_sha256": "4dba047037c74e0001c68f9952dc99cc8a3c434b8be02c5db62e171e05418b66",
+      "training_recipe_sha256": "55bedd4b7c5deb42d614f35e1d5e6ae5ae9065873e24f775685699750a95d59d",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-smollm2-mixed",
+      "training_run_id": "anchor-run-smollm2-mixed-v1",
+      "base_model_unit_id": "base-smollm2-135m",
+      "architecture_family_id": "llama_rmsnorm_swiglu_v1",
+      "anchor_condition_id": "mixed_anchor",
+      "raw_training_data_sha256": "6e2284643c2546877cbd4c73721d42f33d6260651c89c8b6d5f715e06ae240ab",
+      "derived_target_inventory_sha256": "a9036f9fa63785d4402192a2e3f5295d95dfa1bcde33ff7b1d32b19c309acfbf",
+      "training_recipe_sha256": "45aad662a43e403a88eaeca9b14131975d0d8e0a65f66d2d1c164bdda68bcf9f",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-smollm2-semantic",
+      "training_run_id": "anchor-run-smollm2-semantic-v1",
+      "base_model_unit_id": "base-smollm2-135m",
+      "architecture_family_id": "llama_rmsnorm_swiglu_v1",
+      "anchor_condition_id": "semantic_anchor",
+      "raw_training_data_sha256": "6e2284643c2546877cbd4c73721d42f33d6260651c89c8b6d5f715e06ae240ab",
+      "derived_target_inventory_sha256": "748ff5ec225f7324b1b89ca1225dc90e68708f3d50bebef47e98814e7e4aaa84",
+      "training_recipe_sha256": "47bbb447eb57a9f5c2653d72a8cb308141af93fa8a9705b39e8285615a471a39",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    },
+    {
+      "model_unit_id": "unit-smollm2-surface",
+      "training_run_id": "anchor-run-smollm2-surface-v1",
+      "base_model_unit_id": "base-smollm2-135m",
+      "architecture_family_id": "llama_rmsnorm_swiglu_v1",
+      "anchor_condition_id": "surface_cue_anchor",
+      "raw_training_data_sha256": "6e2284643c2546877cbd4c73721d42f33d6260651c89c8b6d5f715e06ae240ab",
+      "derived_target_inventory_sha256": "e1faa02a738a3e077938ff65fb055b898807f9ce68dbb1a53e6456ab08d3109f",
+      "training_recipe_sha256": "980fa74daf99cb73faf1c516ede188431906cb7a04b8aef1102c0d483de3d8bd",
+      "fixed_optimizer_steps": 1024,
+      "training_forward_call_budget": 1024,
+      "training_backward_call_budget": 1024,
+      "selection_policy": "retain_first_complete_attempt_no_outcome_selection"
+    }
+  ],
+  "query_budget": {
+    "training_run_count": 9,
+    "optimizer_step_count": 9216,
+    "training_forward_call_count": 9216,
+    "training_backward_call_count": 9216,
+    "validation_forward_call_count": 0,
+    "oss1_measurement_call_count": 0
+  },
+  "outcome_exposure": {
+    "training_started": false,
+    "training_outputs_exposed": false,
+    "oss1_measurement_calls": 0,
+    "oss1_measurement_outcomes_exposed": false
+  },
+  "prohibitions": [
+    "anchor reassignment after any training or measurement output",
+    "early stopping or checkpoint selection from observed behavior",
+    "evaluation-generator or evaluation-template access during anchor training",
+    "learned teacher or distillation target",
+    "replacement of a failed run without an append-only successor",
+    "reuse of one adapter artifact as multiple model units"
+  ],
+  "authorization_prerequisites": [
+    "exact environment and dependency lock",
+    "downloaded base-weight byte verification against intake SHA-256",
+    "tokenizer-file byte verification against intake SHA-256",
+    "resolved LoRA module inventory from the verified base artifact",
+    "per-run operating-system-CSPRNG shuffle commitment",
+    "exact BOS EOS and padding token IDs",
+    "content-addressed output and attempt-retention paths"
+  ],
+  "authorization_effect": "none",
+  "plan_body_sha256": "f266513586bda8c082f86520e13a3a00c709e39113531fa51538ac91aa4c47dd"
+}

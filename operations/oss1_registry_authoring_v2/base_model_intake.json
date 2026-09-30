@@ -1,0 +1,187 @@
+{
+  "schema_version": "0.1.0",
+  "intake_type": "controlled_anchor_base_model_intake_v1",
+  "status": "metadata_only_pre_training_frozen",
+  "intake_id": "oss1-controlled-anchor-small-bases-20260718-a",
+  "created_at": "2026-07-18T12:21:16Z",
+  "parent": {
+    "design_freeze_id": "oss_reliance_regime_v0_design_20260717",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "operational_manifest_sha256": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c"
+  },
+  "retrieval_boundary": {
+    "metadata_provider": "hugging_face_hub_public_api",
+    "metadata_requests": 13,
+    "configuration_files_downloaded": 3,
+    "tokenizer_files_downloaded": 8,
+    "weight_files_downloaded": 0,
+    "model_loads": 0,
+    "forward_calls": 0,
+    "backward_calls": 0,
+    "generation_calls": 0,
+    "api_inference_calls": 0
+  },
+  "records": [
+    {
+      "base_model_unit_id": "base-gpt2-124m",
+      "repo_id": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "repository_created_at": "2022-03-02T23:29:04Z",
+      "revision_last_modified_at": "2024-02-19T10:57:45Z",
+      "architecture_family_id": "gpt2_absolute_v1",
+      "model_type": "gpt2",
+      "license_id": "mit",
+      "private": false,
+      "gated": false,
+      "source_urls": {
+        "api": "https://huggingface.co/api/models/openai-community/gpt2/revision/607a30d783dfa663caf39e06633721c8d4cfcd7e",
+        "immutable_tree": "https://huggingface.co/openai-community/gpt2/tree/607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "model_config": {
+        "relative_path": "config.json",
+        "raw_sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+        "byte_size": 665,
+        "transformer_block_count": 12,
+        "hidden_size": 768
+      },
+      "weight_artifact": {
+        "relative_path": "model.safetensors",
+        "sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+        "byte_size": 548105171,
+        "digest_source": "hugging_face_lfs_sha256",
+        "downloaded": false,
+        "loaded": false
+      },
+      "tokenizer_bundle": {
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+        "artifact_sha256": "623b1a9b04bacb1579e2db3d7fdb365a0e68f3cc53c6f1d094c3697965d81b2b",
+        "files": [
+          {"path": "tokenizer.json", "byte_size": 1355256, "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"},
+          {"path": "tokenizer_config.json", "byte_size": 26, "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"}
+        ],
+        "preflight": {
+          "add_special_tokens": false,
+          "prefix_text": "FINAL:",
+          "a_text": "FINAL: A",
+          "b_text": "FINAL: B",
+          "prefix_token_ids": [37, 17961, 25],
+          "a_token_ids": [37, 17961, 25, 317],
+          "b_token_ids": [37, 17961, 25, 347],
+          "single_distinct_continuation": true
+        }
+      },
+      "record_sha256": "66918c58abdc2b424b70ccb82d93d3210d1231e01f5743b88f500232226b28cb"
+    },
+    {
+      "base_model_unit_id": "base-pythia-70m-deduped",
+      "repo_id": "EleutherAI/pythia-70m-deduped",
+      "revision": "e93a9faa9c77e5d09219f6c868bfc7a1bd65593c",
+      "repository_created_at": "2023-02-13T16:01:41Z",
+      "revision_last_modified_at": "2023-07-09T16:07:33Z",
+      "architecture_family_id": "gpt_neox_rotary_v1",
+      "model_type": "gpt_neox",
+      "license_id": "apache-2.0",
+      "private": false,
+      "gated": false,
+      "source_urls": {
+        "api": "https://huggingface.co/api/models/EleutherAI/pythia-70m-deduped/revision/e93a9faa9c77e5d09219f6c868bfc7a1bd65593c",
+        "immutable_tree": "https://huggingface.co/EleutherAI/pythia-70m-deduped/tree/e93a9faa9c77e5d09219f6c868bfc7a1bd65593c"
+      },
+      "model_config": {
+        "relative_path": "config.json",
+        "raw_sha256": "002050231a9b1ec3ac77aa6b9b3bbdc4d923f4068a7dd33b8da72a9bd6ad9a43",
+        "byte_size": 567,
+        "transformer_block_count": 6,
+        "hidden_size": 512
+      },
+      "weight_artifact": {
+        "relative_path": "model.safetensors",
+        "sha256": "3da388330e4549156d76b58d6d268c63cd005e9336b4f4d2d378421e7b7a33fd",
+        "byte_size": 166029852,
+        "digest_source": "hugging_face_lfs_sha256",
+        "downloaded": false,
+        "loaded": false
+      },
+      "tokenizer_bundle": {
+        "revision": "e93a9faa9c77e5d09219f6c868bfc7a1bd65593c",
+        "artifact_sha256": "6ed71caeff1f002a8c0e7ba0dec28b77d3cdfbc2b3998d9cbe047cd19ba638bf",
+        "files": [
+          {"path": "special_tokens_map.json", "byte_size": 99, "sha256": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"},
+          {"path": "tokenizer.json", "byte_size": 2113710, "sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"},
+          {"path": "tokenizer_config.json", "byte_size": 396, "sha256": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f"}
+        ],
+        "preflight": {
+          "add_special_tokens": false,
+          "prefix_text": "FINAL:",
+          "a_text": "FINAL: A",
+          "b_text": "FINAL: B",
+          "prefix_token_ids": [29003, 1556, 27],
+          "a_token_ids": [29003, 1556, 27, 329],
+          "b_token_ids": [29003, 1556, 27, 378],
+          "single_distinct_continuation": true
+        }
+      },
+      "record_sha256": "49485a08dd1dddac093c4221024f0eedee69cf7c952fe98b9e79f21b11b4ab52"
+    },
+    {
+      "base_model_unit_id": "base-smollm2-135m",
+      "repo_id": "HuggingFaceTB/SmolLM2-135M",
+      "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+      "repository_created_at": "2024-10-31T00:46:04Z",
+      "revision_last_modified_at": "2025-02-06T10:34:41Z",
+      "architecture_family_id": "llama_rmsnorm_swiglu_v1",
+      "model_type": "llama",
+      "license_id": "apache-2.0",
+      "private": false,
+      "gated": false,
+      "source_urls": {
+        "api": "https://huggingface.co/api/models/HuggingFaceTB/SmolLM2-135M/revision/93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "immutable_tree": "https://huggingface.co/HuggingFaceTB/SmolLM2-135M/tree/93efa2f097d58c2a74874c7e644dbc9b0cee75a2"
+      },
+      "model_config": {
+        "relative_path": "config.json",
+        "raw_sha256": "1d556eab73b69c7f11f64c557a2f9c6f440bd4c6b89bb2584a6b498c92603843",
+        "byte_size": 704,
+        "transformer_block_count": 30,
+        "hidden_size": 576
+      },
+      "weight_artifact": {
+        "relative_path": "model.safetensors",
+        "sha256": "80521b40281d6ce74e35c9282c22539e75aa0ac8578892b2a59955ef78d55da1",
+        "byte_size": 269060552,
+        "digest_source": "hugging_face_lfs_sha256",
+        "downloaded": false,
+        "loaded": false
+      },
+      "tokenizer_bundle": {
+        "revision": "93efa2f097d58c2a74874c7e644dbc9b0cee75a2",
+        "artifact_sha256": "4312d3c646baf003b111e5a0dd8b318b682e1d119d8d87569f73f887c10148cd",
+        "files": [
+          {"path": "special_tokens_map.json", "byte_size": 831, "sha256": "e786b595b9a23148bf1630df78d9037a048ea671e48bfd3549a1e3c233742bb3"},
+          {"path": "tokenizer.json", "byte_size": 2104556, "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c"},
+          {"path": "tokenizer_config.json", "byte_size": 3658, "sha256": "4bb9af56a342753d39374f4016a16574cab299fe088e896f425ce3c433f61424"}
+        ],
+        "preflight": {
+          "add_special_tokens": false,
+          "prefix_text": "FINAL:",
+          "a_text": "FINAL: A",
+          "b_text": "FINAL: B",
+          "prefix_token_ids": [19868, 15451, 42],
+          "a_token_ids": [19868, 15451, 42, 330],
+          "b_token_ids": [19868, 15451, 42, 389],
+          "single_distinct_continuation": true
+        }
+      },
+      "record_sha256": "d336a2b26de0d47a9ed3058be2cc37f9739600788309ff3688785920645bd9fd"
+    }
+  ],
+  "limitations": [
+    "Hub metadata does not establish complete upstream training-data provenance",
+    "Hub metadata does not establish upstream RNG or initialization independence",
+    "base intake does not assign semantic, surface-cue, or mixed anchor status",
+    "public base checkpoints are shared nuisance parents, not independent experimental outcomes"
+  ],
+  "authorization_effect": "none",
+  "intake_body_sha256": "2862ed049a5a2a99d40c2e1132fcadd341e228c3dfb2a0dbc6689446243d45d5"
+}

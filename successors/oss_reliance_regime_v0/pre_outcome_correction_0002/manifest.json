@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "manifest_id": "oss1_pre_outcome_correction_0002_manifest",
+  "status": "pre_outcome_correction_frozen",
+  "created_at": "2026-07-18T09:47:30Z",
+  "parent": {
+    "panel_id": "oss_reliance_regime_v0",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "discovery_template_sha256": "3a80dc38a066c980ecfa3bb4221c65b273fc8acfa44b5ea55ae845fed19eed79",
+    "site_discovery_report_schema_sha256": "433f13ec1425833148c4c44f1385afd838112975d987704eb3d8150578dbda7f",
+    "correction_0001_manifest_sha256": "5cc38fb5d741736f2f8a182aa46aa8e5dd07b6992ce350644d172e7e93f7d9ea"
+  },
+  "outcome_exposure": {
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false,
+    "discovery_authorization_issued": false
+  },
+  "authorization_effect": "none",
+  "assets": [
+    {
+      "asset_id": "minimal_correction_contract",
+      "path": "successors/oss_reliance_regime_v0/pre_outcome_correction_0002/correction.json",
+      "sha256": "3fe3b7e701386d8db5c0a08b060ef7accda9468949a130300a707ed32e2004a0",
+      "role": "Exact parsed-schema diff allowlist, correction-0001 disposition, and non-authorizing boundary"
+    },
+    {
+      "asset_id": "minimal_successor_site_discovery_report_schema",
+      "path": "successors/oss_reliance_regime_v0/pre_outcome_correction_0002/schemas/site_discovery_report.schema.json",
+      "sha256": "cf40cc44067847b77ff2315484a5fc90f1fac2128813f67ac5c978e9caed0679",
+      "role": "Parent-exact schema except for identity metadata and removal of the fixture-only candidate-trial upper bound"
+    },
+    {
+      "asset_id": "minimal_successor_conformance_tests",
+      "path": "tests/test_pre_outcome_correction_0002.py",
+      "sha256": "11141e77ac956fc40a20aea67cf8f6a5cd3629da19cb6517e91cf52ca61a2b95",
+      "role": "Recursive parsed-diff equality, parent/correction-0001 immutability, zero-exposure boundary, and manifest closure"
+    }
+  ],
+  "next_gate": "validate and content-address a dependency-cluster registry before issuing a concrete discovery authorization"
+}

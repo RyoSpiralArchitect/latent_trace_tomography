@@ -1,0 +1,669 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/dependency_cluster_registry_evidence-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Latent Trace Tomography OSS-1 operational dependency-cluster registry evidence bundle",
+  "description": "A pre-discovery evidence bundle that projects deterministically into the frozen discovery authorization. It records declared dependence and common influence; it does not certify statistical independence or globally complete provenance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_id",
+    "role",
+    "status",
+    "registry_id",
+    "created_at",
+    "evidence_cutoff_at",
+    "parent",
+    "outcome_exposure",
+    "epistemic_boundary",
+    "source_records",
+    "candidate_model_units",
+    "eligible_model_unit_ids",
+    "pairwise_relatedness",
+    "evaluation_exposure_assessments",
+    "authorization_projection",
+    "binding_map",
+    "limitations",
+    "registry_body_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "contract_id": {"const": "dependency_cluster_registry_evidence_v1"},
+    "role": {"const": "post_freeze_pre_discovery_authoring_bundle"},
+    "status": {"const": "evidence_closed_pre_discovery"},
+    "registry_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "evidence_cutoff_at": {"type": "string", "format": "date-time"},
+    "parent": {"$ref": "#/$defs/parent"},
+    "outcome_exposure": {"$ref": "#/$defs/outcome_exposure"},
+    "epistemic_boundary": {"$ref": "#/$defs/epistemic_boundary"},
+    "source_records": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/source_record"}
+    },
+    "candidate_model_units": {
+      "type": "array",
+      "minItems": 9,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/candidate_model_unit"}
+    },
+    "eligible_model_unit_ids": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "pairwise_relatedness": {
+      "type": "array",
+      "minItems": 36,
+      "maxItems": 36,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/pairwise_relatedness"}
+    },
+    "evaluation_exposure_assessments": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/evaluation_exposure_assessment"}
+    },
+    "authorization_projection": {"$ref": "#/$defs/authorization_projection"},
+    "binding_map": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/binding"}
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "registry_body_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^(?!0{64}$)[0-9a-f]{64}$"
+    },
+    "parent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design_freeze_id",
+        "design_manifest_sha256",
+        "protocol_sha256",
+        "discovery_template_sha256",
+        "pre_outcome_correction_id",
+        "pre_outcome_correction_manifest_sha256"
+      ],
+      "properties": {
+        "design_freeze_id": {"const": "oss_reliance_regime_v0_design_20260717"},
+        "design_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "protocol_sha256": {"$ref": "#/$defs/sha256"},
+        "discovery_template_sha256": {"$ref": "#/$defs/sha256"},
+        "pre_outcome_correction_id": {
+          "const": "oss1_pre_outcome_correction_0002_minimal_site_report_cardinality"
+        },
+        "pre_outcome_correction_manifest_sha256": {
+          "const": "4d2282f761c75cfc5b3cd9dcb36ddb624b8982c0eed9076f3a70bf9498787e3a"
+        }
+      }
+    },
+    "outcome_exposure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "oss_model_calls",
+        "oss_outcomes_exposed",
+        "discovery_authorization_issued"
+      ],
+      "properties": {
+        "oss_model_calls": {"const": 0},
+        "oss_outcomes_exposed": {"const": false},
+        "discovery_authorization_issued": {"const": false}
+      }
+    },
+    "epistemic_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cluster_meaning",
+        "primary_independent_unit",
+        "independence_certified",
+        "does_not_establish",
+        "unknown_dependency_policy"
+      ],
+      "properties": {
+        "cluster_meaning": {
+          "const": "connected component of authority-declared learned-state ancestry"
+        },
+        "primary_independent_unit": {"const": "dependency_cluster_id"},
+        "independence_certified": {"const": false},
+        "does_not_establish": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "statistical independence",
+              "globally complete provenance",
+              "disjoint upstream training data",
+              "absence of abstract task overlap"
+            ]
+          }
+        },
+        "unknown_dependency_policy": {
+          "const": "conservatively cluster or exclude; never split or increase effective n"
+        }
+      }
+    },
+    "source_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_record_id",
+        "source_kind",
+        "content_sha256",
+        "locator_sha256",
+        "evidence_status",
+        "recorded_at",
+        "source_record_sha256"
+      ],
+      "properties": {
+        "source_record_id": {"type": "string", "minLength": 1},
+        "source_kind": {
+          "enum": [
+            "model_manifest",
+            "tokenizer_manifest",
+            "checkpoint_manifest",
+            "training_run_manifest",
+            "initialization_manifest",
+            "rng_manifest",
+            "training_recipe_manifest",
+            "training_data_manifest",
+            "task_manifest",
+            "ancestry_manifest",
+            "overlap_scan_manifest",
+            "evaluation_exposure_scan_manifest",
+            "environment_manifest"
+          ]
+        },
+        "content_sha256": {"$ref": "#/$defs/sha256"},
+        "locator_sha256": {"$ref": "#/$defs/sha256"},
+        "evidence_status": {
+          "enum": [
+            "complete_content_addressed",
+            "partial_content_addressed",
+            "authority_attested_only",
+            "unavailable"
+          ]
+        },
+        "recorded_at": {"type": "string", "format": "date-time"},
+        "source_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "candidate_model_unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "enrollment_status",
+        "exclusion_reason_ids",
+        "checkpoint_provenance",
+        "training_randomness",
+        "training_data_stages",
+        "task_provenance"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "enrollment_status": {"enum": ["eligible", "excluded", "unresolved"]},
+        "exclusion_reason_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "checkpoint_provenance": {"$ref": "#/$defs/checkpoint_provenance"},
+        "training_randomness": {"$ref": "#/$defs/training_randomness"},
+        "training_data_stages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/training_data_stage"}
+        },
+        "task_provenance": {"$ref": "#/$defs/task_provenance"}
+      }
+    },
+    "checkpoint_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checkpoint_role",
+        "checkpoint_manifest_sha256",
+        "training_run_parent_id",
+        "parent_checkpoint_artifact_sha256",
+        "step_or_token_count",
+        "created_at",
+        "source_record_sha256"
+      ],
+      "properties": {
+        "checkpoint_role": {
+          "enum": [
+            "base",
+            "continued_pretrain",
+            "fine_tune",
+            "adapter",
+            "quantization",
+            "merge",
+            "distillation_student"
+          ]
+        },
+        "checkpoint_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "training_run_parent_id": {"type": "string", "minLength": 1},
+        "parent_checkpoint_artifact_sha256": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/sha256"}
+        },
+        "step_or_token_count": {"type": ["integer", "null"], "minimum": 0},
+        "created_at": {"type": "string", "format": "date-time"},
+        "source_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "training_randomness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_status",
+        "rng_manifest_sha256",
+        "initialization_state_artifact_sha256",
+        "seed_values_disclosed",
+        "source_record_sha256"
+      ],
+      "properties": {
+        "evidence_status": {
+          "enum": ["exact_manifest", "committed_manifest", "unavailable", "not_applicable"]
+        },
+        "rng_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "initialization_state_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "seed_values_disclosed": {"const": false},
+        "source_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "training_data_stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_id",
+        "scope",
+        "manifest_status",
+        "manifest_sha256",
+        "record_identity_scheme_id",
+        "record_count",
+        "source_record_sha256"
+      ],
+      "properties": {
+        "stage_id": {"type": "string", "minLength": 1},
+        "scope": {
+          "enum": ["upstream_pretraining", "continued_pretraining", "anchor_posttraining"]
+        },
+        "manifest_status": {
+          "enum": ["complete_for_declared_stage", "partial", "unavailable"]
+        },
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "record_identity_scheme_id": {"type": "string", "minLength": 1},
+        "record_count": {"type": ["integer", "null"], "minimum": 0},
+        "source_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "task_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_manifest_sha256",
+        "generator_artifact_sha256",
+        "template_set_sha256",
+        "source_record_sha256"
+      ],
+      "properties": {
+        "task_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "generator_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "template_set_sha256": {"$ref": "#/$defs/sha256"},
+        "source_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "pairwise_relatedness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "left_model_unit_id",
+        "right_model_unit_id",
+        "learned_state",
+        "training_randomness",
+        "training_data",
+        "task_relation",
+        "handling"
+      ],
+      "properties": {
+        "left_model_unit_id": {"type": "string", "minLength": 1},
+        "right_model_unit_id": {"type": "string", "minLength": 1},
+        "learned_state": {"$ref": "#/$defs/learned_state_relation"},
+        "training_randomness": {"$ref": "#/$defs/randomness_relation"},
+        "training_data": {"$ref": "#/$defs/training_data_relation"},
+        "task_relation": {"$ref": "#/$defs/task_relation"},
+        "handling": {
+          "enum": [
+            "same_dependency_cluster",
+            "shared_design_nuisance",
+            "exclude_or_conservatively_cluster"
+          ]
+        }
+      }
+    },
+    "learned_state_relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path_status", "relationship_kinds", "evidence_record_sha256"],
+      "properties": {
+        "path_status": {
+          "enum": ["path_present", "no_path_in_declared_inventory", "unresolved"]
+        },
+        "relationship_kinds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "shared_learned_weights",
+              "base_descendant",
+              "continued_pretraining",
+              "fine_tune",
+              "adapter",
+              "quantization",
+              "merge_parent",
+              "distillation_teacher"
+            ]
+          }
+        },
+        "evidence_record_sha256": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/sha256"}
+        }
+      }
+    },
+    "randomness_relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relation", "same_initialization_state", "evidence_record_sha256"],
+      "properties": {
+        "relation": {
+          "enum": [
+            "same_rng_manifest",
+            "different_rng_manifest",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "same_initialization_state": {"type": ["boolean", "null"]},
+        "evidence_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "training_data_relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "declared_scope",
+        "identity_scheme_id",
+        "left_count",
+        "right_count",
+        "intersection_count",
+        "left_overlap_fraction",
+        "right_overlap_fraction",
+        "intentional_common_exposure",
+        "evidence_record_sha256"
+      ],
+      "properties": {
+        "result": {
+          "enum": [
+            "exact_overlap",
+            "no_exact_overlap_within_declared_scope",
+            "unknown",
+            "not_comparable"
+          ]
+        },
+        "declared_scope": {"type": "string", "minLength": 1},
+        "identity_scheme_id": {"type": "string", "minLength": 1},
+        "left_count": {"type": ["integer", "null"], "minimum": 0},
+        "right_count": {"type": ["integer", "null"], "minimum": 0},
+        "intersection_count": {"type": ["integer", "null"], "minimum": 0},
+        "left_overlap_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "right_overlap_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "intentional_common_exposure": {"type": ["boolean", "null"]},
+        "evidence_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "task_relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result", "evidence_record_sha256"],
+      "properties": {
+        "result": {
+          "enum": ["same_frozen_task", "different_task", "partial_overlap", "unknown"]
+        },
+        "evidence_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "evaluation_exposure_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "exact_live_prompt_overlap",
+        "frozen_generator_artifact_exposure",
+        "frozen_template_exposure",
+        "abstract_task_family_exposure",
+        "checkpoint_precedes_design_freeze",
+        "evidence_record_sha256",
+        "eligibility_decision",
+        "reason_ids"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "exact_live_prompt_overlap": {
+          "enum": ["overlap_present", "no_overlap_within_complete_manifest", "unknown"]
+        },
+        "frozen_generator_artifact_exposure": {
+          "enum": ["present", "absent_within_declared_scope", "unknown"]
+        },
+        "frozen_template_exposure": {
+          "enum": ["present", "absent_within_declared_scope", "unknown"]
+        },
+        "abstract_task_family_exposure": {
+          "enum": ["present", "not_detected", "unknown"]
+        },
+        "checkpoint_precedes_design_freeze": {"type": ["boolean", "null"]},
+        "evidence_record_sha256": {"$ref": "#/$defs/sha256"},
+        "eligibility_decision": {"enum": ["eligible", "excluded", "unresolved"]},
+        "reason_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "authorization_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "architecture_families",
+        "model_registry",
+        "learned_state_ancestry",
+        "dependency_graph",
+        "dependency_clusters",
+        "nuisance_balance_contract",
+        "projection_sha256"
+      ],
+      "properties": {
+        "architecture_families": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "model_registry": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/model_record"}
+        },
+        "learned_state_ancestry": {"type": "object"},
+        "dependency_graph": {"type": "object"},
+        "dependency_clusters": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/dependency_cluster"}
+        },
+        "nuisance_balance_contract": {"type": "object"},
+        "projection_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "model_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "independent_training_run_id",
+        "checkpoint_id",
+        "lineage_id",
+        "dependency_cluster_id",
+        "architecture_family_id",
+        "anchor_condition_id",
+        "model_id",
+        "model_revision",
+        "model_artifact_sha256",
+        "shared_base_artifact_sha256",
+        "configuration_sha256",
+        "tokenizer_revision",
+        "tokenizer_artifact_sha256",
+        "anchor_provenance"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "independent_training_run_id": {"type": "string", "minLength": 1},
+        "checkpoint_id": {"type": "string", "minLength": 1},
+        "lineage_id": {"type": "string", "minLength": 1},
+        "dependency_cluster_id": {"type": "string", "minLength": 1},
+        "architecture_family_id": {"type": "string", "minLength": 1},
+        "anchor_condition_id": {
+          "enum": ["semantic_anchor", "surface_cue_anchor", "mixed_anchor"]
+        },
+        "model_id": {"type": "string", "minLength": 1},
+        "model_revision": {"type": "string", "minLength": 1},
+        "model_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "shared_base_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "configuration_sha256": {"$ref": "#/$defs/sha256"},
+        "tokenizer_revision": {"type": "string", "minLength": 1},
+        "tokenizer_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "anchor_provenance": {"$ref": "#/$defs/anchor_provenance"}
+      }
+    },
+    "anchor_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assignment_timing",
+        "anchor_assignment_manifest_sha256",
+        "training_recipe_sha256",
+        "training_data_sha256"
+      ],
+      "properties": {
+        "assignment_timing": {"const": "pre_outcome_training_condition"},
+        "anchor_assignment_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "training_recipe_sha256": {"$ref": "#/$defs/sha256"},
+        "training_data_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "dependency_cluster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dependency_cluster_id", "model_unit_ids"],
+      "properties": {
+        "dependency_cluster_id": {"type": "string", "minLength": 1},
+        "model_unit_ids": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assertion_id",
+        "source_record_sha256",
+        "authorization_json_pointer",
+        "binding_status",
+        "material_for_eligibility"
+      ],
+      "properties": {
+        "assertion_id": {"type": "string", "minLength": 1},
+        "source_record_sha256": {"$ref": "#/$defs/sha256"},
+        "authorization_json_pointer": {"type": ["string", "null"]},
+        "binding_status": {
+          "enum": [
+            "authorization_projection_bound",
+            "registry_body_bound",
+            "supplementary_non_authoritative"
+          ]
+        },
+        "material_for_eligibility": {"type": "boolean"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"binding_status": {"const": "authorization_projection_bound"}}
+          },
+          "then": {
+            "properties": {
+              "authorization_json_pointer": {"type": "string", "minLength": 1},
+              "material_for_eligibility": {"const": true}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"binding_status": {"const": "registry_body_bound"}}},
+          "then": {
+            "properties": {
+              "authorization_json_pointer": {"type": "null"},
+              "material_for_eligibility": {"const": true}
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {"binding_status": {"const": "supplementary_non_authoritative"}}
+          },
+          "then": {
+            "properties": {
+              "authorization_json_pointer": {"type": "null"},
+              "material_for_eligibility": {"const": false}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

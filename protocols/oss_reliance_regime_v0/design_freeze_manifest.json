@@ -1,0 +1,233 @@
+{
+  "schema_version": "0.1.0",
+  "freeze_id": "oss_reliance_regime_v0_design_20260717",
+  "panel_id": "oss_reliance_regime_v0",
+  "status": "design_frozen",
+  "freeze_date": "2026-07-17",
+  "oss_outcomes_exposed": false,
+  "amendment_mode": "append_only_successor",
+  "assets": [
+    {
+      "asset_id": "blind_bundle_schema",
+      "path": "schemas/blind_bundle_manifest.schema.json",
+      "sha256": "11b64192b96b137d021c2fe8c9b03d836ff8c8c460ac1de96109e4c599863aa3",
+      "role": "Auditor-visible weak observation and opaque challenge-slot bundle schema"
+    },
+    {
+      "asset_id": "blind_conformance_tests",
+      "path": "tests/test_blind_interface.py",
+      "sha256": "ea5310293b160c9aec8913af42c5a4d9907a685c1cc312d1e94b7f7b4515f27b",
+      "role": "Executable leak rejection, HMAC, capability warning, commitment, and closure tests"
+    },
+    {
+      "asset_id": "blind_evaluation_contract",
+      "path": "protocols/oss_reliance_regime_v0/blind_evaluation_contract.json",
+      "sha256": "0ca21a3001d40a819d56f595cdb1ca3e606464e63c9231bc9be05f08c46b8e87",
+      "role": "Authority, auditor, evaluator access matrix and fail-closed reveal state machine"
+    },
+    {
+      "asset_id": "blind_interface_source",
+      "path": "src/latent_trace_tomography/blind.py",
+      "sha256": "36704cc8e252e69ecaa9694d8623c6d5225b8d6e50592336d478f05419d85ead",
+      "role": "Executable HMAC identifiers, auditor allowlist, commitments, and closure source"
+    },
+    {
+      "asset_id": "causal_label_evidence_schema",
+      "path": "schemas/causal_label_evidence.schema.json",
+      "sha256": "945159471015baecc7f3df64d56f76eb65361b1784e45499cf10d04c256cf4d5",
+      "role": "Exact raw unpatched and intervention output evidence schema for authoritative causal-profile derivation"
+    },
+    {
+      "asset_id": "causal_profile_schema",
+      "path": "schemas/causal_profile.schema.json",
+      "sha256": "7701073575ceda89432b4012e351ab66e30f48e1f17c079e32c3d4905c45e77b",
+      "role": "Selected-site intervention-susceptibility profile schema"
+    },
+    {
+      "asset_id": "causal_profile_source",
+      "path": "src/latent_trace_tomography/causal_profile.py",
+      "sha256": "dd673017e7c1daad7961cb6c59335d1b5c2a4cf2b6f3bf47935e7215b5c7f75a",
+      "role": "Executable selected-site profile arithmetic, interval, and stability validator"
+    },
+    {
+      "asset_id": "causal_profile_tests",
+      "path": "tests/test_causal_profile.py",
+      "sha256": "06ddcef100a29b43007e9ce8dac5f5106812e87fc1982f724aebc2e35648bbe5",
+      "role": "Executable estimand arithmetic, interval, stability, and uncertainty-scope tests"
+    },
+    {
+      "asset_id": "challenge_prediction_schema",
+      "path": "schemas/challenge_prediction.schema.json",
+      "sha256": "9aa9a9ae8f66f4b266bb85215994c8fbfc91f0c2888de066d2519dbccda4aea6",
+      "role": "Strict prospective probability and abstention row schema"
+    },
+    {
+      "asset_id": "challenge_scoring_key_schema",
+      "path": "schemas/challenge_scoring_key.schema.json",
+      "sha256": "fa23cb6dcf3c85bff7e85c94d7b885f55bb3bfb083a3dae830aad5e1c8a674a7",
+      "role": "Sealed aggregate outcome-count and dependency-cluster scoring-key schema"
+    },
+    {
+      "asset_id": "challenge_slot_schema",
+      "path": "schemas/challenge_slot.schema.json",
+      "sha256": "5f7a755166f80096e512b211a38d7f692d4deecfbd46f757bc62555cd6b60e0b",
+      "role": "Public opaque aggregate challenge-slot row schema"
+    },
+    {
+      "asset_id": "cli_source",
+      "path": "src/latent_trace_tomography/cli.py",
+      "sha256": "d27f143367e292cbd9b5892c728eeec85be3d3730ac3854b27f7724c1b114b94",
+      "role": "CLI dispatch source with lazy synthetic-runner import"
+    },
+    {
+      "asset_id": "design_manifest_schema",
+      "path": "schemas/design_freeze_manifest.schema.json",
+      "sha256": "063fd64d1091617ad3cc61bfd38f2a6e4e41349a8ea2eba51b89d6c9f24b7040",
+      "role": "Design freeze manifest schema"
+    },
+    {
+      "asset_id": "discovery_authorization_schema",
+      "path": "schemas/discovery_authorization.schema.json",
+      "sha256": "f0b1eb032f2e39093eb2315b4d6b9dd25d189fed6b5c01482abf45ab2f6076f8",
+      "role": "Unassigned template and concrete content-addressed discovery-authorization schema"
+    },
+    {
+      "asset_id": "evaluation_commitment_schema",
+      "path": "schemas/evaluation_commitment.schema.json",
+      "sha256": "c1e5dba70a8c2d7467e89f007f2d09bc7ac29fdf7c65be33a5131425d57d56bb",
+      "role": "Pre-reveal prediction, prospective-contract, and auditor-artifact commitment schema"
+    },
+    {
+      "asset_id": "execution_contract_source",
+      "path": "src/latent_trace_tomography/execution.py",
+      "sha256": "5c61640748c734f422be3668619a6d89073c915a5ceb125dc35eb82bacb8e275",
+      "role": "Executable discovery, site-report, execution-lock, raw-evidence, ancestry, and query-ledger validator"
+    },
+    {
+      "asset_id": "execution_contract_tests",
+      "path": "tests/test_execution_contract.py",
+      "sha256": "8d34adb916942476b542aa427abd6c4b9637ba890e5d25bdd2087968056b641b",
+      "role": "Executable discovery/execution ancestry, raw-evidence, carrier, tokenizer, ledger, and template conformance tests"
+    },
+    {
+      "asset_id": "execution_lock_schema",
+      "path": "schemas/execution_lock.schema.json",
+      "sha256": "dc284c96230d235b7d78b4fe6535cdb94f83b76f19d55ec739643f30c4728c61",
+      "role": "Immutable unassigned template and future concrete execution-lock schema"
+    },
+    {
+      "asset_id": "family_split_rule",
+      "path": "protocols/oss_reliance_regime_v0/family_split_rule.json",
+      "sha256": "36d1baaf6da59c3399d5092e5956bf6f45347965f3059bc1bc4921a1dc1a0db7",
+      "role": "Dependency graph, leave-cluster-out split, content partitions, and pilot claim ceiling"
+    },
+    {
+      "asset_id": "generator_conformance_tests",
+      "path": "tests/test_oss_design.py",
+      "sha256": "c8fe15fce06d044443ee620d08955104c7484ff10337e495681d0a9ab7cc3d95",
+      "role": "Executable factorial, role separation, oracle, parser, seed, stratum, and hash tests"
+    },
+    {
+      "asset_id": "independent_unit_definition",
+      "path": "protocols/oss_reliance_regime_v0/independent_unit_definition.json",
+      "sha256": "505cb14861c7701780bf1fb32db5f0c8cc83f1c2b2bd9da6d576a6dc5730b043",
+      "role": "Effective sample size and nested-measurement contract"
+    },
+    {
+      "asset_id": "intervention_table",
+      "path": "protocols/oss_reliance_regime_v0/intervention_table.json",
+      "sha256": "ac1c94e9612dbc386f0bcdc622563ffa7a2e125fd42aa65c4eabfe321b4d88b7",
+      "role": "Symmetric primary stratum, selected-site intervention plan, controls, and matched-null estimand"
+    },
+    {
+      "asset_id": "io_source",
+      "path": "src/latent_trace_tomography/io.py",
+      "sha256": "61c8207d74a0855964efa4d0ff79c81b6336abc8849ed48f9b14d725981ff010",
+      "role": "Canonical JSON and SHA-256 implementation used by generator conformance"
+    },
+    {
+      "asset_id": "module_entry_source",
+      "path": "src/latent_trace_tomography/__main__.py",
+      "sha256": "055419386376f5b4eee16a268e7b1a7bd29fdfbd6399ac74a742e41fad8b1d14",
+      "role": "Python module entry source for the call-free command path"
+    },
+    {
+      "asset_id": "oss_design_source",
+      "path": "src/latent_trace_tomography/oss_design.py",
+      "sha256": "a99c1abf5f3f4184f803c31ed737b5a995f00fd63cfb65f8b8ff901279aa25d3",
+      "role": "Executable deterministic generator, oracle, parser, projection, seed, and intervention-pair source"
+    },
+    {
+      "asset_id": "package_init_source",
+      "path": "src/latent_trace_tomography/__init__.py",
+      "sha256": "1c6272b8228c4929a773b48f1167ed6f9197232e82819e62ad48698ca2d47e2b",
+      "role": "Package initialization source reached by the call-free command path"
+    },
+    {
+      "asset_id": "package_schema_source",
+      "path": "src/latent_trace_tomography/schema.py",
+      "sha256": "4af8e346532ffdd2c29703f94fb8a11c153a42931ec8fd3af586d37263debcab",
+      "role": "Package schema source imported during package initialization"
+    },
+    {
+      "asset_id": "prospective_conformance_tests",
+      "path": "tests/test_prospective.py",
+      "sha256": "a2e9670b99ca50090fd647060239daf223b58bf25d963cfd69ebea645cbee784",
+      "role": "Executable slot, probability, scoring, baseline, gate, and schema tests"
+    },
+    {
+      "asset_id": "prospective_scoring_contract",
+      "path": "protocols/oss_reliance_regime_v0/prospective_scoring_contract.json",
+      "sha256": "94c10383d95d94a3fd3bb180c8f638d15bb1efbf4cb65309a21a4eb85a733f7c",
+      "role": "Exact challenge slots, probability simplex, aggregation, baselines, and primary prospective gate"
+    },
+    {
+      "asset_id": "prospective_source",
+      "path": "src/latent_trace_tomography/prospective.py",
+      "sha256": "3d001349fb48f86c6ce92ba0d55930b1b3082b61b686878c9f84d3c5ef78076c",
+      "role": "Executable challenge-slot validation, scoring, baselines, and gate source"
+    },
+    {
+      "asset_id": "protocol_conformance_tests",
+      "path": "tests/test_protocol.py",
+      "sha256": "61ff2ac7f604ea87c4a97be6b376cb2cd424f271b827c9e0721ddc76110afa53",
+      "role": "Executable preflight, runtime-checkout identity, and JSON Schema tests"
+    },
+    {
+      "asset_id": "protocol_linter_source",
+      "path": "src/latent_trace_tomography/protocol.py",
+      "sha256": "b3e091b79645d8e615670c147f32e65a59791039fc0bc6c6c35d503078bf0947",
+      "role": "Call-free design-freeze preflight, runtime-source identity, and invariant checks"
+    },
+    {
+      "asset_id": "sealed_evaluation_authorization_schema",
+      "path": "schemas/sealed_evaluation_authorization.schema.json",
+      "sha256": "4a749e9a041852dbd9bef0addabc720042e5bbffcaa9da0b78cb1b7c6d53ba85",
+      "role": "Private post-output fold authorization schema with exact unassigned and assigned state closure"
+    },
+    {
+      "asset_id": "site_discovery_report_schema",
+      "path": "schemas/site_discovery_report.schema.json",
+      "sha256": "433f13ec1425833148c4c44f1385afd838112975d987704eb3d8150578dbda7f",
+      "role": "Authority-held raw-evidence-closed site-discovery report schema"
+    },
+    {
+      "asset_id": "split_conformance_tests",
+      "path": "tests/test_split.py",
+      "sha256": "589fc6a48efeccee4859cf497cfb5d05a7fedcef42b5fa722186153ad33cab3c",
+      "role": "Executable dependency clustering and disjoint content partition tests"
+    },
+    {
+      "asset_id": "split_source",
+      "path": "src/latent_trace_tomography/split.py",
+      "sha256": "320ba1b3797da6a119a334b869eff929f32f7f5be2d4877bc5685e8c4ed42699",
+      "role": "Executable dependency-cluster and content-partition source"
+    },
+    {
+      "asset_id": "task_generator_spec",
+      "path": "protocols/oss_reliance_regime_v0/task_generator_spec.json",
+      "sha256": "d532e2d5c021f9e7c25231192b57f7ce4332afe84da0a57c0fe0588e071fa59b",
+      "role": "Exact closed-world task, oracle, parser, projection roles, live seed derivation, and public conformance vector"
+    }
+  ]
+}

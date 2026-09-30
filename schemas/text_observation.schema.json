@@ -1,0 +1,71 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/text_observation-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "output_text": {
+      "type": "string"
+    },
+    "projection_id": {
+      "type": "string"
+    },
+    "projection_kind": {
+      "enum": [
+        "baseline",
+        "paraphrase",
+        "evidence_reorder",
+        "irrelevant_distractor",
+        "surface_cue_mask",
+        "surface_cue_rephrase",
+        "surface_cue_flip",
+        "semantic_premise_flip"
+      ]
+    },
+    "projection_role": {
+      "enum": [
+        "observation",
+        "heldout_challenge"
+      ]
+    },
+    "prompt_text": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "sample_index": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "split": {
+      "enum": [
+        "calibration",
+        "evaluation"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "target_id",
+    "split",
+    "case_id",
+    "projection_id",
+    "projection_kind",
+    "projection_role",
+    "sample_index",
+    "prompt_text",
+    "output_text"
+  ],
+  "title": "Latent Trace Tomography text observation",
+  "type": "object"
+}

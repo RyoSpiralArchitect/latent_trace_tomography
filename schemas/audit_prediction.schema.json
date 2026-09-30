@@ -1,0 +1,121 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/audit_prediction-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Synthetic Phantom-0 binary route prediction only; OSS causal profiles require a successor schema.",
+  "additionalProperties": false,
+  "properties": {
+    "abstained": {
+      "type": "boolean"
+    },
+    "abstention_reasons": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "separation_score": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "distances": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "number"
+      },
+      "type": "object"
+    },
+    "input_coverage": {
+      "additionalProperties": {
+        "maximum": 1,
+        "minimum": 0,
+        "type": "number"
+      },
+      "type": "object"
+    },
+    "ood_detected": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ood_distance": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ood_threshold": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "feature": {
+            "type": "string"
+          },
+          "observed_value": {
+            "type": "number"
+          },
+          "support_over_runner_up": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "feature",
+          "support_over_runner_up",
+          "observed_value"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "predicted_regime": {
+      "anyOf": [
+        {
+          "enum": [
+            "semantic_route",
+            "surface_cue_route"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "target_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "target_id",
+    "predicted_regime",
+    "separation_score",
+    "abstained",
+    "abstention_reasons",
+    "distances",
+    "ood_distance",
+    "ood_threshold",
+    "ood_detected",
+    "input_coverage",
+    "evidence"
+  ],
+  "title": "Latent Trace Tomography synthetic audit prediction",
+  "type": "object"
+}

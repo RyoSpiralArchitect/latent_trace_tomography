@@ -1,0 +1,77 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        python-version:
+          - "3.10"
+          - "3.12"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package
+        run: python -m pip install -e ".[dev]"
+      - name: Check formatting and lint
+        run: make lint
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+        env:
+          PYTHONPATH: src
+      - name: Validate OSS design freeze
+        run: >-
+          python -S -m latent_trace_tomography preflight
+          --protocol protocols/oss_reliance_regime_v0/protocol.json
+        env:
+          PYTHONPATH: src
+      - name: Reproduce OSS generator conformance summary
+        run: python -S -m latent_trace_tomography oss-design-summary
+        env:
+          PYTHONPATH: src
+      - name: Run synthetic calibration smoke
+        run: >-
+          python -S -m latent_trace_tomography synthetic-demo
+          --out-dir "$RUNNER_TEMP/synthetic-smoke"
+          --seed 7
+        env:
+          PYTHONPATH: src
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install packaging tools
+        run: python -m pip install ".[dev]"
+      - name: Build wheel and source distribution
+        run: python -m build
+      - name: Verify source distribution contents
+        run: python tests/verify_distribution.py --dist-dir dist
+      - name: Verify wheel import and CLI in isolation
+        shell: bash
+        run: |
+          smoke_venv="$RUNNER_TEMP/ltt-wheel-smoke"
+          python -m venv "$smoke_venv"
+          "$smoke_venv/bin/python" -m pip install --no-deps dist/*.whl
+          (
+            cd "$RUNNER_TEMP"
+            "$smoke_venv/bin/python" -I -c 'import latent_trace_tomography as ltt; assert ltt.__version__ == "0.1.0"'
+            "$smoke_venv/bin/ltt" --help
+            "$smoke_venv/bin/python" -I -m latent_trace_tomography --help
+            "$smoke_venv/bin/ltt" oss-design-summary > /dev/null
+            "$smoke_venv/bin/ltt" synthetic-demo \
+              --out-dir "$RUNNER_TEMP/wheel-synthetic-smoke" \
+              --seed 7
+          )

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this research harness, please cite the repository."
+title: "Latent Trace Tomography"
+type: software
+version: 0.1.0
+authors:
+  - name: SpiralReality
+license: AGPL-3.0-only
+repository-code: "https://github.com/RyoSpiralArchitect/latent_trace_tomography"
+abstract: >-
+  A research harness for output-only system identification of
+  interventionally defined computational reliance regimes in black-box
+  language models, with explicit abstention and prospective validation.
+keywords:
+  - mechanistic interpretability
+  - black-box auditing
+  - behavioral tomography
+  - causal abstraction
+  - system identification

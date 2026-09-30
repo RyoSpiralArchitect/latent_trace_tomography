@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1.0",
+  "manifest_id": "oss1_pre_outcome_correction_0001_manifest",
+  "status": "pre_outcome_correction_frozen",
+  "created_at": "2026-07-18T08:18:56Z",
+  "parent": {
+    "panel_id": "oss_reliance_regime_v0",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "site_discovery_report_schema_sha256": "433f13ec1425833148c4c44f1385afd838112975d987704eb3d8150578dbda7f"
+  },
+  "outcome_exposure": {
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false,
+    "discovery_authorization_issued": false
+  },
+  "authorization_effect": "none",
+  "assets": [
+    {
+      "asset_id": "correction_contract",
+      "path": "successors/oss_reliance_regime_v0/pre_outcome_correction_0001/correction.json",
+      "sha256": "568e5508e6ae47ea2fbeb46f163227e9e5be9811c8b0eb674455de145c9e022f",
+      "role": "Explicit parented defect statement, substitution rule, and non-authorizing claim boundary"
+    },
+    {
+      "asset_id": "successor_site_discovery_report_schema",
+      "path": "successors/oss_reliance_regime_v0/pre_outcome_correction_0001/schemas/site_discovery_report.schema.json",
+      "sha256": "f8bf4ed72fa3cdfc79113fc787153b7328a8b88348ca30ce05dc8e0842b43aeb",
+      "role": "Live-capable structural report schema with dynamic cardinality delegated to the frozen semantic validator"
+    },
+    {
+      "asset_id": "successor_conformance_tests",
+      "path": "tests/test_pre_outcome_correction.py",
+      "sha256": "d5fa7433bfb27ca909c03ff60c3a2f4a0206ff497dca84e90ac326325f34e78a",
+      "role": "Parent immutability, cardinality correction, call-free boundary, and manifest-closure tests"
+    }
+  ],
+  "next_gate": "validate and content-address a dependency-cluster registry before assigning discovery authorization"
+}

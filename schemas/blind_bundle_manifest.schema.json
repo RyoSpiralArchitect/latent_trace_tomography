@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spiralreality.dev/schemas/ltt/blind_bundle_manifest.schema.json",
+  "title": "LTT blind auditor bundle manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_type",
+    "security_boundary",
+    "auditor_observation_fields",
+    "challenge_slot_fields",
+    "pairing_identifier_format",
+    "pairing_token_scheme",
+    "pairing_token_domains",
+    "pairing_token_material_contract",
+    "observation_count",
+    "observation_set_sha256",
+    "observation_files",
+    "challenge_slot_count",
+    "challenge_slot_set_sha256",
+    "challenge_slot_file",
+    "bundle_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "contract_type": {"const": "ltt.blind_bundle_manifest"},
+    "security_boundary": {"$ref": "#/$defs/security_boundary"},
+    "auditor_observation_fields": {
+      "const": [
+        "target_id",
+        "case_id",
+        "projection_id",
+        "replicate_id",
+        "prompt_text",
+        "output_text"
+      ]
+    },
+    "challenge_slot_fields": {
+      "const": ["target_id", "challenge_slot_id", "challenge_kind"]
+    },
+    "pairing_identifier_format": {"const": "lowercase_128_bit_hex"},
+    "pairing_token_scheme": {
+      "const": "hmac_sha256_128bit_domain_separated_v1"
+    },
+    "pairing_token_domains": {
+      "const": [
+        "target",
+        "cluster",
+        "fold",
+        "case",
+        "projection",
+        "replicate",
+        "challenge_slot"
+      ]
+    },
+    "pairing_token_material_contract": {
+      "const": {
+        "target": "canonical_json_utf8(execution_lock.model_registry record; sorted keys; compact separators; ensure_ascii=false)",
+        "cluster": "canonical_json_utf8({private_fold_id, execution_lock.dependency_clusters record}; sorted keys; compact separators; ensure_ascii=false); serialized as dependency- plus the first 64 HMAC bits for scoring-schema compatibility",
+        "fold": "utf8(private fold_id)",
+        "case": "utf8(generator case_id)",
+        "projection": "utf8(OSSProjectionKind.value)",
+        "replicate": "uint64be(zero_based_replicate_index)",
+        "challenge_slot": "ascii(target_id) || NUL || utf8(challenge_kind)"
+      }
+    },
+    "observation_count": {"type": "integer", "minimum": 1},
+    "observation_set_sha256": {"$ref": "#/$defs/sha256"},
+    "observation_files": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/observation_file"}
+    },
+    "challenge_slot_count": {"type": "integer", "minimum": 1},
+    "challenge_slot_set_sha256": {"$ref": "#/$defs/sha256"},
+    "challenge_slot_file": {"$ref": "#/$defs/challenge_slot_file"},
+    "bundle_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "security_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_security_provided_by_this_contract",
+        "same_process_assurance",
+        "required_boundary",
+        "required_key_state_before_auditor_commitment",
+        "limitation"
+      ],
+      "properties": {
+        "capability_security_provided_by_this_contract": {"const": false},
+        "same_process_assurance": {"const": "prediction_locked_not_blind"},
+        "required_boundary": {
+          "const": "separate OS principal, container, or user-controlled mount"
+        },
+        "required_key_state_before_auditor_commitment": {
+          "const": "unavailable and unmounted"
+        },
+        "limitation": {
+          "const": "Code hashes and phase ordering are audit evidence; they are not capability security."
+        }
+      }
+    },
+    "file_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "bytes",
+        "sha256",
+        "media_type",
+        "record_count",
+        "records_sha256"
+      ],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "media_type": {"const": "application/x-ndjson"},
+        "record_count": {"type": "integer", "minimum": 1},
+        "records_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "observation_file": {
+      "allOf": [
+        {"$ref": "#/$defs/file_entry"},
+        {
+          "properties": {
+            "path": {
+              "pattern": "^(?:observations\\.jsonl|observations/part-[0-9]{6}\\.jsonl)$"
+            }
+          }
+        }
+      ]
+    },
+    "challenge_slot_file": {
+      "allOf": [
+        {"$ref": "#/$defs/file_entry"},
+        {"properties": {"path": {"const": "challenge_slots.jsonl"}}}
+      ]
+    }
+  }
+}

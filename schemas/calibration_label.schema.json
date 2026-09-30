@@ -1,0 +1,38 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/calibration_label-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Synthetic Phantom-0 hard-route label only; OSS causal profiles require a successor schema.",
+  "additionalProperties": false,
+  "properties": {
+    "intervention_id": {
+      "type": "string"
+    },
+    "regime": {
+      "enum": [
+        "semantic_route",
+        "surface_cue_route"
+      ]
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "split": {
+      "enum": [
+        "calibration",
+        "evaluation"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "target_id",
+    "regime",
+    "intervention_id",
+    "split"
+  ],
+  "title": "Latent Trace Tomography synthetic calibration label",
+  "type": "object"
+}

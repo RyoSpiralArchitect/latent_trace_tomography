@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1.0",
+  "correction_id": "oss1_pre_outcome_correction_0001_site_report_cardinality",
+  "status": "pre_outcome_correction_frozen",
+  "created_at": "2026-07-18T08:18:56Z",
+  "parent": {
+    "panel_id": "oss_reliance_regime_v0",
+    "design_freeze_id": "oss_reliance_regime_v0_design_20260717",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "protocol_manifest_sha256": "ee23bf4f4dfaba5b4c6e2dfbe5e5ad7c0075c0b7af73c2c4e504c66ebe2c94da",
+    "discovery_template_sha256": "3a80dc38a066c980ecfa3bb4221c65b273fc8acfa44b5ea55ae845fed19eed79",
+    "site_discovery_report_schema_sha256": "433f13ec1425833148c4c44f1385afd838112975d987704eb3d8150578dbda7f"
+  },
+  "outcome_exposure_at_correction": {
+    "oss_model_selected": false,
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false,
+    "discovery_authorization_issued": false
+  },
+  "issue": {
+    "severity": "pre_live_blocker",
+    "kind": "schema_executable_cardinality_mismatch",
+    "description": "The frozen JSON Schema fixed candidate_trial_evidence to exactly 1728 rows, which is only the 54-site two-block conformance fixture. The frozen candidate-site algorithm instead includes every transformer block, and the executable validator derives the live cardinality from the authorized candidate inventory.",
+    "fixture_cardinality": {
+      "model_variable_panels": 27,
+      "candidate_sites_per_panel": 2,
+      "candidate_site_count": 54,
+      "primary_pairs_per_candidate_site": 32,
+      "candidate_trial_evidence_count": 1728
+    },
+    "live_cardinality": {
+      "candidate_site_count_symbol": "C",
+      "definition": "C = 3 * sum(transformer_block_count for each of the nine authorized model units)",
+      "candidate_trial_evidence_count": "32 * C",
+      "discovery_forward_count": "576 + 128 * C"
+    }
+  },
+  "correction_scope": {
+    "change_class": "structural_validation_correction",
+    "scientific_estimand_changed": false,
+    "task_generator_changed": false,
+    "intervention_or_null_changed": false,
+    "split_or_independent_unit_changed": false,
+    "site_selection_algorithm_changed": false,
+    "query_budget_formula_changed": false,
+    "claim_ceiling_changed": false,
+    "parent_assets_mutated": false
+  },
+  "successor": {
+    "site_discovery_report_schema_path": "successors/oss_reliance_regime_v0/pre_outcome_correction_0001/schemas/site_discovery_report.schema.json",
+    "site_discovery_report_schema_sha256": "f8bf4ed72fa3cdfc79113fc787153b7328a8b88348ca30ce05dc8e0842b43aeb",
+    "schema_id": "https://spiralreality.dev/schemas/ltt/site_discovery_report-0.1.1.json",
+    "structural_rule": "candidate_trial_evidence has a frozen minimum of 1728 and no false fixed maximum; exact dynamic cardinality is derived from the authorization by the semantic validator",
+    "validation_composition": [
+      "validate the report against this successor JSON Schema",
+      "validate the same report with latent_trace_tomography.execution.validate_site_discovery_report",
+      "require both validations to pass before creating an execution lock"
+    ],
+    "semantic_validator_source_sha256": "5c61640748c734f422be3668619a6d89073c915a5ceb125dc35eb82bacb8e275"
+  },
+  "supersession": {
+    "applies_to": "future live OSS-1 site-discovery reports only",
+    "parent_schema_retained": true,
+    "parent_schema_role": "historical frozen design evidence and two-block conformance fixture",
+    "successor_schema_role": "structural schema required for any live report",
+    "silent_rewrite_forbidden": true
+  },
+  "authorization_effect": {
+    "authorizes_model_calls": false,
+    "authorizes_discovery": false,
+    "required_before_discovery_authorization": true,
+    "next_gate": "content-addressed dependency-cluster registry and concrete discovery authorization"
+  },
+  "claim_boundary": "This correction repairs a validator cardinality defect. It does not strengthen evidence, certify runtime execution, prove ancestry completeness, or change the named-dependency-cluster engineering-pilot ceiling."
+}

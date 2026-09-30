@@ -1,0 +1,151 @@
+{
+  "schema_version": "0.1.0",
+  "manifest_id": "controlled_anchor_phantom_v1_manifest",
+  "status": "pre_training_scientific_successor_frozen",
+  "created_at": "2026-07-18T13:27:40Z",
+  "parent": {
+    "panel_id": "oss_reliance_regime_v0",
+    "design_freeze_id": "oss_reliance_regime_v0_design_20260717",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "required_correction_id": "oss1_pre_outcome_correction_0002_minimal_site_report_cardinality",
+    "required_correction_manifest_sha256": "4d2282f761c75cfc5b3cd9dcb36ddb624b8982c0eed9076f3a70bf9498787e3a",
+    "operational_profile_id": "oss1_execution_v1",
+    "operational_manifest_sha256": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c"
+  },
+  "reason_for_successor": {
+    "public_checkpoint_screen_retained": true,
+    "public_checkpoint_result": "nine unresolved, zero eligible, zero retrospective anchor assignments",
+    "operational_overconstraint": "the v1 checkpoint-before-design-freeze rule cannot represent an outcome-naive post-freeze controlled descendant",
+    "resolution": "retain v1 unchanged and freeze a pre-training controlled calibration phantom plus a separate temporal authoring successor",
+    "silent_parent_rewrite_forbidden": true
+  },
+  "scientific_scope": {
+    "estimand_changed": false,
+    "evaluation_task_generator_changed": false,
+    "intervention_or_matched_null_changed": false,
+    "selected_site_algorithm_changed": false,
+    "split_or_independent_unit_changed": false,
+    "blind_interface_changed": false,
+    "controlled_anchor_construction_added": true,
+    "temporal_eligibility_policy_requires_successor": true,
+    "claim_ceiling_relation_to_parent": "strict_subclaim",
+    "claim_ceiling": "controlled_calibration_phantom_named_base_families",
+    "natural_checkpoint_anchor_claim_allowed": false,
+    "population_generalization_allowed": false,
+    "proprietary_internal_truth_claim_allowed": false,
+    "effective_independent_n": 3,
+    "model_unit_count": 9
+  },
+  "outcome_exposure": {
+    "metadata_network_access_occurred": true,
+    "intake_metadata_requests": 13,
+    "public_screen_metadata_access_occurred": true,
+    "configuration_files_downloaded": 3,
+    "tokenizer_files_downloaded": 8,
+    "weight_files_downloaded": 0,
+    "model_loads": 0,
+    "training_started": false,
+    "training_forward_calls": 0,
+    "training_backward_calls": 0,
+    "generation_calls": 0,
+    "api_inference_calls": 0,
+    "oss1_measurement_calls": 0,
+    "oss1_outcomes_exposed": false,
+    "anchor_construction_authorization_issued": false,
+    "discovery_authorization_issued": false
+  },
+  "authorization_effect": "none",
+  "bound_inputs": [
+    {
+      "input_id": "base_model_intake",
+      "path": "operations/oss1_registry_authoring_v2/base_model_intake.json",
+      "sha256": "0a10d031d9e0640dd2eac064c70dfbb92e64c0812b347fca290c3d2671c7af42",
+      "body_hash_field": "intake_body_sha256",
+      "body_sha256": "2862ed049a5a2a99d40c2e1132fcadd341e228c3dfb2a0dbc6689446243d45d5"
+    },
+    {
+      "input_id": "public_candidate_feasibility_screen",
+      "path": "operations/oss1_registry_authoring_v2/public_candidate_feasibility_screen.json",
+      "sha256": "661443466a8253d5e78a6043b89cbd8ee1ee433985324c222b65fefd3b50373e",
+      "body_hash_field": "screen_body_sha256",
+      "body_sha256": "a62ca4e8a3d5f3fb90221a1358ac004964436f1f0a82313c0b084f6edbd4ab86"
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "base_model_intake",
+      "path": "operations/oss1_registry_authoring_v2/base_model_intake.json",
+      "sha256": "0a10d031d9e0640dd2eac064c70dfbb92e64c0812b347fca290c3d2671c7af42",
+      "role": "Metadata-only intake for three immutable public base parents"
+    },
+    {
+      "asset_id": "base_model_intake_schema",
+      "path": "operations/oss1_registry_authoring_v2/schemas/base_model_intake.schema.json",
+      "sha256": "6e9ab7a6c754e14c58dd39f021d932ce610ad923f60f161e869d383bf05f3b2f",
+      "role": "Strict call-free base-intake structure"
+    },
+    {
+      "asset_id": "canonical_artifact_hash_source",
+      "path": "src/latent_trace_tomography/artifact_hash.py",
+      "sha256": "fd9c63907f31febe6558ed4a10f0b44ef1808d32f410da92cde8c5e69801aa58",
+      "role": "Dependency-neutral canonical JSON hashing for construction artifacts"
+    },
+    {
+      "asset_id": "anchor_intake_validator",
+      "path": "src/latent_trace_tomography/anchor_intake.py",
+      "sha256": "20896cb45af9e1c709599d27eebdceab5499e8a9c268ead21f91825639732d05",
+      "role": "Semantic base-intake and tokenizer-continuation validator"
+    },
+    {
+      "asset_id": "anchor_plan_validator",
+      "path": "src/latent_trace_tomography/anchor_plan.py",
+      "sha256": "17c3b5772bedab47563912ac78a90a86111937e56daa631545893c7d7669b153",
+      "role": "Actual-file-bound non-authorizing plan validator"
+    },
+    {
+      "asset_id": "anchor_training_generator",
+      "path": "src/latent_trace_tomography/anchor_training.py",
+      "sha256": "372f93547da7a004a0dda96967f3cdc412dd689f10e05c41710ce1d2f991715f",
+      "role": "Teacher-free raw-case and condition-specific target inventory generator"
+    },
+    {
+      "asset_id": "anchor_construction_plan",
+      "path": "successors/oss_reliance_regime_v0/controlled_anchor_phantom_v1/anchor_construction_plan.json",
+      "sha256": "7440f37292003533622803b6178c601db1664cd65fa7694644b441eed47c95a5",
+      "role": "Nine-run pre-training condition assignment and fixed construction plan"
+    },
+    {
+      "asset_id": "anchor_construction_plan_schema",
+      "path": "successors/oss_reliance_regime_v0/controlled_anchor_phantom_v1/anchor_construction_plan.schema.json",
+      "sha256": "d1d043817132815447d76956e0bfa6a810e45480959651472d36146bdc1fbc2e",
+      "role": "Strict non-authorizing construction-plan schema"
+    },
+    {
+      "asset_id": "anchor_intake_tests",
+      "path": "tests/test_anchor_intake.py",
+      "sha256": "fb89c77676feb346d62cefa1a9847316dacd2b6c2fe968f7149c113af65a1b73",
+      "role": "Intake hash, retrieval-boundary, and tokenizer negative tests"
+    },
+    {
+      "asset_id": "anchor_plan_tests",
+      "path": "tests/test_anchor_plan.py",
+      "sha256": "95925f9c2c68f165dfe7a85929f2375f4b05073661982999f5abafb99ed31169",
+      "role": "Plan schema, actual-file binding, budget, and non-authority tests"
+    },
+    {
+      "asset_id": "anchor_training_tests",
+      "path": "tests/test_anchor_training.py",
+      "sha256": "f5f5d1445cbc224f5ee68bd6053319d55de6f7b240db61a97c9820b41363bb9d",
+      "role": "Factorial, target-balance, disjointness, and generator-separation tests"
+    },
+    {
+      "asset_id": "controlled_successor_tests",
+      "path": "tests/test_controlled_anchor_phantom_successor.py",
+      "sha256": "1879eb84709cc2ba078aa85fb584058260e713d460e615096ca88c0a52013c0f",
+      "role": "Exact asset set, parent DAG, zero-execution, and claim-narrowing tests"
+    }
+  ],
+  "claim_boundary": "This successor preassigns a controlled same-task calibration phantom on three named public base families. It does not establish that training succeeded, that an induced selected-site profile will meet G2, that source evidence is semantically closed, or that the result generalizes to natural or proprietary models.",
+  "next_gate": "issue a separate content-addressed anchor-construction authorization binding verified weight/tokenizer bytes, environment, RNG, resolved adapter modules, exact token-label inventories, and append-only output paths before any weight download, model load, or training call"
+}

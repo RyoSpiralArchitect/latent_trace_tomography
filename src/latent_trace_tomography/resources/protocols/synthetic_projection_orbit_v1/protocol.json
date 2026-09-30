@@ -1,0 +1,79 @@
+{
+  "amendment_rule": {
+    "mode": "append_only_successor",
+    "rule": "Never overwrite a reviewed run. Corrections must name the superseded run and preserve both manifests."
+  },
+  "claim_ceiling": "This panel can validate the behavior of the text-only measurement pipeline against a hard-routed synthetic phantom. It cannot validate a mechanism in a natural language model.",
+  "factor_grid": {
+    "challenge_only": [
+      "surface_cue_flip",
+      "semantic_premise_flip"
+    ],
+    "observation_only": [
+      "baseline",
+      "paraphrase",
+      "evidence_reorder",
+      "irrelevant_distractor",
+      "surface_cue_mask",
+      "surface_cue_rephrase"
+    ],
+    "route": [
+      "semantic_route",
+      "surface_cue_route"
+    ]
+  },
+  "forbidden_claims": [
+    "hidden chain-of-thought recovery",
+    "natural-model mechanism validation",
+    "model psychology inference",
+    "single-response trace reconstruction"
+  ],
+  "outcome_exposure": {
+    "at_freeze": "synthetic smoke outcomes observed during repository bootstrap",
+    "interpretation": "This is a regression contract, not a preregistration."
+  },
+  "panel_id": "synthetic_projection_orbit_v1",
+  "phase_contract": {
+    "evaluate": "May read the sealed route key only after predictions are written.",
+    "ordered_phases": [
+      "preflight",
+      "plan",
+      "evaluate"
+    ],
+    "plan": "Build projection panels and feature vectors without evaluation labels.",
+    "preflight": "Run the current structural contract lint and protocol-manifest hash check with zero model calls.",
+    "sealing_limit": "The current runner simulates prediction locking in one process; it is not a capability-separated blind evaluation."
+  },
+  "primary_readouts": [
+    "heldout target regime accuracy",
+    "selective coverage and accuracy",
+    "advantage over a single baseline-projection decision",
+    "gap over label-permutation null",
+    "prospective accuracy on heldout challenge projections"
+  ],
+  "scope": {
+    "auditor_feature_whitelist": [
+      "parsed final answer",
+      "case grouping key",
+      "projection-kind selector"
+    ],
+    "auditor_forbidden_inputs": [
+      "route label",
+      "model identity",
+      "logprobs",
+      "latency",
+      "token usage",
+      "provider metadata"
+    ],
+    "phantom": "shared renderer with a hidden hard gate selecting semantic evidence or a surface cue",
+    "unit": "target x heldout case projection orbit"
+  },
+  "schema_version": "0.1.0",
+  "status": "retrospective_scaffold",
+  "stop_conditions": [
+    "projection panel accuracy below 0.90",
+    "advantage over the single baseline-projection decision below 0.25",
+    "reduced matched-output orbit does not force abstention",
+    "prospective heldout challenge accuracy below 0.90"
+  ]
+}

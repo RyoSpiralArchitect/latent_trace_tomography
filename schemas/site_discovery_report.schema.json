@@ -1,0 +1,212 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/site_discovery_report-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Latent Trace Tomography site discovery report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "discovery_authorization_id",
+    "discovery_authorization_sha256",
+    "candidate_site_set_sha256",
+    "query_usage",
+    "unpatched_prompt_evidence",
+    "candidate_trial_evidence",
+    "candidate_evidence",
+    "selected_sites",
+    "site_selection_stability"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "status": {"const": "complete"},
+    "discovery_authorization_id": {"type": "string", "minLength": 1},
+    "discovery_authorization_sha256": {"$ref": "#/$defs/sha256"},
+    "candidate_site_set_sha256": {"$ref": "#/$defs/sha256"},
+    "query_usage": {"$ref": "#/$defs/query_usage"},
+    "unpatched_prompt_evidence": {
+      "type": "array",
+      "minItems": 576,
+      "maxItems": 576,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/unpatched_prompt_evidence"}
+    },
+    "candidate_trial_evidence": {
+      "type": "array",
+      "minItems": 1728,
+      "maxItems": 1728,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/candidate_trial_evidence"}
+    },
+    "candidate_evidence": {
+      "type": "array",
+      "minItems": 54,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/candidate_evidence"}
+    },
+    "selected_sites": {
+      "type": "array",
+      "minItems": 27,
+      "maxItems": 27,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/selected_site"}
+    },
+    "site_selection_stability": {
+      "type": "array",
+      "minItems": 27,
+      "maxItems": 27,
+      "uniqueItems": true,
+      "items": {"type": "object"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^(?!0{64}$)[0-9a-f]{64}$"},
+    "query_usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_forward_passes",
+        "unpatched_forward_passes",
+        "targeted_intervention_forward_passes",
+        "matched_null_forward_passes",
+        "self_sham_forward_passes",
+        "control_site_forward_passes",
+        "wall_clock_seconds"
+      ],
+      "properties": {
+        "total_forward_passes": {"type": "integer", "minimum": 5},
+        "unpatched_forward_passes": {"type": "integer", "minimum": 1},
+        "targeted_intervention_forward_passes": {"type": "integer", "minimum": 1},
+        "matched_null_forward_passes": {"type": "integer", "minimum": 1},
+        "self_sham_forward_passes": {"type": "integer", "minimum": 1},
+        "control_site_forward_passes": {"type": "integer", "minimum": 1},
+        "wall_clock_seconds": {"type": "number", "minimum": 0}
+      }
+    },
+    "unpatched_prompt_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_unit_id", "prompt_id", "case_id", "prompt_sha256", "prompt_record_sha256", "oracle_final", "output_text", "output_text_sha256", "parsed_final", "oracle_correct", "activation_capture_record_sha256"],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "prompt_id": {"type": "string", "minLength": 1},
+        "case_id": {"type": "string", "minLength": 1},
+        "prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "prompt_record_sha256": {"$ref": "#/$defs/sha256"},
+        "oracle_final": {"enum": ["FINAL: A", "FINAL: B"]},
+        "output_text": {"type": "string"},
+        "output_text_sha256": {"$ref": "#/$defs/sha256"},
+        "parsed_final": {"enum": ["A", "B", null]},
+        "oracle_correct": {"type": "boolean"},
+        "activation_capture_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "candidate_trial_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_unit_id", "causal_variable", "canonical_site_id", "pair_id", "opaque_content_seed_id", "pair_record_sha256", "base_prompt_id", "base_prompt_sha256", "source_prompt_id", "source_prompt_sha256", "expected_patched_final", "base_oracle_final", "base_activation_capture_record_sha256", "source_activation_capture_record_sha256", "trial_order"],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {"enum": ["semantic_solution", "surface_cue", "answer_codebook"]},
+        "canonical_site_id": {"type": "string", "minLength": 1},
+        "pair_id": {"type": "string", "minLength": 1},
+        "opaque_content_seed_id": {"$ref": "#/$defs/sha256"},
+        "pair_record_sha256": {"$ref": "#/$defs/sha256"},
+        "base_prompt_id": {"type": "string", "minLength": 1},
+        "base_prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "source_prompt_id": {"type": "string", "minLength": 1},
+        "source_prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "expected_patched_final": {"enum": ["FINAL: A", "FINAL: B"]},
+        "base_oracle_final": {"enum": ["FINAL: A", "FINAL: B"]},
+        "base_activation_capture_record_sha256": {"$ref": "#/$defs/sha256"},
+        "source_activation_capture_record_sha256": {"$ref": "#/$defs/sha256"},
+        "trial_order": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/trial_condition"}}
+      }
+    },
+    "trial_condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition_id", "order_index", "output_text", "output_text_sha256", "parsed_final", "success", "intervention_execution_record", "intervention_execution_record_sha256"],
+      "properties": {
+        "condition_id": {"enum": ["targeted_interchange", "norm_matched_rotation", "self_sham", "control_site_delta"]},
+        "order_index": {"type": "integer", "minimum": 0, "maximum": 3},
+        "output_text": {"type": "string"},
+        "output_text_sha256": {"$ref": "#/$defs/sha256"},
+        "parsed_final": {"enum": ["A", "B", null]},
+        "success": {"type": "boolean"},
+        "intervention_execution_record": {"type": "object"},
+        "intervention_execution_record_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "candidate_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "causal_variable",
+        "canonical_site_id",
+        "zero_based_layer_index",
+        "intended_success_count",
+        "intended_trial_count",
+        "intended_iia",
+        "matched_null_success_count",
+        "matched_null_trial_count",
+        "matched_null_iia",
+        "self_sham_success_count",
+        "self_sham_trial_count",
+        "self_sham_iia",
+        "control_site_success_count",
+        "control_site_trial_count",
+        "control_site_iia",
+        "specific_score"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {
+          "enum": ["semantic_solution", "surface_cue", "answer_codebook"]
+        },
+        "canonical_site_id": {"type": "string", "minLength": 1},
+        "zero_based_layer_index": {"type": "integer", "minimum": 0},
+        "intended_success_count": {"type": "integer", "minimum": 0},
+        "intended_trial_count": {"type": "integer", "minimum": 1},
+        "intended_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "matched_null_success_count": {"type": "integer", "minimum": 0},
+        "matched_null_trial_count": {"type": "integer", "minimum": 1},
+        "matched_null_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "self_sham_success_count": {"type": "integer", "minimum": 0},
+        "self_sham_trial_count": {"const": 32},
+        "self_sham_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "control_site_success_count": {"type": "integer", "minimum": 0},
+        "control_site_trial_count": {"const": 32},
+        "control_site_iia": {"type": "number", "minimum": 0, "maximum": 1},
+        "specific_score": {"type": "number", "minimum": -1, "maximum": 1}
+      }
+    },
+    "selected_site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_unit_id",
+        "causal_variable",
+        "selected_site_id",
+        "runner_up_site_id",
+        "candidate_site_count",
+        "selection_score",
+        "runner_up_score",
+        "selection_gap"
+      ],
+      "properties": {
+        "model_unit_id": {"type": "string", "minLength": 1},
+        "causal_variable": {
+          "enum": ["semantic_solution", "surface_cue", "answer_codebook"]
+        },
+        "selected_site_id": {"type": "string", "minLength": 1},
+        "runner_up_site_id": {"type": "string", "minLength": 1},
+        "candidate_site_count": {"type": "integer", "minimum": 2},
+        "selection_score": {"type": "number", "minimum": -1, "maximum": 1},
+        "runner_up_score": {"type": "number", "minimum": -1, "maximum": 1},
+        "selection_gap": {"type": "number", "minimum": 0, "maximum": 2}
+      }
+    }
+  }
+}

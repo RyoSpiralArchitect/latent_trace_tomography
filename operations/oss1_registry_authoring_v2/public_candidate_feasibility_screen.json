@@ -1,0 +1,137 @@
+{
+  "schema_version": "0.1.0",
+  "screen_type": "public_checkpoint_anchor_feasibility_screen_v1",
+  "status": "complete_metadata_only_no_eligible_anchor",
+  "screen_id": "oss1-public-candidates-20260718-a",
+  "created_at": "2026-07-18T12:21:16Z",
+  "parent": {
+    "design_freeze_id": "oss_reliance_regime_v0_design_20260717",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "operational_manifest_sha256": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c"
+  },
+  "selection_rule": "three publicly documented posttraining chains inspected as feasibility candidates; no checkpoint receives a retrospective anchor assignment",
+  "records": [
+    {
+      "candidate_id": "olmo2-dpo",
+      "candidate_cluster_id": "olmo2-0425-1b-public-chain",
+      "repo_id": "allenai/OLMo-2-0425-1B-DPO",
+      "revision": "c4b0485961ab24c2433b090f3b922f0913a9290f",
+      "model_type": "olmo2",
+      "repository_created_at": "2025-04-28T19:51:57Z",
+      "revision_last_modified_at": "2025-04-30T22:33:13Z",
+      "source_url": "https://huggingface.co/allenai/OLMo-2-0425-1B-DPO/tree/c4b0485961ab24c2433b090f3b922f0913a9290f",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment", "unclosed_parent_artifact"]
+    },
+    {
+      "candidate_id": "olmo2-rlvr1",
+      "candidate_cluster_id": "olmo2-0425-1b-public-chain",
+      "repo_id": "allenai/OLMo-2-0425-1B-RLVR1",
+      "revision": "12cb33498d26b411c38ac3ca9df27180a1d291b8",
+      "model_type": "olmo2",
+      "repository_created_at": "2025-04-29T21:22:34Z",
+      "revision_last_modified_at": "2025-04-30T22:33:02Z",
+      "source_url": "https://huggingface.co/allenai/OLMo-2-0425-1B-RLVR1/tree/12cb33498d26b411c38ac3ca9df27180a1d291b8",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment", "unclosed_parent_artifact"]
+    },
+    {
+      "candidate_id": "olmo2-sft",
+      "candidate_cluster_id": "olmo2-0425-1b-public-chain",
+      "repo_id": "allenai/OLMo-2-0425-1B-SFT",
+      "revision": "0d85a3d037876ce6ac7d4311d994400fc66ac27f",
+      "model_type": "olmo2",
+      "repository_created_at": "2025-04-24T21:04:53Z",
+      "revision_last_modified_at": "2025-04-30T22:33:22Z",
+      "source_url": "https://huggingface.co/allenai/OLMo-2-0425-1B-SFT/tree/0d85a3d037876ce6ac7d4311d994400fc66ac27f",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment", "unclosed_parent_artifact"]
+    },
+    {
+      "candidate_id": "qwen25-base",
+      "candidate_cluster_id": "qwen25-15b-public-chain",
+      "repo_id": "Qwen/Qwen2.5-1.5B",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "model_type": "qwen2",
+      "repository_created_at": "2024-09-15T12:16:50Z",
+      "revision_last_modified_at": "2024-10-08T10:56:50Z",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B/tree/8faed761d45a263340a0528343f099c05c9a4323",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment"]
+    },
+    {
+      "candidate_id": "qwen25-instruct",
+      "candidate_cluster_id": "qwen25-15b-public-chain",
+      "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "model_type": "qwen2",
+      "repository_created_at": "2024-09-17T14:10:29Z",
+      "revision_last_modified_at": "2024-09-25T12:32:50Z",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/tree/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment", "tokenizer_wrapper_identity_differs", "unclosed_parent_artifact"]
+    },
+    {
+      "candidate_id": "qwen25-math-instruct",
+      "candidate_cluster_id": "qwen25-15b-public-chain",
+      "repo_id": "Qwen/Qwen2.5-Math-1.5B-Instruct",
+      "revision": "aafeb0fc6f22cbf0eaeed126eff8be45b0360a35",
+      "model_type": "qwen2",
+      "repository_created_at": "2024-09-16T11:57:49Z",
+      "revision_last_modified_at": "2024-09-23T06:07:25Z",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-Math-1.5B-Instruct/tree/aafeb0fc6f22cbf0eaeed126eff8be45b0360a35",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment", "tokenizer_wrapper_identity_differs", "unclosed_parent_artifact"]
+    },
+    {
+      "candidate_id": "smollm2-base",
+      "candidate_cluster_id": "smollm2-17b-public-chain",
+      "repo_id": "HuggingFaceTB/SmolLM2-1.7B",
+      "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71",
+      "model_type": "llama",
+      "repository_created_at": "2024-10-30T22:50:10Z",
+      "revision_last_modified_at": "2025-02-06T10:31:23Z",
+      "source_url": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B/tree/effd688a12921b4cc83e3312b6feb579f70f9c71",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment"]
+    },
+    {
+      "candidate_id": "smollm2-instruct",
+      "candidate_cluster_id": "smollm2-17b-public-chain",
+      "repo_id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674",
+      "model_type": "llama",
+      "repository_created_at": "2024-10-31T13:42:06Z",
+      "revision_last_modified_at": "2025-04-21T20:51:14Z",
+      "source_url": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct/tree/31b70e2e869a7173562077fd711b654946d38674",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["ambiguous_parentage", "evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment", "tokenizer_wrapper_identity_differs"]
+    },
+    {
+      "candidate_id": "smollm2-sft-only",
+      "candidate_cluster_id": "smollm2-17b-public-chain",
+      "repo_id": "HuggingFaceTB/SmolLM2-1.7B-sft-only",
+      "revision": "c9c43e73dbb7054658b0b973a30dccd0d23fbc86",
+      "model_type": "llama",
+      "repository_created_at": "2024-10-30T23:56:52Z",
+      "revision_last_modified_at": "2025-01-29T23:31:36Z",
+      "source_url": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-sft-only/tree/c9c43e73dbb7054658b0b973a30dccd0d23fbc86",
+      "enrollment_status": "unresolved",
+      "reason_ids": ["ambiguous_parentage", "evaluation_exposure_unresolved", "incomplete_training_data_inventory", "missing_exact_rng_manifest", "missing_pre_outcome_anchor_assignment", "tokenizer_wrapper_identity_differs"]
+    }
+  ],
+  "summary": {
+    "candidate_count": 9,
+    "candidate_cluster_count": 3,
+    "eligible_count": 0,
+    "excluded_count": 0,
+    "unresolved_count": 9,
+    "retrospective_anchor_assignments": 0,
+    "model_weight_downloads": 0,
+    "model_loads": 0,
+    "inference_calls": 0
+  },
+  "decision": "do not populate the v0 eligible registry from public checkpoint labels; construct outcome-naive controlled anchors in an append-only successor",
+  "screen_body_sha256": "a62ca4e8a3d5f3fb90221a1358ac004964436f1f0a82313c0b084f6edbd4ab86"
+}

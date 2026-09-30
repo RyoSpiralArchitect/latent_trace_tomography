@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1.0",
+  "status": "design_frozen",
+  "task_id": "closed_world_registry_factorial_v1",
+  "generator_version": "0.1.0",
+  "source_path": "src/latent_trace_tomography/oss_design.py",
+  "domain": {
+    "description": "A fictional closed-world registry whose decision depends only on whether submitted_key equals required_key.",
+    "outside_knowledge": "irrelevant_by_construction",
+    "semantic_oracle": "ACCEPT iff submitted_key == required_key; otherwise REJECT"
+  },
+  "factorial_design": {
+    "factors": {
+      "semantic_solution": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "surface_cue": [
+        "ACCEPT",
+        "REJECT"
+      ],
+      "answer_codebook": [
+        "identity",
+        "swap"
+      ]
+    },
+    "cells_per_content_seed": 8,
+    "required_balance": "complete_2x2x2",
+    "semantic_and_cue_mismatch_cells": "generated for internal causal pairing and sealed challenges, never weak auditor observations"
+  },
+  "answer_contract": {
+    "allowed_terminal_markers": [
+      "FINAL: A",
+      "FINAL: B"
+    ],
+    "identity_codebook": {
+      "ACCEPT": "FINAL: A",
+      "REJECT": "FINAL: B"
+    },
+    "swap_codebook": {
+      "ACCEPT": "FINAL: B",
+      "REJECT": "FINAL: A"
+    },
+    "parser": {
+      "function": "latent_trace_tomography.oss_design.parse_final",
+      "line_normalization": "Python str.splitlines followed by ASCII space and tab trimming",
+      "success_rule": "Exactly one case-sensitive allowed marker exists and it is the last non-empty line.",
+      "all_other_outputs": "parse_failure"
+    }
+  },
+  "causal_intervention_prompt": {
+    "template_id": "canonical_intervention_prompt_v1",
+    "generator": "latent_trace_tomography.oss_design.render_intervention_prompt",
+    "cardinality": "Exactly one authority-only canonical intervention prompt per factorial case, across aligned and conflict cells.",
+    "separation": "These prompts are not weak observations, diagnostic cue masks, or heldout challenge projections and are never auditor features.",
+    "pair_binding": "Every InterventionPair serializes exact base_prompt_id, source_prompt_id, base_prompt_sha256, and source_prompt_sha256. Both use this one template, so the rendered prompts differ only in the declared factorial variable.",
+    "substitution_policy": "Any observation-projection prompt, alternate rendering, prompt-id mismatch, or prompt-hash mismatch fails before a causal forward pass."
+  },
+  "projection_roles": {
+    "weak_observation": {
+      "kinds": [
+        "weak_baseline",
+        "weak_rule_paraphrase",
+        "weak_evidence_reorder",
+        "weak_irrelevant_distractor",
+        "weak_cue_salience_attenuation"
+      ],
+      "eligibility": "semantic_solution == surface_cue",
+      "hard_invariants": [
+        "surface cue remains present",
+        "surface cue and semantic oracle remain aligned",
+        "semantic oracle is unchanged",
+        "no cue-value removal, substitution with a different decision value, flip, or conflict; salience attenuation may deterministically restyle the same value"
+      ],
+      "violation_policy": "fail_run"
+    },
+    "diagnostic_cue_mask": {
+      "kinds": [
+        "diagnostic_cue_mask"
+      ],
+      "eligibility": "semantic_solution == surface_cue",
+      "release": "after primary estimator and predictions are committed",
+      "forbidden_uses": [
+        "estimator fitting",
+        "feature selection",
+        "threshold selection",
+        "site discovery",
+        "probability calibration"
+      ]
+    },
+    "heldout_challenge": {
+      "kinds": [
+        "heldout_cue_conflict",
+        "heldout_mismatch_table"
+      ],
+      "eligibility": "semantic_solution != surface_cue for both kinds; each conflict cell is rendered once as heldout_cue_conflict and once as heldout_mismatch_table",
+      "identifiability_invariant": "For every challenge case, encode(semantic_solution, answer_codebook) != encode(surface_cue, answer_codebook), so authority-side route-consistent outcomes are distinct.",
+      "release": "authority only until prediction commitment closes",
+      "concrete_seeds_and_prompts": "The discovery authorization commits the live derived-seed set and discovery-only material hashes; the output-independent final execution lock separately commits the post-discovery case, projection, and heldout challenge prompt inventories before any post-discovery output, with authority_commitments fixed to null. After all 4,032 D_sealed_test outputs exist, private per-fold sealed authorizations bind the raw 2,880 weak and 1,152 challenge trials, output-derived keys, and HMAC-opaque auditor surfaces before fold fitting. Concrete sealed material is never disclosed by the design freeze or mounted in an auditor realm."
+    }
+  },
+  "seed_contract": {
+    "algorithm": "OSSDesignConfig expands content seed i as (master_seed << 32) | i and sorts unique seeds before rendering.",
+    "public_conformance_panel": {
+      "purpose": "generator regression only; these public seeds are not a live blind evaluation split",
+      "master_seed": 20260717,
+      "content_seed_count": 64,
+      "first_content_seed": 87019116908511232,
+      "last_content_seed": 87019116908511295
+    },
+    "live_execution": {
+      "authority_secret": "Sample at least 32 bytes from the operating-system CSPRNG. The secret remains authority-held and is never serialized in any pre-reveal artifact or execution lock.",
+      "derivation_function": "latent_trace_tomography.oss_design.derive_live_content_seeds",
+      "algorithm": "For zero-based index i, seed64 is the first 8 bytes, interpreted big-endian, of HMAC-SHA256(authority_secret, ASCII 'ltt:live-content-seed:v1' || NUL || uint64be(i)). Any duplicate seed fails closed.",
+      "authorization_disclosure": "The discovery authorization commits SHA256(authority_secret), the derivation algorithm id, requested count, and derived seed-set SHA-256; the final execution lock must preserve them exactly. Do not disclose the secret or concrete seeds before reveal.",
+      "separation": "Live content-seed derivation and blind pairing-token derivation use distinct domain strings."
+    }
+  },
+  "tokenizer_preflight": {
+    "required": true,
+    "algorithm": "For each pinned tokenizer with add_special_tokens=false, token IDs for 'FINAL: A' and 'FINAL: B' must each equal the token IDs for 'FINAL:' followed by exactly one distinct continuation token.",
+    "failure_policy": "discovery_authorization_rejected",
+    "generator_assumption": "none"
+  },
+  "public_conformance": {
+    "generator_config_sha256": "106b5c2d938431dc8ba85d035cf5d3b5e275c422fbe8b264a8525f355008389c",
+    "design_manifest_sha256": "e927b4e542078786fed53e271e6526eee859f7eaa1d87b1de2649ca40cf5f14a",
+    "case_set_sha256": "694f1b2aa3a4d94138cc7929f1c1b8fd449ba325f7a5c5295a9e53b08b785004",
+    "projection_set_sha256": "66901a3bf751105fea603b4006a3cdb0bdda79310e990159ba981e14d209dffa",
+    "intervention_prompt_set_sha256": "e938bf9568a12ac6a21dfe89fd87234c93615c8274e3301807794c3d27bae03e",
+    "intervention_pair_set_sha256": "1df0d1bfc697b50fb2e01648583ca1788d18bb06a6e830065d7718df301b60dd",
+    "primary_intervention_pair_set_sha256": "7c6799ba41644ab82fe273b47184a8d65dbafe43ad55ee74c9682c18cf556db0",
+    "counts": {
+      "content_seeds": 64,
+      "cases": 512,
+      "projections": 2048,
+      "intervention_prompts": 512,
+      "intervention_pairs": 1536,
+      "primary_intervention_pairs": 768,
+      "weak_observations": 1280,
+      "diagnostic_cue_masks": 256,
+      "heldout_challenges": 512
+    }
+  },
+  "outcome_exposure": {
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false
+  }
+}

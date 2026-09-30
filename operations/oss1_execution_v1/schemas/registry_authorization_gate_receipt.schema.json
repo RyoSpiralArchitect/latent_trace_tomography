@@ -1,0 +1,44 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/registry_authorization_gate_receipt-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LTT OSS-1 dependency-registry to discovery-authorization gate receipt",
+  "description": "An authority-HMAC and content-addressed receipt that binds the complete dependency registry body to one concrete frozen discovery authorization. It is necessary but not sufficient for model calls; frozen discovery readiness must pass separately.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_type",
+    "status",
+    "registry_id",
+    "registry_body_sha256",
+    "authorization_id",
+    "authorization_sha256",
+    "authorization_projection_sha256",
+    "authorized_at",
+    "issued_at",
+    "authority_secret_commitment_sha256",
+    "authority_hmac_sha256",
+    "receipt_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "receipt_type": {"const": "registry_authorization_gate_receipt_v1"},
+    "status": {"const": "registry_and_authorization_bound"},
+    "registry_id": {"type": "string", "minLength": 1},
+    "registry_body_sha256": {"$ref": "#/$defs/sha256"},
+    "authorization_id": {"type": "string", "minLength": 1},
+    "authorization_sha256": {"$ref": "#/$defs/sha256"},
+    "authorization_projection_sha256": {"$ref": "#/$defs/sha256"},
+    "authorized_at": {"type": "string", "format": "date-time"},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "authority_secret_commitment_sha256": {"$ref": "#/$defs/sha256"},
+    "authority_hmac_sha256": {"$ref": "#/$defs/sha256"},
+    "receipt_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^(?!0{64}$)[0-9a-f]{64}$"
+    }
+  }
+}

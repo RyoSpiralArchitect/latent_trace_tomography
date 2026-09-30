@@ -1,0 +1,75 @@
+{
+  "$id": "https://spiralreality.dev/schemas/ltt/design_freeze_manifest-0.1.0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "amendment_mode": {
+      "const": "append_only_successor"
+    },
+    "assets": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "asset_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "path": {
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$",
+            "type": "string"
+          },
+          "role": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "asset_id",
+          "path",
+          "sha256",
+          "role"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "freeze_date": {
+      "format": "date",
+      "type": "string"
+    },
+    "freeze_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "oss_outcomes_exposed": {
+      "const": false
+    },
+    "panel_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "status": {
+      "const": "design_frozen"
+    }
+  },
+  "required": [
+    "schema_version",
+    "freeze_id",
+    "panel_id",
+    "status",
+    "freeze_date",
+    "oss_outcomes_exposed",
+    "amendment_mode",
+    "assets"
+  ],
+  "title": "Latent Trace Tomography design freeze manifest",
+  "type": "object"
+}

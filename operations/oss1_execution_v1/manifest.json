@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1.0",
+  "operation_profile_id": "oss1_execution_v1",
+  "status": "post_freeze_operational_companion_frozen",
+  "created_at": "2026-07-18T09:38:42Z",
+  "parent": {
+    "panel_id": "oss_reliance_regime_v0",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "discovery_template_sha256": "3a80dc38a066c980ecfa3bb4221c65b273fc8acfa44b5ea55ae845fed19eed79",
+    "required_correction_id": "oss1_pre_outcome_correction_0002_minimal_site_report_cardinality",
+    "required_correction_manifest_sha256": "4d2282f761c75cfc5b3cd9dcb36ddb624b8982c0eed9076f3a70bf9498787e3a"
+  },
+  "outcome_exposure": {
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false,
+    "discovery_authorization_issued": false
+  },
+  "authorization_effect": "none",
+  "scope": {
+    "scientific_design_changed": false,
+    "split_definition_changed": false,
+    "independent_unit_changed": false,
+    "claim_ceiling_changed": false,
+    "new_pre_authorization_evidence_gate": "dependency-cluster registry must project exactly into the frozen authorization fields; before calls, an authority-HMAC gate receipt must bind the complete registry body to the concrete authorization hash",
+    "registry_power": "may conservatively cluster, exclude, or weaken a claim; may not delete a declared edge, split a component, or increase effective n",
+    "taxonomy_role": "derived non-normative product and audit vocabulary"
+  },
+  "assets": [
+    {
+      "asset_id": "dependency_registry_schema",
+      "path": "operations/oss1_execution_v1/schemas/dependency_cluster_registry.schema.json",
+      "sha256": "07ab687a68f4dae46b67531d812278799d37671a7f6343e88688e7abf14375a7",
+      "role": "Strict pre-discovery provenance, overlap, exposure, projection, and epistemic-boundary schema"
+    },
+    {
+      "asset_id": "registry_authorization_gate_receipt_schema",
+      "path": "operations/oss1_execution_v1/schemas/registry_authorization_gate_receipt.schema.json",
+      "sha256": "2cc193aa8da31fc6236e0b540ea110056e48e21376f76f61ba7c4bd63b3df078",
+      "role": "Authority-HMAC and content-addressed transitive binding from the complete registry body to one concrete discovery authorization"
+    },
+    {
+      "asset_id": "dependency_registry_source",
+      "path": "src/latent_trace_tomography/dependency_registry.py",
+      "sha256": "8f78af237d7f238cbe274bbd3c21bdb0433619bdfa19a4e01dec0fd0e59df808",
+      "role": "Fail-closed claim-source typing, derived materiality, pair coverage, graph projection, and signed registry-authorization binding validator"
+    },
+    {
+      "asset_id": "dependency_registry_tests",
+      "path": "tests/test_dependency_registry.py",
+      "sha256": "deecfde326db4c274e3f742ce648a688219d01aa59d068cdeb8aa31b93adac65",
+      "role": "Registry schema, self-hash, claim-source, materiality, pairwise, exposure, and signed gate-receipt mutation tests"
+    },
+    {
+      "asset_id": "execution_playbook",
+      "path": "operations/oss1_execution_v1/docs/oss1_execution_playbook.md",
+      "sha256": "e9083af24a003d6f5f29188be20b87a2b4b0660c8a4f45e5f43c08fe632af0a5",
+      "role": "Exact call-free-to-release state machine, gate evidence, budgets, abort policy, and claim boundary"
+    },
+    {
+      "asset_id": "failure_taxonomy",
+      "path": "operations/oss1_execution_v1/docs/failure_taxonomy.md",
+      "sha256": "6fe20ab3a5f0a70377ffafc5fd12cd2f38569858c660d686c073d36d83523d94",
+      "role": "Factorized evidence-layer, validity, disposition, assurance, claim-tier, and product-language vocabulary"
+    },
+    {
+      "asset_id": "operational_companion_tests",
+      "path": "tests/test_operational_companion.py",
+      "sha256": "8bfc6027031c003baa76666f8ed82f04344d197ade479f508d4d430b8934a9d1",
+      "role": "Parent binding, non-authority, state ordering, budget, taxonomy-boundary, and asset-hash tests"
+    }
+  ],
+  "next_gate": "populate a real dependency-cluster registry; do not assign discovery authorization until it validates, and do not call models until the concrete authorization, signed gate receipt, and frozen discovery readiness all validate"
+}

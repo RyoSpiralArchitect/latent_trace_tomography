@@ -1,0 +1,126 @@
+{
+  "schema_version": "0.1.0",
+  "status": "design_frozen",
+  "split_rule_id": "leave_dependency_cluster_out_v1",
+  "source_path": "src/latent_trace_tomography/split.py",
+  "terminology_note": "The filename is retained for continuity; architecture-family labels are descriptive and are not the primary independence or holdout unit.",
+  "registry_fields": [
+    "model_unit_id",
+    "independent_training_run_id",
+    "checkpoint_id",
+    "lineage_id",
+    "dependency_cluster_id",
+    "architecture_family_id",
+    "anchor_condition_id",
+    "model_id",
+    "model_revision",
+    "model_artifact_sha256",
+    "shared_base_artifact_sha256",
+    "configuration_sha256",
+    "tokenizer_revision",
+    "tokenizer_artifact_sha256",
+    "anchor_provenance"
+  ],
+  "dependency_graph": {
+    "nodes": "model_unit_id values, one per independently initialized training run before dependency clustering",
+    "edge_kinds": [
+      "shared_learned_weights",
+      "base_descendant",
+      "continued_pretraining",
+      "fine_tune",
+      "adapter",
+      "quantization",
+      "merge_parent",
+      "distillation_teacher"
+    ],
+    "edge_authority": "The discovery authorization must carry one content-addressed complete/unambiguous learned-state ancestry record per model plus every external base, teacher, merge-parent, and adapter-base artifact. The validator derives the dependency edge set exactly from declared direct parents and shared parent artifacts; an independently supplied graph cannot add or omit an edge.",
+    "cluster_algorithm": "Treat edges as undirected for independence, compute deterministic connected components, sort member model_unit_id values, and assign dependency- plus the first 16 lowercase hex characters of SHA256(NUL-joined sorted members).",
+    "unknown_or_cross_fold_dependency": "hard_error"
+  },
+  "outer_split": {
+    "primary_axis": "leave exactly one dependency_cluster_id out",
+    "implementation": "latent_trace_tomography.split.build_leave_dependency_cluster_out_folds",
+    "train_test_constraint": "No dependency_cluster_id may occur on both sides of a fold.",
+    "architecture_family_holdout": "secondary_descriptive_analysis_only"
+  },
+  "pilot_anchor_balance": {
+    "dependency_cluster_count": 3,
+    "model_unit_count": 9,
+    "exact_anchor_set_per_dependency_cluster": [
+      "semantic_anchor",
+      "surface_cue_anchor",
+      "mixed_anchor"
+    ],
+    "anchor_multiplicity_per_cluster": 1,
+    "within_cluster_nuisance_match": "All three anchor units in a dependency cluster must share exactly one architecture_family_id, tokenizer_revision, and tokenizer_artifact_sha256. Model artifacts and training configurations remain anchor-specific.",
+    "learned_state_identity_closure": "An identical model_artifact_sha256 is never a second model unit. Repeated lineage_id values must remain within one connected dependency cluster; any cross-cluster repetition fails closed.",
+    "fold_invariant": "Every heldout dependency cluster and every remaining training set contain all three anchor conditions, so dependency-cluster or architecture-family identity cannot alone determine the anchor."
+  },
+  "content_seed_partition": {
+    "unit": "semantic_instance_group_id equal to content_seed, including every factor cell, template, source/base pair, and codebook rendering for that seed",
+    "assignment": "Sort unique content seeds by SHA256(split_rule_id || ':' || decimal_content_seed), then allocate positions 0-7 to D_site_discovery, 8-23 to D_causal_label, 24-47 to D_behavior_fit, and 48-63 to D_sealed_test.",
+    "required_seed_count": 64,
+    "counts": {
+      "D_site_discovery": 8,
+      "D_causal_label": 16,
+      "D_behavior_fit": 24,
+      "D_sealed_test": 16
+    },
+    "Q_challenge": "Only heldout_challenge projections belonging to D_sealed_test. For each target, aggregate every assigned output into exactly one heldout_cue_conflict slot and one heldout_mismatch_table slot. Raw prompts, seeds, outputs, counts, dependency-cluster keys, and identities remain evaluator-private; auditor-facing target, slot, fold, and development dependency-cluster identifiers are HMAC-derived pseudonyms.",
+    "cue_mask": "Only diagnostic_cue_mask projections belonging to D_sealed_test; their forwards remain zero and pending until all three fold prediction commitments close, and release follows that barrier.",
+    "template_policy": "The globally frozen projection renderers and canonical intervention template are intentionally reused in every content partition; template identity is not an independent split unit and must not be represented as partition-disjoint.",
+    "overlap_policy": "Any semantic_instance_group_id, case_seed_block_id, or source_base_pair_group_id crossing content partitions is a hard error."
+  },
+  "probability_calibration": {
+    "causal_profile": "continuous point and interval; probability calibration not applicable",
+    "challenge_response": "If categorical probabilities are produced, calibrator fitting is nested inside development dependency clusters and never uses a heldout cluster.",
+    "three_cluster_pilot": "Report uncalibrated compatibility scores or prediction sets, not a calibrated posterior."
+  },
+  "claim_tiers": {
+    "three_dependency_clusters": {
+      "tier": "engineering_transfer_pilot",
+      "permitted": "Descriptive transfer was observed on these named dependency clusters.",
+      "forbidden": [
+        "generalizes to unseen model families",
+        "model-independent",
+        "calibrated posterior",
+        "population-level confidence interval"
+      ]
+    },
+    "confirmatory_cross_cluster": {
+      "minimum": "A fresh outcome-naive execution with at least three development dependency clusters and three separately sealed confirmatory dependency clusters.",
+      "additional_requirement": "A frozen power simulation may require more than the hard minimum."
+    }
+  },
+  "discovery_authorization_requirements": [
+    "content-addressed exact model and tokenizer revisions",
+    "content-addressed complete and unambiguous learned-state ancestry inventory",
+    "dependency graph derived exactly from ancestry parents and shared artifacts, followed by derived clusters",
+    "exact three-anchor balance and nuisance matching inside every dependency cluster",
+    "pre-outcome anchor provenance with content-addressed training data and assignment manifest",
+    "no duplicate learned-weight artifact and no lineage identity crossing clusters",
+    "exact content-seed and projection hashes",
+    "exact discovery-only pair and candidate-site inventories",
+    "exact discovery query plan and bounded wall-clock budget",
+    "site-discovery and causal-label disjointness proof",
+    "at least 256-bit operating-system-CSPRNG authority-secret commitment and frozen HMAC derivation ids"
+  ],
+  "final_execution_lock_requirements": [
+    "discovery-authorization and evidence-closed site-discovery-report hashes",
+    "primary symmetric intervention-stratum pair hash",
+    "exact fold and within-seed partition hashes",
+    "site-discovery and causal-label disjointness proof",
+    "exact post-discovery query plan",
+    "preserved operating-system-CSPRNG and HMAC commitments from discovery authorization",
+    "prospective scoring-contract and challenge schema hashes",
+    "authority_commitments exactly null and no output-derived key, score, or challenge commitment"
+  ],
+  "sealed_evaluation_split_closure": {
+    "creation_boundary": "After the authority supplies the exact regenerated prompt/raw-output inventory and self-addressed ledger declaring 8,064 causal-label, 4,320 behavior-fit, and 4,032 sealed-test forwards (16,416 total) while diagnostics remain zero and pending, create exactly one private post-output sealed authorization per heldout dependency cluster. The ledger is not physical runtime attestation.",
+    "raw_evidence": "Every fold authorization binds the same raw D_sealed_test roots: exactly 2,880 weak and 1,152 challenge trials over all nine targets, from which its opaque heldout surface and scoring material are derived.",
+    "fold_workers": "Exactly three distinct fold-worker capability IDs and no-shared-mount/cache/IPC declarations are required before any reveal. These declarations are audit evidence, not physical isolation attestation; fold-local estimator training/replay remains residual P1.",
+    "private_identity_boundary": "Private authorizations and raw model/dependency-cluster IDs never enter an auditor realm. Development dependency-cluster IDs are domain-separated HMAC pseudonyms.",
+    "coordinator_closure": "fold_runs contain no reveal bytes or nonces. Only after all three commitment/bundle/prediction/redaction and common-root checks close does the coordinator invoke the exact four-field authority opening provider; it proves each fold's development slots and scoring key are the other two folds' heldout material after dependency-cluster IDs are rekeyed into the receiving fold's private HMAC namespace.",
+    "authority": "Single-fold scoring is descriptive and non-authoritative. Candidate and each named baseline are averaged equally across the three heldout clusters before the lower global baseline is selected and the 10-percent gate is applied; diagnostics follow the three-commitment barrier."
+  }
+}

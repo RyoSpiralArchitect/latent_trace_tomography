@@ -1,0 +1,247 @@
+{
+  "schema_version": "0.1.0",
+  "status": "design_frozen",
+  "contract_id": "oss1_capability_separated_evaluation_v1",
+  "source_path": "src/latent_trace_tomography/blind.py",
+  "assurance_language": {
+    "same_process": "prediction_locked_not_blind",
+    "blind": "Requires a separate OS principal, container, or user-controlled mount that keeps sealed assets unavailable and unmounted until a valid commitment exists.",
+    "hashes": "Integrity and phase-order evidence only; not capability security.",
+    "capability_ids": "Three distinct fold-worker capability IDs and their no-shared-mount/cache/IPC declarations are authority-supplied audit evidence, not physical isolation attestation.",
+    "residual_p1": "Fold-local estimator fitting and replay are not independently attested by the current coordinator; absent separate proof, assurance is prediction-locked rather than blind."
+  },
+  "roles": {
+    "authority": "Executes the output-independent lock, holds raw model/cluster identities and outputs, and supplies an exact regenerated prompt/raw-output inventory plus a self-addressed ledger declaring the 16,416 planned pre-auditor forwards with diagnostics pending. This is authority evidence, not runtime attestation.",
+    "evaluator": "After all D_sealed outputs exist, derives and seals one private authorization per fold, validates common roots, opens reveal bytes only after the three-commitment barrier, and scores without exposing private material to workers.",
+    "fold_worker": "Receives only one HMAC-opaque heldout bundle plus HMAC-pseudonymized development material, fits one fold-local estimator, and hands off content-addressed artifacts and predictions.",
+    "production_coordinator": "Requires exactly three distinct fold commitments before any reveal, validates each other-two-fold development union, and applies one equal-three-cluster global gate."
+  },
+  "execution_lock_boundary": {
+    "output_independent": true,
+    "authority_commitments": null,
+    "forbidden_lock_material": "Output-derived evaluation keys, scoring counts, challenge-bundle commitments, and sealed-authorization hashes.",
+    "pre_auditor_forward_ledger": {
+      "causal_label": 8064,
+      "behavior_fit": 4320,
+      "sealed_test": 4032,
+      "diagnostic": 0,
+      "total": 16416,
+      "diagnostic_status": "pending_until_all_fold_prediction_commitments"
+    }
+  },
+  "output_runtime_evidence": {
+    "validated_evidence": [
+      "regenerated_D_sealed_prompt_inventory",
+      "raw_prompt_and_output_content_hashes",
+      "relational_outcomes_derived_from_raw_outputs"
+    ],
+    "completion_record_sha256_role": "authority_supplied_pointer_only",
+    "runtime_attestation_provided": false,
+    "limitation": "Per-completion locked-model/runtime provenance and physical forward execution are not attested without inline typed completion records and an external runtime attestation boundary."
+  },
+  "cross_fold_method_identity": {
+    "common_roles": [
+      "abstention_rule",
+      "analysis_config",
+      "estimator_source",
+      "feature_spec"
+    ],
+    "fold_specific_roles": [
+      "calibration_status",
+      "estimator"
+    ],
+    "enforcement": "The four method-defining artifact SHA-256 values must be identical across all three commitments before the authority opening provider is called. Fitted estimator weights and fold calibration status may differ."
+  },
+  "authority_commitment": {
+    "scheme": "sha256_domain_separated_u64be_length_prefixed_v1",
+    "digest": "SHA-256",
+    "framing": "u64be_len(domain)||domain||u64be_len(nonce)||nonce||u64be_len(payload)||payload",
+    "minimum_nonce_bytes": 32,
+    "nonce_generation": "operating_system_csprng",
+    "conformance_vector": {
+      "domain_hex": "6c74742d6576616c756174696f6e2d6b65792d7631",
+      "nonce_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "payload_hex": "7b226b6579223a22666978747572652d7631227d0a",
+      "sha256": "1bf349c05ab1bb6535ceed0d147f4391db1f1dd7fb39c0963fa373025f4ef6ee"
+    }
+  },
+  "authority_commitment_lifecycle": "Authority commitments are created inside each private post-output sealed fold authorization after all 4,032 D_sealed_test outputs exist and before that fold worker fits; they are not fields of the output-independent execution lock.",
+  "auditor_observation_surface": {
+    "exact_fields": [
+      "target_id",
+      "case_id",
+      "projection_id",
+      "replicate_id",
+      "prompt_text",
+      "output_text"
+    ],
+    "id_format": "lowercase 32-hex-character pseudonyms with no semantic encoding",
+    "id_generation": "HMAC-SHA256(authority-held >=256-bit CSPRNG secret, ASCII 'ltt-pairing-token-v1' || NUL || ASCII domain || NUL || non-empty canonical source bytes); truncate to the first 128 bits and encode as lowercase hex via latent_trace_tomography.blind.derive_pairing_token.",
+    "pairing_token_scheme": "hmac_sha256_128bit_domain_separated_v1",
+    "pairing_token_domains": [
+      "target",
+      "cluster",
+      "fold",
+      "case",
+      "projection",
+      "replicate",
+      "challenge_slot"
+    ],
+    "pairing_token_material_contract": {
+      "target": "canonical_json_utf8(execution_lock.model_registry record; sorted keys; compact separators; ensure_ascii=false)",
+      "cluster": "canonical_json_utf8({private_fold_id, execution_lock.dependency_clusters record}; sorted keys; compact separators; ensure_ascii=false); serialized as dependency- plus the first 64 HMAC bits for scoring-schema compatibility",
+      "fold": "utf8(private fold_id)",
+      "case": "utf8(generator case_id)",
+      "projection": "utf8(OSSProjectionKind.value)",
+      "replicate": "uint64be(zero_based_replicate_index)",
+      "challenge_slot": "ascii(target_id) || NUL || utf8(challenge_kind)"
+    },
+    "cross_target_alignment": "case_id, projection_id, and replicate_id are stable across targets for the same generator case, projection kind, and zero-based replicate index; target_id remains opaque.",
+    "allowed_filenames": [
+      "observations.jsonl",
+      "observations/part-NNNNNN.jsonl"
+    ],
+    "extra_fields": "reject",
+    "duplicate_pairing_identity": "reject"
+  },
+  "auditor_development_surface": {
+    "exact_roles": [
+      "development_scoring_key",
+      "development_slot_inventory"
+    ],
+    "per_fold_source": "Exactly the other two folds' heldout slots and scoring keys, derived from the same raw D_sealed evidence, with dependency-cluster IDs rekeyed into the receiving fold's private HMAC namespace, and verified again by the production coordinator after reveal.",
+    "identity_rule": "Target, slot, fold, and dependency-cluster identities are domain-separated HMAC pseudonyms. Raw execution-lock model_unit_id and dependency_cluster_id values are forbidden in every auditor-visible byte.",
+    "counts": "Six development targets, twelve challenge slots, and 768 challenge trials per fold."
+  },
+  "auditor_challenge_slot_surface": {
+    "filename": "challenge_slots.jsonl",
+    "exact_fields": [
+      "target_id",
+      "challenge_slot_id",
+      "challenge_kind"
+    ],
+    "required_inventory": "Exactly one heldout_cue_conflict and one heldout_mismatch_table slot per auditor observation target_id.",
+    "not_disclosed": "No challenge prompt, output, outcome, model identity, seed, or scoring count is present before commitment."
+  },
+  "sealed_before_prediction_commitment": [
+    "private post-output sealed fold authorization",
+    "evaluation target identity",
+    "dependency_cluster_id and model/provider identity",
+    "evaluation causal site maps",
+    "evaluation selected-site susceptibility profiles and labels",
+    "cue-mask prompts and outputs",
+    "challenge prompts, seeds, outputs, and scoring keys",
+    "internal activations, intervention trials, logits, and telemetry",
+    "authority nonces and evaluation-key bytes"
+  ],
+  "post_output_fold_authorization": {
+    "count": 3,
+    "timing": "After the complete D_sealed_test output set exists and before any fold-local estimator fitting.",
+    "raw_evidence_counts": {
+      "weak_trials": 2880,
+      "challenge_trials": 1152,
+      "sealed_test_forwards": 4032
+    },
+    "heldout_per_fold": "One dependency cluster, three targets, 960 weak rows, six challenge slots, and 384 challenge trials.",
+    "development_per_fold": "The other two dependency clusters, six targets, twelve challenge slots, and 768 challenge trials.",
+    "privacy": "The authorization, raw model/cluster identities, authority secret, raw challenge outputs, and reveal bytes remain evaluator-private and are never mounted in a fold-worker realm."
+  },
+  "phase_state_machine": [
+    {
+      "phase": "output_independent_execution_lock",
+      "required": "The validated execution lock has authority_commitments=null and contains no output-derived key, score, or challenge commitment."
+    },
+    {
+      "phase": "pre_auditor_output_barrier",
+      "required": "Validate the exact regenerated prompt/raw-output inventory and self-addressed ledger declaring 8,064 causal-label, 4,320 behavior-fit, and 4,032 sealed-test forwards, exactly 16,416 total. Diagnostics are zero and pending. This does not attest locked-model runtime provenance or physical execution."
+    },
+    {
+      "phase": "private_post_output_fold_authorize",
+      "required": "For each of the three folds, regenerate and validate the raw 2,880 weak and 1,152 challenge records, derive heldout/development keys and the HMAC-opaque auditor surface, then bind them with nonce-bound authority commitments in one evaluator-private sealed authorization before that fold fits."
+    },
+    {
+      "phase": "capability_separated_fold_commit",
+      "required": "Exactly three distinct fold-worker capability realms, with declared no shared mounts, caches, or IPC before the global barrier, each hand off a content-addressed estimator, configuration, development artifacts, and prediction. Capability IDs are declarations and do not physically attest isolation; private authorizations and raw identities never enter workers."
+    },
+    {
+      "phase": "all_fold_commitment_barrier",
+      "required": "The production coordinator validates all three immutable commitments, bundles, prediction files, redaction surfaces, distinct heldout clusters and fold tokens, and common design, execution, pre-auditor-ledger, prospective-contract, raw-evidence, and pilot-barrier roots before it accepts any reveal bytes. fold_runs contain no reveal bytes or nonces."
+    },
+    {
+      "phase": "authority_reveal_and_cross_fold_close",
+      "required": "Only after the barrier, the coordinator invokes authority_opening_provider once per authorization. It must return exactly revealed_evaluation_key_bytes, revealed_challenge_bundle_bytes, evaluation_nonce, and challenge_nonce as bytes; each opening is independently rederived and verified. Each fold's development slot inventory and scoring key must equal the other two folds' heldout material after dependency-cluster IDs are rekeyed into that fold's private HMAC namespace."
+    },
+    {
+      "phase": "global_score",
+      "required": "latent_trace_tomography.blind.evaluate_committed_pilot_gate derives the six normalized inputs per fold, internally reconstructs both baselines, equally averages candidate and each baseline loss over all three heldout clusters, selects the lower globally averaged baseline, and applies the 10-percent gate. Single-fold scoring is non-authoritative."
+    },
+    {
+      "phase": "diagnostic_release",
+      "required": "Cue-mask diagnostics may execute or be released only after all three prediction commitments have closed; they never enter fitting or the primary prospective gate."
+    }
+  ],
+  "path_security": {
+    "absolute_paths": "reject",
+    "path_traversal": "reject",
+    "symlinks": "reject",
+    "non_regular_files": "reject",
+    "evaluation_key_path_in_serialized_artifact": "forbidden"
+  },
+  "required_commitment_artifacts": [
+    "three private post-output sealed evaluation authorizations with one common pilot barrier and raw D_sealed evidence roots",
+    "three blind bundle manifests and bundle SHA-256 values",
+    "three authority evaluation-key and challenge-bundle commitments",
+    "three prediction artifact SHA-256 and challenge-slot-set SHA-256 values",
+    "exact development_scoring_key and development_slot_inventory roles with normalized path, bytes, file SHA-256, record count, and canonical-record SHA-256",
+    "exact role-tagged auditor artifacts: estimator, estimator_source, feature_spec, analysis_config, calibration_status, and abstention_rule",
+    "prospective scoring contract, executable scoring source, challenge-slot schema, challenge-prediction schema, and challenge-scoring-key schema SHA-256 values",
+    "six normalized prospective input hashes derived by the verifier from the committed blind bundle, exact development files, and opened heldout authority payload, never accepted as caller expectations",
+    "three self-addressed pre-reveal evaluation commitments closed before any reveal"
+  ],
+  "authoritative_scoring_entrypoint": {
+    "function": "latent_trace_tomography.blind.evaluate_committed_pilot_gate",
+    "candidate_source": "Exactly the three unchanged content-addressed prediction files named by the three evaluation commitments.",
+    "weak_source": "Per fold, only normalized observations and their implied composite inventory from its revalidated HMAC-opaque blind bundle.",
+    "development_source": "Per fold, only the two exact role-tagged files in its self-addressed commitment, also proven equal to the other two folds' heldout union.",
+    "heldout_source": "Per fold, slots only from the revalidated blind bundle and scoring key only from the successfully opened private post-output authorization.",
+    "return_evidence": "One global equal-three-cluster gate result plus three non-authoritative fold results and commitment/closure hashes; no sealed path, key bytes, raw model ID, or raw dependency-cluster ID.",
+    "opening_provider": "authority_opening_provider(sealed_evaluation_authorization) is invoked only after all three commitment, bundle, prediction, and redaction checks close. fold_runs exclude reveal bytes and nonces; the provider returns exactly four byte fields: revealed_evaluation_key_bytes, revealed_challenge_bundle_bytes, evaluation_nonce, and challenge_nonce.",
+    "single_fold_helper": "latent_trace_tomography.blind.evaluate_committed_candidate_fold_non_authoritative returns descriptive fold evidence only. The retired evaluate_committed_candidate_gate name fails closed.",
+    "low_level_helper": "latent_trace_tomography.prospective.evaluate_verified_candidate_gate is a pure scorer for already verified artifacts and is not the production phase or capability boundary."
+  },
+  "pilot_gate": {
+    "fold_count": 3,
+    "independent_unit": "dependency_cluster_id",
+    "single_fold_authority": false,
+    "commitment_barrier": "All three immutable prediction commitments validate before any reveal bytes are accepted.",
+    "cross_fold_closure": "Each fold's development material is the other two folds' heldout material with cluster IDs rekeyed into the receiving fold's private HMAC namespace.",
+    "global_aggregation": "Average candidate loss, candidate Brier, candidate coverage, and the corresponding values for each named baseline equally over the three heldout dependency clusters; choose the lower global baseline loss and require candidate <= 0.90 * stronger baseline loss."
+  },
+  "prospective_scoring": {
+    "contract_path": "protocols/oss_reliance_regime_v0/prospective_scoring_contract.json",
+    "challenge_slot_schema": "schemas/challenge_slot.schema.json",
+    "prediction_schema": "schemas/challenge_prediction.schema.json",
+    "scoring_key_schema": "schemas/challenge_scoring_key.schema.json",
+    "outcome_labels": [
+      "semantic_consistent",
+      "surface_cue_consistent",
+      "parse_failure"
+    ],
+    "outcome_derivation": "After prediction commitment, the authority parses each output and compares the terminal marker with the sealed codebook-relative semantic and surface-cue expected finals; both challenge kinds are restricted to semantic_solution != surface_cue.",
+    "closure": "composite challenge_slot_id, not target_id alone; per-fold closure is nested under the authoritative equal-three-fold coordinator"
+  },
+  "forbidden_auditor_capabilities": [
+    "InternalObserver",
+    "model execution or completion collection",
+    "sealed filesystem mount",
+    "evaluation lineage registry",
+    "site-map or causal-label lookup",
+    "private sealed authorization, raw model/dependency-cluster registry, authority secret, or reveal bytes"
+  ],
+  "residual_p1": "The coordinator validates artifact and barrier closure but does not replay or physically attest fold-local estimator training. A separate outcome-naive runner/attestation contract is required for a blind-process claim; otherwise report prediction locking.",
+  "unseal_failure_policy": "fail_closed_without_scoring",
+  "outcome_exposure": {
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false
+  }
+}

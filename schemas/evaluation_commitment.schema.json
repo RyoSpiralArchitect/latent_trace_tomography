@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spiralreality.dev/schemas/ltt/evaluation_commitment.schema.json",
+  "title": "LTT pre-reveal evaluation commitment",
+  "description": "Evaluator-side commitment built after an isolated worker hands off its artifacts. Binds one private sealed authorization by hash while exposing only an opaque HMAC fold token, never a raw fold, model, or dependency-cluster identity.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_type",
+    "phase",
+    "evaluation_id",
+    "protocol_id",
+    "execution_lock_sha256",
+    "sealed_evaluation_authorization_sha256",
+    "fold_token",
+    "blind_bundle_sha256",
+    "authority_commitments",
+    "prospective_contract",
+    "prediction_artifact",
+    "development_artifacts",
+    "auditor_artifacts",
+    "security_boundary",
+    "commitment_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "contract_type": {"const": "ltt.evaluation_commitment"},
+    "phase": {"const": "pre_reveal"},
+    "evaluation_id": {"$ref": "#/$defs/opaque_id"},
+    "protocol_id": {"$ref": "#/$defs/opaque_id"},
+    "execution_lock_sha256": {"$ref": "#/$defs/sha256"},
+    "sealed_evaluation_authorization_sha256": {"$ref": "#/$defs/sha256"},
+    "fold_token": {"$ref": "#/$defs/pairing_token"},
+    "blind_bundle_sha256": {"$ref": "#/$defs/sha256"},
+    "authority_commitments": {"$ref": "#/$defs/authority_commitments"},
+    "prospective_contract": {"$ref": "#/$defs/prospective_contract"},
+    "prediction_artifact": {"$ref": "#/$defs/prediction_artifact"},
+    "development_artifacts": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "prefixItems": [
+        {"$ref": "#/$defs/development_scoring_key_artifact"},
+        {"$ref": "#/$defs/development_slot_inventory_artifact"}
+      ],
+      "items": false
+    },
+    "auditor_artifacts": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "uniqueItems": true,
+      "prefixItems": [
+        {"$ref": "#/$defs/abstention_rule_artifact"},
+        {"$ref": "#/$defs/analysis_config_artifact"},
+        {"$ref": "#/$defs/calibration_status_artifact"},
+        {"$ref": "#/$defs/estimator_artifact"},
+        {"$ref": "#/$defs/estimator_source_artifact"},
+        {"$ref": "#/$defs/feature_spec_artifact"}
+      ],
+      "items": false
+    },
+    "security_boundary": {"$ref": "#/$defs/security_boundary"},
+    "commitment_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pairing_token": {"type": "string", "pattern": "^[0-9a-f]{32}$"},
+    "opaque_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "safe_relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(?:/|$))(?!.*\\\\)(?!.*//).+$"
+    },
+    "security_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_security_provided_by_this_contract",
+        "same_process_assurance",
+        "required_boundary",
+        "required_key_state_before_auditor_commitment",
+        "limitation"
+      ],
+      "properties": {
+        "capability_security_provided_by_this_contract": {"const": false},
+        "same_process_assurance": {"const": "prediction_locked_not_blind"},
+        "required_boundary": {
+          "const": "separate OS principal, container, or user-controlled mount"
+        },
+        "required_key_state_before_auditor_commitment": {
+          "const": "unavailable and unmounted"
+        },
+        "limitation": {
+          "const": "Code hashes and phase ordering are audit evidence; they are not capability security."
+        }
+      }
+    },
+    "authority_commitments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scheme",
+        "evaluation_key_commitment",
+        "challenge_bundle_commitment"
+      ],
+      "properties": {
+        "scheme": {
+          "const": "sha256_domain_separated_u64be_length_prefixed_v1"
+        },
+        "evaluation_key_commitment": {"$ref": "#/$defs/sha256"},
+        "challenge_bundle_commitment": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "prospective_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "challenge_slot_schema_sha256",
+        "prediction_schema_sha256",
+        "scoring_key_schema_sha256",
+        "scoring_contract_sha256",
+        "scoring_source_sha256"
+      ],
+      "properties": {
+        "challenge_slot_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "prediction_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "scoring_key_schema_sha256": {"$ref": "#/$defs/sha256"},
+        "scoring_contract_sha256": {"$ref": "#/$defs/sha256"},
+        "scoring_source_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "prediction_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "bytes",
+        "sha256",
+        "media_type",
+        "record_count",
+        "challenge_slot_ids_sha256"
+      ],
+      "properties": {
+        "path": {"$ref": "#/$defs/safe_relative_path"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "media_type": {"const": "application/x-ndjson"},
+        "record_count": {"type": "integer", "minimum": 1},
+        "challenge_slot_ids_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "development_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "path",
+        "bytes",
+        "sha256",
+        "media_type",
+        "record_count",
+        "records_sha256"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "development_scoring_key",
+            "development_slot_inventory"
+          ]
+        },
+        "path": {"$ref": "#/$defs/safe_relative_path"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "media_type": {"const": "application/x-ndjson"},
+        "record_count": {"type": "integer", "minimum": 1},
+        "records_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "development_scoring_key_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/development_artifact"},
+        {"properties": {"role": {"const": "development_scoring_key"}}}
+      ]
+    },
+    "development_slot_inventory_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/development_artifact"},
+        {"properties": {"role": {"const": "development_slot_inventory"}}}
+      ]
+    },
+    "auditor_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "path", "bytes", "sha256", "media_type"],
+      "properties": {
+        "role": {
+          "enum": [
+            "abstention_rule",
+            "analysis_config",
+            "calibration_status",
+            "estimator",
+            "estimator_source",
+            "feature_spec"
+          ]
+        },
+        "path": {"$ref": "#/$defs/safe_relative_path"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "media_type": {"const": "application/octet-stream"}
+      }
+    },
+    "abstention_rule_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/auditor_artifact"},
+        {"properties": {"role": {"const": "abstention_rule"}}}
+      ]
+    },
+    "analysis_config_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/auditor_artifact"},
+        {"properties": {"role": {"const": "analysis_config"}}}
+      ]
+    },
+    "calibration_status_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/auditor_artifact"},
+        {"properties": {"role": {"const": "calibration_status"}}}
+      ]
+    },
+    "estimator_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/auditor_artifact"},
+        {"properties": {"role": {"const": "estimator"}}}
+      ]
+    },
+    "estimator_source_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/auditor_artifact"},
+        {"properties": {"role": {"const": "estimator_source"}}}
+      ]
+    },
+    "feature_spec_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/auditor_artifact"},
+        {"properties": {"role": {"const": "feature_spec"}}}
+      ]
+    }
+  }
+}

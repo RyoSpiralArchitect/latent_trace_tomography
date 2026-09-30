@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spiralreality.dev/ltt/public_checkpoint_anchor_feasibility_screen-0.1.0.json",
+  "title": "Public checkpoint anchor feasibility screen",
+  "description": "Metadata-only exclusion screen. Unresolved public checkpoints cannot receive retrospective anchor labels.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "screen_type",
+    "status",
+    "screen_id",
+    "created_at",
+    "parent",
+    "selection_rule",
+    "records",
+    "summary",
+    "decision",
+    "screen_body_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "screen_type": {
+      "const": "public_checkpoint_anchor_feasibility_screen_v1"
+    },
+    "status": {
+      "const": "complete_metadata_only_no_eligible_anchor"
+    },
+    "screen_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "parent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design_freeze_id",
+        "design_manifest_sha256",
+        "protocol_sha256",
+        "operational_manifest_sha256"
+      ],
+      "properties": {
+        "design_freeze_id": {
+          "const": "oss_reliance_regime_v0_design_20260717"
+        },
+        "design_manifest_sha256": {
+          "const": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b"
+        },
+        "protocol_sha256": {
+          "const": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11"
+        },
+        "operational_manifest_sha256": {
+          "const": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c"
+        }
+      }
+    },
+    "selection_rule": {
+      "type": "string",
+      "minLength": 1
+    },
+    "records": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "candidate_id",
+          "candidate_cluster_id",
+          "repo_id",
+          "revision",
+          "model_type",
+          "repository_created_at",
+          "revision_last_modified_at",
+          "source_url",
+          "enrollment_status",
+          "reason_ids"
+        ],
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_cluster_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "repo_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "model_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "repository_created_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "revision_last_modified_at": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "Z$"
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "enrollment_status": {
+            "const": "unresolved"
+          },
+          "reason_ids": {
+            "type": "array",
+            "minItems": 4,
+            "uniqueItems": true,
+            "contains": {
+              "const": "missing_pre_outcome_anchor_assignment"
+            },
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "const": {
+        "candidate_count": 9,
+        "candidate_cluster_count": 3,
+        "eligible_count": 0,
+        "excluded_count": 0,
+        "unresolved_count": 9,
+        "retrospective_anchor_assignments": 0,
+        "model_weight_downloads": 0,
+        "model_loads": 0,
+        "inference_calls": 0
+      }
+    },
+    "decision": {
+      "const": "do not populate the v0 eligible registry from public checkpoint labels; construct outcome-naive controlled anchors in an append-only successor"
+    },
+    "screen_body_sha256": {
+      "type": "string",
+      "pattern": "^(?!0{64}$)[0-9a-f]{64}$"
+    }
+  }
+}

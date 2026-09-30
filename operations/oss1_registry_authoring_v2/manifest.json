@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1.0",
+  "operation_profile_id": "oss1_registry_authoring_v2",
+  "status": "pre_registry_authoring_companion_frozen",
+  "created_at": "2026-07-18T13:28:52Z",
+  "parent": {
+    "panel_id": "oss_reliance_regime_v0",
+    "protocol_sha256": "5c49316503b2cec2ad26d4bf47dc59c02f0b61d9f6896b84035e6d0412dced11",
+    "design_manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b",
+    "required_correction_id": "oss1_pre_outcome_correction_0002_minimal_site_report_cardinality",
+    "required_correction_manifest_sha256": "4d2282f761c75cfc5b3cd9dcb36ddb624b8982c0eed9076f3a70bf9498787e3a",
+    "predecessor_operational_profile_id": "oss1_execution_v1",
+    "predecessor_operational_manifest_sha256": "d9ea2369a14983756dcb60cb985d4eabea10f2471f934a5c3598478dbf4dc93c",
+    "controlled_anchor_successor_manifest_id": "controlled_anchor_phantom_v1_manifest",
+    "controlled_anchor_successor_manifest_sha256": "f7faa1aa7980388e1b30733d6cdd1b5e454169d3b87f6d0a66174dfc5914aded"
+  },
+  "outcome_exposure": {
+    "metadata_network_access_occurred": true,
+    "intake_metadata_requests": 13,
+    "public_screen_metadata_access_occurred": true,
+    "configuration_files_downloaded": 3,
+    "tokenizer_files_downloaded": 8,
+    "weight_files_downloaded": 0,
+    "model_loads": 0,
+    "training_forward_calls": 0,
+    "training_backward_calls": 0,
+    "generation_calls": 0,
+    "api_inference_calls": 0,
+    "oss1_measurement_calls": 0,
+    "oss1_outcomes_exposed": false,
+    "anchor_construction_authorization_issued": false,
+    "discovery_authorization_issued": false
+  },
+  "authorization_effect": "none",
+  "scope": {
+    "scientific_estimand_changed": false,
+    "evaluation_task_or_intervention_changed": false,
+    "split_or_independent_unit_changed": false,
+    "blind_interface_changed": false,
+    "real_registry_present": false,
+    "lineage_receipt_present": false,
+    "source_catalog_instance_present": false,
+    "kind_specific_semantic_validation_present": false,
+    "discovery_authorization_ready": false,
+    "evidence_catalog_assurance": "typed identity and byte/content closure only",
+    "temporal_policy": "pre-freeze public base plus plan-bound outcome-naive post-freeze descendant",
+    "integrated_gate": "temporal v2 AND controlled-plan binding AND source identity catalog; semantic evidence remains a mandatory successor gate"
+  },
+  "assets": [
+    {
+      "asset_id": "base_model_intake",
+      "path": "operations/oss1_registry_authoring_v2/base_model_intake.json",
+      "sha256": "0a10d031d9e0640dd2eac064c70dfbb92e64c0812b347fca290c3d2671c7af42",
+      "role": "Metadata-only immutable three-base intake"
+    },
+    {
+      "asset_id": "registry_authoring_document",
+      "path": "operations/oss1_registry_authoring_v2/docs/registry_authoring_successor.md",
+      "sha256": "e79a58d5df2e5da5cd1f229bba64ca5711db764806e0c0e5fbaf7526322d23a2",
+      "role": "Gate order, access semantics, non-proofs, claim boundary, and next legal action"
+    },
+    {
+      "asset_id": "public_candidate_feasibility_screen",
+      "path": "operations/oss1_registry_authoring_v2/public_candidate_feasibility_screen.json",
+      "sha256": "661443466a8253d5e78a6043b89cbd8ee1ee433985324c222b65fefd3b50373e",
+      "role": "Nine immutable public candidate dispositions with zero retrospective anchor labels"
+    },
+    {
+      "asset_id": "base_model_intake_schema",
+      "path": "operations/oss1_registry_authoring_v2/schemas/base_model_intake.schema.json",
+      "sha256": "6e9ab7a6c754e14c58dd39f021d932ce610ad923f60f161e869d383bf05f3b2f",
+      "role": "Strict metadata-only intake schema"
+    },
+    {
+      "asset_id": "postfreeze_anchor_lineage_receipt_schema",
+      "path": "operations/oss1_registry_authoring_v2/schemas/postfreeze_anchor_lineage_receipt.schema.json",
+      "sha256": "2a6560107050a59906b9ab0c1fa07dfcad26774c0429ed4b319fefc28d7ccee7",
+      "role": "Plan-ready temporal lineage, budget, base, and descendant binding schema"
+    },
+    {
+      "asset_id": "public_candidate_screen_schema",
+      "path": "operations/oss1_registry_authoring_v2/schemas/public_candidate_feasibility_screen.schema.json",
+      "sha256": "7ee64b7007d73b455845cbade992ca58cbbf349b21038f019cc146a33e4abeb2",
+      "role": "Unresolved-only public candidate screen schema"
+    },
+    {
+      "asset_id": "source_evidence_catalog_schema",
+      "path": "operations/oss1_registry_authoring_v2/schemas/source_evidence_catalog.schema.json",
+      "sha256": "395f4a75043f097fc38ce80f02e8652396c9e4930e8e9cfb42c54ded8990f06a",
+      "role": "All-13-kind v1 source identity and local payload closure schema"
+    },
+    {
+      "asset_id": "canonical_artifact_hash_source",
+      "path": "src/latent_trace_tomography/artifact_hash.py",
+      "sha256": "fd9c63907f31febe6558ed4a10f0b44ef1808d32f410da92cde8c5e69801aa58",
+      "role": "Dependency-neutral canonical JSON hashing shared by authoring validators"
+    },
+    {
+      "asset_id": "registry_authoring_source",
+      "path": "src/latent_trace_tomography/registry_authoring.py",
+      "sha256": "611f37294a4281b4ed8b194d3bde0e93819eae76d1d8ed872b0aa7d94cd9b7ba",
+      "role": "Conjunctive non-authorizing temporal, plan, and source-identity gate"
+    },
+    {
+      "asset_id": "registry_evidence_source",
+      "path": "src/latent_trace_tomography/registry_evidence.py",
+      "sha256": "397c1de81a58794278d76b200feff4771314fb1216cd37414b9136e323033f62",
+      "role": "Fail-closed source record, raw byte, canonical content, locator, and inventory validator"
+    },
+    {
+      "asset_id": "registry_temporal_source",
+      "path": "src/latent_trace_tomography/registry_temporal.py",
+      "sha256": "be2b257dfca56181be5c71f4c7346222b9da3c46499cec8437e887377150658f",
+      "role": "Append-only post-freeze descendant temporal eligibility validator"
+    },
+    {
+      "asset_id": "public_candidate_screen_tests",
+      "path": "tests/test_public_candidate_screen.py",
+      "sha256": "3f426dfeb0e0265b05eb1acc8a670684318768fa094e677547177856e26fd627",
+      "role": "Unresolved disposition, schema, self-hash, and zero-call tests"
+    },
+    {
+      "asset_id": "registry_authoring_tests",
+      "path": "tests/test_registry_authoring.py",
+      "sha256": "ce261c885f7a147b2adb2fbde364ffc7c408a24cafe7f1240477a312fe373086",
+      "role": "Plan/intake/run/descendant binding and conjunctive gate tests"
+    },
+    {
+      "asset_id": "registry_authoring_companion_tests",
+      "path": "tests/test_registry_authoring_v2_companion.py",
+      "sha256": "98b959848b7adc26813b2c7f9f6cc075af82dc216190105c051e972dae3981ff",
+      "role": "Exact asset, parent DAG, schema, document, and no-instance tests"
+    },
+    {
+      "asset_id": "registry_evidence_tests",
+      "path": "tests/test_registry_evidence.py",
+      "sha256": "434d25c2931b96e61c28cf122925970c22a417b219a481fe256a686126c1bd08",
+      "role": "All source kinds, byte/content drift, path, chronology, duplicate, and inventory tests"
+    },
+    {
+      "asset_id": "registry_temporal_tests",
+      "path": "tests/test_registry_temporal.py",
+      "sha256": "24ea642c8d912237729db1a4beeec4c425c6e954ebe9c1e41e69020691d5f674",
+      "role": "Post-freeze chronology, descendant identity, access, and schema-runtime parity tests"
+    }
+  ],
+  "claim_boundary": "This companion defines fail-closed authoring mechanics. No real registry, lineage receipt, source catalog instance, or kind-specific evidence-body semantic validator is present, so it supplies neither evidence closure nor discovery readiness.",
+  "next_gate": "create a separate anchor-construction authorization that binds verified downloaded bytes, environment, RNG, resolved adapter modules, exact token-label inventories, and output paths; the current companion authorizes no weight download, model load, training, discovery, or OSS-1 measurement"
+}

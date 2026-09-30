@@ -1,0 +1,174 @@
+{
+  "schema_version": "0.1.0",
+  "status": "design_frozen",
+  "panel_id": "oss_reliance_regime_v0",
+  "scope": {
+    "scientific_question": "Can text-only weak projection orbits estimate a matched-null-specific, selected-site semantic-versus-cue intervention-susceptibility profile on a heldout learned-state dependency cluster and prospectively predict sealed challenge behavior?",
+    "primary_independent_unit": "dependency_cluster_id",
+    "effective_n": "unique eligible dependency_cluster_id values; checkpoints, descendants, prompts, cases, templates, and replicates are nested",
+    "outer_split": "leave exactly one dependency_cluster_id out",
+    "three_cluster_claim_tier": "engineering_transfer_pilot",
+    "auditor_primary_inputs": [
+      "target_id",
+      "case_id",
+      "projection_id",
+      "replicate_id",
+      "prompt_text",
+      "output_text"
+    ],
+    "primary_exclusions": [
+      "logprobs",
+      "logits",
+      "gradients",
+      "activations",
+      "attention",
+      "weights",
+      "latency",
+      "usage",
+      "finish reason",
+      "request ID",
+      "provider, model, architecture, lineage, or dependency-cluster identifiers",
+      "private sealed-evaluation authorization or raw model/cluster identities",
+      "evaluation selected-site susceptibility labels",
+      "cue-mask or challenge material before prediction commitment"
+    ]
+  },
+  "factor_grid": {
+    "task": "complete semantic_solution x surface_cue x answer_codebook 2x2x2 grid",
+    "causal_variables": [
+      "semantic_solution",
+      "surface_cue",
+      "answer_codebook"
+    ],
+    "observation_projections": [
+      "weak_baseline",
+      "weak_rule_paraphrase",
+      "weak_evidence_reorder",
+      "weak_irrelevant_distractor",
+      "weak_cue_salience_attenuation"
+    ],
+    "observation_eligibility": "semantic_solution == surface_cue",
+    "diagnostic_ablation": [
+      "diagnostic_cue_mask_after_prediction_lock"
+    ],
+    "challenge_projections": [
+      "heldout_cue_conflict",
+      "heldout_mismatch_table"
+    ],
+    "challenge_eligibility": "semantic_solution != surface_cue for both frozen challenge kinds; outcomes are scored relative to the sealed semantic, cue, and codebook factors"
+  },
+  "phase_contract": {
+    "ordered_phases": [
+      "preflight",
+      "plan",
+      "evaluate"
+    ],
+    "preflight": "Validate the design manifest, exact runtime-source identity, executable conformance vectors, symmetric primary intervention stratum, projection-role leakage boundary, intervention controls, dependency-cluster and anchor-balance units, blind allowlist, prospective slot/scoring closure, and immutable unassigned discovery-authorization, final-execution, and sealed-evaluation templates with zero forward or API calls.",
+    "plan": "A content-addressed discovery authorization first pins exact models, tokenizers, environment, complete learned-state ancestry, the ancestry-derived three-anchor-within-each-dependency-cluster registry, discovery-only split, every-transformer-block candidate-site algorithm, exact carrier bindings, and bounded discovery budget. After authority-held site discovery, a distinct immutable execution lock binds the authorization and raw-evidence-closed discovery-report hashes and commits sites, cases, symmetric-primary pair set, folds, exact post-discovery budgets, feature view, operating-system-CSPRNG secret commitment and HMAC ids, prospective source/contract/schema hashes, and blind runtime before any post-discovery output. The execution lock is output-independent: authority_commitments is null and no output-derived key, score, or challenge commitment is permitted.",
+    "evaluate": "The authority supplies the exact regenerated prompt/raw-output inventory and a self-addressed pre-auditor ledger declaring 8,064 causal-label, 4,320 behavior-fit, and 4,032 sealed-test forwards (16,416 total) while diagnostic forwards remain zero and pending. This validates inventory integrity and derived outcomes, not locked-model runtime provenance or physical execution. Only after all D_sealed outputs exist under that declared authority does it issue three evaluator-private sealed fold authorizations binding the raw 2,880 weak and 1,152 challenge trials, derived keys, HMAC-opaque surfaces, and distinct declared worker capabilities. Exactly three fold workers commit before any reveal; fold_runs contain no reveal bytes or nonces, and the four-field authority_opening_provider is invoked only after every commitment, bundle, prediction, redaction, and common-root check closes. The coordinator requires each development key and slot set to equal the other two folds' heldout material after cluster IDs are rekeyed into the receiving fold's private HMAC namespace, globally averages candidate and each baseline loss over the three clusters, selects the stronger global baseline, applies the frozen 10-percent gate, and releases diagnostics only after the commitment barrier. Single-fold scoring is non-authoritative. Capability IDs are declarations rather than physical attestation; fold-local estimator training/replay remains residual P1, so blindness requires separate proof. Any mismatch fails closed."
+  },
+  "reference_label": {
+    "variables": [
+      "semantic_solution",
+      "surface_cue",
+      "answer_codebook"
+    ],
+    "estimand_name": "selected_site_intervention_susceptibility",
+    "conditioning": "Conditional on the frozen per-variable selected-site algorithm; no unconditional model-level reliance interpretation is licensed.",
+    "primary_stratum": "Aligned base cases for which the targeted intervention changes the expected final marker: base.semantic_solution == base.surface_cue and expected_patched_final != base.oracle_final.",
+    "raw_components": "IIA_targeted_v and IIA_matched_null_v on every preplanned symmetric-primary-stratum source/base pair",
+    "specific_effect": "S_v = IIA_targeted_v - IIA_matched_null_v",
+    "primary_estimand": "delta_specific = S_semantic_solution - S_surface_cue",
+    "matched_null": "norm_matched_rotation at the identical causal site, source/base pair, intervention count, and decoding seed",
+    "specificity_controls": [
+      "self_sham",
+      "control_site_delta"
+    ],
+    "parse_failure_policy": "count_as_failure",
+    "denominator": "all_preplanned_primary_stratum_pairs_intent_to_treat",
+    "serialized_arithmetic": "Raw and leave-one IIAs are integer-success-count divided by shared trial_count. Exactly 16 keyed strict-subset leave-one records close to 15 times each full total; component and delta omission IDs close exactly; stored intervals are recomputed. Codebook competence is count-bound and content-addressed.",
+    "serialized_gate_evidence": "Every component retains count-bound self-sham and control-site evidence. The gate report recomputes the frozen 0.25 route-specificity, 0.90 self-sham, 0.10 absolute control-site, 0.90 codebook, and 0.75 site-stability thresholds; failed evidence remains serialized and forces the anchor summary to unresolved.",
+    "site_selection_stability": "Report all eight leave-one-D_site_discovery-content-seed selections and the full-data site's selection frequency; do not filter or replace the primary estimate from this diagnostic.",
+    "warning": "Activation visibility, raw targeted IIA, or a separately selected factor site is not an unconditional ground-truth mechanism or model-level reliance label."
+  },
+  "analysis_contract": {
+    "primary_output": "continuous selected-site g_specific profile and delta_specific point estimate with within-target measurement-precision interval",
+    "probability_status": "not_calibrated",
+    "primary_feature_view": "canonical final-marker parse distributions and transition contrasts over the five weak observation projections; no cue mask, challenge, raw telemetry, identity field, or internal field",
+    "primary_estimator": "Multi-output ridge regression with intercept; continuous features are standardized on training dependency clusters only. Lambda is selected from [0.01, 0.1, 1.0, 10.0] by inner leave-dependency-cluster-out mean absolute error, with ties resolved toward the larger lambda. If an inner fold has fewer than three training dependency clusters, lambda is fixed at 1.0 and the result remains pilot-only.",
+    "missing_or_parse_features": "Retain an explicit parse-failure rate feature; never drop a target or projection because parsing failed.",
+    "anchor_classification": "Secondary descriptive view derived from frozen anchor definitions; AUROC does not replace continuous-profile error.",
+    "prospective_scoring": "Exactly two conflict-stratum challenge kinds, codebook-relative semantic-consistent/surface-cue-consistent/parse-failure probabilities, scoring-key counts, HMAC-pseudonymized development cluster identities, route-agnostic weak and development add-one baselines, and a production three-fold gate frozen in prospective_scoring_contract.json. Candidate and each named baseline loss are averaged equally over the three heldout clusters before the lower global baseline is selected and the 10-percent reduction is tested; a single-fold score is non-authoritative.",
+    "raw_text_view": "Secondary ablation only and must beat the canonical contrast view after identity/style controls before supporting any stronger claim.",
+    "uncertainty": "Current profile intervals use the frozen 16-content-seed delete-one jackknife normal method and are within-target measurement precision conditional on the selected site. The three-cluster pilot reports no model-population interval; any powered successor must separately freeze dependency-cluster resampling.",
+    "multiplicity": "Report all three S_v components and delta_specific; no component selection after outcomes. Any confirmatory successor must freeze its familywise procedure before exposure."
+  },
+  "primary_readouts": [
+    "leave-dependency-cluster-out delta_specific mean absolute error",
+    "leave-dependency-cluster-out g_specific component mean absolute error",
+    "prospective codebook-relative heldout-challenge log loss averaged equally over all three heldout clusters versus the stronger globally averaged route-agnostic weak-orbit split and development-challenge marginal baseline",
+    "prospective raw cluster-macro multiclass Brier score as a secondary descriptive metric",
+    "cluster-macro accepted-slot coverage; abstained slots remain in primary scoring",
+    "secondary anchor macro AUROC"
+  ],
+  "engineering_pilot_gates": {
+    "reference_specificity": "For every named anchor unit, intended IIA minus norm-matched-rotation IIA is at least 0.25 on its induced route; self-sham preserves the base answer on at least 0.90 of pairs; absolute control-site effect is at most 0.10.",
+    "site_selection_stability": "Each resolved anchor component selects the full-data site in at least six of the eight leave-one-D_site_discovery-content-seed rediscoveries; otherwise its anchor summary is unresolved.",
+    "codebook_competence": "At least 0.90 on unpatched heldout codebook cells.",
+    "continuous_transfer": "Leave-dependency-cluster-out delta_specific MAE is at most 0.25.",
+    "anchor_display": "Secondary macro AUROC is at least 0.70 and every fold exceeds 0.60.",
+    "prospective": "After all three prediction commitments close before any reveal, codebook-relative heldout-challenge loss for the candidate and each named baseline is averaged equally over the three heldout clusters. Candidate global loss is at least 10 percent lower than the lower of the two globally averaged frozen baseline losses. Raw Brier and accepted-slot coverage are secondary and have no pass threshold in OSS-1; no single-fold pass is authoritative."
+  },
+  "claim_ceiling": "This design can support a named-unit engineering transfer pilot. It cannot support model-independent, population-generalization, calibrated-posterior, proprietary-internal-truth, or hidden-chain-of-thought claims. Confirmatory cross-cluster language requires a fresh outcome-naive successor with at least three development and three separately sealed confirmatory dependency clusters, subject to frozen power analysis.",
+  "stop_conditions": [
+    "targeted interchange is not specific against the norm-matched rotation control",
+    "self-sham or control-site gates fail",
+    "accuracy matching removes the output-only signal",
+    "weak observation features require cue masks, conflicts, or challenge material",
+    "dependency-cluster holdout collapses continuous-profile prediction",
+    "prospective challenge prediction does not beat the stronger of the prespecified route-agnostic weak split and development marginal add-one baselines",
+    "only raw style or model-identity features work",
+    "answer-codebook competence is below 0.90",
+    "the selected-site susceptibility profile switches across the declared weak projection orbit"
+  ],
+  "forbidden_retrofit": [
+    "changing factor, projection, parser, primary intervention stratum, selected-site algorithm, null, split, unit, feature, estimator, challenge slot, probability rule, baseline, aggregation, threshold, metric, or claim rules after an OSS outcome",
+    "using diagnostic cue masks or heldout challenge projections as estimator features",
+    "splitting a dependency cluster, semantic instance, case-seed block, or source/base pair group across a forbidden boundary; globally frozen templates are intentionally shared",
+    "dropping abstentions, parse failures, baseline-incorrect pairs, or failed controls from the primary denominator",
+    "calling same-process prediction locking blind evaluation",
+    "using a single-fold score as the production pilot gate, revealing any heldout material before all three commitments close, or running diagnostics before that barrier"
+  ],
+  "freeze_layers": {
+    "design": {
+      "status": "frozen",
+      "manifest_path": "design_freeze_manifest.json",
+      "manifest_sha256": "8c974390ceea3f1defaae19067359c909b4182dd26c321075c9e25ee1518e64b"
+    },
+    "discovery": {
+      "status": "unassigned",
+      "template_path": "discovery_authorization.json",
+      "template_sha256": "3a80dc38a066c980ecfa3bb4221c65b273fc8acfa44b5ea55ae845fed19eed79"
+    },
+    "execution": {
+      "status": "unassigned",
+      "template_path": "execution_lock.json",
+      "template_sha256": "8f17a12fed87fdf365fda146cce6765fe7de716f0545b32e01d1a53398771f4b"
+    },
+    "sealed_evaluation": {
+      "status": "unassigned",
+      "template_path": "sealed_evaluation_authorization.json",
+      "template_sha256": "43ca159b7551402e93e4d382388824d37869c0f503448bedc456bdce7af6a97c"
+    }
+  },
+  "outcome_exposure": {
+    "at_freeze": "none",
+    "oss_model_calls": 0,
+    "oss_outcomes_exposed": false,
+    "note": "Phantom-0 synthetic regression outcomes were known, but no OSS model was selected, called, or observed."
+  },
+  "amendment_rule": {
+    "mode": "append_only_successor",
+    "rule": "Never mutate this design or any of the three unassigned templates. Any concrete discovery authorization, site-discovery report, final execution lock, powered confirmatory design, or correction is a new content-addressed artifact with the relevant parent SHA-256."
+  }
+}

@@ -12,6 +12,8 @@ The checkpoint separates the locked primary abstention from post-hoc diagnosis.
 |---|---|---|
 | Project, setup, scientific boundaries | [README](../README.md) | [README](../README.ja.md) |
 | First live results and offline replay | [Report](../reports/output_only_bridge_20261023/README.md) | [レポート](../reports/output_only_bridge_20261023/README.ja.md) |
+| V2 content/format/reference-set interface | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md) | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.ja.md) |
+| Next bounded experiment proposal | [Strategy](next_bridge_pilot.md) | [次の作戦](next_bridge_pilot.ja.md) |
 | Contribution and evidence rules | [Contributing](../CONTRIBUTING.md) | [開発への参加](../CONTRIBUTING.ja.md) |
 | Authorization and data handling | [Responsible use](../RESPONSIBLE_USE.md) | [責任ある利用](../RESPONSIBLE_USE.ja.md) |
 

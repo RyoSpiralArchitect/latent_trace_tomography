@@ -36,6 +36,9 @@ promptの変更は既知の線形Radon operatorではなく、計算そのもの
 
 ## 現在あるもの
 
+- 追加実装の[output-only bridge v2](successors/oss_reliance_regime_v0/output_only_bridge_v2/README.ja.md)。
+  回答内容と形式適合を分け、caseごとに一致した全referenceと有限のchallenge-output集合を返します。
+  モデルを呼ばない開発用実装です。v1 checkpointを書き換えず、liveでのprospective transferを実証するものでもありません。
 - [2026-10-23のoutput-only Furnace/API checkpoint](reports/output_only_bridge_20261023/README.ja.md)。
   保全したOSSモデルの1,008回答、112回のAPI呼び出し、公開した合成prompt/outputとoffline replayを含みます。
   主結果は予測の棄権です。別途行った事後の形式診断は、転移成功の証拠ではありません。
@@ -235,6 +238,7 @@ live backendを追加する前に、[research contract](docs/research_contract.m
 5. API-1：consistency class、不確実性、driftを報告します。未検証の内部の真実は主張せず、確率較正は別gateに残します。
 
 詳細は[roadmap](docs/roadmap.md)と[industrial thesis](docs/industrial_thesis.md)を参照してください。
+次の小規模試験は[次期bridge pilotの作戦](docs/next_bridge_pilot.ja.md)にまとめています。まだ実行許可ではありません。
 
 ## 範囲と倫理
 

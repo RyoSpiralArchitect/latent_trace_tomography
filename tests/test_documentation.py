@@ -15,6 +15,8 @@ PAIRS = (
     "RESPONSIBLE_USE.md",
     "docs/README.md",
     "reports/output_only_bridge_20261023/README.md",
+    "successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md",
+    "docs/next_bridge_pilot.md",
 )
 
 

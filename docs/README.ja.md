@@ -12,6 +12,8 @@
 |---|---|---|
 | 概要・セットアップ・主張の範囲 | [README](../README.md) | [README](../README.ja.md) |
 | 初回の実測結果とoffline replay | [Report](../reports/output_only_bridge_20261023/README.md) | [レポート](../reports/output_only_bridge_20261023/README.ja.md) |
+| V2のcontent/format/reference-set interface | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md) | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.ja.md) |
+| 次の小規模実験の提案 | [Strategy](next_bridge_pilot.md) | [次の作戦](next_bridge_pilot.ja.md) |
 | 開発への参加と証拠の扱い | [Contributing](../CONTRIBUTING.md) | [開発への参加](../CONTRIBUTING.ja.md) |
 | 実行許可とデータ管理 | [Responsible use](../RESPONSIBLE_USE.md) | [責任ある利用](../RESPONSIBLE_USE.ja.md) |
 

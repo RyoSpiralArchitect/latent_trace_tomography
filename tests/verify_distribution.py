@@ -33,6 +33,7 @@ REQUIRED_TREES = (
     "reports",
 )
 REQUIRED_WHEEL_PATHS = (
+    "latent_trace_tomography/reference_bridge.py",
     "latent_trace_tomography/resources/protocols/synthetic_projection_orbit_v1/protocol.json",
     "latent_trace_tomography/resources/protocols/synthetic_projection_orbit_v1/protocol_manifest.json",
 )

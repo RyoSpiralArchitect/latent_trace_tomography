@@ -1,5 +1,7 @@
 # Latent Trace Tomography
 
+English | [日本語](README.ja.md) · [Documentation](docs/README.md)
+
 An output-only system-identification research program for behaviorally
 identifiable computational regimes in black-box language models.
 
@@ -268,7 +270,8 @@ before adding a live backend.
 
 ## Claim boundary
 
-Permitted:
+Permitted when the corresponding evidence is established, not as blanket claims
+of current achievement:
 
 - “Outputs are behaviorally consistent with regime class R under calibration C.”
 - “The estimator predicts failure pattern F on held-out perturbations.”
@@ -321,7 +324,8 @@ make test
 make smoke
 ~~~
 
-The project currently has no runtime dependencies beyond Python 3.10 or newer.
+The core package has no runtime dependencies beyond Python 3.10 or newer.
+The archived live-checkpoint replay requires Python 3.12.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for evidence and amendment rules.
 
 ## Prior work

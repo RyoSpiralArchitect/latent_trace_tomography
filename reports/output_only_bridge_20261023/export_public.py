@@ -7,7 +7,32 @@ from pathlib import Path
 from replay import ARCHIVE, a, b, digest
 
 
+def verify_retained_bytes(root, manifest):
+    """This exporter is for the reviewed checkpoint, not arbitrary future runs.
+
+    Copied summaries and nested plan metadata must match the reviewed bytes.
+    Reject additions before creating an output directory; an allowlisted outer
+    key alone does not prevent private fields from leaking through nested values.
+    """
+    b.check(manifest["format"] == "ltt_public_checkpoint_v1", "unknown checkpoint format")
+    bindings = {"plan.json": manifest["retained_plan_sha256"]}
+    for name, sha in manifest["retained_result_sha256"].items():
+        bindings[name + "/results.jsonl"] = sha
+    for name in (
+        "forecast_lock.json",
+        "analysis.json",
+        "verification.json",
+        "posthoc_format_diagnostic.json",
+    ):
+        retained = name if name == "forecast_lock.json" else "analysis-v1/" + name
+        bindings[retained] = manifest["published_files"][name]
+    for name, sha in bindings.items():
+        b.check(digest(root / name) == sha, "unreviewed retained export input: " + name)
+
+
 def export(root, output):
+    manifest = b.read(Path(__file__).with_name("data") / "manifest.json")
+    verify_retained_bytes(root, manifest)
     plan_path = root / "plan.json"
     plan, plan_sha = b.read(plan_path), digest(plan_path)
     b.validate(plan)

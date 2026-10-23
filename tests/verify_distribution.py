@@ -11,10 +11,13 @@ from typing import Sequence
 
 REQUIRED_FILES = (
     "README.md",
+    "README.ja.md",
     "LICENSE",
     "CONTRIBUTING.md",
+    "CONTRIBUTING.ja.md",
     "CITATION.cff",
     "RESPONSIBLE_USE.md",
+    "RESPONSIBLE_USE.ja.md",
     "pyproject.toml",
     "MANIFEST.in",
     "Makefile",

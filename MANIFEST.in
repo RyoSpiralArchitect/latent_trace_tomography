@@ -1,8 +1,11 @@
 include README.md
+include README.ja.md
 include LICENSE
 include CONTRIBUTING.md
+include CONTRIBUTING.ja.md
 include CITATION.cff
 include RESPONSIBLE_USE.md
+include RESPONSIBLE_USE.ja.md
 include pyproject.toml
 include Makefile
 

@@ -1,0 +1,321 @@
+{
+  "analysis_tier": "post_hoc_format_diagnostic_not_prospective",
+  "canonicalization_rule": "accept exact stripped A or B in addition to the frozen FINAL marker parser",
+  "canonicalized_weak_feature_matches": [
+    "target-01",
+    "target-02",
+    "target-08"
+  ],
+  "new_model_calls": 0,
+  "not_a_mechanism_label": true,
+  "per_target_phase": [
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 16,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 16,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-01"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 80,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 80,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-01"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 0,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 32,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-02"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 80,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 80,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-02"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 20,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 12,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-03"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 52,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 52,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-03"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 16,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 16,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-04"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 64,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 64,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-04"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 4,
+      "canonicalized_parseable": 30,
+      "canonicalized_semantic_consistent": 26,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 30,
+      "target_id": "target-05"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 68,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 68,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-05"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 32,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 0,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-06"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 72,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 72,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-06"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 16,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 16,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-07"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 78,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 78,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-07"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 2,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 30,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-08"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 80,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 80,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-08"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 32,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 0,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 32,
+      "target_id": "target-09"
+    },
+    {
+      "bare_marker_only": 0,
+      "canonicalized_cue_consistent": 72,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 72,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 80,
+      "target_id": "target-09"
+    },
+    {
+      "bare_marker_only": 3,
+      "canonicalized_cue_consistent": 0,
+      "canonicalized_parseable": 32,
+      "canonicalized_semantic_consistent": 32,
+      "n": 32,
+      "phase": "challenge",
+      "strict_parseable": 29,
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": 12,
+      "canonicalized_cue_consistent": 80,
+      "canonicalized_parseable": 80,
+      "canonicalized_semantic_consistent": 80,
+      "n": 80,
+      "phase": "weak",
+      "strict_parseable": 68,
+      "target_id": "target-10"
+    }
+  ],
+  "primary_lock_unchanged": true,
+  "script_sha256": "a31d55ac4636035b16661bcbf5c27e84bda8f9e18a4618b60f86571dfc778a22",
+  "source_lock_sha256": "d53993cda2c7143dbef756035e02ed0ced7d3dfe3fd9a8b613be2b993358304d",
+  "source_plan_sha256": "7ccb4e44234f6e68445ea9e3c7c4a71b52c5ee776747f2e30d1dffc64dfaa307",
+  "strict_parse_failures": [
+    {
+      "bare_marker_only": false,
+      "query_id": "challenge:0:2:challenge_table:r0",
+      "raw_output": "\nFINAL: AB",
+      "target_id": "target-05"
+    },
+    {
+      "bare_marker_only": false,
+      "query_id": "challenge:0:2:challenge_table:r1",
+      "raw_output": "\nFINAL: AB",
+      "target_id": "target-05"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:1:weak_rule_paraphrase:r0",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:1:weak_cue_salience_attenuation:r0",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:6:weak_baseline:r0",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:6:weak_irrelevant_distractor:r0",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:6:weak_cue_salience_attenuation:r0",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:1:1:weak_cue_salience_attenuation:r0",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:1:weak_cue_salience_attenuation:r1",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:6:weak_cue_salience_attenuation:r1",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:7:weak_irrelevant_distractor:r1",
+      "raw_output": "A",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:0:7:weak_cue_salience_attenuation:r1",
+      "raw_output": "A",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:1:6:weak_cue_salience_attenuation:r1",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "weak:1:7:weak_cue_salience_attenuation:r1",
+      "raw_output": "A",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "challenge:0:4:challenge_conflict:r0",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "challenge:0:3:challenge_conflict:r1",
+      "raw_output": "B",
+      "target_id": "target-10"
+    },
+    {
+      "bare_marker_only": true,
+      "query_id": "challenge:1:4:challenge_table:r1",
+      "raw_output": "B",
+      "target_id": "target-10"
+    }
+  ]
+}

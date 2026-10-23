@@ -40,6 +40,13 @@ a controlled input orbit.
 
 ## What exists now
 
+- A [2026-10-23 output-only Furnace/API checkpoint](reports/output_only_bridge_20261023/README.md)
+  with 1,008 retained-OSS completions and 112 API calls, public synthetic
+  prompt/output records, and offline replay. The primary forecast abstained;
+  a separate post-hoc format diagnosis is not a transfer-success claim.
+  Three OSS instances had identical observed weak outputs but different
+  challenge behavior. This is a bounded successor pilot, not frozen OSS-1
+  collection or validated internal-mechanism attribution.
 - A standard-library-only synthetic calibration instrument with two genuinely
   known hard routes: semantic evidence and a correlated surface cue.
 - Matched baseline outputs, diagnostic observation projections, and challenge
@@ -64,15 +71,16 @@ a controlled input orbit.
 - Two deliberately unassigned pre-output execution boundaries—a content-
   addressed discovery authorization and a separate final execution lock—plus
   an unassigned private post-output sealed-evaluation authorization template.
-  No OSS model or API endpoint has been called and no OSS outcome has been
-  exposed. Preflight can therefore report `design_ready=true` while discovery,
-  execution, and sealed-evaluation readiness remain false.
+  These checked-in templates remain unassigned. Separate live successors have
+  since run; the checkpoint above does not fill or retroactively authorize
+  these templates. `design_ready=true` is not live-execution readiness.
 - An append-only [controlled-anchor construction plan](successors/oss_reliance_regime_v0/controlled_anchor_phantom_v1/anchor_construction_plan.json)
   and [registry-authoring companion](operations/oss1_registry_authoring_v2/docs/registry_authoring_successor.md).
   Nine public checkpoint candidates remain `unresolved`; the successor instead
-  preassigns three controlled descendants per named base family. Construction
-  has not been authorized or run. Effective independent `n` would be three,
-  not nine, and the claim is limited to a controlled calibration phantom.
+  assigns three controlled descendants per named base family. The retained
+  cohort was used in the separate checkpoint above. Nine descendants are not
+  nine independent subjects; construction-condition names are not validated
+  mechanism labels. The causal-calibration bridge remains unresolved.
 
 The synthetic panel is a regression test for the instrument. It uses only
 parsed final decisions, and its challenge generator shares the same hard-route
@@ -103,9 +111,8 @@ ltt synthetic-demo \
 Both OSS commands are call-free. Preflight validates frozen asset hashes and
 executable invariants; the summary reproduces the public 64-seed generator
 conformance hashes. At the current boundary they stop before model execution.
-The next step for the controlled-anchor successor is a separate,
-content-addressed construction authorization closing its environment,
-verified-byte, RNG, module, tokenization, and output-path prerequisites.
+Live successors require separate, content-addressed authorization closing
+environment, verified-byte, RNG, module, tokenization, and output prerequisites.
 Construction, registry evidence closure, discovery authorization, and the final
 execution lock are distinct gates. Publishing this repository or passing
 preflight does not authorize weight downloads, training, or model/API calls.

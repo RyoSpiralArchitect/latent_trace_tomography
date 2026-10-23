@@ -13,6 +13,7 @@ graft operations
 graft successors
 graft examples
 graft tests
+graft reports
 
 global-exclude .DS_Store
 global-exclude *.py[cod]

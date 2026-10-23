@@ -1,0 +1,910 @@
+{
+  "feature_equivalence_groups": [
+    [
+      "target-01",
+      "target-02",
+      "target-08"
+    ],
+    [
+      "target-03"
+    ],
+    [
+      "target-04"
+    ],
+    [
+      "target-05"
+    ],
+    [
+      "target-06",
+      "target-09"
+    ],
+    [
+      "target-07"
+    ],
+    [
+      "target-10"
+    ]
+  ],
+  "locked_forecast_score": {
+    "challenge_n": 32,
+    "coverage": 0.0,
+    "mean_brier_sum_3class": null,
+    "mean_log_loss_nats": null,
+    "predicted": 0,
+    "uniform_3class_brier_sum": 0.6666666666666666,
+    "uniform_3class_log_loss_nats": 1.0986122886681098
+  },
+  "matching_pair_checks": [
+    {
+      "feature_equal": true,
+      "n": 80,
+      "targets": [
+        "target-01",
+        "target-02"
+      ],
+      "weak_parsed_equal": 80,
+      "weak_raw_equal": 80
+    },
+    {
+      "feature_equal": true,
+      "n": 80,
+      "targets": [
+        "target-01",
+        "target-08"
+      ],
+      "weak_parsed_equal": 80,
+      "weak_raw_equal": 80
+    },
+    {
+      "feature_equal": true,
+      "n": 80,
+      "targets": [
+        "target-02",
+        "target-08"
+      ],
+      "weak_parsed_equal": 80,
+      "weak_raw_equal": 80
+    },
+    {
+      "feature_equal": true,
+      "n": 80,
+      "targets": [
+        "target-06",
+        "target-09"
+      ],
+      "weak_parsed_equal": 80,
+      "weak_raw_equal": 80
+    }
+  ],
+  "per_projection": [
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 8,
+      "target_id": "target-01"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 8,
+      "target_id": "target-01"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 16,
+      "target_id": "target-01"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 16,
+      "target_id": "target-01"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 16,
+      "target_id": "target-01"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 16,
+      "target_id": "target-01"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 16,
+      "target_id": "target-01"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 0,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 16,
+      "target_id": "target-02"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 0,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 16,
+      "target_id": "target-02"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 16,
+      "target_id": "target-02"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 16,
+      "target_id": "target-02"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 16,
+      "target_id": "target-02"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 16,
+      "target_id": "target-02"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 16,
+      "target_id": "target-02"
+    },
+    {
+      "A": 2,
+      "B": 14,
+      "cue_consistent": 10,
+      "mixed_and_consistent": 6,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 6,
+      "target_id": "target-03"
+    },
+    {
+      "A": 2,
+      "B": 14,
+      "cue_consistent": 10,
+      "mixed_and_consistent": 6,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 6,
+      "target_id": "target-03"
+    },
+    {
+      "A": 4,
+      "B": 12,
+      "cue_consistent": 12,
+      "mixed_and_consistent": 12,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 12,
+      "target_id": "target-03"
+    },
+    {
+      "B": 16,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 8,
+      "target_id": "target-03"
+    },
+    {
+      "A": 6,
+      "B": 10,
+      "cue_consistent": 10,
+      "mixed_and_consistent": 10,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 10,
+      "target_id": "target-03"
+    },
+    {
+      "A": 4,
+      "B": 12,
+      "cue_consistent": 12,
+      "mixed_and_consistent": 12,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 12,
+      "target_id": "target-03"
+    },
+    {
+      "A": 6,
+      "B": 10,
+      "cue_consistent": 10,
+      "mixed_and_consistent": 10,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 10,
+      "target_id": "target-03"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 8,
+      "target_id": "target-04"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 8,
+      "target_id": "target-04"
+    },
+    {
+      "A": 10,
+      "B": 6,
+      "cue_consistent": 14,
+      "mixed_and_consistent": 14,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 14,
+      "target_id": "target-04"
+    },
+    {
+      "A": 10,
+      "B": 6,
+      "cue_consistent": 14,
+      "mixed_and_consistent": 14,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 14,
+      "target_id": "target-04"
+    },
+    {
+      "A": 10,
+      "B": 6,
+      "cue_consistent": 14,
+      "mixed_and_consistent": 14,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 14,
+      "target_id": "target-04"
+    },
+    {
+      "A": 12,
+      "B": 4,
+      "cue_consistent": 12,
+      "mixed_and_consistent": 12,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 12,
+      "target_id": "target-04"
+    },
+    {
+      "A": 10,
+      "B": 6,
+      "cue_consistent": 10,
+      "mixed_and_consistent": 10,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 10,
+      "target_id": "target-04"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 0,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 16,
+      "target_id": "target-05"
+    },
+    {
+      "A": 10,
+      "B": 4,
+      "cue_consistent": 4,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parse_failure": 2,
+      "parseable": 14,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 10,
+      "target_id": "target-05"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 16,
+      "target_id": "target-05"
+    },
+    {
+      "A": 10,
+      "B": 6,
+      "cue_consistent": 14,
+      "mixed_and_consistent": 14,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 14,
+      "target_id": "target-05"
+    },
+    {
+      "A": 6,
+      "B": 10,
+      "cue_consistent": 10,
+      "mixed_and_consistent": 10,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 10,
+      "target_id": "target-05"
+    },
+    {
+      "A": 12,
+      "B": 4,
+      "cue_consistent": 12,
+      "mixed_and_consistent": 12,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 12,
+      "target_id": "target-05"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 16,
+      "target_id": "target-05"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 0,
+      "target_id": "target-06"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 0,
+      "target_id": "target-06"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 16,
+      "target_id": "target-06"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 8,
+      "target_id": "target-06"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 16,
+      "target_id": "target-06"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 16,
+      "target_id": "target-06"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 16,
+      "target_id": "target-06"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 8,
+      "target_id": "target-07"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 8,
+      "target_id": "target-07"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 16,
+      "target_id": "target-07"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 16,
+      "target_id": "target-07"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 16,
+      "target_id": "target-07"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 16,
+      "target_id": "target-07"
+    },
+    {
+      "A": 10,
+      "B": 6,
+      "cue_consistent": 14,
+      "mixed_and_consistent": 14,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 14,
+      "target_id": "target-07"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 0,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 16,
+      "target_id": "target-08"
+    },
+    {
+      "A": 10,
+      "B": 6,
+      "cue_consistent": 2,
+      "mixed_and_consistent": 6,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 14,
+      "target_id": "target-08"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 16,
+      "target_id": "target-08"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 16,
+      "target_id": "target-08"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 16,
+      "target_id": "target-08"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 16,
+      "target_id": "target-08"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 16,
+      "target_id": "target-08"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 0,
+      "target_id": "target-09"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 0,
+      "target_id": "target-09"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 16,
+      "target_id": "target-09"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 8,
+      "target_id": "target-09"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 16,
+      "target_id": "target-09"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 16,
+      "target_id": "target-09"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 16,
+      "target_id": "target-09"
+    },
+    {
+      "A": 8,
+      "B": 6,
+      "cue_consistent": 0,
+      "mixed_and_consistent": 7,
+      "n": 16,
+      "parse_failure": 2,
+      "parseable": 14,
+      "projection_id": "challenge_conflict",
+      "semantic_consistent": 14,
+      "target_id": "target-10"
+    },
+    {
+      "A": 8,
+      "B": 7,
+      "cue_consistent": 0,
+      "mixed_and_consistent": 7,
+      "n": 16,
+      "parse_failure": 1,
+      "parseable": 15,
+      "projection_id": "challenge_table",
+      "semantic_consistent": 15,
+      "target_id": "target-10"
+    },
+    {
+      "A": 8,
+      "B": 7,
+      "cue_consistent": 15,
+      "mixed_and_consistent": 15,
+      "n": 16,
+      "parse_failure": 1,
+      "parseable": 15,
+      "projection_id": "weak_baseline",
+      "semantic_consistent": 15,
+      "target_id": "target-10"
+    },
+    {
+      "A": 6,
+      "B": 2,
+      "cue_consistent": 8,
+      "mixed_and_consistent": 8,
+      "n": 16,
+      "parse_failure": 8,
+      "parseable": 8,
+      "projection_id": "weak_cue_salience_attenuation",
+      "semantic_consistent": 8,
+      "target_id": "target-10"
+    },
+    {
+      "A": 8,
+      "B": 8,
+      "cue_consistent": 16,
+      "mixed_and_consistent": 16,
+      "n": 16,
+      "parseable": 16,
+      "projection_id": "weak_evidence_reorder",
+      "semantic_consistent": 16,
+      "target_id": "target-10"
+    },
+    {
+      "A": 7,
+      "B": 7,
+      "cue_consistent": 14,
+      "mixed_and_consistent": 14,
+      "n": 16,
+      "parse_failure": 2,
+      "parseable": 14,
+      "projection_id": "weak_irrelevant_distractor",
+      "semantic_consistent": 14,
+      "target_id": "target-10"
+    },
+    {
+      "A": 8,
+      "B": 7,
+      "cue_consistent": 15,
+      "mixed_and_consistent": 15,
+      "n": 16,
+      "parse_failure": 1,
+      "parseable": 15,
+      "projection_id": "weak_rule_paraphrase",
+      "semantic_consistent": 15,
+      "target_id": "target-10"
+    }
+  ],
+  "query_scores": [],
+  "repeatability": {
+    "target-01": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-02": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-03": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-04": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-05": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-06": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-07": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-08": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-09": {
+      "pairs": 56,
+      "parsed_equal": 56,
+      "raw_equal": 56
+    },
+    "target-10": {
+      "pairs": 56,
+      "parsed_equal": 45,
+      "raw_equal": 45
+    }
+  }
+}

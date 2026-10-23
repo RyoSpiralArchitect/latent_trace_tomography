@@ -27,6 +27,7 @@ REQUIRED_TREES = (
     "successors",
     "examples",
     "tests",
+    "reports",
 )
 REQUIRED_WHEEL_PATHS = (
     "latent_trace_tomography/resources/protocols/synthetic_projection_orbit_v1/protocol.json",

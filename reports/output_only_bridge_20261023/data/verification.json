@@ -1,0 +1,59 @@
+{
+  "analysis_script_sha256": "fc58230d9bbf76e4ea1b370dbdfbf0176242b2cd1f1e5891b7a6bd2489a9357e",
+  "api_challenge": {
+    "estimated_uncached_cost_usd": 0.0015679999999999995,
+    "event_chain": {
+      "event_count": 66,
+      "final_event_sha256": "3fe48014605f7aa3ebcc91d0fe9110538be34d941c237ead01f644b4815aae52"
+    },
+    "receipt_sha256": "adb2a7e67006df7cbc0b1b36795dd0d5b8ab01e74f9bfa4c120a4a864ce5fb49",
+    "requests": 32,
+    "reserved_ceiling_usd": 0.10649600000000001,
+    "usage": {
+      "input_tokens": 3432,
+      "output_tokens": 122,
+      "total_tokens": 3554
+    },
+    "wall_seconds": 63.86061245900055
+  },
+  "api_estimated_uncached_cost_usd": 0.005611200000000002,
+  "api_total_requests": 112,
+  "api_weak": {
+    "estimated_uncached_cost_usd": 0.004043200000000002,
+    "event_chain": {
+      "event_count": 162,
+      "final_event_sha256": "9b4a77a8ad4ff9fef25196616fc9221b0d876452c3763e94ee29e4d9db7f9ce7"
+    },
+    "receipt_sha256": "62ffda0ef72aa0ba6a9629e342e2de2d086dfa46badb905f832e2c280f499756",
+    "requests": 80,
+    "reserved_ceiling_usd": 0.26624000000000003,
+    "usage": {
+      "input_tokens": 8924,
+      "output_tokens": 296,
+      "total_tokens": 9220
+    },
+    "wall_seconds": 167.6912896250069
+  },
+  "forecast_lock_sha256": "d53993cda2c7143dbef756035e02ed0ced7d3dfe3fd9a8b613be2b993358304d",
+  "forecast_replay": "exact",
+  "furnace": {
+    "event_chain": {
+      "event_count": 14127,
+      "final_event_sha256": "d86e106e611474e4e7e37718123793ed98e89d3ffe14ffc0f22aa10bd99a86f7"
+    },
+    "logical_completions": 1008,
+    "physical_forwards": 6050,
+    "receipt_sha256": "975c35ef46522a40ce8ae18d7fdd6c5151b70766e445111846c3555a46367c84",
+    "wall_seconds": 129.78272147942334
+  },
+  "limitations": [
+    "self-recorded evidence, not independent execution attestation",
+    "price estimate, not an invoice",
+    "shared Furnace GPU; latency is not a comparison metric"
+  ],
+  "local_chronology": "weak_complete < lock < challenge_started",
+  "new_model_calls": 0,
+  "plan_sha256": "7ccb4e44234f6e68445ea9e3c7c4a71b52c5ee776747f2e30d1dffc64dfaa307",
+  "script_sha256": "c38a459b6ce97a4c88b948d59c0a5bf01d78df2029e6ecfc26bfd781cf421981",
+  "status": "verified"
+}

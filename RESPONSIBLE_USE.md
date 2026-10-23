@@ -1,5 +1,7 @@
 # Responsible use
 
+English | [日本語](RESPONSIBLE_USE.ja.md)
+
 Latent Trace Tomography is intended for authorized model evaluation, research,
 incident diagnosis, and governance.
 

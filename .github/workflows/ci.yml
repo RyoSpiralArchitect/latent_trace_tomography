@@ -8,6 +8,20 @@ permissions:
   contents: read
 
 jobs:
+  output-only-checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Replay public checkpoint without network or credentials
+        run: python -S reports/output_only_bridge_20261023/replay.py
+      - name: Test archived runner and public replay
+        run: |
+          python -S -m unittest discover -s successors/oss_reliance_regime_v0/output_only_bridge_v1 -v
+          python -S -m unittest discover -s reports/output_only_bridge_20261023 -v
+
   test:
     strategy:
       matrix:

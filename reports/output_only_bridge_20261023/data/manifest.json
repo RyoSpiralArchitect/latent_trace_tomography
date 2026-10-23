@@ -1,0 +1,29 @@
+{
+  "archived_source_sha256": {
+    "README.md": "0f01bc9308f01a76a0acf2e457aef52bc71c3cf211ff942ec2c4d4ec134413b8",
+    "analyze_saved.py": "fc58230d9bbf76e4ea1b370dbdfbf0176242b2cd1f1e5891b7a6bd2489a9357e",
+    "bridge.py": "c38a459b6ce97a4c88b948d59c0a5bf01d78df2029e6ecfc26bfd781cf421981",
+    "diagnose_format.py": "a31d55ac4636035b16661bcbf5c27e84bda8f9e18a4618b60f86571dfc778a22",
+    "test_analysis.py": "069debbfedccf18c79a8db7da802f16e666bede162575e811cfdb5a687f54157",
+    "test_bridge.py": "b4328367c159c4c70cd6a003298fd835b040312e33a80e585b589d7af899b59f"
+  },
+  "claim_ceiling": "replayable behavioral observations, original abstention, and separately labeled post-hoc diagnosis",
+  "export_policy": "six-field observations and allowlisted task inventory; no host paths, credentials, response IDs, or token/activation telemetry",
+  "format": "ltt_public_checkpoint_v1",
+  "new_model_calls": 0,
+  "published_files": {
+    "analysis.json": "d1ffc15d5e5aafa7f3066f5f3eac1c51f0cbf3b9720b3385570bebcfbc34ce05",
+    "forecast_lock.json": "d53993cda2c7143dbef756035e02ed0ced7d3dfe3fd9a8b613be2b993358304d",
+    "inventory.json": "2f3ee90556d7a1a562caf8b8c31ac3083b9d2a3739d83bfbd87d2b41425ee203",
+    "observations.jsonl": "9e8d1d5f23f5420af20bab8adb33dc082e504b52c448b58010465b3ef9bf58b4",
+    "posthoc_format_diagnostic.json": "627e10a1d019f50e9ed8f27afead960712724b8830fad34639e792883941ea9a",
+    "verification.json": "264e7535a8dce6e6b84eb55fa11f642cc9d77dc982f68d3bebd64a34ae44e0f8"
+  },
+  "retained_plan_sha256": "7ccb4e44234f6e68445ea9e3c7c4a71b52c5ee776747f2e30d1dffc64dfaa307",
+  "retained_result_sha256": {
+    "api-challenge-attempt-001": "3a09b76cabcd5f1f700bea779613ce3bb086e07be76e164a5e54525a6e1819a0",
+    "api-weak-attempt-001": "04f8080d886cbaa73f48f89ce3e79d85a96d65b8981609d404e74b4c25129db2",
+    "furnace-attempt-001": "027940f6c6d56ade6010d8f2cc82b20771d499105a9fd4069c92829ddb54d421"
+  },
+  "scope": "public derived export, not a replacement for the retained plan, results, or receipts"
+}

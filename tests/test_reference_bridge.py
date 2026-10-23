@@ -133,6 +133,42 @@ class ReferenceBridgeTests(unittest.TestCase):
             any("unresolved" in row["observed_answer_set"] for row in report["challenge_envelope"])
         )
 
+    def test_reference_challenge_answers_cannot_select_support(self):
+        data = bundle()
+        before = r.build_reference_report(data)
+        for rows in data["reference_challenge"].values():
+            for row in rows:
+                row["output_text"] = "FINAL: AB"
+        after = r.build_reference_report(data)
+        self.assertEqual(before["support_targets"], after["support_targets"])
+        self.assertEqual(before["status"], after["status"])
+        self.assertNotEqual(before["challenge_envelope"], after["challenge_envelope"])
+        self.assertNotEqual(
+            before["input_commitments"]["reference_challenge_sha256"],
+            after["input_commitments"]["reference_challenge_sha256"],
+        )
+
+    def test_invalid_target_content_never_uses_a_matching_failure_reference(self):
+        data = bundle()
+        data["target_weak"][0]["output_text"] = "unknown"
+        for rows in data["reference_weak"].values():
+            rows[0]["output_text"] = "unknown"
+        report = r.build_reference_report(data)
+        self.assertEqual(report["status"], "abstain_unresolved_target_answers")
+        self.assertEqual(report["support_targets"], [])
+        self.assertTrue(
+            all(row["observed_answer_set"] is None for row in report["challenge_envelope"])
+        )
+
+    def test_v2_full_response_contract_does_not_reinterpret_v1(self):
+        script = ROOT / "successors/oss_reliance_regime_v0/output_only_bridge_v1/bridge.py"
+        spec = importlib.util.spec_from_file_location("archived_v1_parser", script)
+        archived = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(archived)
+        raw = "Explanation\nFINAL: A"
+        self.assertEqual(archived.marker(raw), "A")
+        self.assertEqual(r.parse_channels(raw), {"answer": None, "format": "unresolved"})
+
     def test_raw_inputs_are_unchanged(self):
         data = bundle()
         before = copy.deepcopy(data)

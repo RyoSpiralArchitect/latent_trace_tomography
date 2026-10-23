@@ -1,5 +1,7 @@
 # Output-only bridge v2: content, format, and reference sets
 
+English | [日本語](README.ja.md)
+
 This additive implementation follows the [v1 research checkpoint](../../../reports/output_only_bridge_20261023/README.md).
 It does not edit the v1 parser, saved primary abstention, public data, or frozen OSS-1 contract.
 There is no model loader, provider client, automatic retry, or live-execution command here.
@@ -12,6 +14,9 @@ There is no model loader, provider client, automatic retry, or live-execution co
    multiple markers, explanations, lowercase symbols, and `FINAL: AB`—is unresolved.
    Raw observations remain untouched. A bare symbol is not silently counted as
    successful format compliance.
+   Unlike the archived v1 line parser, v2 does not accept an explanatory prefix
+   followed by a final marker. This is an intentional full-response contract,
+   not merely a relaxation of v1. Historical v1 scores are not reparsed with it.
 2. Return **all case-aligned matching references**, not one regime label. Matching
    compares every canonical weak answer at the same case/projection/replicate slot.
    Equal aggregate marginals alone are insufficient. Format counts, model identity,
@@ -73,3 +78,5 @@ Before a new live experiment: select fresh content/seed and budget, save the v2 
 and implementation identity, bind the concrete inventories, and persist the report
 before opening target challenge outputs. Keep the separate causal-calibration gap
 visible. This PR neither authorizes nor starts that experiment.
+See the [next pilot strategy](../../../docs/next_bridge_pilot.md) for the proposed
+sequence and the distinction between set containment and useful prediction.

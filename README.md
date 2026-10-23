@@ -303,6 +303,8 @@ Not permitted:
    unverified internal truth; probability calibration remains a separate gate.
 
 See [the full roadmap](docs/roadmap.md) and [the industrial thesis](docs/industrial_thesis.md).
+The [next bridge pilot strategy](docs/next_bridge_pilot.md) proposes a bounded
+next experiment; it is not an execution authorization.
 
 ## Scope and ethics
 

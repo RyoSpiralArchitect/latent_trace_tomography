@@ -1,5 +1,7 @@
 # Contributing
 
+English | [日本語](CONTRIBUTING.ja.md)
+
 Latent Trace Tomography is an evidence-first research repository. A change is
 complete only when its scientific claim, artifact identity, and failure surface
 remain inspectable.

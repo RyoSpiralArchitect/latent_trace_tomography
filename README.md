@@ -40,6 +40,11 @@ a controlled input orbit.
 
 ## What exists now
 
+- An additive [output-only bridge v2](successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md)
+  separates answer content from format compliance and returns all case-aligned
+  matching references with finite challenge-output sets. It is model-free and
+  development-only; it does not revise the v1 checkpoint or establish live
+  prospective transfer.
 - A [2026-10-23 output-only Furnace/API checkpoint](reports/output_only_bridge_20261023/README.md)
   with 1,008 retained-OSS completions and 112 API calls, public synthetic
   prompt/output records, and offline replay. The primary forecast abstained;

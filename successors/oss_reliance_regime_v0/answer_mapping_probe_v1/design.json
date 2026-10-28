@@ -1,0 +1,27 @@
+{
+  "schema_version": "ltt_answer_mapping_probe_v1",
+  "status": "design_only_not_execution_authorized",
+  "motivation_checkpoint": "mistral_bridge_20261029",
+  "content_count": 2,
+  "repetitions": 2,
+  "full_task": {
+    "semantic": ["PASS", "FAIL"],
+    "cue": ["PASS", "FAIL"],
+    "layout": ["baseline", "reorder"],
+    "response_mode": ["direct", "standard", "inverted"]
+  },
+  "mapping_only": {
+    "provided_decision": ["PASS", "FAIL"],
+    "response_mode": ["standard", "inverted"]
+  },
+  "planned_requests": {"full_task": 96, "mapping_only": 16, "total": 112},
+  "candidate_endpoint": "mistral-large-4",
+  "candidate_settings": {"temperature": 0, "max_tokens": 32, "reasoning_effort": "none", "n": 1, "stream": false, "service_tier": "standard_only"},
+  "budget": {"money_cap_usd": 0.5, "input_tokens_per_request": 2048, "output_tokens_per_request": 32, "automatic_retries": 0, "model_substitutions": 0},
+  "order": "repeat blocks 0 then 1; within each, ascending SHA256(scope, repeat, case_id)",
+  "primary_contrasts": ["full_task_inverted_error_rate_minus_standard", "mapping_only_inverted_error_rate_minus_standard"],
+  "secondary": ["direct_correct_by_encoded_correct_paired_tables", "semantic_and_cue_conflict_breakdowns", "layout_breakdowns", "format_and_unresolved", "repeat_disagreement"],
+  "unit": "two content instances; paired factorial slots and repetitions are dependent measurements, not independent subjects",
+  "claim_ceiling": "small descriptive behavioral dissociation, not isolation of an internal computation stage",
+  "launch_requirements": ["explicit live authorization", "fresh model availability and price check", "hash-bound request/scoring artifacts and transport settings", "mock execution pass", "complete no-retry receipt handling", "all 112 outcomes retained or incomplete run reported"]
+}

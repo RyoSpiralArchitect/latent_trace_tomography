@@ -1,0 +1,707 @@
+{
+  "created_at": "2026-10-28T19:46:16.481773+00:00",
+  "reference_report": {
+    "challenge_envelope": [
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-2-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-2-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-2-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-2-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-3-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-3-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-3-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-3-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-4-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-4-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-4-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-4-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-5-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-5-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-5-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-0-5-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-2-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-2-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-2-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-2-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-3-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-3-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-3-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-3-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-4-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-4-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-4-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-4-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-5-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-5-r0",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r0"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-5-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_conflict",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      },
+      {
+        "ambiguous_within_reference_set": null,
+        "case_id": "reference_replication_20261029_v1:case-1-5-r1",
+        "observed_answer_set": null,
+        "projection_id": "challenge_table",
+        "reference_answers_and_formats": {},
+        "replicate_id": "r1"
+      }
+    ],
+    "declared_reference_cluster_count": 3,
+    "envelope_interpretation": "finite reference output sets, not probabilities or guaranteed future coverage",
+    "evidence_tier": "development_only_not_prospective_validation",
+    "implementation_sha256": "73172f26c9090115d771f233a27608de57489eeedc716a7be8416cb64bc32ac9",
+    "input_commitments": {
+      "challenge_inventory_sha256": "afe38758afc06d45079eed7d5e9f631ee396f4f075d58541790ee539ca91feea",
+      "reference_challenge_sha256": {
+        "target-01": "cefd75c0b57f54e27f27616d8967696dae9ec899b510c17ffa5015bd6583cf1f",
+        "target-02": "f3175d6cdd8b01742702b2234f1941611db98c83dd72f6583a38277e7635a6e6",
+        "target-03": "bb1b01cfed03c87b6bf085c749190fb5a812d7cfbeac085bd0d1eee65a96f14d",
+        "target-04": "ef855c73c0066438ed6dfa45ba3230ed4f5b0621ffee232326aa67036f830309",
+        "target-05": "4e44626a50efcaa0c2c6c3e2e57faed9830b1691ff24ded6271a1405eb48c20b",
+        "target-06": "df4819336d028a6dbe696504b8dfd37d4ce9d347188ae6d29ac62f1d96732751",
+        "target-07": "040c0f5151f76afde567eea02497fb8b489a5962b8f61b3753243a74ba150465",
+        "target-08": "a4e7f22ab737d23d71688a3956e9fadc2729d647e55efdd9117bc76a15b29f35",
+        "target-09": "9770dc3a67dd1a433ad4650c031eb907dcde7d569f00247b2e13f66944cc4e16"
+      },
+      "reference_clusters_sha256": "dc797f327716837877ad55fcea3dca5a97f23bb4980c6bf7fbfb0fe78eeb5121",
+      "reference_weak_sha256": {
+        "target-01": "52e48247eb3f5aeecf8e09108d13e449ed6df07ea6ec25cdf5be8f19ee305d81",
+        "target-02": "b4309335705ac563bac739b6b8286d5ed97a3f0babad7d744d82e778ca53ed9d",
+        "target-03": "2fafe6ab9a1195afd279434900f55e56095dbb4859a5d05992b46ba195db528d",
+        "target-04": "a90fd19141e061b0bd371b3e65823c4057de393b1c950e193490477ed117815d",
+        "target-05": "6b6e46d760802d42f37e84f91b510275c124314ad611afe4d4c2a99dfd27001d",
+        "target-06": "d42a479258e7fe9bc84741a3756d2a12601119f0eecb4120d7da5df128150f5f",
+        "target-07": "c856b4326a7a0aa362f7e832276bd4ba83b40ccbd019bf0f6a2bbc5b0b5239d3",
+        "target-08": "2eae06eab78422d659e422955ef2c875b97e6436ae6a6420cb9c62a7723d8954",
+        "target-09": "3e939be03522362d130ab3f993be32b1ca9c73a8ed2505e80e4ae44d08ca9cd0"
+      },
+      "target_weak_sha256": "c6d63601dac93b487474df48978a14ebe9b7b9d699964f777304df269b5d007e",
+      "weak_inventory_sha256": "b639d70cb21d9395f5b2bfc00818dbbf04edc1510c332bf435a910f11d075bfc"
+    },
+    "mechanism_attribution": "not_attempted_even_for_single_match",
+    "new_model_calls": 0,
+    "reference_channels": {
+      "target-01": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-02": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-03": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-04": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-05": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-06": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-07": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-08": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      },
+      "target-09": {
+        "excluded_reason": "different_case_aligned_answers",
+        "formats": {
+          "bare_symbol": 0,
+          "exact_marker": 80,
+          "unresolved": 0
+        },
+        "n": 80,
+        "unresolved_answers": 0
+      }
+    },
+    "reference_count": 9,
+    "rules_sha256": "bc83155cdd96118a6ee9610c5d8df047bb7d014010f02835a487b59fd4cad239",
+    "schema_version": "ltt_output_bridge_v2_report_v1",
+    "status": "abstain_outside_reference_support",
+    "support_clusters": [],
+    "support_targets": [],
+    "target_channels": {
+      "formats": {
+        "bare_symbol": 35,
+        "exact_marker": 45,
+        "unresolved": 0
+      },
+      "n": 80,
+      "unresolved_answers": 0
+    },
+    "target_id": "target-api-mistral-01"
+  },
+  "retained_commitment_sha256": "1f38e538b56ec3224da34c702f352affb9f0ccadcc2e4687843d10ec8b9a878b",
+  "schema_version": "ltt_mistral_public_forecast_v1",
+  "unconditional_baseline": [
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-2-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-2-r0",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-2-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-2-r1",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-3-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-3-r0",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-3-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-3-r1",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-4-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-4-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-4-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-4-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-5-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-5-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-5-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-0-5-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-2-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-2-r0",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-2-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-2-r1",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-3-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-3-r0",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-3-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-3-r1",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-4-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-4-r0",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-4-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-4-r1",
+      "observed_answer_set": [
+        "A",
+        "B",
+        "unresolved"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-5-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-5-r0",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r0"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-5-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_conflict",
+      "replicate_id": "r1"
+    },
+    {
+      "case_id": "reference_replication_20261029_v1:case-1-5-r1",
+      "observed_answer_set": [
+        "A",
+        "B"
+      ],
+      "projection_id": "challenge_table",
+      "replicate_id": "r1"
+    }
+  ]
+}

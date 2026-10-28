@@ -3,17 +3,19 @@
 [English](README.md) | 日本語
 
 まず[プロジェクトのREADME](../README.ja.md)、次に
-[初回live checkpoint](../reports/output_only_bridge_20261023/README.ja.md)をお読みください。
-レポートでは、事前に保存した一次評価の棄権と、事後診断を分けています。
+[Mistral checkpoint](../reports/mistral_bridge_20261029/README.ja.md)をお読みください。
+公開した2つのcheckpointでは、保存済みの一次評価の棄権と、事後診断を分けています。
 
 ## 目的別の入口
 
 | 目的 | English | 日本語 |
 |---|---|---|
 | 概要・セットアップ・主張の範囲 | [README](../README.md) | [README](../README.ja.md) |
+| 10月29日のMistral結果とreplay | [Report](../reports/mistral_bridge_20261029/README.md) | [レポート](../reports/mistral_bridge_20261029/README.ja.md) |
+| 次のanswer-mapping診断：設計のみ | [Design](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md) |
 | 初回の実測結果とoffline replay | [Report](../reports/output_only_bridge_20261023/README.md) | [レポート](../reports/output_only_bridge_20261023/README.ja.md) |
 | V2のcontent/format/reference-set interface | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md) | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.ja.md) |
-| 次の小規模実験の提案 | [Strategy](next_bridge_pilot.md) | [次の作戦](next_bridge_pilot.ja.md) |
+| 以前の小規模bridge試験の提案 | [Strategy](next_bridge_pilot.md) | [以前の作戦](next_bridge_pilot.ja.md) |
 | 開発への参加と証拠の扱い | [Contributing](../CONTRIBUTING.md) | [開発への参加](../CONTRIBUTING.ja.md) |
 | 実行許可とデータ管理 | [Responsible use](../RESPONSIBLE_USE.md) | [責任ある利用](../RESPONSIBLE_USE.ja.md) |
 
@@ -41,5 +43,6 @@ READMEは仕様書の代わりではありません。
 必要な説明は別文書に追加します。公開replayはv1の６ソースすべてのハッシュを検証し、
 元の棄権を一次結果として維持します。
 
-core packageはPython 3.10以降に対応しています。保存したlive checkpointのreplayにはPython 3.12が必要です。
+core package、10月29日のreplay、answer-mapping設計はPython 3.10以降に対応しています。
+10月23日の保存済みreplayにはPython 3.12が必要です。
 掲載しているofflineの実行例では、モデルやAPIを呼び出しません。

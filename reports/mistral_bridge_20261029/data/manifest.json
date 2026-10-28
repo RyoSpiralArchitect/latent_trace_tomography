@@ -1,0 +1,30 @@
+{
+  "evidence_tier": "prospective_engineering_pilot_not_causal_validation",
+  "export_policy": "pinned allowlist; six-field synthetic observations, no credentials, host paths, response IDs, tensor/token telemetry",
+  "new_model_calls": 0,
+  "published_files": {
+    "analysis.json": "9b67f045e6b3999374d0db65dff1ed118775813eb29ac4a667b8e14874e478ba",
+    "execution.json": "c2d0477e7767c6494232fe56e29bfa7a005582a204114c916bd3b13c54110de9",
+    "forecast.json": "10ed76b92b36e3e8de5fd56033287ec9afb0d918574af44306dcb8b892a09a75",
+    "inventory.json": "10bb2fc5f61dcf0d650e120bd0697d2ffb14a82808f1759c8433a512981cb2ab",
+    "observations.jsonl": "809f4a22d468adbbf2ff09903f2dd5d237d0b65a5fef2f9f253a75a4ee38104c"
+  },
+  "retained_input_sha256": {
+    "api": {
+      "api-challenge-attempt-001/attempt_receipt.json": "7b35fd1a38a97f354d039f9f9231de5ee83b9f354865d9e0070be68a29d5c179",
+      "api-challenge.claim.json": "e81068d97517fc241971239004d3d9dc798533619bd7391c72f12ddafe0449e1",
+      "api-weak-attempt-001/attempt_receipt.json": "2ba52d2375c0b327136e2db6eec9edfc55024ba6925d466f09060e4907c05004",
+      "commitment.json": "1f38e538b56ec3224da34c702f352affb9f0ccadcc2e4687843d10ec8b9a878b",
+      "evaluation.json": "85d8a99d428f733f068be56de9a7ef96cd9cc3fe553fe8fe7607510be49f9c81",
+      "plan.json": "8ac9218fcca0382d0d8490cd174bfe03cccaa6a25c6dcdbb5bbba93621ba2832",
+      "posthoc_diagnostics.json": "3c46726b15b58e0801cb34c47c4d0584626d3cb20d16dab47b1706ac74f6dc5a"
+    },
+    "reference": {
+      "furnace-attempt-001/attempt_receipt.json": "b8f2f1b3832caf9095515a082891686b1fd41b3f8af20cd631eeb07448e728fb",
+      "plan.json": "8ba8eb101aec7ea4b355efbb3a5f7bc5c561e1806bba8350bfd9bfecf084ab1b"
+    }
+  },
+  "schema_version": "ltt_mistral_public_checkpoint_v1",
+  "scope": "derived public projection, not rewritten original receipts",
+  "v2_sha256": "73172f26c9090115d771f233a27608de57489eeedc716a7be8416cb64bc32ac9"
+}

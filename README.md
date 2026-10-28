@@ -42,11 +42,22 @@ a controlled input orbit.
 
 ## What exists now
 
+- A [2026-10-29 Mistral checkpoint](reports/mistral_bridge_20261029/README.md)
+  with 1,008 reference completions, 112 API completions and public offline replay.
+  The v2 primary result remains abstention: all weak answers parsed, but none
+  matched a reference trace. Post-hoc task-oracle agreement was 70/80 weak and
+  30/32 challenge; all twelve errors required the inverted `FAIL → A` map.
+  This is a behavioral diagnostic, not internal-mechanism attribution.
+- A call-free [answer-mapping probe design](successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md):
+  96 full-task requests and 16 mapping-only controls, comparing direct answers
+  with standard/inverted maps. Requests, scoring keys and descriptive contrasts
+  are fixed; live execution is not authorized. The design also tests a practical
+  API-interface question without assuming hidden-mechanism recovery.
 - An additive [output-only bridge v2](successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md)
   separates answer content from format compliance and returns all case-aligned
-  matching references with finite challenge-output sets. It is model-free and
-  development-only; it does not revise the v1 checkpoint or establish live
-  prospective transfer.
+  matching references with finite challenge-output sets. The module itself is
+  model-free and conservatively labeled development-only. Its use in the bounded
+  Mistral run above does not revise v1 or establish successful prospective transfer.
 - A [2026-10-23 output-only Furnace/API checkpoint](reports/output_only_bridge_20261023/README.md)
   with 1,008 retained-OSS completions and 112 API calls, public synthetic
   prompt/output records, and offline replay. The primary forecast abstained;
@@ -303,8 +314,9 @@ Not permitted:
    unverified internal truth; probability calibration remains a separate gate.
 
 See [the full roadmap](docs/roadmap.md) and [the industrial thesis](docs/industrial_thesis.md).
-The [next bridge pilot strategy](docs/next_bridge_pilot.md) proposes a bounded
-next experiment; it is not an execution authorization.
+The [earlier bridge strategy](docs/next_bridge_pilot.md) remains a historical
+proposal. The current next step is the [answer-mapping probe](successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md);
+neither document is an execution authorization.
 
 ## Scope and ethics
 
@@ -327,7 +339,8 @@ make smoke
 ~~~
 
 The core package has no runtime dependencies beyond Python 3.10 or newer.
-The archived live-checkpoint replay requires Python 3.12.
+The October 23 archived replay requires Python 3.12; the October 29 replay and
+answer-mapping design support Python 3.10+.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for evidence and amendment rules.
 
 ## Prior work

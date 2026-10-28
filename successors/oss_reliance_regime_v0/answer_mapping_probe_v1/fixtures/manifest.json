@@ -1,0 +1,16 @@
+{
+  "design_sha256": "4b00b393cffd311053f001de1391c0555d626cdd0b852d7ef903a105ed74511f",
+  "generator_sha256": "e7a9cd3aa6aa5c78a6d53fe9274148c81323ab25c2de36deee76a18521cbbf5e",
+  "live_execution_authorized": false,
+  "new_model_calls": 0,
+  "planned_requests": {
+    "full_task": 96,
+    "mapping_only": 16,
+    "total": 112
+  },
+  "request_count": 112,
+  "requests_sha256": "3a0bbe53efb9bf106e7d50acc9cc4ddebc50719d8db54a00a8513d7a112a581f",
+  "schema_version": "answer_mapping_probe_v1_manifest",
+  "scoring_key_sha256": "d5bcd642c4000bc9aaad40f3b1f3702f6c6b953089284c4d4d2bd7d8952c44be",
+  "unique_prompts": 56
+}

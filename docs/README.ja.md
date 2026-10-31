@@ -13,6 +13,7 @@
 | 概要・セットアップ・主張の範囲 | [README](../README.md) | [README](../README.ja.md) |
 | 10月31日のGPT-6 Luna結果とreplay | [Report](../reports/gpt6luna_answer_mapping_20261031/README.md) | [レポート](../reports/gpt6luna_answer_mapping_20261031/README.ja.md) |
 | 次のoutput-contract試験：未実行 | [Design](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md) |
+| 保存済み回答を採点する・モデルなしで動作を確かめる | [Guide](../successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.md) | [採点と模擬実行](../successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.ja.md) |
 | 10月29日のMistral結果とreplay | [Report](../reports/mistral_bridge_20261029/README.md) | [レポート](../reports/mistral_bridge_20261029/README.ja.md) |
 | 凍結済みの親answer-mapping設計 | [Design](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md) |
 | 初回の実測結果とoffline replay | [Report](../reports/output_only_bridge_20261023/README.md) | [レポート](../reports/output_only_bridge_20261023/README.ja.md) |

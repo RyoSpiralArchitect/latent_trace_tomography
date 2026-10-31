@@ -49,8 +49,9 @@ a controlled input orbit.
   not evidence of an internal mechanism or a revision of prior abstention.
 - An unexecuted [96-request output-contract design](successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md)
   compares marker versus bare-symbol instructions with paired decision tasks.
-  It is design-only, not live-ready; a scorer, mock rehearsal and separate
-  execution authorization remain future work.
+  Its [offline scorer and rehearsal](successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.md)
+  test how saved answers are counted and when scoring must stop. The design stays frozen;
+  there are no endpoint results for this panel, and live execution is not authorized.
 - A [2026-10-29 Mistral checkpoint](reports/mistral_bridge_20261029/README.md)
   with 1,008 reference completions, 112 API completions and public offline replay.
   The v2 primary result remains abstention: all weak answers parsed, but none

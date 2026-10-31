@@ -1,0 +1,45 @@
+{
+  "api_wall_seconds": {
+    "challenge": 108.63417879099143,
+    "weak": 289.94508766599756
+  },
+  "attestation_limit": "self-recorded local evidence; not independent execution attestation",
+  "automatic_retries": 0,
+  "estimated_uncached_cost_usd": 0.01821451999999999,
+  "generation_requests": 112,
+  "metadata_gets": 1,
+  "model": "mistral-large-4",
+  "money_cap_usd": 0.5,
+  "pricing": {
+    "billing_note": "uncached public list-price estimate, not an invoice",
+    "checked_on_jst": "2026-10-29",
+    "input_usd_per_million": 1.36,
+    "output_usd_per_million": 4.18,
+    "source": "https://docs.mistral.ai/models/mistral-large-4-0"
+  },
+  "reference_counts": {
+    "logical_trials_completed": 1008,
+    "logical_trials_started": 1008,
+    "physical_forwards_completed": 6112,
+    "physical_forwards_started": 6112,
+    "physical_started_by_kind": {
+      "decode": 5104,
+      "prefill": 1008
+    },
+    "wall_clock_seconds": 136.98880697594723
+  },
+  "reference_wall_seconds": 136.98008772497997,
+  "reserved_cost_ceiling_usd": 0.32693247999999997,
+  "schema_version": "ltt_mistral_public_execution_v1",
+  "times": {
+    "challenge_claimed": "2026-10-28T19:46:35.191149+00:00",
+    "challenge_completed": "2026-10-28T19:48:23.822601+00:00",
+    "challenge_started": "2026-10-28T19:46:35.191567+00:00",
+    "weak_completed": "2026-10-28T19:46:09.410428+00:00"
+  },
+  "usage": {
+    "input_tokens": 12096,
+    "output_tokens": 422,
+    "total_tokens": 12518
+  }
+}

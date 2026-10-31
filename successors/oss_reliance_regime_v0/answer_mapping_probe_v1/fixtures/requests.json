@@ -1,0 +1,450 @@
+[
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:FAIL:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:PASS:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:PASS:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:PASS:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:PASS:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:FAIL:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:reorder:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:FAIL:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:standard:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:direct:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:reorder:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:FAIL:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:inverted:r0"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:PASS:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:PASS:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:reorder:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:FAIL:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:reorder:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:FAIL:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:PASS:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = ALT-B22939519AC2\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:PASS:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = ALT-6C4DA8960B80\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-3587EA46C97A\nCandidate code = ALT-B22939519AC2\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = ALT-6C4DA8960B80\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nRequired code = REQ-CBA4F8FE3087\nCandidate code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:reorder:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-3587EA46C97A\nCandidate code = REQ-CBA4F8FE3087\nRequired code = REQ-CBA4F8FE3087\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-82EF655A9E42\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:0:FAIL:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:FAIL:inverted:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): PASS\nDocket: DOC-82EF655A9E42\nRequired code = REQ-D155C011C919\nCandidate code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:PASS:baseline:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic response-map drill; no evidence evaluation is needed.\nThe already-decided result is PASS.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nDocket: DOC-3587EA46C97A\nEncode the already-decided result. Emit one FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:mapping:1:PASS:standard:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse format: FINAL: PASS or FINAL: FAIL.\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:direct:r1"
+  },
+  {
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-82EF655A9E42\nCandidate code = REQ-D155C011C919\nRequired code = REQ-D155C011C919\nEmit one requested FINAL marker and nothing else.",
+    "query_id": "answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:inverted:r1"
+  }
+]

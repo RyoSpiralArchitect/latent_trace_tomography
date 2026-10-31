@@ -1,13 +1,16 @@
 PYTHON ?= python3
+CHECKPOINT_PATHS = reports/mistral_bridge_20261029 successors/oss_reliance_regime_v0/answer_mapping_probe_v1
 
 .PHONY: lint test preflight design-summary smoke check
 
 lint:
-	PYTHONPATH=src $(PYTHON) -m ruff check src tests
-	PYTHONPATH=src $(PYTHON) -m ruff format --check src tests
+	PYTHONPATH=src $(PYTHON) -m ruff check src tests $(CHECKPOINT_PATHS)
+	PYTHONPATH=src $(PYTHON) -m ruff format --check src tests $(CHECKPOINT_PATHS)
 
 test:
 	PYTHONPATH=src $(PYTHON) -m unittest discover -s tests -v
+	$(PYTHON) -S -m unittest discover -s reports/mistral_bridge_20261029 -v
+	$(PYTHON) -S -m unittest discover -s successors/oss_reliance_regime_v0/answer_mapping_probe_v1 -v
 
 preflight:
 	PYTHONPATH=src $(PYTHON) -S -m latent_trace_tomography preflight \

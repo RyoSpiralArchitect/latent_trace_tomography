@@ -1,0 +1,112 @@
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:direct:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:baseline:inverted:r0"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:direct:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:0:FAIL:standard:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:0:PASS:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:inverted:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:standard:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:direct:r0"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:inverted:r0"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:direct:r0"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:direct:r0"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:standard:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:0:PASS:standard:r0"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:standard:r0"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:baseline:standard:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:baseline:direct:r0"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:standard:r0"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:standard:r0"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:reorder:standard:r0"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:standard:r0"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:standard:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:reorder:direct:r0"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:direct:r0"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:reorder:standard:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:baseline:direct:r0"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:direct:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:standard:r0"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:direct:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:baseline:standard:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:1:PASS:standard:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:standard:r0"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:reorder:inverted:r0"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:direct:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:1:PASS:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:inverted:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:direct:r0"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:standard:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:1:FAIL:standard:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:inverted:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:baseline:inverted:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:direct:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:standard:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:reorder:direct:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:inverted:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:inverted:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:0:FAIL:inverted:r0"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:standard:r0"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:direct:r0"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:reorder:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:1:FAIL:inverted:r0"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:inverted:r0"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:standard:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:direct:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:baseline:standard:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:standard:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:inverted:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:0:PASS:inverted:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:direct:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:standard:r1"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:standard:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:inverted:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:direct:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:inverted:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:0:PASS:standard:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:standard:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:baseline:standard:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:reorder:direct:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:inverted:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:direct:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:inverted:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:baseline:inverted:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:baseline:direct:r1"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:reorder:inverted:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:standard:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:baseline:standard:r1"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:standard:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:0:FAIL:inverted:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:standard:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:baseline:direct:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:inverted:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:standard:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:baseline:direct:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:baseline:inverted:r1"}
+{"output_text":"B","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:reorder:inverted:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:inverted:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:1:FAIL:standard:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:reorder:direct:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:standard:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:1:PASS:inverted:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:standard:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:baseline:direct:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:1:FAIL:FAIL:reorder:inverted:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:reorder:direct:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:1:PASS:PASS:reorder:standard:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:0:FAIL:PASS:baseline:direct:r1"}
+{"output_text":"FINAL: FAIL","query_id":"answer_mapping_probe_v1:full:1:FAIL:PASS:reorder:direct:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:full:0:FAIL:FAIL:reorder:inverted:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:direct:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:baseline:inverted:r1"}
+{"output_text":"A","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:reorder:standard:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:1:PASS:FAIL:reorder:inverted:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:mapping:0:FAIL:standard:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:1:FAIL:inverted:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:PASS:baseline:direct:r1"}
+{"output_text":"FINAL: A","query_id":"answer_mapping_probe_v1:mapping:1:PASS:standard:r1"}
+{"output_text":"FINAL: PASS","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:direct:r1"}
+{"output_text":"FINAL: B","query_id":"answer_mapping_probe_v1:full:0:PASS:FAIL:reorder:inverted:r1"}

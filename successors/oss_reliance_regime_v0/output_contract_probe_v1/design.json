@@ -1,0 +1,105 @@
+{
+  "candidate_model": "gpt-6-luna",
+  "candidate_transport_settings": {
+    "max_output_tokens": 32,
+    "model": "gpt-6-luna",
+    "reasoning": {
+      "effort": "none"
+    },
+    "service_tier": "default",
+    "store": false,
+    "stream": false,
+    "temperature": 0,
+    "tools": [],
+    "truncation": "disabled"
+  },
+  "decision_rule": "A lower observed joint failure rate with no observed increase in normalized answer errors is only a candidate interface improvement on this panel. Null, mixed or worse results are retained without retuning or expansion.",
+  "exclusions": [
+    "direct PASS/FAIL",
+    "reorder",
+    "structured-output constraints",
+    "parser repair",
+    "prompt search",
+    "model comparison",
+    "causal attribution"
+  ],
+  "factors": {
+    "content_instances": 2,
+    "full_task_cues": [
+      "PASS",
+      "FAIL"
+    ],
+    "full_task_layout": "baseline",
+    "repetitions": 2,
+    "requested_formats": [
+      "marker",
+      "bare"
+    ],
+    "response_maps": [
+      "standard",
+      "inverted"
+    ],
+    "semantic_decisions": [
+      "PASS",
+      "FAIL"
+    ]
+  },
+  "intervention": "Marker prompts are byte-identical to their parent prompts. Bare prompts remove FINAL: from both map lines and use the exact bare-only final instruction fixed by this generator. Evidence, cue, docket, answer map and expected answer remain unchanged.",
+  "launch_requirements": [
+    "new explicit live authorization",
+    "fresh metadata and price check",
+    "frozen implemented scorer and boundary tests",
+    "model-free execution rehearsal",
+    "pinned execution plan with complete no-retry failure receipts"
+  ],
+  "limits": {
+    "automatic_resume": false,
+    "automatic_retries": 0,
+    "furnace_calls": 0,
+    "generation_attempts": 96,
+    "input_tokens_per_request": 2048,
+    "model_substitutions": 0,
+    "money_cap_usd": 0.5,
+    "output_tokens_per_request": 32
+  },
+  "live_execution_authorized": false,
+  "motivation": "GPT-6 Luna run: all 112 answers correct under frozen parser, but 26 bare outputs and 8/56 format-repeat differences; question selected after observing these outputs.",
+  "motivation_analysis_sha256": "ee9b1de0d0bdd4eb2130e617847355885d0fa3d2f3bae771564be3dd2a7356a5",
+  "new_model_calls": 0,
+  "order": "repeat blocks 0 then 1; within each, ascending SHA256 of canonical [scope, repeat, case_id]",
+  "parent_generator_sha256": "e7a9cd3aa6aa5c78a6d53fe9274148c81323ab25c2de36deee76a18521cbbf5e",
+  "parent_plan_file_sha256": "b9feb7e5fc88ff448160ad7cded1987afadb43fa0d486ce41c71bddc988bb1fc",
+  "planned_requests": {
+    "full_task": 64,
+    "mapping_only": 32,
+    "total": 96,
+    "unique_prompts": 48
+  },
+  "schema_version": "output_contract_probe_v1",
+  "scoring_contract": {
+    "answer_correct": "Normalized answer equals expected_answer; unresolved is false.",
+    "format_compliant": "After outer whitespace stripping: marker condition requires exactly FINAL: A or FINAL: B; bare condition requires exactly A or B. A wrong but well-formed symbol is still format-compliant.",
+    "input": "query_id and output_text only; complete unique 96-slot run required",
+    "joint_success": "answer_correct AND format_compliant; unresolved is false.",
+    "normalized_answer": "Reuse parent parse(text, response_mode), accepting bare A/B or exact FINAL: A/B after outer whitespace stripping only; all other output unresolved.",
+    "primary_contrasts": [
+      "full_task_joint_failure_rate_bare_minus_marker",
+      "mapping_only_joint_failure_rate_bare_minus_marker"
+    ],
+    "primary_denominators_per_format": {
+      "full_task": 32,
+      "mapping_only": 16
+    },
+    "reporting": "Counts and descriptive paired contrasts only; no independent-n=96 inference, significance claim, general reliability or internal mechanism attribution.",
+    "secondary": [
+      "normalized_answer_errors_by_kind_map_and_format",
+      "format_errors_by_kind_map_and_format",
+      "unresolved_count",
+      "paired_joint_success_table",
+      "repeat_answer_and_format_disagreement"
+    ]
+  },
+  "selection": "All r0 standard/inverted parent cases; full tasks restricted to baseline layout; all mapping-only cases retained. Selection does not depend on individual output correctness or formatting.",
+  "status": "design_only_not_execution_ready",
+  "unit": "Two reused content instances; all factorial slots and repetitions are dependent. Pair formats within parent_case_id and replicate_id. This is not a new independent content sample."
+}

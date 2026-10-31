@@ -1,0 +1,281 @@
+{
+  "claim_ceiling": "small descriptive behavioral diagnostic; no internal-stage isolation, Mistral replication, calibrated mechanism attribution or cross-family generalization",
+  "new_model_calls": 0,
+  "posthoc_repeat_format_readout": {
+    "label": "additional descriptive readout; not a new prespecified endpoint",
+    "pairs": 56,
+    "parsed_format_disagreements": 8,
+    "raw_text_disagreements": 8
+  },
+  "prespecified_format_secondary": {
+    "by_condition": {
+      "full_task/direct": {
+        "bare_symbol": 0,
+        "correct_under_frozen_parser": 32,
+        "exact_marker": 32,
+        "n": 32,
+        "unresolved": 0
+      },
+      "full_task/inverted": {
+        "bare_symbol": 7,
+        "correct_under_frozen_parser": 32,
+        "exact_marker": 25,
+        "n": 32,
+        "unresolved": 0
+      },
+      "full_task/standard": {
+        "bare_symbol": 19,
+        "correct_under_frozen_parser": 32,
+        "exact_marker": 13,
+        "n": 32,
+        "unresolved": 0
+      },
+      "mapping_only/inverted": {
+        "bare_symbol": 0,
+        "correct_under_frozen_parser": 8,
+        "exact_marker": 8,
+        "n": 8,
+        "unresolved": 0
+      },
+      "mapping_only/standard": {
+        "bare_symbol": 0,
+        "correct_under_frozen_parser": 8,
+        "exact_marker": 8,
+        "n": 8,
+        "unresolved": 0
+      }
+    },
+    "totals": {
+      "bare_symbol": 26,
+      "correct_under_frozen_parser": 112,
+      "exact_marker": 86,
+      "n": 112,
+      "unresolved": 0
+    }
+  },
+  "prior_reference_result": "abstain_outside_reference_support_unchanged",
+  "schema_version": "ltt_gpt6luna_public_analysis_v1",
+  "score": {
+    "claim_ceiling": "behavioral dissociation only; no internal-stage or generalization claim",
+    "content_instance_count": 2,
+    "contrasts": {
+      "full_task_inverted_error_rate_minus_standard": 0.0,
+      "mapping_only_inverted_error_rate_minus_standard": 0.0
+    },
+    "groups": {
+      "direct/cue/aligned": {
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 16,
+        "n": 16
+      },
+      "direct/cue/conflict": {
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 16,
+        "n": 16
+      },
+      "direct/layout/baseline": {
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 16,
+        "n": 16
+      },
+      "direct/layout/reorder": {
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 16,
+        "n": 16
+      },
+      "full_task/direct": {
+        "correct": 32,
+        "errors": 0,
+        "exact_marker": 32,
+        "n": 32
+      },
+      "full_task/direct/semantic/FAIL": {
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 16,
+        "n": 16
+      },
+      "full_task/direct/semantic/PASS": {
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 16,
+        "n": 16
+      },
+      "full_task/inverted": {
+        "bare_symbol": 7,
+        "correct": 32,
+        "errors": 0,
+        "exact_marker": 25,
+        "n": 32
+      },
+      "full_task/inverted/semantic/FAIL": {
+        "bare_symbol": 4,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 12,
+        "n": 16
+      },
+      "full_task/inverted/semantic/PASS": {
+        "bare_symbol": 3,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 13,
+        "n": 16
+      },
+      "full_task/semantic/FAIL": {
+        "bare_symbol": 12,
+        "correct": 48,
+        "errors": 0,
+        "exact_marker": 36,
+        "n": 48
+      },
+      "full_task/semantic/PASS": {
+        "bare_symbol": 14,
+        "correct": 48,
+        "errors": 0,
+        "exact_marker": 34,
+        "n": 48
+      },
+      "full_task/standard": {
+        "bare_symbol": 19,
+        "correct": 32,
+        "errors": 0,
+        "exact_marker": 13,
+        "n": 32
+      },
+      "full_task/standard/semantic/FAIL": {
+        "bare_symbol": 8,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 8,
+        "n": 16
+      },
+      "full_task/standard/semantic/PASS": {
+        "bare_symbol": 11,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 5,
+        "n": 16
+      },
+      "inverted/cue/aligned": {
+        "bare_symbol": 5,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 11,
+        "n": 16
+      },
+      "inverted/cue/conflict": {
+        "bare_symbol": 2,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 14,
+        "n": 16
+      },
+      "inverted/layout/baseline": {
+        "bare_symbol": 3,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 13,
+        "n": 16
+      },
+      "inverted/layout/reorder": {
+        "bare_symbol": 4,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 12,
+        "n": 16
+      },
+      "mapping_only/inverted": {
+        "correct": 8,
+        "errors": 0,
+        "exact_marker": 8,
+        "n": 8
+      },
+      "mapping_only/inverted/semantic/FAIL": {
+        "correct": 4,
+        "errors": 0,
+        "exact_marker": 4,
+        "n": 4
+      },
+      "mapping_only/inverted/semantic/PASS": {
+        "correct": 4,
+        "errors": 0,
+        "exact_marker": 4,
+        "n": 4
+      },
+      "mapping_only/semantic/FAIL": {
+        "correct": 8,
+        "errors": 0,
+        "exact_marker": 8,
+        "n": 8
+      },
+      "mapping_only/semantic/PASS": {
+        "correct": 8,
+        "errors": 0,
+        "exact_marker": 8,
+        "n": 8
+      },
+      "mapping_only/standard": {
+        "correct": 8,
+        "errors": 0,
+        "exact_marker": 8,
+        "n": 8
+      },
+      "mapping_only/standard/semantic/FAIL": {
+        "correct": 4,
+        "errors": 0,
+        "exact_marker": 4,
+        "n": 4
+      },
+      "mapping_only/standard/semantic/PASS": {
+        "correct": 4,
+        "errors": 0,
+        "exact_marker": 4,
+        "n": 4
+      },
+      "standard/cue/aligned": {
+        "bare_symbol": 11,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 5,
+        "n": 16
+      },
+      "standard/cue/conflict": {
+        "bare_symbol": 8,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 8,
+        "n": 16
+      },
+      "standard/layout/baseline": {
+        "bare_symbol": 11,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 5,
+        "n": 16
+      },
+      "standard/layout/reorder": {
+        "bare_symbol": 8,
+        "correct": 16,
+        "errors": 0,
+        "exact_marker": 8,
+        "n": 16
+      }
+    },
+    "paired_tables": {
+      "inverted": {
+        "direct_1_encoded_1": 32
+      },
+      "standard": {
+        "direct_1_encoded_1": 32
+      }
+    },
+    "repeat_answer_disagreements": 0,
+    "repeat_pairs": 56,
+    "status": "complete_descriptive_diagnostic"
+  }
+}

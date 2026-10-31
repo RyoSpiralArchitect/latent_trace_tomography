@@ -36,6 +36,13 @@ promptの変更は既知の線形Radon operatorではなく、計算そのもの
 
 ## 現在あるもの
 
+- [2026-10-31のGPT-6 Luna answer-mapping checkpoint](reports/gpt6luna_answer_mapping_20261031/README.ja.md)。
+  事前に定めたparserでは112/112件が正答でしたが、指定markerは86/112件でした。
+  対応表による誤り率の差は両課題とも0で、反復56組のうち8組は答えを変えずに形式だけが変わりました。
+  正答とinterface適合を別々に監査する結果であり、内部機構の証拠や以前の棄権の変更ではありません。
+- 未実行の[96件のoutput-contract設計](successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md)。
+  同じ判断課題でmarker付きと記号のみの指示を比べます。設計のみでlive実行の準備は未完了です。
+  Scorerの実装、模擬実行、別途の実行許可は、次の段階で扱います。
 - [2026-10-29のMistral checkpoint](reports/mistral_bridge_20261029/README.ja.md)。
   参照1,008回答、API 112回答と、公開データのoffline replayを含みます。
   弱観測はすべて解釈できましたが、参照の回答列と一致せず、v2の一次結果は棄権でした。
@@ -43,7 +50,8 @@ promptの変更は既知の線形Radon operatorではなく、計算そのもの
   これは挙動の診断であり、内部機構のattributionではありません。
 - モデルを呼ばない[answer-mapping probeの小設計](successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md)。
   本課題96件とmapping-only control 16件で、直接回答と通常・反転の回答対応表を比較します。
-  リクエスト、採点キー、記述的な比較を固定していますが、live実行は未許可です。
+  リクエスト、採点キー、記述的な比較を固定し、親packageは設計のみの状態を維持しています。
+  上記GPT-6 Lunaのrunは、promptとscorerを保持したうえで別途許可して実行しました。
   内部機構の復元を前提にせず、実用上のAPI interface設計も調べる構成です。
 - 追加実装の[output-only bridge v2](successors/oss_reliance_regime_v0/output_only_bridge_v2/README.ja.md)。
   回答内容と形式適合を分け、caseごとに一致した全referenceと有限のchallenge-output集合を返します。

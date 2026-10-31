@@ -1,0 +1,25 @@
+{
+  "evidence_tier": "descriptive_behavioral_diagnostic_not_mechanistic_validation",
+  "export_policy": "Exact-byte reviewed sources; explicit observation and aggregate-audit fields. No credentials, local paths, response IDs, live runner, private receipts or per-response telemetry.",
+  "new_model_calls": 0,
+  "parent_generator_sha256": "e7a9cd3aa6aa5c78a6d53fe9274148c81323ab25c2de36deee76a18521cbbf5e",
+  "published_files": {
+    "analysis.json": "875cd06eba3029370c216cffa08896dc88705938765698432233159a1cb5e374",
+    "execution.json": "d77f8683670d871c541cb3b94e93b79e79b035746860c5fee06e93c3dae1f22a",
+    "observations.jsonl": "8bf68821168f28725807df428a8874682315f598b09f38cbf333c41d5bd0dbc1"
+  },
+  "retained_input_sha256": {
+    "analysis.json": "ee9b1de0d0bdd4eb2130e617847355885d0fa3d2f3bae771564be3dd2a7356a5",
+    "attempt-001/attempt_receipt.json": "a2a9909614da307ce95a32b0610382f7985cd261e7e7d5ebfb874a85b5ac908d",
+    "attempt-001/events.jsonl": "77cc9a96f19428c1761ecc87ae0b8305b0b5ddf2e5bf0ac68d943826d663f40a",
+    "attempt-001/results.jsonl": "82d985d865050c06dd8c6a9df95e3480450140636f7904e6b5715b8d65ef1ded",
+    "execution_summary.json": "255d194fc743b19e8455e55b4936b4467bd3aeda53a9e6359c993683e2c9d3e9",
+    "live_claim.json": "cfc083420e136f71af78c9a5daaf45c5f6f4f700b76043f2d6433777c7803a1a",
+    "metadata_receipt.json": "68318dc41601340b665f4627bfec55f15346623afc8296b6209e4e6c249421f9",
+    "plan.json": "b9feb7e5fc88ff448160ad7cded1987afadb43fa0d486ce41c71bddc988bb1fc",
+    "run.py": "6968dbd775c245e897e00faeb26f1b4eafc9fa51c7a62e4d8f2c0df8e0381659",
+    "test_run.py": "a7a855f33d184c757ac1547061c0b4cd9411c4f8bc7f7583edc39900a10c4878"
+  },
+  "schema_version": "ltt_gpt6luna_public_checkpoint_v1",
+  "scope": "Derived public projection; originals retained unchanged. Hashes alone do not expose or independently attest private originals."
+}

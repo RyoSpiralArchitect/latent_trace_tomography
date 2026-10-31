@@ -3,16 +3,18 @@
 [English](README.md) | 日本語
 
 まず[プロジェクトのREADME](../README.ja.md)、次に
-[Mistral checkpoint](../reports/mistral_bridge_20261029/README.ja.md)をお読みください。
-公開した2つのcheckpointでは、保存済みの一次評価の棄権と、事後診断を分けています。
+[GPT-6 Luna checkpoint](../reports/gpt6luna_answer_mapping_20261031/README.ja.md)をお読みください。
+正答と出力形式の遵守を分けて報告しています。以前のbridge checkpointの棄権も、事後診断とは別に保持します。
 
 ## 目的別の入口
 
 | 目的 | English | 日本語 |
 |---|---|---|
 | 概要・セットアップ・主張の範囲 | [README](../README.md) | [README](../README.ja.md) |
+| 10月31日のGPT-6 Luna結果とreplay | [Report](../reports/gpt6luna_answer_mapping_20261031/README.md) | [レポート](../reports/gpt6luna_answer_mapping_20261031/README.ja.md) |
+| 次のoutput-contract試験：未実行 | [Design](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md) |
 | 10月29日のMistral結果とreplay | [Report](../reports/mistral_bridge_20261029/README.md) | [レポート](../reports/mistral_bridge_20261029/README.ja.md) |
-| 次のanswer-mapping診断：設計のみ | [Design](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md) |
+| 凍結済みの親answer-mapping設計 | [Design](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md) |
 | 初回の実測結果とoffline replay | [Report](../reports/output_only_bridge_20261023/README.md) | [レポート](../reports/output_only_bridge_20261023/README.ja.md) |
 | V2のcontent/format/reference-set interface | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md) | [V2](../successors/oss_reliance_regime_v0/output_only_bridge_v2/README.ja.md) |
 | 以前の小規模bridge試験の提案 | [Strategy](next_bridge_pilot.md) | [以前の作戦](next_bridge_pilot.ja.md) |
@@ -43,6 +45,6 @@ READMEは仕様書の代わりではありません。
 必要な説明は別文書に追加します。公開replayはv1の６ソースすべてのハッシュを検証し、
 元の棄権を一次結果として維持します。
 
-core package、10月29日のreplay、answer-mapping設計はPython 3.10以降に対応しています。
+core package、10月29日・31日のreplay、両probe設計はPython 3.10以降に対応しています。
 10月23日の保存済みreplayにはPython 3.12が必要です。
 掲載しているofflineの実行例では、モデルやAPIを呼び出しません。

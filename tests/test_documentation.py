@@ -17,6 +17,8 @@ PAIRS = (
     "reports/output_only_bridge_20261023/README.md",
     "successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md",
     "docs/next_bridge_pilot.md",
+    "reports/gpt6luna_answer_mapping_20261031/README.md",
+    "successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md",
 )
 
 
@@ -29,6 +31,34 @@ def command_blocks(text):
 
 
 class DocumentationTests(unittest.TestCase):
+    def test_gpt6luna_report_counts_match_both_languages(self):
+        report = ROOT / "reports/gpt6luna_answer_mapping_20261031/README.md"
+        analysis = json.loads((report.parent / "data/analysis.json").read_text())
+        groups = analysis["prespecified_format_secondary"]["by_condition"]
+        names = (
+            "full_task/direct",
+            "full_task/standard",
+            "full_task/inverted",
+            "mapping_only/standard",
+            "mapping_only/inverted",
+        )
+        expected = [
+            [
+                f"{groups[k]['correct_under_frozen_parser']}/{groups[k]['n']}",
+                str(groups[k]["exact_marker"]),
+                str(groups[k]["bare_symbol"]),
+            ]
+            for k in names
+        ]
+        expected.append(["112/112", "86", "26"])
+        for path in (report, japanese(report)):
+            rows = [
+                [c.strip() for c in line.strip("|").split("|")][1:]
+                for line in path.read_text().splitlines()
+                if line.startswith("|") and re.search(r"\| \d+/\d+ \|", line)
+            ]
+            self.assertEqual(rows, expected)
+
     def test_language_pairs_link_to_each_other(self):
         for name in PAIRS:
             english = ROOT / name

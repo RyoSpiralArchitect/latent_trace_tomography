@@ -1,0 +1,15 @@
+{
+  "definition_sha256": "aa93b8ed29657e66f84c6858cc08e2cd1af536590ceffca34f4413ac94715acc",
+  "generator_sha256": "ef715e106189daae301daf49621b041aa52c40cdf25f69523a5707fbc1782b73",
+  "live_execution_authorized": false,
+  "new_model_calls": 0,
+  "parent_generator_sha256": "e7a9cd3aa6aa5c78a6d53fe9274148c81323ab25c2de36deee76a18521cbbf5e",
+  "published_files": {
+    "requests.json": "f074cbc1d8199f10c7ad371f6606d45dbb364d15a804720fa769a217d83e4dee",
+    "scoring_key.json": "d55a4154273e3211b1cb0546720d86a54a53527db2ba026fa54a7d0fd8278d01"
+  },
+  "request_count": 96,
+  "schema_version": "output_contract_probe_v1_public_manifest",
+  "scope": "Public generator re-expression; retained definition, request bytes and scoring-key bytes unchanged. No API client or live scorer is provided.",
+  "unique_prompts": 48
+}

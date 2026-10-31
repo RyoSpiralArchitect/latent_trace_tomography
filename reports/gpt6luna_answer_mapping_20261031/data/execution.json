@@ -1,0 +1,45 @@
+{
+  "attempted_requests": 112,
+  "attestation_limit": "Derived from self-recorded retained evidence; not independent provider attestation, an immutable model snapshot or an invoice.",
+  "automatic_retries": 0,
+  "completed_requests": 112,
+  "conservative_cost_ceiling_usd": 0.003152,
+  "estimated_uncached_cost_usd": 0.0014804,
+  "historical_rates_per_million_usd": {
+    "conservative_input": 0.25,
+    "input": 0.1,
+    "output": 0.5
+  },
+  "metadata_gets": 1,
+  "model": "gpt-6-luna",
+  "money_cap_usd": 0.5,
+  "pre_output_amendment": "Explicitly authorized target and transport switch to gpt-6-luna; parent prompts, order and scorer unchanged. The parent design-only authorization is unchanged.",
+  "price_checked_on_jst": "2026-10-31",
+  "price_source": "https://developers.openai.com/api/docs/pricing",
+  "refusals": 0,
+  "request_settings": {
+    "max_output_tokens": 32,
+    "model": "gpt-6-luna",
+    "reasoning": {
+      "effort": "none"
+    },
+    "service_tier": "default",
+    "store": false,
+    "stream": false,
+    "temperature": 0,
+    "tools": [],
+    "truncation": "disabled"
+  },
+  "run_date_jst": "2026-10-31",
+  "schema_version": "ltt_gpt6luna_public_execution_v1",
+  "status": "complete",
+  "status_counts": {
+    "completed": 112
+  },
+  "usage": {
+    "input_tokens": 11144,
+    "output_tokens": 732,
+    "total_tokens": 11876
+  },
+  "wall_seconds": 292.8888870840019
+}

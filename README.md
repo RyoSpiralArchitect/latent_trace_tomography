@@ -42,6 +42,15 @@ a controlled input orbit.
 
 ## What exists now
 
+- A [2026-10-31 GPT-6 Luna answer-mapping checkpoint](reports/gpt6luna_answer_mapping_20261031/README.md):
+  112/112 correct under the prespecified parser, but only 86/112 requested markers.
+  Both answer-mapping error contrasts were zero; 8/56 repeat pairs changed format,
+  not answer. Correctness and interface compliance are separate audit readouts,
+  not evidence of an internal mechanism or a revision of prior abstention.
+- An unexecuted [96-request output-contract design](successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md)
+  compares marker versus bare-symbol instructions with paired decision tasks.
+  It is design-only, not live-ready; a scorer, mock rehearsal and separate
+  execution authorization remain future work.
 - A [2026-10-29 Mistral checkpoint](reports/mistral_bridge_20261029/README.md)
   with 1,008 reference completions, 112 API completions and public offline replay.
   The v2 primary result remains abstention: all weak answers parsed, but none
@@ -51,7 +60,8 @@ a controlled input orbit.
 - A call-free [answer-mapping probe design](successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md):
   96 full-task requests and 16 mapping-only controls, comparing direct answers
   with standard/inverted maps. Requests, scoring keys and descriptive contrasts
-  are fixed; live execution is not authorized. The design also tests a practical
+  are fixed; the parent package remains design-only. The separately authorized
+  GPT-6 Luna run above retains its prompts and scorer. The design tests a practical
   API-interface question without assuming hidden-mechanism recovery.
 - An additive [output-only bridge v2](successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md)
   separates answer content from format compliance and returns all case-aligned

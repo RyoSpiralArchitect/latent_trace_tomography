@@ -1,5 +1,5 @@
 PYTHON ?= python3
-CHECKPOINT_PATHS = reports/mistral_bridge_20261029 successors/oss_reliance_regime_v0/answer_mapping_probe_v1
+CHECKPOINT_PATHS = reports/mistral_bridge_20261029 successors/oss_reliance_regime_v0/answer_mapping_probe_v1 reports/gpt6luna_answer_mapping_20261031 successors/oss_reliance_regime_v0/output_contract_probe_v1
 
 .PHONY: lint test preflight design-summary smoke check
 
@@ -11,6 +11,8 @@ test:
 	PYTHONPATH=src $(PYTHON) -m unittest discover -s tests -v
 	$(PYTHON) -S -m unittest discover -s reports/mistral_bridge_20261029 -v
 	$(PYTHON) -S -m unittest discover -s successors/oss_reliance_regime_v0/answer_mapping_probe_v1 -v
+	$(PYTHON) -S -m unittest discover -s reports/gpt6luna_answer_mapping_20261031 -v
+	$(PYTHON) -S -m unittest discover -s successors/oss_reliance_regime_v0/output_contract_probe_v1 -v
 
 preflight:
 	PYTHONPATH=src $(PYTHON) -S -m latent_trace_tomography preflight \

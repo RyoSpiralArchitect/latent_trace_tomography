@@ -21,6 +21,10 @@ jobs:
         run: |
           python -S reports/mistral_bridge_20261029/replay.py
           python -S successors/oss_reliance_regime_v0/answer_mapping_probe_v1/design.py verify --out successors/oss_reliance_regime_v0/answer_mapping_probe_v1/fixtures
+      - name: Replay GPT-6 Luna checkpoint and verify unexecuted format design
+        run: |
+          python -S reports/gpt6luna_answer_mapping_20261031/replay.py
+          python -S successors/oss_reliance_regime_v0/output_contract_probe_v1/design.py verify
       - name: Test archived runner and public replay
         run: |
           python -S -m unittest discover -s successors/oss_reliance_regime_v0/output_only_bridge_v1 -v

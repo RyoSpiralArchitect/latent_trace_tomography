@@ -1,0 +1,26 @@
+{
+  "id": "ltt-aligned-reference-separator-20261103-v1",
+  "inventories": {
+    "confirmation": {
+      "heading": "79abbe4e05d1a5393e0982a06a38782dc766d71afe728eeaa2919f2bdba88898",
+      "position": "afe250c18d9be633724649b897925a639a1f8c0e5befc06b371fc49d14514373"
+    },
+    "conflict": "029a0bfb579162e288a14f9f009250a158a7ff9e9fe737558d46c8a16d3d7fa7",
+    "development": "d700123d35f1e38b9179c153a1a295433022d5a49ccdb21c6b653ebf69c6b18e"
+  },
+  "new_endpoint_calls": 0,
+  "registry": [
+    "mistral-7b-instruct-v0.3",
+    "unit-gpt2-mixed",
+    "unit-pythia-mixed",
+    "unit-pythia-surface",
+    "unit-smollm2-mixed",
+    "unit-smollm2-surface"
+  ],
+  "sources": {
+    "acquire.py": "bac76bad81a4e39d32b1c0031660964f10c2fb6fdf4f79d05e870e605cb8291d",
+    "protocol.json": "06eb028348f7d9d29bd415390672b3f782d715d9bfafe94e4a262d5fe2a36f21",
+    "study.py": "9ce21229d6e5b6c28f28ea28b7a78af2b8441319eff501a009e42f56dc884d8b",
+    "study_io.py": "f0a9b7751a9b801625ed918f2c00e1409fdd6a85a6319869b38cd71a74460107"
+  }
+}

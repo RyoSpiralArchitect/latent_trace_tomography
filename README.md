@@ -42,6 +42,9 @@ a controlled input orbit.
 
 ## What exists now
 
+- [Aligned separator follow-up](successors/oss_reliance_regime_v0/aligned_reference_separator_v1/README.md):
+  moving a truthful advisory separated four alternatives from Mistral but left GPT-2 mixed tied;
+  the precommitted rule abstained before any endpoint call.
 - [Scaled reference screen](reports/scaled_reference_screen_20261102/README.md):
   one checkpoint matched Luna on aligned and conflict prompts across two archived panels.
   Six matched the aligned screen alone; their predictions included both answers on every conflict.

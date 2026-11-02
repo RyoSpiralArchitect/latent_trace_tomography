@@ -36,6 +36,8 @@ promptの変更は既知の線形Radon operatorではなく、計算そのもの
 
 ## 現在あるもの
 
+- [弱観測の書式を変えた後続実験](successors/oss_reliance_regime_v0/aligned_reference_separator_v1/README.ja.md)。
+  参考欄の位置を変えると小型4個体がMistralから分かれましたが、GPT-2 mixedとは同じままで、APIを呼ぶ前に棄権しました。
 - [参照を12個体に広げた比較実験](reports/scaled_reference_screen_20261102/README.ja.md)。
   2組の保存済み案件で、弱観測と衝突時の両方に一致する個体が見つかりました。
   ただし弱観測では6個体が残り、どの衝突条件でも答えを一つには絞れませんでした。

@@ -42,6 +42,9 @@ a controlled input orbit.
 
 ## What exists now
 
+- [Scaled reference screen](reports/scaled_reference_screen_20261102/README.md):
+  one checkpoint matched Luna on aligned and conflict prompts across two archived panels.
+  Six matched the aligned screen alone; their predictions included both answers on every conflict.
 - The [November 1–2 weak-projection checkpoint](reports/weak_projection_checkpoint_20261102/README.md)
   separates previously identical OSS answer pairs and locks six Luna predictions before dispatch.
   All six match; the written rule and copying the control do equally well. The earlier

@@ -10,6 +10,49 @@ ROOT = Path(__file__).resolve().parent
 ORDER = ("development", "confirmation", "conflict")
 
 
+def require_one_trial_per_id(events, expected):
+    """Check multiplicity and order, not just the last result stored per job."""
+    started, completed = set(), set()
+    for e in events:
+        kind = e["event"]
+        if kind not in ("trial_started", "trial_completed"):
+            continue
+        payload = e["payload"]
+        job = payload["job_id"]
+        s.require(job in expected, "foreign trial ID")
+        if kind == "trial_started":
+            s.require(job not in started, "duplicate trial start")
+            started.add(job)
+        else:
+            s.require(
+                job in started and job not in completed, "out-of-order or duplicate completion"
+            )
+            s.require(payload["result_sha256"] == expected[job], "trial result hash")
+            completed.add(job)
+    s.require(started == completed == set(expected), "missing trial start/completion")
+
+
+def audit_small_trials(private, stage, rows, raw):
+    for unit in s.SMALL:
+        dr = private / (stage + "-small") / unit
+        rec = io.read(dr / "receipt.json")
+        journal = (dr / "events.jsonl").read_bytes()
+        s.require(s.sha(journal) == rec["artifacts"]["events.jsonl"], "different trial journal")
+        expected = {
+            unit + "/" + q["qid"]: s.seal(
+                {"qid": q["qid"], "prompt_sha256": q["prompt_sha256"], "text": raw[unit][q["qid"]]}
+            )
+            for q in rows
+        }
+        require_one_trial_per_id((json.loads(line) for line in journal.splitlines()), expected)
+        s.require(
+            rec["counts"]["logical_trials_started"]
+            == rec["counts"]["logical_trials_completed"]
+            == len(expected),
+            "trial counters do not match the planned IDs",
+        )
+
+
 def export(private, dest):
     pin = io.digest(ROOT / "freeze.json")
     io.verify(pin)
@@ -18,6 +61,7 @@ def export(private, dest):
         g = io.outcome(stage, private, pin)
         s.require(g == io.read(private / (stage + "-gate.json")), "not a saved gate")
         rows, raw, measured, receipts = io.load(stage, private, pin)
+        audit_small_trials(private, stage, rows, raw)
         public["stages"][stage] = {
             "observations": {
                 u: "".join(s.symbol(out[q["qid"]]) or "?" for q in rows) for u, out in raw.items()

@@ -6,6 +6,31 @@ import study as s
 import study_io as io
 
 
+class TrialMultiplicityTests(unittest.TestCase):
+    def test_each_planned_id_has_one_ordered_start_and_matching_completion(self):
+        start = {"event": "trial_started", "payload": {"job_id": "u/k"}}
+        end = {"event": "trial_completed", "payload": {"job_id": "u/k", "result_sha256": "right"}}
+        c.require_one_trial_per_id([start, end], {"u/k": "right"})
+        for events in (
+            [start, start, end],
+            [start, end, end],
+            [end, start],
+            [start],
+            [],
+            [
+                start,
+                {
+                    "event": "trial_completed",
+                    "payload": {"job_id": "u/k", "result_sha256": "other"},
+                },
+                end,
+            ],
+            [{"event": "trial_started", "payload": {"job_id": "other"}}, start, end],
+        ):
+            with self.subTest(events=events), self.assertRaises(ValueError):
+                c.require_one_trial_per_id(events, {"u/k": "right"})
+
+
 class PublicCheckpointTests(unittest.TestCase):
     def setUp(self):
         self.path = c.ROOT / "checkpoint.json"

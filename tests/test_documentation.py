@@ -18,6 +18,7 @@ PAIRS = (
     "successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md",
     "docs/next_bridge_pilot.md",
     "reports/gpt6luna_answer_mapping_20261031/README.md",
+    "reports/weak_projection_checkpoint_20261102/README.md",
     "successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md",
     "successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.md",
 )

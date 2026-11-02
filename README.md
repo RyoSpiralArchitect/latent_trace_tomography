@@ -42,16 +42,20 @@ a controlled input orbit.
 
 ## What exists now
 
+- The [November 1–2 weak-projection checkpoint](reports/weak_projection_checkpoint_20261102/README.md)
+  separates previously identical OSS answer pairs and locks six Luna predictions before dispatch.
+  All six match; the written rule and copying the control do equally well. The earlier
+  reference collisions, all-abstention result and conditional-bracket miss remain in the replay.
 - A [2026-10-31 GPT-6 Luna answer-mapping checkpoint](reports/gpt6luna_answer_mapping_20261031/README.md):
   112/112 correct under the prespecified parser, but only 86/112 requested markers.
   Both answer-mapping error contrasts were zero; 8/56 repeat pairs changed format,
   not answer. Correctness and interface compliance are separate audit readouts,
   not evidence of an internal mechanism or a revision of prior abstention.
-- An unexecuted [96-request output-contract design](successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md)
+- A frozen [96-request output-contract design](successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md)
   compares marker versus bare-symbol instructions with paired decision tasks.
   Its [offline scorer and rehearsal](successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.md)
   test how saved answers are counted and when scoring must stop. The design stays frozen;
-  there are no endpoint results for this panel, and live execution is not authorized.
+  the November checkpoint above reports its separately authorized successor runs.
 - A [2026-10-29 Mistral checkpoint](reports/mistral_bridge_20261029/README.md)
   with 1,008 reference completions, 112 API completions and public offline replay.
   The v2 primary result remains abstention: all weak answers parsed, but none
@@ -326,8 +330,8 @@ Not permitted:
 
 See [the full roadmap](docs/roadmap.md) and [the industrial thesis](docs/industrial_thesis.md).
 The [earlier bridge strategy](docs/next_bridge_pilot.md) remains a historical
-proposal. The current next step is the [answer-mapping probe](successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md);
-neither document is an execution authorization.
+proposal. The [November checkpoint](reports/weak_projection_checkpoint_20261102/README.md)
+records what the later probes measured. No design or report here authorizes new execution.
 
 ## Scope and ethics
 

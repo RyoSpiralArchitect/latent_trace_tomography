@@ -1,0 +1,18 @@
+{
+  "files": {
+    "api_controls.jsonl": "bc29a523d99fe40047112689e9932e8beba45b78f2a00dd5b47cdc91ad277dc2",
+    "api_near.jsonl": "cc5e12377853a9afd38f28263941ea9127b7d9a5108830034b5f2f2d39f8b87f",
+    "as_run_protocol.json": "fb6ee440a4db3936983ef734633792676d9516f99fb87523d3008f4a131b9949",
+    "execution.json": "bd309ba5197c5ebbd6d57fdc730e341e8619f0a6d51d31e5a23d13f6be84e84c",
+    "forecast_lock.json": "166ce4488d950da882739afac719b0de73b962e5e8f5fc76e1dc81901a7e3aa7",
+    "interface.jsonl": "e41eb7fa264e0cf7176a2ec05f66bb17cddb4a1a1ddc57795bff7585ac520008",
+    "oss.jsonl": "9331f213eef2e2ffa1119a32b6ac93552582f9655736bb8157c2c1e14f8b1679",
+    "panel.json": "000d93610e0a90f4b38ba92fc2ba1fe2dbfe8d379e0a93ab7b1fddf5b596fa2f",
+    "reference_counts.json": "16b6c3693b8c0dd803369316d116da92232318a1c08f33f52b0761515563315d",
+    "surface_collision.json": "e0c73b3fccf7ddff5d15cf28f9f5afe4756e229bbd3b3e515715c960918fc1d9"
+  },
+  "prior_public_inventory_sha256": "10bb2fc5f61dcf0d650e120bd0697d2ffb14a82808f1759c8433a512981cb2ab",
+  "prior_public_observations_sha256": "809f4a22d468adbbf2ff09903f2dd5d237d0b65a5fef2f9f253a75a4ee38104c",
+  "schema": "weak_projection_public_replay_v1",
+  "source_pin_sha256": "7b4e120a7b14d6d5e7a74ccea9184fdf8693f644da86ea44b379fe4082ddd29b"
+}

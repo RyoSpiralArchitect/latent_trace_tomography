@@ -3,17 +3,18 @@
 English | [日本語](README.ja.md)
 
 Start with the [project README](../README.md), then read the
-[GPT-6 Luna checkpoint](../reports/gpt6luna_answer_mapping_20261031/README.md).
-It separates answer correctness from output-format compliance; the earlier bridge
-checkpoints retain their primary abstentions separately from post-hoc diagnoses.
+[weak-projection checkpoint](../reports/weak_projection_checkpoint_20261102/README.md).
+It distinguishes prospective behavioral prediction from intervention attribution.
+Earlier primary abstentions remain separate from post-hoc diagnoses.
 
 ## Reading paths
 
 | Purpose | English | 日本語 |
 |---|---|---|
+| Weak projections, known collisions and a prospective Luna check | [Checkpoint](../reports/weak_projection_checkpoint_20261102/README.md) | [実験記録](../reports/weak_projection_checkpoint_20261102/README.ja.md) |
 | Project, setup, scientific boundaries | [README](../README.md) | [README](../README.ja.md) |
 | GPT-6 Luna result and replay (October 31) | [Report](../reports/gpt6luna_answer_mapping_20261031/README.md) | [レポート](../reports/gpt6luna_answer_mapping_20261031/README.ja.md) |
-| Next output-contract probe, unexecuted | [Design](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md) |
+| Frozen output-contract design (not itself an authorization) | [Design](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md) |
 | Score saved text or rehearse without a model | [Guide](../successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.md) | [採点と模擬実行](../successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.ja.md) |
 | Mistral result and replay (October 29) | [Report](../reports/mistral_bridge_20261029/README.md) | [レポート](../reports/mistral_bridge_20261029/README.ja.md) |
 | Frozen parent answer-mapping design | [Design](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md) |

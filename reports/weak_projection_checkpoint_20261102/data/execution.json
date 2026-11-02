@@ -1,0 +1,45 @@
+{
+  "control_receipt_sha256": "eb9072201291160343506d41debbe00edc4078ab2d8fafe8be4dfd8ce9ff7e16",
+  "controls": {
+    "dispatch_outcome_unknown": 0,
+    "dispatches": 36,
+    "finished": "2026-11-02T11:42:20.723271+00:00",
+    "prediction_lock_sha256": null,
+    "recorded": 36,
+    "transport_retries": 0
+  },
+  "endpoint": "gpt-6-luna",
+  "forecast_sha256": "39516c88dbc1ff78592a862cbe57a043e852aa7674db6106572b9a71525e1fe9",
+  "furnace_receipt_sha256": "a77e877d11d2a1cfde38734bbd003e2db2af3facc84dc57631c74f6b5329927b",
+  "near": {
+    "dispatch_outcome_unknown": 0,
+    "dispatches": 12,
+    "finished": "2026-11-02T11:43:18.361098+00:00",
+    "prediction_lock_sha256": "39516c88dbc1ff78592a862cbe57a043e852aa7674db6106572b9a71525e1fe9",
+    "recorded": 12,
+    "transport_retries": 0
+  },
+  "near_first_dispatch": "2026-11-02T11:42:40.827741+00:00",
+  "oss": {
+    "logical_trials_completed": 192,
+    "physical_forwards_completed": 1152,
+    "physical_started_by_kind": {
+      "decode": 960,
+      "prefill": 192
+    }
+  },
+  "plan_sha256": "ee9099e45bd487caebe92438574603445505e52722580fca0b8020c7817e2010",
+  "sampling": {
+    "max_output_tokens": 32,
+    "reasoning": {
+      "effort": "none"
+    },
+    "store": false,
+    "temperature": 0
+  },
+  "training_prompt_overlap": {
+    "docket_hits": 0,
+    "exact_text": 0,
+    "reference_prompts": 12288
+  }
+}

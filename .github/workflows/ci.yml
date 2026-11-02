@@ -33,6 +33,8 @@ jobs:
         run: python -S reports/weak_projection_checkpoint_20261102/replay.py
       - name: Reproduce scaled-reference retrospective comparison
         run: python -S reports/scaled_reference_screen_20261102/replay.py
+      - name: Replay the prospective reference-only separator gate
+        run: python -S successors/oss_reliance_regime_v0/aligned_reference_separator_v1/checkpoint.py replay
 
   test:
     strategy:

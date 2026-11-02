@@ -1,0 +1,48 @@
+{
+  "new_endpoint_calls": 0,
+  "plan": "4b571ada4c13707141a7b04ecf73793cfd2073bf93f0202165702ad88bd225a7",
+  "stages": {
+    "development": {
+      "gate_sha256": "f949641bdd712670789deb5a8bbf1e53425bfe3da2e0cdc061c802b6331d162f",
+      "measured": {
+        "mistral-7b-instruct-v0.3": {
+          "logical": 72,
+          "physical": 432
+        },
+        "unit-gpt2-mixed": {
+          "logical": 72,
+          "physical": 432
+        },
+        "unit-pythia-mixed": {
+          "logical": 72,
+          "physical": 432
+        },
+        "unit-pythia-surface": {
+          "logical": 72,
+          "physical": 432
+        },
+        "unit-smollm2-mixed": {
+          "logical": 72,
+          "physical": 432
+        },
+        "unit-smollm2-surface": {
+          "logical": 72,
+          "physical": 432
+        }
+      },
+      "observations": {
+        "mistral-7b-instruct-v0.3": "AAAAAABBBBBBBBBBBBAAAAAAAAAAAABBBBBBBBBBBBAAAAAAAAAAAABBBBBBBBBBBBAAAAAA",
+        "unit-gpt2-mixed": "AAAAAABBBBBBBBBBBBAAAAAAAAAAAABBBBBBBBBBBBAAAAAAAAAAAABBBBBBBBBBBBAAAAAA",
+        "unit-pythia-mixed": "AAAAAABBBBBBBBBBAAAAAAAAAABBBBBBBBBBBBBBAAAAAAAAAABBBBBBBBBBBBBBAAAAAAAA",
+        "unit-pythia-surface": "AAAAAABBBBAABBBBBBAAAAAAAAAAAABBBBAABBBBBBAAAAAAAAAAAABBBBAABBBBBBAAAAAA",
+        "unit-smollm2-mixed": "AAAAAABBBBAABBBBBBAAAABBAAAAAABBBBAABBBBBBAAAABBAAAAAABBBBAABBBBBBAAAABB",
+        "unit-smollm2-surface": "AAAAAABBBBBBBBBBBBAAAABBAAAAAABBBBBBBBBBBBAAAABBAAAAAABBBBBBBBBBBBAAAABB"
+      },
+      "receipts": {
+        "large": "ba9aa2c38c2758ac5ac160bf1964ac8af09a8e050b8d34fb8fe033c1c8209447",
+        "small": "490d613587a1e3ddf20e8dc4332e520c9fda196938006a1e6ab4896e94bb2d15"
+      },
+      "rows": "d700123d35f1e38b9179c153a1a295433022d5a49ccdb21c6b653ebf69c6b18e"
+    }
+  }
+}

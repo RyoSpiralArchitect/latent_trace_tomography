@@ -1,0 +1,18 @@
+{
+  "prior": {
+    "unit-gpt2-mixed":"gpt2","unit-gpt2-semantic":"gpt2",
+    "unit-smollm2-mixed":"smollm2","unit-smollm2-semantic":"smollm2"
+  },
+  "remaining": {
+    "unit-gpt2-surface":["gpt2","417473b5c3ab55d52ee945e3c7fffd298be67fc1258c116b8e2506b6a2292e66"],
+    "unit-pythia-mixed":["pythia","da1530474ca03483c48e3a9bbc0f8681c7db96214695697e66fd7f5277ea1a9f"],
+    "unit-pythia-semantic":["pythia","d6d83cb8d7e771060bf1087eb68294ef95291e299083c8afc786e67c8bcf6550"],
+    "unit-pythia-surface":["pythia","443626a071b31b9cbc93b172c43519170b6891914f1be88255869aa230a30ad7"],
+    "unit-smollm2-surface":["smollm2","7ab22eac4dcd5b63fa2a3bdfabcd108108078251f397529971d3f0dc68f4e2c6"]
+  },
+  "scaled": {
+    "smollm2-1.7b-base":{"repo":"HuggingFaceTB/SmolLM2-1.7B","revision":"effd688a12921b4cc83e3312b6feb579f70f9c71","family":"smollm2","primary":"raw","model_type":"llama"},
+    "gemma-2-2b-it":{"repo":"google/gemma-2-2b-it","revision":"299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8","family":"gemma2","primary":"chat","model_type":"gemma2"},
+    "mistral-7b-instruct-v0.3":{"repo":"mistralai/Mistral-7B-Instruct-v0.3","revision":"c170c708c41dac9275d15a8fff4eca08d52bab71","family":"mistral","primary":"chat","model_type":"mistral"}
+  }
+}

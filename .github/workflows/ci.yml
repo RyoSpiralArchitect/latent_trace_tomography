@@ -31,6 +31,8 @@ jobs:
           python -S -m unittest discover -s reports/output_only_bridge_20261023 -v
       - name: Reproduce weak-projection checkpoint (no model or key)
         run: python -S reports/weak_projection_checkpoint_20261102/replay.py
+      - name: Reproduce scaled-reference retrospective comparison
+        run: python -S reports/scaled_reference_screen_20261102/replay.py
 
   test:
     strategy:

@@ -11,6 +11,7 @@ Earlier primary abstentions remain separate from post-hoc diagnoses.
 
 | Purpose | English | 日本語 |
 |---|---|---|
+| What is still missing before a tomography claim? | [Readiness and stop rules](tomography_readiness.md) | [判定条件](tomography_readiness.ja.md) |
 | Weak projections, known collisions and a prospective Luna check | [Checkpoint](../reports/weak_projection_checkpoint_20261102/README.md) | [実験記録](../reports/weak_projection_checkpoint_20261102/README.ja.md) |
 | Project, setup, scientific boundaries | [README](../README.md) | [README](../README.ja.md) |
 | GPT-6 Luna result and replay (October 31) | [Report](../reports/gpt6luna_answer_mapping_20261031/README.md) | [レポート](../reports/gpt6luna_answer_mapping_20261031/README.ja.md) |

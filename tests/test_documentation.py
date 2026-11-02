@@ -17,6 +17,7 @@ PAIRS = (
     "reports/output_only_bridge_20261023/README.md",
     "successors/oss_reliance_regime_v0/output_only_bridge_v2/README.md",
     "docs/next_bridge_pilot.md",
+    "docs/tomography_readiness.md",
     "reports/gpt6luna_answer_mapping_20261031/README.md",
     "reports/weak_projection_checkpoint_20261102/README.md",
     "successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md",
@@ -33,6 +34,26 @@ def command_blocks(text):
 
 
 class DocumentationTests(unittest.TestCase):
+    def test_tomography_ledger_is_documentation_not_a_run_permit(self):
+        ledger = json.loads((ROOT / "docs/tomography_readiness.json").read_text())
+        self.assertFalse(ledger["execution_authorized"])
+        self.assertEqual(ledger["kind"], "documentation_only_evidence_ledger")
+        for name in ("evidence", "frozen_contract"):
+            self.assertTrue((ROOT / "docs" / ledger[name]).is_file())
+        self.assertEqual([g["id"] for g in ledger["gates"]], list("QRITPU"))
+        self.assertEqual(ledger["named_pilot_required_gates"], list("QRITP"))
+        next_design = ledger["next_design"]
+        self.assertEqual(next_design["status"], "proposal_not_a_freeze_or_permit")
+        scale = next_design["fresh_dockets"] * next_design["codebooks"] * next_design["repeats"]
+        self.assertEqual(
+            len(next_design["aligned_control_arms"]) * scale,
+            next_design["endpoint_control_slots_if_authorized"],
+        )
+        self.assertEqual(
+            len(next_design["sealed_challenge_arms"]) * scale,
+            next_design["endpoint_challenge_slots_if_authorized_and_informative"],
+        )
+
     def test_gpt6luna_report_counts_match_both_languages(self):
         report = ROOT / "reports/gpt6luna_answer_mapping_20261031/README.md"
         analysis = json.loads((report.parent / "data/analysis.json").read_text())

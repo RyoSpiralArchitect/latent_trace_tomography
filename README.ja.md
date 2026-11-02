@@ -236,6 +236,9 @@ live backendを追加する前に、[research contract](docs/research_contract.m
 
 ## 主張の範囲
 
+[tomographyの判定条件](docs/tomography_readiness.ja.md)では、公開した実測と残っている検証を対応付けています。
+個体の応答を区別できても、次の答えを当てられても、未知の系列で介入値を推定できたことにはなりません。
+
 対応する証拠が揃った場合に使える表現です。現時点での達成を一括して宣言するものではありません。
 
 - 「出力は、calibration Cのもとでregime class Rと挙動上整合します」

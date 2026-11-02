@@ -296,6 +296,9 @@ before adding a live backend.
 
 ## Claim boundary
 
+The [tomography readiness checklist](docs/tomography_readiness.md) compares the published evidence with the remaining gates.
+Behavioral separation and a correct answer forecast do not establish blind transfer of an intervention-defined profile.
+
 Permitted when the corresponding evidence is established, not as blanket claims
 of current achievement:
 

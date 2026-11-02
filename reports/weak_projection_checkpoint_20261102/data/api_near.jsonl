@@ -1,0 +1,12 @@
+{"output_text":"B","qid":"d1-identity/fail_near/r0"}
+{"output_text":"A","qid":"d2-swap/fail_near/r0"}
+{"output_text":"A","qid":"d1-swap/fail_near/r0"}
+{"output_text":"FINAL: B","qid":"d2-identity/fail_near/r0"}
+{"output_text":"FINAL: A","qid":"d0-swap/fail_near/r0"}
+{"output_text":"B","qid":"d0-identity/fail_near/r0"}
+{"output_text":"A","qid":"d1-swap/fail_near/r1"}
+{"output_text":"A","qid":"d0-swap/fail_near/r1"}
+{"output_text":"B","qid":"d1-identity/fail_near/r1"}
+{"output_text":"FINAL: A","qid":"d2-swap/fail_near/r1"}
+{"output_text":"FINAL: B","qid":"d0-identity/fail_near/r1"}
+{"output_text":"FINAL: B","qid":"d2-identity/fail_near/r1"}

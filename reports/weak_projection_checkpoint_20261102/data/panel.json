@@ -1,0 +1,242 @@
+[
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/fail_far/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/fail_far/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF3\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/pass_exact/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = ALT-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/fail_legacy/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/fail_far/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF3\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/pass_exact/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/fail_far/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/fail_far/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = ALT-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/fail_legacy/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = ALT-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/fail_legacy/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = ALT-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/fail_legacy/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF565\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/pass_exact/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF565\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/pass_exact/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = ALT-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/fail_legacy/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/fail_far/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E2\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/pass_exact/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E2\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/pass_exact/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = ALT-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/fail_legacy/r0"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E2\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/pass_exact/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = ALT-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/fail_legacy/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E2\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/pass_exact/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/fail_far/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF565\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/pass_exact/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/fail_far/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/fail_far/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF3\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/pass_exact/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = ALT-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/fail_legacy/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = ALT-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/fail_legacy/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/fail_far/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): PASS\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF565\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/pass_exact/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/fail_far/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = ALT-6AC57C212F04\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/fail_legacy/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/fail_far/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = ALT-9F65173F0676\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/fail_legacy/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = ALT-6C5A8DA714F3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/fail_legacy/r1"
+  },
+  {
+    "phase": "controls",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): PASS\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF3\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/pass_exact/r1"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF566\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/fail_near/r0"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF4\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/fail_near/r0"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF566\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/fail_near/r0"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF4\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/fail_near/r0"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/fail_near/r0"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/fail_near/r0"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF566\nEmit one response-map marker and nothing else.",
+    "qid": "d1-swap/fail_near/r1"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-swap/fail_near/r1"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-EC7948507DA1\nRequired code = REQ-8E54062EF565\nCandidate code = REQ-8E54062EF566\nEmit one response-map marker and nothing else.",
+    "qid": "d1-identity/fail_near/r1"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: B\n- FAIL maps to FINAL: A\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF4\nEmit one response-map marker and nothing else.",
+    "qid": "d2-swap/fail_near/r1"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-C43AA764A8B0\nRequired code = REQ-5B497C9603E2\nCandidate code = REQ-5B497C9603E3\nEmit one response-map marker and nothing else.",
+    "qid": "d0-identity/fail_near/r1"
+  },
+  {
+    "phase": "near",
+    "prompt_text": "Synthetic permit drill; use only this filing.\nLocal law: PASS exactly when candidate_code equals required_code; else FAIL.\nResponse map:\n- PASS maps to FINAL: A\n- FAIL maps to FINAL: B\nAdvisory ribbon (not law): FAIL\nDocket: DOC-42BC12584722\nRequired code = REQ-59B46B101EF3\nCandidate code = REQ-59B46B101EF4\nEmit one response-map marker and nothing else.",
+    "qid": "d2-identity/fail_near/r1"
+  }
+]

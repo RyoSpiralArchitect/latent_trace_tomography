@@ -3,16 +3,17 @@
 [English](README.md) | 日本語
 
 まず[プロジェクトのREADME](../README.ja.md)、次に
-[GPT-6 Luna checkpoint](../reports/gpt6luna_answer_mapping_20261031/README.ja.md)をお読みください。
-正答と出力形式の遵守を分けて報告しています。以前のbridge checkpointの棄権も、事後診断とは別に保持します。
+[弱観測の実験記録](../reports/weak_projection_checkpoint_20261102/README.ja.md)をお読みください。
+未観測の回答を予測することと、内部の介入値を推定することを分けて報告しています。以前の棄権も事後診断とは別に残しています。
 
 ## 目的別の入口
 
 | 目的 | English | 日本語 |
 |---|---|---|
+| 弱観測・衝突例・Lunaへの事前予測 | [Checkpoint](../reports/weak_projection_checkpoint_20261102/README.md) | [実験記録](../reports/weak_projection_checkpoint_20261102/README.ja.md) |
 | 概要・セットアップ・主張の範囲 | [README](../README.md) | [README](../README.ja.md) |
 | 10月31日のGPT-6 Luna結果とreplay | [Report](../reports/gpt6luna_answer_mapping_20261031/README.md) | [レポート](../reports/gpt6luna_answer_mapping_20261031/README.ja.md) |
-| 次のoutput-contract試験：未実行 | [Design](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md) |
+| 凍結したoutput-contract設計（実行許可ではありません） | [Design](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md) |
 | 保存済み回答を採点する・モデルなしで動作を確かめる | [Guide](../successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.md) | [採点と模擬実行](../successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.ja.md) |
 | 10月29日のMistral結果とreplay | [Report](../reports/mistral_bridge_20261029/README.md) | [レポート](../reports/mistral_bridge_20261029/README.ja.md) |
 | 凍結済みの親answer-mapping設計 | [Design](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.md) | [小設計](../successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md) |

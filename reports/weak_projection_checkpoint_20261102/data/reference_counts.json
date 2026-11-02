@@ -1,0 +1,92 @@
+{
+  "target-01": {
+    "informative": 8,
+    "matched_null": 0,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 6,
+    "targeted_parsed": 16,
+    "unit": "unit-gpt2-mixed",
+    "unparseable": 0
+  },
+  "target-02": {
+    "informative": 0,
+    "matched_null": 0,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 0,
+    "targeted_parsed": 16,
+    "unit": "unit-gpt2-semantic",
+    "unparseable": 0
+  },
+  "target-03": {
+    "informative": 2,
+    "matched_null": 1,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 0,
+    "targeted_parsed": 16,
+    "unit": "unit-gpt2-surface",
+    "unparseable": 0
+  },
+  "target-04": {
+    "informative": 8,
+    "matched_null": 4,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 8,
+    "targeted_parsed": 16,
+    "unit": "unit-pythia-mixed",
+    "unparseable": 0
+  },
+  "target-05": {
+    "informative": 0,
+    "matched_null": 0,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 0,
+    "targeted_parsed": 16,
+    "unit": "unit-pythia-semantic",
+    "unparseable": 0
+  },
+  "target-06": {
+    "informative": 16,
+    "matched_null": 7,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 16,
+    "targeted_parsed": 16,
+    "unit": "unit-pythia-surface",
+    "unparseable": 0
+  },
+  "target-07": {
+    "informative": 8,
+    "matched_null": 0,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 6,
+    "targeted_parsed": 16,
+    "unit": "unit-smollm2-mixed",
+    "unparseable": 0
+  },
+  "target-08": {
+    "informative": 0,
+    "matched_null": 0,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 0,
+    "targeted_parsed": 16,
+    "unit": "unit-smollm2-semantic",
+    "unparseable": 0
+  },
+  "target-09": {
+    "informative": 16,
+    "matched_null": 0,
+    "null_parsed": 16,
+    "pairs": 16,
+    "targeted": 12,
+    "targeted_parsed": 16,
+    "unit": "unit-smollm2-surface",
+    "unparseable": 0
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "locked_at": "2026-11-02T11:42:27.440589+00:00",
+  "near_endpoint_slots_seen": 0,
+  "plan_sha256": "ee9099e45bd487caebe92438574603445505e52722580fca0b8020c7817e2010",
+  "prediction": {
+    "api_intervention_profile_issued": false,
+    "cases": {
+      "d0-identity": {
+        "all_oss": [
+          "A",
+          "B"
+        ],
+        "copy_far": [
+          "B"
+        ],
+        "law": [
+          "B"
+        ],
+        "matched": [
+          "B"
+        ],
+        "reason": null
+      },
+      "d0-swap": {
+        "all_oss": [
+          "A",
+          "B"
+        ],
+        "copy_far": [
+          "A"
+        ],
+        "law": [
+          "A"
+        ],
+        "matched": [
+          "A"
+        ],
+        "reason": null
+      },
+      "d1-identity": {
+        "all_oss": [
+          "A",
+          "B"
+        ],
+        "copy_far": [
+          "B"
+        ],
+        "law": [
+          "B"
+        ],
+        "matched": [
+          "B"
+        ],
+        "reason": null
+      },
+      "d1-swap": {
+        "all_oss": [
+          "A",
+          "B"
+        ],
+        "copy_far": [
+          "A"
+        ],
+        "law": [
+          "A"
+        ],
+        "matched": [
+          "A"
+        ],
+        "reason": null
+      },
+      "d2-identity": {
+        "all_oss": [
+          "A",
+          "B"
+        ],
+        "copy_far": [
+          "B"
+        ],
+        "law": [
+          "B"
+        ],
+        "matched": [
+          "B"
+        ],
+        "reason": null
+      },
+      "d2-swap": {
+        "all_oss": [
+          "A",
+          "B"
+        ],
+        "copy_far": [
+          "A"
+        ],
+        "law": [
+          "A"
+        ],
+        "matched": [
+          "A"
+        ],
+        "reason": null
+      }
+    },
+    "global_abstention": null,
+    "matching_base_lineages": [
+      "gpt2",
+      "smollm2"
+    ],
+    "matching_ids": [
+      "unit-gpt2-mixed",
+      "unit-smollm2-mixed"
+    ]
+  }
+}

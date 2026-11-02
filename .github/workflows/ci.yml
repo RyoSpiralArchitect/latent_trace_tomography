@@ -29,6 +29,8 @@ jobs:
         run: |
           python -S -m unittest discover -s successors/oss_reliance_regime_v0/output_only_bridge_v1 -v
           python -S -m unittest discover -s reports/output_only_bridge_20261023 -v
+      - name: Reproduce weak-projection checkpoint (no model or key)
+        run: python -S reports/weak_projection_checkpoint_20261102/replay.py
 
   test:
     strategy:

@@ -1,0 +1,36 @@
+{"output_text":"FINAL: A","qid":"d1-swap/fail_far/r0"}
+{"output_text":"FINAL: B","qid":"d1-identity/fail_far/r0"}
+{"output_text":"B","qid":"d2-swap/pass_exact/r0"}
+{"output_text":"FINAL: A","qid":"d0-swap/fail_legacy/r0"}
+{"output_text":"A","qid":"d2-swap/fail_far/r0"}
+{"output_text":"A","qid":"d2-identity/pass_exact/r0"}
+{"output_text":"FINAL: A","qid":"d0-swap/fail_far/r0"}
+{"output_text":"B","qid":"d0-identity/fail_far/r0"}
+{"output_text":"FINAL: A","qid":"d2-swap/fail_legacy/r0"}
+{"output_text":"FINAL: B","qid":"d1-identity/fail_legacy/r0"}
+{"output_text":"B","qid":"d0-identity/fail_legacy/r0"}
+{"output_text":"A","qid":"d1-identity/pass_exact/r0"}
+{"output_text":"B","qid":"d1-swap/pass_exact/r0"}
+{"output_text":"FINAL: A","qid":"d1-swap/fail_legacy/r0"}
+{"output_text":"FINAL: B","qid":"d2-identity/fail_far/r0"}
+{"output_text":"FINAL: B","qid":"d0-swap/pass_exact/r0"}
+{"output_text":"FINAL: A","qid":"d0-identity/pass_exact/r0"}
+{"output_text":"FINAL: B","qid":"d2-identity/fail_legacy/r0"}
+{"output_text":"FINAL: A","qid":"d0-identity/pass_exact/r1"}
+{"output_text":"A","qid":"d2-swap/fail_legacy/r1"}
+{"output_text":"FINAL: B","qid":"d0-swap/pass_exact/r1"}
+{"output_text":"B","qid":"d1-identity/fail_far/r1"}
+{"output_text":"FINAL: A","qid":"d1-identity/pass_exact/r1"}
+{"output_text":"A","qid":"d2-swap/fail_far/r1"}
+{"output_text":"B","qid":"d0-identity/fail_far/r1"}
+{"output_text":"B","qid":"d2-swap/pass_exact/r1"}
+{"output_text":"FINAL: A","qid":"d0-swap/fail_legacy/r1"}
+{"output_text":"A","qid":"d1-swap/fail_legacy/r1"}
+{"output_text":"FINAL: B","qid":"d2-identity/fail_far/r1"}
+{"output_text":"FINAL: B","qid":"d1-swap/pass_exact/r1"}
+{"output_text":"A","qid":"d1-swap/fail_far/r1"}
+{"output_text":"FINAL: B","qid":"d2-identity/fail_legacy/r1"}
+{"output_text":"FINAL: A","qid":"d0-swap/fail_far/r1"}
+{"output_text":"B","qid":"d1-identity/fail_legacy/r1"}
+{"output_text":"B","qid":"d0-identity/fail_legacy/r1"}
+{"output_text":"A","qid":"d2-identity/pass_exact/r1"}

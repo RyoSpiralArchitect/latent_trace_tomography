@@ -36,15 +36,18 @@ promptの変更は既知の線形Radon operatorではなく、計算そのもの
 
 ## 現在あるもの
 
+- [11月1–2日の弱観測の実験](reports/weak_projection_checkpoint_20261102/README.ja.md)。
+  以前は同じ答えだったOSS個体を区別できました。Lunaの未送信6条件への予測は6/6一致しましたが、
+  明文の規則でも対照回答のコピーでも同点です。以前の衝突例・全棄権・条件付き区間の外れも再生できます。
 - [2026-10-31のGPT-6 Luna answer-mapping checkpoint](reports/gpt6luna_answer_mapping_20261031/README.ja.md)。
   事前に定めたparserでは112/112件が正答でしたが、指定markerは86/112件でした。
   対応表による誤り率の差は両課題とも0で、反復56組のうち8組は答えを変えずに形式だけが変わりました。
   正答とinterface適合を別々に監査する結果であり、内部機構の証拠や以前の棄権の変更ではありません。
-- 未実行の[96件のoutput-contract設計](successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md)。
+- 凍結した[96件のoutput-contract設計](successors/oss_reliance_regime_v0/output_contract_probe_v1/README.ja.md)。
   同じ判断課題でmarker付きと記号のみの指示を比べます。
   [採点器と模擬実行](successors/oss_reliance_regime_v0/output_contract_scoring_v1/README.ja.md)では、
   正答と形式遵守を別々に数え、回答が欠けた場合は採点しません。
-  設計は凍結したままです。この96件のAPI実測結果はなく、実行も未許可です。
+  親設計は凍結したままです。別途許可を得た後続実験の結果は、上の11月のレポートに掲載しました。
 - [2026-10-29のMistral checkpoint](reports/mistral_bridge_20261029/README.ja.md)。
   参照1,008回答、API 112回答と、公開データのoffline replayを含みます。
   弱観測はすべて解釈できましたが、参照の回答列と一致せず、v2の一次結果は棄権でした。
@@ -259,8 +262,8 @@ live backendを追加する前に、[research contract](docs/research_contract.m
 
 詳細は[roadmap](docs/roadmap.md)と[industrial thesis](docs/industrial_thesis.md)を参照してください。
 [以前のbridge pilot作戦](docs/next_bridge_pilot.ja.md)は、当時の提案として残しています。
-現在の次の一手は[answer-mapping probe](successors/oss_reliance_regime_v0/answer_mapping_probe_v1/README.ja.md)です。
-どちらの文書も実行許可ではありません。
+[11月のレポート](reports/weak_projection_checkpoint_20261102/README.ja.md)には、その後の実験で測れたことをまとめました。
+設計やレポートの公開は新たな実行の許可ではありません。
 
 ## 範囲と倫理
 

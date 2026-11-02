@@ -1,0 +1,30 @@
+{
+  "as_of": "2026-11-02",
+  "kind": "documentation_only_evidence_ledger",
+  "execution_authorized": false,
+  "claim_now": "named_panel_separation_and_locked_endpoint_answer_forecast",
+  "not_established": "output_only_transfer_of_an_intervention_validated_profile_to_an_unseen_cluster",
+  "named_pilot_required_gates": ["Q","R","I","T","P"],
+  "additional_gate_for_open_set_or_probabilistic_claims": "U",
+  "evidence": "../reports/weak_projection_checkpoint_20261102/README.md",
+  "frozen_contract": "../protocols/oss_reliance_regime_v0/protocol.json",
+  "gates": [
+    {"id":"Q", "status":"observed_on_named_oss_pairs", "deliverable":"Repeatable paired symbol contrasts on a specified weak panel; raw format and instability counted separately.", "if_not_met":"Report the collision or unresolved cell. Do not relabel a format change as separation."},
+    {"id":"R", "status":"small_panel_measured_full_reference_not_qualified", "deliverable":"Disjoint site discovery and evaluation; specific, stable, opportunity-matched reference and control evidence.", "if_not_met":"Keep the reference undefined, unstable or unverified. Do not turn it into a zero or a mechanism label."},
+    {"id":"I", "status":"known_finite_panel_collision", "deliverable":"Resolution target, collision guard and measured coverage/width. Equal observed orbits cannot justify conflicting unique estimates.", "if_not_met":"Return a class, interval or abstention; redesign Q or coarsen the estimand under a new contract."},
+    {"id":"T", "status":"held_cluster_continuous_transfer_not_demonstrated", "deliverable":"Ancestry-aware whole-cluster holdout and target-blind profile predictions scored against independently measured references.", "if_not_met":"Report within-panel discrimination only, not cross-model measurement."},
+    {"id":"P", "status":"prospective_narrowing_tied_with_simple_rules", "deliverable":"Locked answers on fresh discriminatory challenges, comparator disagreements and the separate frozen cluster-macro prospective gate.", "if_not_met":"If all simple rules agree, mark that contrast non-discriminating even at perfect accuracy."},
+    {"id":"U", "status":"abstention_observed_open_set_risk_not_validated", "deliverable":"Independent support, risk/coverage and drift validation before any calibrated or deployed attribution claim.", "if_not_met":"Withhold attribution or probabilities and retain an output-level audit."}
+  ],
+  "next_design": {
+    "status": "proposal_not_a_freeze_or_permit",
+    "fresh_dockets": 3, "codebooks": 2, "repeats": 2,
+    "aligned_control_arms": ["exact_PASS","legacy_FAIL","same_prefix_far_FAIL"],
+    "sealed_challenge_arms": ["exact_PASS_with_FAIL_advice","same_prefix_far_FAIL_with_PASS_advice"],
+    "endpoint_control_slots_if_authorized": 36,
+    "endpoint_challenge_slots_if_authorized_and_informative": 24,
+    "comparators": ["matched_OSS_set","all_OSS_set","written_law","copy_paired_aligned_answer","follow_advisory"],
+    "before_challenge": "Require stable support from at least two distinct OSS lineages; commit all candidate sets, comparator answers and disagreement masks before any endpoint challenge request.",
+    "stop": "No support or no singleton disagreement with any simple predictor: record abstention or non-discriminating design. No challenge dispatch or prompt search to rescue it."
+  }
+}

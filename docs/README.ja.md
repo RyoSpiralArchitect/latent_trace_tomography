@@ -10,6 +10,7 @@
 
 | 目的 | English | 日本語 |
 |---|---|---|
+| tomographyと呼ぶために何が不足しているか | [Readiness and stop rules](tomography_readiness.md) | [判定条件](tomography_readiness.ja.md) |
 | 弱観測・衝突例・Lunaへの事前予測 | [Checkpoint](../reports/weak_projection_checkpoint_20261102/README.md) | [実験記録](../reports/weak_projection_checkpoint_20261102/README.ja.md) |
 | 概要・セットアップ・主張の範囲 | [README](../README.md) | [README](../README.ja.md) |
 | 10月31日のGPT-6 Luna結果とreplay | [Report](../reports/gpt6luna_answer_mapping_20261031/README.md) | [レポート](../reports/gpt6luna_answer_mapping_20261031/README.ja.md) |

@@ -36,6 +36,10 @@ promptの変更は既知の線形Radon operatorではなく、計算そのもの
 
 ## 現在あるもの
 
+- [助言で判断が変わるとき、変わらないとき](reports/advisory_interventions_20261104/README.ja.md)。
+  第6層で不許可の助言を移すと、GPT-2 mixedは24/24条件で不許可に変わり、GPT-2 semanticは0/24でした。
+  新しい6案件では、申請コードの末尾も一緒に移してなお、コード不一致の案件は許可に変わりませんでした。
+  これは公開重みでの結果です。Lunaの衝突時の判断については予測を棄権しました。
 - [弱観測の書式を変えた後続実験](successors/oss_reliance_regime_v0/aligned_reference_separator_v1/README.ja.md)。
   参考欄の位置を変えると小型4個体がMistralから分かれましたが、GPT-2 mixedとは同じままで、APIを呼ぶ前に棄権しました。
 - [参照を12個体に広げた比較実験](reports/scaled_reference_screen_20261102/README.ja.md)。

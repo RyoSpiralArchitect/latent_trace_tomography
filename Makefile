@@ -4,12 +4,13 @@ CONTRACT_SCORING = successors/oss_reliance_regime_v0/output_contract_scoring_v1
 WEAK_CHECKPOINT = reports/weak_projection_checkpoint_20261102
 SCALED_CHECKPOINT = reports/scaled_reference_screen_20261102
 ALIGNED_SEPARATOR = successors/oss_reliance_regime_v0/aligned_reference_separator_v1
+ADVISORY_CHECKPOINT = reports/advisory_interventions_20261104
 
 .PHONY: lint test preflight design-summary smoke check
 
 lint:
-	PYTHONPATH=src $(PYTHON) -m ruff check src tests $(CHECKPOINT_PATHS) $(CONTRACT_SCORING) $(WEAK_CHECKPOINT) $(SCALED_CHECKPOINT) $(ALIGNED_SEPARATOR)
-	PYTHONPATH=src $(PYTHON) -m ruff format --check src tests $(CHECKPOINT_PATHS) $(CONTRACT_SCORING) $(WEAK_CHECKPOINT) $(SCALED_CHECKPOINT) $(ALIGNED_SEPARATOR)
+	PYTHONPATH=src $(PYTHON) -m ruff check src tests $(CHECKPOINT_PATHS) $(CONTRACT_SCORING) $(WEAK_CHECKPOINT) $(SCALED_CHECKPOINT) $(ALIGNED_SEPARATOR) $(ADVISORY_CHECKPOINT)
+	PYTHONPATH=src $(PYTHON) -m ruff format --check src tests $(CHECKPOINT_PATHS) $(CONTRACT_SCORING) $(WEAK_CHECKPOINT) $(SCALED_CHECKPOINT) $(ALIGNED_SEPARATOR) $(ADVISORY_CHECKPOINT)
 
 test:
 	PYTHONPATH=src $(PYTHON) -m unittest discover -s tests -v
@@ -21,6 +22,7 @@ test:
 	$(PYTHON) -S -m unittest discover -s $(WEAK_CHECKPOINT) -v
 	$(PYTHON) -S -m unittest discover -s $(SCALED_CHECKPOINT) -v
 	$(PYTHON) -S -m unittest discover -s $(ALIGNED_SEPARATOR) -v
+	$(PYTHON) -S -m unittest discover -s $(ADVISORY_CHECKPOINT) -v
 
 preflight:
 	PYTHONPATH=src $(PYTHON) -S -m latent_trace_tomography preflight \

@@ -1,0 +1,44 @@
+{
+  "advisory-map-replication-20261104": {
+    "freeze.json": "bf38fc2c36d6b322120768487c85ff01cb193ee3eb1a65f2eb8646275a3aa586",
+    "independent.json": "dc25962c558cc91cb4d27058f70ddbf56746ace07128b8ff9237de5b70664494",
+    "score.json": "b0513140dde523bd514c57ede157c88bc5a05ec293576bfc956be4cfc6cc5174"
+  },
+  "gpt2-mixed-cue-code-cross-20261104/measurement": {
+    "attempt/receipt.json": "0fe8b666aadaee9c9a6deedae2a287a6e150fe279f474db2bc51b4371dad00b1",
+    "attempt/results.jsonl": "854cd83fb56f78de20707bbd1f949cab45b13beaeeccdb9e1d0589a7e405cec1",
+    "cpu_replay.json": "591656270f2e9f6ff578d23b9a19f01e6249a4d2ce04ba1f5f75dc177cb53e70",
+    "freeze.json": "f6f060397c244486299ff44fef7e78991b06993db030486fa5571d3fb167a82d",
+    "independent.json": "10a170646ecbfc305f7def6b159420a962ed0b44a05c0d929d49f571ce959bb6",
+    "packet.json": "cb70fd7e10579f52e527e9111ae3409623d12d919281ea994497b4dd8f3ef28e",
+    "preflight_amendment.json": "f12f9bc5f7b8f79f8a90ec9f589dbf44fd1a25284adf6a3ea8e6fbbf3deed02e",
+    "protocol.json": "27637d48cfb39683159fa12c8e66ac654a5b49e63eb38e2f04f9f30820ab1ed0",
+    "score.json": "066577cb681e1b1d03c57076947d9428945fc3e4f7c84753eb129864aa3585fb"
+  },
+  "gpt2-pair-cue-interchange-20261104": {
+    "attempt/receipt.json": "7f9ef0780426c95ace4fcfb8c6e6cddf3d04f86020706714779120d1c30dccdf",
+    "attempt/results.jsonl": "da59f991eea116ea2abcc61793bb6e57d38084b82bf06b9e88408dfabb32cc3f",
+    "cpu_replay.json": "ad5378c441d4a5dbb05f17a3f3ba672afa4a8633b201beaaba25775c06185ea3",
+    "freeze.json": "9e73d8207b1fede2b18173d0eb6f57b7bdb741f23ce5ebdd574e447a30b0abb9",
+    "independent.json": "6629c8c2009ee87fb6572d9e3834f5a62d18fa377bab1f49dc5c9e1d88d80a5a",
+    "packet.json": "e622c923f6189610aadafd3adfeffba6a03c1f9cfe2d546df5b700cdb96d9dab",
+    "protocol.json": "6c1e51a068708ee4c5bdb4b3f171b223ab7c6a1ff53adff92c2c877998907c2f",
+    "score.json": "6b86bd172f2ddb9c2f49e6dbfa36e38427fc1678399b88f021dc194a68edbde3"
+  },
+  "luna-exact-panel-flip-20261103": {
+    "forecast.json": "03fd085edd3d89b97d601a31d9c31246de71c5c27f2f73f370c125855355f63a",
+    "freeze.json": "e4fc6576b3059f6cce3e01326d8913145c0b187527ca9d8b37c46f3e0e58993e",
+    "independent.json": "44923bf200f3dd65bd3a1c28e9a4770c87ebcd61b969f5fdc3592cabd86e963e"
+  },
+  "luna-literal-legend-20261103": {
+    "api/observations.jsonl": "d7c364806e377717b1394633648513403d4cb64fb0c0768b68e493b47484b24a",
+    "api/receipt.json": "bebc50f9bc3cec67d720d75d5429d593fb12df22c8e9d57db4a359d89f1f59f2",
+    "independent.json": "8366b24b2f1bc212b83c2a01fa607d0b0edbea32a8614e3482057117a5114527",
+    "plan.json": "eebfb6273f3a340715dee69ac41ee11f49b8ef16df1e35e4bd825ce657375aae"
+  },
+  "pair-advisory-legend-20261103": {
+    "evidence/development-gate.json": "0dc7fa365eb5b08562f1a088d5f5263db215237fad0e73a2d397c3fe607c0e38",
+    "freeze.json": "5dcca8ffc87a0b01f044059e1a23389e79eeab0b4e1026bd4b59bd2a74bafe40",
+    "independent.json": "846e235b9b547bad5bd37ae00eb5dba44f16b1c3b3520fe72c0615dc816f7059"
+  }
+}

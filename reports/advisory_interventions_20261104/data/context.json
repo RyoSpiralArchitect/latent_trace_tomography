@@ -1,0 +1,379 @@
+{
+  "coded_advisory": {
+    "arms": {
+      "baseline": {
+        "different": 0,
+        "mistral-7b-instruct-v0.3": 12,
+        "same": 12,
+        "total": 12,
+        "unit-gpt2-mixed": 12
+      },
+      "coded_decode": {
+        "different": 10,
+        "mistral-7b-instruct-v0.3": 17,
+        "same": 9,
+        "total": 24,
+        "unit-gpt2-mixed": 12
+      },
+      "coded_task": {
+        "different": 7,
+        "mistral-7b-instruct-v0.3": 9,
+        "same": 2,
+        "total": 24,
+        "unit-gpt2-mixed": 12
+      },
+      "literal_decode": {
+        "different": 12,
+        "mistral-7b-instruct-v0.3": 20,
+        "same": 8,
+        "total": 24,
+        "unit-gpt2-mixed": 12
+      },
+      "literal_task": {
+        "different": 0,
+        "mistral-7b-instruct-v0.3": 0,
+        "same": 0,
+        "total": 24,
+        "unit-gpt2-mixed": 12
+      }
+    },
+    "clean_coded_splits": 0,
+    "go": false,
+    "issued": {},
+    "new_endpoint_calls": 0
+  },
+  "cue_run": {
+    "cpu_replay_attestation": {
+      "capture_files": 96,
+      "interventions_replayed": 864,
+      "new_model_calls": 0,
+      "receipt_sha256": "7f9ef0780426c95ace4fcfb8c6e6cddf3d04f86020706714779120d1c30dccdf",
+      "site_tensors_checked": 288
+    },
+    "endpoint_calls": 0,
+    "forwards": 5760,
+    "generations": 960
+  },
+  "exact_witness": {
+    "endpoint_accuracy": null,
+    "flip_counts": {
+      "gemma-2-2b-it": {
+        "advisory": 24,
+        "rule": 24,
+        "unresolved": 0
+      },
+      "mistral-7b-instruct-v0.3": {
+        "advisory": 7,
+        "rule": 18,
+        "unresolved": 23
+      },
+      "smollm2-1.7b-base": {
+        "advisory": 0,
+        "rule": 0,
+        "unresolved": 48
+      },
+      "unit-gpt2-mixed": {
+        "advisory": 36,
+        "rule": 12,
+        "unresolved": 0
+      },
+      "unit-gpt2-semantic": {
+        "advisory": 24,
+        "rule": 24,
+        "unresolved": 0
+      },
+      "unit-gpt2-surface": {
+        "advisory": 23,
+        "rule": 25,
+        "unresolved": 0
+      },
+      "unit-pythia-mixed": {
+        "advisory": 36,
+        "rule": 12,
+        "unresolved": 0
+      },
+      "unit-pythia-semantic": {
+        "advisory": 23,
+        "rule": 25,
+        "unresolved": 0
+      },
+      "unit-pythia-surface": {
+        "advisory": 33,
+        "rule": 15,
+        "unresolved": 0
+      },
+      "unit-smollm2-mixed": {
+        "advisory": 42,
+        "rule": 6,
+        "unresolved": 0
+      },
+      "unit-smollm2-semantic": {
+        "advisory": 17,
+        "rule": 31,
+        "unresolved": 0
+      },
+      "unit-smollm2-surface": {
+        "advisory": 48,
+        "rule": 0,
+        "unresolved": 0
+      }
+    },
+    "issued": {},
+    "new_endpoint_calls": 0,
+    "selection": {
+      "IN": [
+        "unit-smollm2-surface"
+      ],
+      "OUT": [
+        "gemma-2-2b-it",
+        "unit-gpt2-mixed",
+        "unit-gpt2-semantic",
+        "unit-gpt2-surface",
+        "unit-pythia-mixed",
+        "unit-pythia-semantic",
+        "unit-pythia-surface",
+        "unit-smollm2-mixed",
+        "unit-smollm2-semantic"
+      ],
+      "UNKNOWN": [
+        "mistral-7b-instruct-v0.3",
+        "smollm2-1.7b-base"
+      ]
+    },
+    "status": "ABSTAIN_NO_DISTINCTIVE_FORECAST",
+    "weak_counts": {
+      "gemma-2-2b-it": {
+        "matches": 24,
+        "mismatches": 24,
+        "unresolved": 0
+      },
+      "mistral-7b-instruct-v0.3": {
+        "matches": 24,
+        "mismatches": 0,
+        "unresolved": 24
+      },
+      "smollm2-1.7b-base": {
+        "matches": 0,
+        "mismatches": 0,
+        "unresolved": 48
+      },
+      "unit-gpt2-mixed": {
+        "matches": 36,
+        "mismatches": 12,
+        "unresolved": 0
+      },
+      "unit-gpt2-semantic": {
+        "matches": 24,
+        "mismatches": 24,
+        "unresolved": 0
+      },
+      "unit-gpt2-surface": {
+        "matches": 29,
+        "mismatches": 19,
+        "unresolved": 0
+      },
+      "unit-pythia-mixed": {
+        "matches": 34,
+        "mismatches": 14,
+        "unresolved": 0
+      },
+      "unit-pythia-semantic": {
+        "matches": 24,
+        "mismatches": 24,
+        "unresolved": 0
+      },
+      "unit-pythia-surface": {
+        "matches": 34,
+        "mismatches": 14,
+        "unresolved": 0
+      },
+      "unit-smollm2-mixed": {
+        "matches": 42,
+        "mismatches": 6,
+        "unresolved": 0
+      },
+      "unit-smollm2-semantic": {
+        "matches": 32,
+        "mismatches": 16,
+        "unresolved": 0
+      },
+      "unit-smollm2-surface": {
+        "matches": 48,
+        "mismatches": 0,
+        "unresolved": 0
+      }
+    }
+  },
+  "joint_run": {
+    "cpu_replay_attestation": {
+      "capture_files": 384,
+      "joint_patches": 2304,
+      "new_model_calls": 0,
+      "per_site_replacements": 4608,
+      "receipt_sha256": "0fe8b666aadaee9c9a6deedae2a287a6e150fe279f474db2bc51b4371dad00b1",
+      "site_tensors": 768
+    },
+    "endpoint_calls": 0,
+    "forwards": 16128,
+    "generations": 2688
+  },
+  "literal_luna": {
+    "calls": {
+      "ket_pass": {
+        "bare": 9,
+        "correct": 24,
+        "marker": 15
+      },
+      "neutral": {
+        "bare": 6,
+        "correct": 24,
+        "marker": 18
+      },
+      "original": {
+        "bare": 10,
+        "correct": 24,
+        "marker": 14
+      },
+      "vor_pass": {
+        "bare": 11,
+        "correct": 24,
+        "marker": 13
+      }
+    },
+    "events": {
+      "dispatch": 96,
+      "received": 96,
+      "recorded": 96
+    },
+    "pairs": {
+      "ket_pass": {
+        "both_marker": 5,
+        "correct": 12,
+        "raw_changed": 5
+      },
+      "neutral": {
+        "both_marker": 7,
+        "correct": 12,
+        "raw_changed": 4
+      },
+      "original": {
+        "both_marker": 6,
+        "correct": 12,
+        "raw_changed": 2
+      },
+      "vor_pass": {
+        "both_marker": 4,
+        "correct": 12,
+        "raw_changed": 5
+      }
+    }
+  },
+  "replication": {
+    "eight_cell_signatures": {
+      "gemma-2-2b-it": {
+        "mapped_PASS": 6
+      },
+      "mistral-7b-instruct-v0.3": {
+        "mixed": 3,
+        "rule": 3
+      },
+      "smollm2-1.7b-base": {
+        "unresolved": 6
+      },
+      "unit-gpt2-mixed": {
+        "advisory": 6
+      },
+      "unit-gpt2-semantic": {
+        "mapped_PASS": 6
+      },
+      "unit-gpt2-surface": {
+        "literal_A": 1,
+        "literal_B": 3,
+        "mixed": 2
+      },
+      "unit-pythia-mixed": {
+        "advisory": 5,
+        "mixed": 1
+      },
+      "unit-pythia-semantic": {
+        "mapped_PASS": 6
+      },
+      "unit-pythia-surface": {
+        "advisory": 6
+      },
+      "unit-smollm2-mixed": {
+        "advisory": 6
+      },
+      "unit-smollm2-semantic": {
+        "mapped_PASS": 2,
+        "mixed": 1,
+        "rule": 3
+      },
+      "unit-smollm2-surface": {
+        "advisory": 6
+      }
+    },
+    "eleven": {
+      "both": {
+        "contradicted": 6
+      },
+      "identity": {
+        "contradicted": 5,
+        "matched": 1
+      },
+      "swap": {
+        "contradicted": 6
+      }
+    },
+    "new_endpoint_calls": 0,
+    "seven": {
+      "both": {
+        "contradicted": 6
+      },
+      "identity": {
+        "contradicted": 6
+      },
+      "swap": {
+        "contradicted": 6
+      }
+    },
+    "stability": {
+      "gemma-2-2b-it": {
+        "stable": 48
+      },
+      "mistral-7b-instruct-v0.3": {
+        "stable": 48
+      },
+      "smollm2-1.7b-base": {
+        "unscorable": 48
+      },
+      "unit-gpt2-mixed": {
+        "stable": 48
+      },
+      "unit-gpt2-semantic": {
+        "stable": 48
+      },
+      "unit-gpt2-surface": {
+        "stable": 48
+      },
+      "unit-pythia-mixed": {
+        "stable": 48
+      },
+      "unit-pythia-semantic": {
+        "stable": 48
+      },
+      "unit-pythia-surface": {
+        "stable": 48
+      },
+      "unit-smollm2-mixed": {
+        "stable": 48
+      },
+      "unit-smollm2-semantic": {
+        "stable": 48
+      },
+      "unit-smollm2-surface": {
+        "stable": 48
+      }
+    }
+  }
+}

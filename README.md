@@ -42,6 +42,10 @@ a controlled input orbit.
 
 ## What exists now
 
+- [Where an advisory changes the answer, and where it does not](reports/advisory_interventions_20261104/README.md):
+  a fixed layer-6 cue patch changed GPT-2 mixed to rejection in 24/24 conditions, versus 0/24
+  for GPT-2 semantic. On six fresh dockets, patching the candidate-code endpoint as well did
+  not rescue mismatches. The Luna conflict forecast abstained; these are open-weight results.
 - [Aligned separator follow-up](successors/oss_reliance_regime_v0/aligned_reference_separator_v1/README.md):
   moving a truthful advisory separated four alternatives from Mistral but left GPT-2 mixed tied;
   the precommitted rule abstained before any endpoint call.

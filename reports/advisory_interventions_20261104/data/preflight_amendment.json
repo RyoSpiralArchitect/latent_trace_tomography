@@ -1,0 +1,43 @@
+{
+  "status": "preflight_stopped_before_any_capture",
+  "plan_sha256": "a6d6b35970d41154de403ea4f2095f48a59515a877322e58ec38c7438ccbb7ea",
+  "reason": "balanced panel must match token AND absolute position",
+  "observed": {
+    "original/context": {
+      "position_delta_2": 8,
+      "same_id": 48,
+      "position_delta_0": 24,
+      "position_delta_-2": 8,
+      "position_delta_1": 8
+    },
+    "original/value": {
+      "position_delta_2": 8,
+      "same_id": 0,
+      "position_delta_-2": 8,
+      "position_delta_0": 24,
+      "position_delta_1": 4,
+      "position_delta_-1": 4
+    },
+    "original/relay": {
+      "position_delta_-1": 24,
+      "same_id": 48,
+      "position_delta_1": 24
+    },
+    "balanced/context": {
+      "position_delta_0": 48,
+      "same_id": 48
+    },
+    "balanced/value": {
+      "position_delta_0": 48,
+      "same_id": 48
+    },
+    "balanced/relay": {
+      "position_delta_-1": 24,
+      "same_id": 48,
+      "position_delta_1": 24
+    }
+  },
+  "model_generations": 0,
+  "physical_forwards": 0,
+  "resolution": "Primary context and secondary value both match position and terminal id on all 48 balanced rows. Relay preserves candidate token but necessarily shifts its absolute position by one when the advice string changes. Keep this route descriptive only; forbid a controlled claim for it."
+}

@@ -10,6 +10,7 @@
 
 | 目的 | English | 日本語 |
 |---|---|---|
+| 11月3–4日：APIの挙動、公開重みへの介入、次に比較する範囲 | [Research checkpoint](../reports/advisory_interventions_20261104/README.md) | [実験記録と次の小設計](../reports/advisory_interventions_20261104/README.ja.md) |
 | tomographyと呼ぶために何が不足しているか | [Readiness and stop rules](tomography_readiness.md) | [判定条件](tomography_readiness.ja.md) |
 | 弱観測・衝突例・Lunaへの事前予測 | [Checkpoint](../reports/weak_projection_checkpoint_20261102/README.md) | [実験記録](../reports/weak_projection_checkpoint_20261102/README.ja.md) |
 | 概要・セットアップ・主張の範囲 | [README](../README.md) | [README](../README.ja.md) |

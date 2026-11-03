@@ -13,6 +13,13 @@ PANELS = ("original", "balanced")
 MAPS = ("identity", "swap")
 SIGNS = ("FAIL", "PASS")
 ROUTES = ("context", "value", "relay")
+LAW_LINE = "Local law: PASS exactly when candidate_code equals required_code; else FAIL."
+PRESENTATIONS = {
+    "original": (),
+    "neutral": ("Filing note: box = east; tray = north.",),
+    "ket_pass": ("Ribbon legend: KET = PASS; VOR = FAIL.",),
+    "vor_pass": ("Ribbon legend: KET = FAIL; VOR = PASS.",),
+}
 FILES = {
     "prompts.jsonl",
     "trials.jsonl",
@@ -46,7 +53,7 @@ def decode(text):
     return m[1]
 
 
-def parse_prompt(txt):
+def parse_prompt(txt, presentation="original"):
     req = field(txt, r"^Required code = (REQ-[A-F0-9]{12})$")
     val = field(txt, r"^Candidate code = (REQ-[A-F0-9]{12})$")
     docket = field(txt, r"^Docket: (DOC-[A-F0-9]{12})$")
@@ -54,6 +61,20 @@ def parse_prompt(txt):
     ps = field(txt, r"^- PASS maps to FINAL: ([AB])$")
     fs = field(txt, r"^- FAIL maps to FINAL: ([AB])$")
     ck(ps != fs, "ambiguous response map")
+    expected = (
+        "Synthetic permit drill; use only this filing.",
+        LAW_LINE,
+        "Response map:",
+        f"- PASS maps to FINAL: {ps}",
+        f"- FAIL maps to FINAL: {fs}",
+        f"Advisory ribbon (not law): {cue}",
+        *PRESENTATIONS[presentation],
+        f"Docket: {docket}",
+        f"Required code = {req}",
+        f"Candidate code = {val}",
+        "Emit one response-map marker and nothing else.",
+    )
+    ck(txt == "\n".join(expected), "written rule, presentation or renderer mismatch")
     return {
         "law": "PASS" if req == val else "FAIL",
         "cue": cue,
@@ -86,6 +107,32 @@ def arms(study, c):
     return {"base", *(":".join((op, rt, k)) for op, (rt, k) in product("STN", donors))}
 
 
+def count_cue(cells, read, make_arm):
+    """Count actual changes, changes to the donor advice, and transfer on informative pairs."""
+    all_changes, directed, transfers = (dict.fromkeys("STN", 0) for _ in range(3))
+    informative = 0
+    for c in cells:
+        stem, sign = c.rsplit("/", 1)
+        natural = read(c, "base")
+        donor = read(stem + "/" + opposite(sign), "base")
+        informative += donor != natural
+        for op in "STN":
+            edited = read(c, make_arm(op))
+            all_changes[op] += edited != natural
+            directed[op] += edited != natural and edited == int(sign == "FAIL")
+            transfers[op] += donor != natural and edited == donor
+    return {
+        "n": len(cells),
+        "all_changes": all_changes,
+        "toward_donor_advice": directed,
+        "informative_pairs": informative,
+        "to_donor_on_informative": transfers,
+        "conditional_donor_rate": {
+            k: n / informative if informative else None for k, n in transfers.items()
+        },
+    }
+
+
 def tally(prompts, trial_rows, api_rows, context):
     cases = keys()
     luna = [
@@ -98,7 +145,10 @@ def tally(prompts, trial_rows, api_rows, context):
         len(prompts) == len(dict(prompts)) and set(dict(prompts)) == set(cases + luna),
         "prompt inventory",
     )
-    q = {k: parse_prompt(txt) for k, txt in prompts}
+    q = {
+        k: parse_prompt(txt, k.split("/")[-1] if k.startswith("luna/") else "original")
+        for k, txt in prompts
+    }
     codes = {}
     dockets = {}
     for c in cases:
@@ -112,9 +162,23 @@ def tally(prompts, trial_rows, api_rows, context):
             ck(codes.setdefault(k, vv) == vv, "literal code changed between sibling conditions")
         ck(dockets.setdefault((p, n), v["docket"]) == v["docket"], "docket changed")
     ck(len(set(dockets.values())) == 12, "dockets reused across reference panels")
+    endpoint_dockets, endpoint_codes = {}, {}
+    exact_text = dict(prompts)
+    ck(len({exact_text[c] for c in luna}) == 48, "duplicate Luna user text")
     for c in luna:
-        _, _, law, m, _ = c.split("/")
+        _, n, law, m, _ = c.split("/")
         ck((law, m, law) == (q[c]["law"], q[c]["map"], q[c]["cue"]), "endpoint not aligned")
+        v = q[c]
+        ck(
+            endpoint_dockets.setdefault(n, (v["docket"], v["required"]))
+            == (v["docket"], v["required"]),
+            "Luna docket changed",
+        )
+        ck(
+            endpoint_codes.setdefault((n, law), v["candidate"]) == v["candidate"],
+            "Luna presentation siblings changed codes",
+        )
+    ck(len({d for d, _ in endpoint_dockets.values()}) == 3, "Luna dockets not distinct")
     wanted = {
         (s, u, c, a) for s, u, c in product(("cue", "joint"), MODELS, cases) for a in arms(s, c)
     }
@@ -167,26 +231,24 @@ def tally(prompts, trial_rows, api_rows, context):
                     ck(ref != donor, "uninterpretable answer-map control")
                     moves += int(ref != sym and sym == donor)
                 posctrl[u][mode] = moves
-        for panel, sign, law in product(PANELS, SIGNS, SIGNS):
+        for panel, sign, law in product(PANELS, SIGNS, (*SIGNS, "ALL")):
             cells = [
                 c
                 for c in src
                 if c.startswith(panel + "/")
                 and c.split("/")[2] == "X"
                 and q[c]["cue"] == sign
-                and q[c]["law"] == law
+                and (law == "ALL" or q[c]["law"] == law)
             ]
             if not cells:
                 continue
-            ck(len(cells) == 12, "wrong stratum denominator")
-            counts = {}
-            for mode in "STN":
-                op = ("cue6:" + mode) if s == "cue" else (mode + ":none:S")
-                counts[mode] = sum(
-                    y(s, u, c, op) != y(s, u, c, "base") and y(s, u, c, op) == int(sign == "FAIL")
-                    for c in cells
+            ck(len(cells) == (24 if law == "ALL" else 12), "wrong stratum denominator")
+            for site in ("cue3", "cue6") if s == "cue" else ("cue6",):
+                direct["/".join((s, u, panel, site, sign, law))] = count_cue(
+                    cells,
+                    lambda c, op: y(s, u, c, op),
+                    lambda op: site + ":" + op if s == "cue" else op + ":none:S",
                 )
-            direct["/".join((s, u, panel, sign, law))] = counts
     for u, p, law, route in product(MODELS, PANELS, SIGNS, ROUTES):
         cells = [
             c
@@ -308,5 +370,8 @@ if __name__ == "__main__":
     }
     selected["fresh_primary"] = {
         law: out["factorials"][f"mixed/balanced/{law}/context"] for law in SIGNS
+    }
+    selected["cue_direction_comparisons"] = {
+        k: v for k, v in out["cue_changes"].items() if k.endswith("/ALL")
     }
     print(json.dumps(selected, indent=2, sort_keys=True))

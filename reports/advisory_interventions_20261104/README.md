@@ -21,10 +21,12 @@ On the 48 texts of the six-docket replication, we used the final token of the ad
 
 | Original advisory → donor advisory | Mixed: target / matched control | Semantic: target / matched control |
 |---|---:|---:|
-| PASS → FAIL, primary | 24/24 → FAIL / 0/24 | 0/24 → FAIL / 0/24 |
-| FAIL → PASS, secondary | 9/24 → PASS / 0/24 | 0/24 **changes** / 0/24 |
+| L6 PASS → FAIL, primary | 24/24 → FAIL / 0/24 | 0/24 changes / 0/24 |
+| L6 FAIL → PASS, secondary | 9/24 → PASS / 0/24 | 0/24 changes / 0/24 |
+| L3 PASS → FAIL, secondary | 24/24 → FAIL / 0/24 | 0/24 changes / 0/24 |
+| L3 FAIL → PASS, secondary | 12/24 → PASS / 1/24 | 0/24 changes / 0/24 |
 
-All 24 primary recipients started at mapped PASS in both models. Semantic's reverse row counts actual changes, not a transfer rate from donors with a different natural answer: both sides already gave PASS. As a positive control, transplanting the response map at layer 3 changed the symbol as predicted in **48/48 per model**, versus 0/48 under the matched null. The advisory precedes the case codes: only **two distinct directed cue-vector pairs** per model were used in the primary comparison. The 24 rows are repeated contexts. The layer had previously been selected for mixed; the result is not a layer-wide or general circuit discovery.
+All 24 primary recipients started at mapped PASS in both models. The table shows *all actual decision changes*; the observed mixed changes also went in the intended direction. For semantic, both donor and recipient gave natural PASS: **zero informative pairs; conditional transfer rate undefined**, not a measured rate of zero. The replay reports all changes, changes toward the donor advisory, and changes to an initially different natural donor answer separately. The prespecified L3 secondary results show the effect was not unique to L6. As a positive control, transplanting the response map at L3 changed the symbol as predicted in **48/48 per model**, versus 0/48 under the matched null. The advisory precedes the case codes: only **two distinct directed cue-vector pairs** per model were used in the primary comparison. The 24 rows are repeated contexts. L6 had previously been selected for mixed.
 
 ## Does the final candidate-code token explain the asymmetry?
 
@@ -45,7 +47,9 @@ Changing the candidate value instead of the required line (secondary VALUE) gave
 
 Keep GPT-2 mixed, L6, the cue intervention and the renderer fixed. Compare **last candidate token vs. the whole candidate-code span** on fresh, non-overlapping dockets and both answer maps. Use a required-line-only donor: the recipient and donor must have the identical candidate string, token IDs and absolute positions **at every copied token**. Define the span by the literal value, not the field label. A boundary-straddling token or failed alignment is an invalid input, not a failed rescue.
 
-Before measuring, lock the texts, positions, scorer, seeds, inventories and decision rule. Include cue-only, candidate-only, self replacements and an equal-width, per-token norm-matched control for both spans. Primary question: on **mismatches**, does the whole span turn recipients to PASS beyond both the single-token transplant and its own width-matched control? Proposed advance rule: positive paired contrasts against both on each map and on ≥4/6 dockets, with exact shams, stable natural controls and no unscorable arms. Report both directions of individual changes. A valid run missing this gate closes *this layer/field/donor* as a sufficient explanation on the tested panel; a failed technical control makes the test inconclusive. Do not rescue the result by selecting another layer or placing new Luna calls. No models were run for this publication.
+Before measuring, lock the texts, positions, scorer, seeds, inventories and decision rule. Include cue-only, candidate-only, self replacements and an equal-width, per-token norm-matched control for both spans. The proposed question is **incremental**: on the same mismatching recipients, does targeting the cue **and** the whole span yield more approvals than each of (1) the **cue alone**, (2) cue + final token and (3) cue + width-matched span null? Require positive paired differences against all three on each answer map and on at least four **common** dockets out of six. Require exact shams, stable natural controls and no unscorable arms. Report both directions of every paired change and the absolute approval counts.
+
+If the cue alone already gives 12/12 approvals, the span cannot earn credit for them. If the last token and the span both recover 12/12, report that both recover the cases, not that the span is ineffective. A valid no-go closes only the search for a **span-specific increment above all three comparators on this panel**. A technical-control failure is inconclusive. The [decision-rule examples](next_design.py) exercise these distinctions on synthetic numbers only. No new layer search, Luna calls or model runs are part of this publication.
 
 ## What can be verified from this PR?
 
